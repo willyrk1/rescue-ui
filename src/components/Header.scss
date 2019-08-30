@@ -1,0 +1,31 @@
+div#header {
+	padding				: .5rem 0;
+	text-align			: center;
+	font-size			: 1.25rem;
+	line-height         : 1.4rem;
+	letter-spacing		: .4px;
+	background-color	: #F7F7F7;
+	border-color		: #E3E3E3;
+	width				: 100%;
+	height				: auto;
+
+	p {
+		margin			: 0;
+	}
+}
+
+ul.Navigation {
+	display: inline;
+
+	li {
+		display: inline;
+		padding-right: 1rem;
+
+		a { 
+			line-height: 24px;
+			display: inline-flex;
+			vertical-align: middle;
+			text-decoration : none;
+		}
+	}
+}
