@@ -1,0 +1,57 @@
+/* animal listing layout */
+
+div.AnimalCard {
+	text-align: left;
+
+	div.left_half {
+		float:left;
+
+		div.thumbnail {
+			float: left;
+		}
+
+		div.profile {
+			float: left;
+		}
+
+		table.profile {
+			padding:0;
+			margin:0;
+			font-size:.85em;
+		}
+		
+		table.profile tr th {
+			font-family: 'AdelleRegular';
+			font-weight: normal;
+			padding:0;
+			vertical-align: top;
+			text-align: right;
+		}
+		
+		table.profile tr td {
+			font-family: 'AdelleBold';
+			vertical-align: top;
+			text-align: left;
+		}
+	}
+
+	div.right_half {
+		float:right;
+
+		.pending {
+			background-color: #FD8D5C;
+			color:#FFFFFF;
+			padding: 0.4% 0.4% 0.4% 1.8%;
+			display:block;
+		}
+	}
+
+	div.toprightpad {
+		padding:0;
+	}
+
+	div.toprightpad p {
+		margin-bottom: 4px;
+	}
+
+}

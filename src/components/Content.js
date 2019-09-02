@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
+import Mission from './Mission';
 import Cats from './Cats';
 import Dogs from './Dogs';
 import UnderConstruction from './UnderConstruction';
@@ -21,6 +22,7 @@ class Content extends Component {
 			<div className="Content" id="content">
               <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/mission" component={Mission} />
                 <Route exact path="/cats" component={Cats} />
                 <Route exact path="/dogs" component={Dogs} />
                 <Route component={UnderConstruction} />

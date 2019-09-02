@@ -112,9 +112,13 @@ const StFrancisRescue = function() {
             return get(`animals/cats`, params);
         },
 
-        getDigs : function(params) {
+        getDogs : function(params) {
             return get(`animals/dogs`, params);
         },
+
+        getBoardMembers : function(params) {
+            return get(`mission`, params);
+        }
     };
     
 }();

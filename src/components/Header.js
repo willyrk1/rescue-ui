@@ -15,6 +15,7 @@ function Header() {
       <div className="Header" id="header">
           <ul className="Navigation">
             <li><Link to="/"><i className="material-icons">home</i> Home</Link></li>
+            <li><Link to="/mission">Mission</Link></li>
             <li><Link to="/cats">Cats</Link></li>
             <li><Link to="/dogs">Dogs</Link></li>
           </ul>
