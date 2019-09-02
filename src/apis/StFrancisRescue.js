@@ -107,6 +107,9 @@ const StFrancisRescue = function() {
             }
         },
 
+        getHome : function(params) {
+            return get(`home`, params);
+        },
 
         getCats : function(params) {
             return get(`animals/cats`, params);

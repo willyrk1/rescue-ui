@@ -1,31 +1,39 @@
+
 div#header {
 	padding				: .5rem 0;
 	text-align			: center;
 	font-size			: 1.25rem;
 	line-height         : 1.4rem;
 	letter-spacing		: .4px;
-	background-color	: #F7F7F7;
+	background-color    : #1d75bc;
 	border-color		: #E3E3E3;
+	color               : white;
 	width				: 100%;
 	height				: auto;
 
-	p {
-		margin			: 0;
-	}
-}
+	div#logo {
+		background-image: url('/logo_white.png');
+	    width: 230px;
+		height: 82px;
+		background-repeat: no-repeat;
+		background-position: 0 18px;
+	}		
 
-ul.Navigation {
-	display: inline;
-
-	li {
+	ul.Navigation {
 		display: inline;
-		padding-right: 1rem;
-
-		a { 
-			line-height: 24px;
-			display: inline-flex;
-			vertical-align: middle;
-			text-decoration : none;
+		
+		li {
+			display: inline;
+			padding-right: 1rem;
+			
+			a { 
+				line-height: 24px;
+				display: inline-flex;
+				vertical-align: middle;
+				text-decoration : none;
+				color : white;
+			}
 		}
 	}
 }
+

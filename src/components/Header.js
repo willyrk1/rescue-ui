@@ -13,12 +13,13 @@ import './Header.scss';
 function Header() {
   return (
       <div className="Header" id="header">
-          <ul className="Navigation">
-            <li><Link to="/"><i className="material-icons">home</i> Home</Link></li>
-            <li><Link to="/mission">Mission</Link></li>
-            <li><Link to="/cats">Cats</Link></li>
-            <li><Link to="/dogs">Dogs</Link></li>
-          </ul>
+        <a href="/"><div id="logo"/></a>
+        <ul className="Navigation">
+          <li><Link to="/"><i className="material-icons">home</i> Home</Link></li>
+          <li><Link to="/mission">Mission</Link></li>
+          <li><Link to="/cats">Cats</Link></li>
+          <li><Link to="/dogs">Dogs</Link></li>
+        </ul>
       </div>
   );
 }
