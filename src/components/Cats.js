@@ -8,6 +8,7 @@
 
 import React, { Component } from 'react';
 import StFrancisRescue from '../apis/StFrancisRescue';
+import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
 
 class Cats extends Component {
     constructor(props) {
@@ -31,8 +32,9 @@ class Cats extends Component {
         const c = [];
         if (cats) {
             cats.forEach(cat => {
-                c.push(<div className="cat">
+                c.push(<div className="cat" key={`cat-${cat.id}`}>
                        <p>Name: {cat.name}</p>
+                       <img height="200" src={`${PROTOCOL}://${HOSTNAME}${cat.primary_image.public_filename}`}/>
                        </div>);
             });
         }
