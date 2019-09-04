@@ -16,13 +16,10 @@ class Cats extends Component {
         super(props);
 
         this.state = { data : {}};
-    }
 
-    componentDidMount() {
-		StFrancisRescue.getCats()
+    	StFrancisRescue.getCats()
             .then(data => this.loadCats(data))
             .catch(error => console.error(error));
-
     }
 
     loadCats(data) {
@@ -40,26 +37,49 @@ class Cats extends Component {
     }
 
     render() {
-        const {adoptionCenterAnimals, fosteredAnimals, specialNeedsAnimals} = this.state.data;
+        const {adoptionCenterAnimals, fosteredAnimals, specialNeedsAnimals, adoptionCenters} = this.state.data;
 
         if (this.state.loaded) {
             return (
 			    <div id="cats">
-                  <h3>Special Needs Cats</h3>
-                  <div>
-                    {this.renderCatList(specialNeedsAnimals)}
-                  </div>
-                  
-                  <h3>Adoption Center Cats</h3>
-                  <div>
-                    {this.renderCatList(adoptionCenterAnimals)}
-                  </div>
-                  
-                  <h3>Fostered Cats</h3>
-                  <div>
-                    {this.renderCatList(fosteredAnimals)}
-                  </div>
-                  
+                  <h1>Our Cats</h1>
+                  <br />
+                  { adoptionCenters && adoptionCenters.length > 0 &&
+                      <p>Some of our cats ready for adoption can be seen at the following
+                            Adoption Centers, which will be listed in their story.
+                      </p> }
+                      
+                      <p>
+                        For cats located in foster homes, you can contact the foster
+                        directly if you have questions about the cat. Otherwise, click on
+                        the "Want to Adopt Me?" button next to a cat, fill out the adoption
+                        form and someone will contact you.
+                      </p>
+
+                      { specialNeedsAnimals.length > 0 &&
+                          <span>
+                                <h3>Special Needs Cats</h3>
+                                    <div>
+                                          {this.renderCatList(specialNeedsAnimals)}
+                                        </div>
+                          </span>}
+                      
+                          { adoptionCenterAnimals.length > 0 &&
+                              <span>
+                                    <h3>Adoption Center Cats</h3>
+                                        <div>
+                                              {this.renderCatList(adoptionCenterAnimals)}
+                                            </div>
+                              </span> }
+                              
+                              { fosteredAnimals.length > 0 &&
+                                  <span>
+                                        <h3>Fostered Cats</h3>
+                                            <div>
+                                                  {this.renderCatList(fosteredAnimals)}
+                                                </div>
+                                  </span> }
+                                  
                 </div>
 		    );
         } else {

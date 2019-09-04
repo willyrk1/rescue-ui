@@ -107,10 +107,10 @@ const StFrancisRescue = function() {
             }
         },
 
-        getHome : function(params) {
-            return get(`home`, params);
+        getPage : function(pagename, params) {
+            return get(pagename, params);
         },
-
+        
         getCats : function(params) {
             return get(`animals/cats`, params);
         },
@@ -119,9 +119,14 @@ const StFrancisRescue = function() {
             return get(`animals/dogs`, params);
         },
 
+        getSuccessStories : function(params) {
+            return get(`animals/success_stories`, params);
+        },
+
         getBoardMembers : function(params) {
             return get(`mission`, params);
         }
+        
     };
     
 }();

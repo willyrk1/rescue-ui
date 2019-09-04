@@ -17,7 +17,7 @@ class AnimalCard extends Component {
         return (
 			<div className="AnimalCard" id="animalCard" key={`animalCard-${animal.id}`}>
               <div className="left_half">
-                <img height="200" alt="" src={`${PROTOCOL}://${HOSTNAME}${animal.primary_image.public_filename}`}/>
+                <img height="200" alt="" src={`${PROTOCOL}://${HOSTNAME}${animal.primary_image_thumbnail}`}/>
 
                 <table className="profile">
                   <tbody>

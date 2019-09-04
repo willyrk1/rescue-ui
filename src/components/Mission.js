@@ -15,13 +15,10 @@ class Mission extends Component {
         super(props);
 
         this.state = { data : {}};
-    }
 
-    componentDidMount() {
-		StFrancisRescue.getBoardMembers()
+    	StFrancisRescue.getBoardMembers()
             .then(data => this.loadBoardMembers(data))
             .catch(error => console.error(error));
-
     }
 
     loadBoardMembers(data) {

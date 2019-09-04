@@ -16,13 +16,10 @@ class Dogs extends Component {
         super(props);
 
         this.state = { data : {}};
-    }
 
-    componentDidMount() {
-		StFrancisRescue.getDogs()
+    	StFrancisRescue.getDogs()
             .then(data => this.loadDogs(data))
             .catch(error => console.error(error));
-
     }
 
     loadDogs(data) {
@@ -45,12 +42,25 @@ class Dogs extends Component {
         if (this.state.loaded) {
             return (
 			    <div id="dogs">
-                  <h3>Adoption Center Dogs</h3>
-                  {this.renderDogList(adoptionCenterAnimals)}
+
+                  <p>Since all of our dogs live in foster homes and it is up to the
+                    foster family to transport for adoption events, we can not ensure
+                    that all dogs will be present. If you are interested in seeing a
+                    specific dog, please contact the person listed by phone or email to
+                    arrange a visit with the dog.<br />
+                  </p>
                   
-                  <h3>Fostered Dogs</h3>
-                  {this.renderDogList(fosteredAnimals)}
-                  
+                  { adoptionCenterAnimals.length > 0 &&
+                      <span>
+                            <h3>Adoption Center Dogs</h3>
+                                {this.renderDogList(adoptionCenterAnimals)}
+                      </span> }
+                      
+                      { fosteredAnimals.length > 0 &&
+                          <span>
+                                <h3>Fostered Dogs</h3>
+                                    {this.renderDogList(fosteredAnimals)}
+                          </span> }
                 </div>
 		    );
         } else {
