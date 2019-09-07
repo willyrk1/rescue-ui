@@ -1,7 +1,6 @@
 
 div#header {
-	padding				: .5rem 0;
-	text-align			: center;
+	padding				: 0 0 .5rem 0;
 	font-size			: 1.25rem;
 	line-height         : 1.4rem;
 	letter-spacing		: .4px;
@@ -10,8 +9,12 @@ div#header {
 	color               : white;
 	width				: 100%;
 	height				: auto;
+	display			: flex;
+	flex-direction  : row; 
+
 
 	div#logo {
+		margin-left: 1rem;
 		background-image: url('/logo_white.png');
 	    width: 230px;
 		height: 82px;
@@ -19,21 +22,22 @@ div#header {
 		background-position: 0 18px;
 	}		
 
-	ul.Navigation {
-		display: inline;
-		
-		li {
-			display: inline;
-			padding-right: 1rem;
-			
-			a { 
-				line-height: 24px;
-				display: inline-flex;
-				vertical-align: middle;
-				text-decoration : none;
-				color : white;
-			}
+	span#menu-icon {
+		i {
+			cursor : pointer;
+			font-size: 34px;
+			vertical-align: top;
 		}
 	}
 }
 
+.MuiListItemText-root { 
+	a {
+		text-decoration : none;
+		color    : #1d75bc;
+	}
+}
+
+svg.MuiSvgIcon-root {
+	fill:  #1d75bc;
+}
