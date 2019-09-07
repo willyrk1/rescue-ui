@@ -24,7 +24,7 @@ class BoardMember extends Component {
                   }
   
                   <div className="left fifteen">
-                    <img alt="" width="200px" src={picture} />
+                    <img alt="" width="100%" src={picture} />
                   </div>
                   <div className="right eighty-five">
   	                <div className="padded">
