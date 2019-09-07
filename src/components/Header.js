@@ -42,7 +42,7 @@ function Header() {
       <div className="Header" id="header">
         <span id="menu-icon"><i className="material-icons" onClick={toggleNav}>menu</i></span>
         <a href="/"><div id="logo"/></a>
-        <SwipeableDrawer open={state.showNav} onOpen={toggleNav} onClose={toggleNav} disableBackdropTransition={!iOS} disableDiscovery={iOS}>
+        <SwipeableDrawer anchor="right" open={state.showNav} onOpen={toggleNav} onClose={toggleNav} disableBackdropTransition={!iOS} disableDiscovery={iOS}>
           <List>
             <ListItem>
               <ListItemIcon><Link to="/" onClick={toggleNav}><HomeIcon/></Link></ListItemIcon>
@@ -61,8 +61,8 @@ function Header() {
               <ListItemText><Link to="/dogs" onClick={toggleNav}>Dogs</Link></ListItemText>
             </ListItem>
             <ListItem>
-              <ListItemIcon><Link to="/adoptions onClick={toggleNav}"><AdoptionsIcon/></Link></ListItemIcon>
-              <ListItemText><Link to="/adoptions onClick={toggleNav}">Adoptions</Link></ListItemText>
+              <ListItemIcon><Link to="/adoptions" onClick={toggleNav}><AdoptionsIcon/></Link></ListItemIcon>
+              <ListItemText><Link to="/adoptions" onClick={toggleNav}>Adoptions</Link></ListItemText>
             </ListItem>
             <ListItem>
               <ListItemIcon><Link to="/foster" onClick={toggleNav}><FosterIcon/></Link></ListItemIcon>

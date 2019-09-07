@@ -14,19 +14,23 @@ div#header {
 
 
 	div#logo {
-		margin-left: 1rem;
 		background-image: url('/logo_white.png');
-	    width: 230px;
-		height: 82px;
+	    width: 235px;
+		height: 71px;
 		background-repeat: no-repeat;
-		background-position: 0 18px;
+		background-position: right;
 	}		
 
 	span#menu-icon {
+		position: fixed;
+		z-index: 100;
+		top: 3px;
+		right: 8px;
+		
 		i {
 			cursor : pointer;
 			font-size: 34px;
-			vertical-align: top;
+			vertical-align: middle;
 		}
 	}
 }

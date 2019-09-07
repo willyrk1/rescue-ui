@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import StFrancisRescue from '../apis/StFrancisRescue';
 import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
+import './SuccessStories.scss';
 
 class SuccessStories extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class SuccessStories extends Component {
                   <div style={{textAlign: "justify"}}>
                     <ul style={{padding: 0}}>
                       {adoptedAnimals.map((animal, index) => {
-                          return <li key={index}><img src={animal.primary_image_thumbnail.replace(/\/uploads/g, `${PROTOCOL}://${HOSTNAME}/uploads`)} alt="" title={animal.name}></img></li>;
+                          return <li key={index}><img src={animal.primary_image_thumbnail.replace(/\/uploads/g, `${PROTOCOL}://${HOSTNAME}/uploads`)} alt="" title={animal.name} className="success_thumb"></img></li>;
                       })}
                     </ul>
                   </div>
