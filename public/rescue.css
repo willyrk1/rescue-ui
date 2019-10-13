@@ -1,0 +1,100 @@
+/*
+Colors :
+
+
+
+*/
+
+/* CSS Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+
+/* Header */
+
+.header {
+  height: 15rem;
+  background: #ccc;
+  padding: 4rem 4% 0 4%;
+}
+
+.header__logo {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+.header__logo img {
+  height: 8.2rem;
+}
+
+.header__nav {
+  /*float: right;*/
+  display: inline-block;
+  list-style: none;
+}
+
+.header__nav li {
+  display: inline-block;
+  margin-left: 4rem;
+}
+
+.header__nav li a:link,
+.header__nav li a:visited {
+  color: #1c75bb;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  border-bottom: 0.2rem solid transparent;
+  transition: border-bottom 0.2s;
+  padding-bottom: 0.3rem;
+}
+
+.header__nav li a:hover,
+.header__nav li a:active {
+  border-bottom: 0.2rem solid #a0cd3a;
+  padding-bottom: 0.3rem;
+}
+
+.header__btn--container {
+  display: inline-block;
+  margin-left: 8rem;
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.2rem 3rem;
+  border-radius: 20rem;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+}
+
+.btn:active {
+  transform: translateY(-0.1rem);
+}
+
+.btn--orange {
+  background-color: #fd8d5c;
+  color: #fff;
+  font-weight: 700;
+}

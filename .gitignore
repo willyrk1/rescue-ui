@@ -29,3 +29,5 @@ yarn-error.log*
 *.esproj/**/*
 .dir-locals.el
 .vscode/*
+**/*.swp
+**/tags

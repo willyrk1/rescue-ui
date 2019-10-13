@@ -39,6 +39,93 @@ function Header() {
     };
     
   return (
+    <div>
+      <header className="header">
+        <div className="header__logo">
+          <img src="header-logo.svg" alt="St. Francis Society Animal Rescue" />
+        </div>
+        <ul className="header__nav">
+          <li><a href="#">Adopt</a></li>
+          <li><a href="#">Foster</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Help Our Cause</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div className="header__btn--container">
+        <a className="btn btn--orange" href="#">Donate</a>
+        </div>
+      </header>
+
+      <section className="grid-test">
+        <div className="row">
+          <div className="col-1-of-2">
+          Col 1 of 2
+          </div>
+          <div className="col-1-of-2">
+          Col 1 of 2
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-1-of-3">
+          Col 1 of 3
+          </div>
+          <div className="col-1-of-3">
+          Col 1 of 3
+          </div>
+          <div className="col-1-of-3">
+          Col 1 of 3
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-1-of-3">
+          Col 1 of 3
+          </div>
+          <div className="col-2-of-3">
+          Col 2 of 3
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-1-of-4">
+          Col 1 of 4
+          </div>
+          <div className="col-1-of-4">
+          Col 1 of 4
+          </div>
+          <div className="col-1-of-4">
+          Col 1 of 4
+          </div>
+          <div className="col-1-of-4">
+          Col 1 of 4
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-1-of-4">
+          Col 1 of 4
+          </div>
+          <div className="col-1-of-4">
+          Col 1 of 4
+          </div>
+          <div className="col-2-of-4">
+          Col 2 of 4
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-1-of-4">
+          Col 1 of 4
+          </div>
+          <div className="col-3-of-4">
+          Col 3 of 4
+          </div>
+        </div>
+      </section>
+
       <div className="Header" id="header">
         <span id="menu-icon"><i className="material-icons" onClick={toggleNav}>menu</i></span>
         <a href="/"><div id="logo"/></a>
@@ -95,6 +182,7 @@ function Header() {
           </List>
         </SwipeableDrawer>
       </div>
+    </div>
   );
 }
 
