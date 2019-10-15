@@ -1,3 +1,10 @@
 @import './_variables.scss';
 @import './_mixins.scss';
 @import './_grid.scss';
+
+.hero__background {
+  height: 70rem;
+  background-image: url("../images/hero-bg.jpg"); 
+  background-size: cover;
+  background-position: top;
+}
