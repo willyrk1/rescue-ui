@@ -31,7 +31,6 @@ body {
 
 .header {
   height: 15rem;
-  background: #ccc;
   padding: 4rem 4% 0 4%;
 }
 
@@ -75,6 +74,19 @@ body {
 .header__btn--container {
   display: inline-block;
   margin-left: 8rem;
+  position: relative;
+}
+
+.header__btn--container a {
+  z-index: 200;
+  position: relative;
+}
+
+.header__btn--container img {
+  position: absolute;
+  top: -105px;
+  left: 64px;
+  z-index: 100;
 }
 
 .btn:link,

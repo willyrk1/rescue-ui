@@ -26,6 +26,7 @@ import ResourcesIcon from '@material-ui/icons/Bookmarks';
 import SuccessStoriesIcon from '@material-ui/icons/ImportContacts';
 import DonateIcon from '@material-ui/icons/LocalAtm';
 import './Header.scss';
+import headerKitten from '../assets/images/kitty.png'
 
 function Header() {
     const [state, setState] = React.useState({
@@ -117,83 +118,10 @@ function Header() {
           <li><Link to="/">Contact</Link></li>
         </ul>
         <div className="header__btn--container">
-        <a className="btn btn--orange" href="#">Donate</a>
+          <a className="btn btn--orange" href="#">Donate</a>
+          <img src={headerKitten} />
         </div>
       </header>
-
-      <section className="grid-test">
-        <div className="row">
-          <div className="col-1-of-1">
-          Col 1 of 1
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-1-of-2">
-          Col 1 of 2
-          </div>
-          <div className="col-1-of-2">
-          Col 1 of 2
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-1-of-3">
-          Col 1 of 3
-          </div>
-          <div className="col-1-of-3">
-          Col 1 of 3
-          </div>
-          <div className="col-1-of-3">
-          Col 1 of 3
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-1-of-3">
-          Col 1 of 3
-          </div>
-          <div className="col-2-of-3">
-          Col 2 of 3
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-1-of-4">
-          Col 1 of 4
-          </div>
-          <div className="col-1-of-4">
-          Col 1 of 4
-          </div>
-          <div className="col-1-of-4">
-          Col 1 of 4
-          </div>
-          <div className="col-1-of-4">
-          Col 1 of 4
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-1-of-4">
-          Col 1 of 4
-          </div>
-          <div className="col-1-of-4">
-          Col 1 of 4
-          </div>
-          <div className="col-2-of-4">
-          Col 2 of 4
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-1-of-4">
-          Col 1 of 4
-          </div>
-          <div className="col-3-of-4">
-          Col 3 of 4
-          </div>
-        </div>
-      </section>
     </div> 
   );
 }
