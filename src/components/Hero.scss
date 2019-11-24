@@ -1,0 +1,16 @@
+.banner {
+  position: relative;
+
+  img {
+    width: 100%;
+    filter: brightness(75%);
+  }
+
+  > div {
+    position: absolute;
+    top: 40%;
+    left: 5rem;
+    line-height: 1;
+    width: 45rem;
+  }
+}

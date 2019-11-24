@@ -1,4 +1,5 @@
 import React from 'react';
+import './Hero.scss'
 import heroImage from '../assets/images/hero.png'
 
 class Hero extends React.Component {
@@ -9,7 +10,7 @@ class Hero extends React.Component {
         <div>
           <h1>
             CUDDLE<br/>
-            <span style={{color: '#B2E63B'}}>PARTY</span>
+            <span className='alt-color'>PARTY</span>
           </h1>
           <hr/>
           <p>
