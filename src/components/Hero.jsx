@@ -1,11 +1,11 @@
 import React from 'react';
-import hero from '../assets/images/hero.png'
+import heroImage from '../assets/images/hero.png'
 
 class Hero extends React.Component {
   render() {
     return (
       <section className='banner'>
-        <img src={hero} />
+        <img src={heroImage} />
         <div>
           <h1>
             CUDDLE<br/>

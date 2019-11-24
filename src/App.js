@@ -21,7 +21,6 @@ class App extends Component {
             <Router>
               <div className="App">
 		        <Header />
-            <Hero />
 		        <Content />
 		        <Footer />
               </div>

@@ -26,11 +26,14 @@ body {
   box-sizing: border-box;
 }
 
+img {
+  display:block;
+}
 
 /* Header */
 
 .header, .banner {
-  width: 140rem;
+  width: 144rem;
 }
 
 .header {
