@@ -110,3 +110,40 @@ body {
   color: #fff;
   font-weight: 700;
 }
+
+.banner {
+  position: relative;
+}
+
+.banner > div {
+  position: absolute;
+  top: 40%;
+  left: 5rem;
+  line-height: 1;
+  width: 45rem;
+}
+
+.banner img {
+  filter: brightness(75%);
+}
+
+.banner h1 {
+  font-size: 5rem;
+  color: #fff;
+}
+
+.banner hr {
+  background-color: #fff;
+  color: #fff;
+  margin: 1rem 0;
+  width: 5rem;
+  height: 0.3rem;
+  border: 0;
+}
+
+.banner p {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
