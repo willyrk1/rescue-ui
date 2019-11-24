@@ -29,6 +29,10 @@ body {
 
 /* Header */
 
+.header, .banner {
+  width: 140rem;
+}
+
 .header {
   height: 15rem;
   padding: 4rem 4% 0 4%;
@@ -113,6 +117,10 @@ body {
 
 .banner {
   position: relative;
+}
+
+.banner img {
+  width: 100%;
 }
 
 .banner > div {
