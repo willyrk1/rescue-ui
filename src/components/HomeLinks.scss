@@ -1,9 +1,9 @@
-.home-links {
+.home .home-links {
 	background-image: url('../assets/images/about_bg.png');
 	display: flex;
   justify-content: center;
   
-  .home & h1 {
+  h1 {
     font-size: 3.5rem;
   }
 

@@ -17,6 +17,9 @@ class Hero extends React.Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex, non vulputate
             enim est gravida enim. Suspendisse eu tortor dui.
           </p>
+          <div className="btn-container">
+            <a className="btn btn--orange" href="#">Foster</a>
+          </div>
         </div>
       </section>
     );

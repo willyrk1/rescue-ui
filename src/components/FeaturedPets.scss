@@ -1,0 +1,33 @@
+
+.home .featured-pets {
+  background-color: #f9ffed;
+  padding: 5rem 8rem;
+
+  h1 {
+    color: #1576bc;
+  }
+
+  hr {
+    background-color: #fd8d5c;
+  }
+
+  .pet-image  {
+    height: 54rem;
+    width: 62rem;
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .btn-container {
+    margin-top: 7rem;
+  }
+}
