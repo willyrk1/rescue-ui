@@ -1,7 +1,7 @@
 import React from 'react'
 import './FeaturedPets.scss';
-import featuredDog from '../assets/images/featuredDog.png'
-import featuredCat from '../assets/images/featuredCat.png'
+import featuredDog from '../../assets/images/featuredDog.png'
+import featuredCat from '../../assets/images/featuredCat.png'
 
 const FeaturedPets = () => (
   <div className='featured-pets'>

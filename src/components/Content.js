@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from './Home'
+import Home from './Home/Home'
 import Mission from './Mission';
 import Cats from './Cats';
 import Dogs from './Dogs';

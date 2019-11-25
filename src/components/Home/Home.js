@@ -3,7 +3,7 @@ import Hero from './Hero'
 import HomeLinks from './HomeLinks'
 import FeaturedPets from './FeaturedPets'
 import './Home.scss';
-import donateRibbon from '../assets/images/donate_ribbon.png'
+import donateRibbon from '../../assets/images/donate_ribbon.png'
 
 const Home = () => (
   <div className='home'>
