@@ -9,6 +9,9 @@ const HomeLinks = () => (
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
       </p>
+      <div className="btn-container">
+        <a className="btn btn--orange" href="#">View All</a>
+      </div>
     </div>
     <div>
       <h1>Foster</h1>
@@ -16,6 +19,9 @@ const HomeLinks = () => (
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
       </p>
+      <div className="btn-container">
+        <a className="btn btn--orange" href="#">Learn How</a>
+      </div>
     </div>
     <div>
       <h1>Donate</h1>
@@ -23,6 +29,9 @@ const HomeLinks = () => (
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
       </p>
+      <div className="btn-container">
+        <a className="btn btn--orange" href="#">More Info</a>
+      </div>
     </div>
   </div>
 )
