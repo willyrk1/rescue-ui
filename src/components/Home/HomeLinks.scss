@@ -1,10 +1,14 @@
+@import '../../assets/stylesheets/style.scss';
+
 .home .home-links {
+  width: $content-width;
 	background-image: url('../../assets/images/about_bg.png');
 	display: flex;
   justify-content: center;
   
   h1 {
     font-size: 3.5rem;
+    color: $color-secondary;
   }
 
   > div {

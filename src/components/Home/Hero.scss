@@ -1,5 +1,12 @@
+@import '../../assets/stylesheets/style.scss';
+
 .home .banner {
+  width: $content-width;
   position: relative;
+
+  .alt-color {
+    color: $color-secondary;
+  }
 
   img {
     width: 100%;

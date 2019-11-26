@@ -1,3 +1,63 @@
+@import '../assets/stylesheets/style.scss';
+
+.header {
+  width: $content-width;
+  height: 15rem;
+	padding: 4rem 4% 0 4%;
+	
+	&__logo {
+		display: inline-block;
+		padding-right: 1rem;
+
+		img {
+			height: 8.2rem;
+		}
+	}
+
+	&__nav {
+		/*float: right;*/
+		display: inline-block;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin-left: 4rem;
+
+			a:link, a:visited {
+				color: #1c75bb;
+				text-decoration: none;
+				font-size: 1.7rem;
+				font-weight: 700;
+				border-bottom: 0.2rem solid transparent;
+				transition: border-bottom 0.2s;
+				padding-bottom: 0.3rem;
+			}
+
+			a:hover, a:active {
+				border-bottom: 0.2rem solid #a0cd3a;
+				padding-bottom: 0.3rem;
+			}
+		}
+	}
+
+	&__btn--container {
+		display: inline-block;
+		margin-left: 8rem;
+		position: relative;
+
+		a {
+			z-index: 200;
+			position: relative;
+		}
+
+		img {
+			position: absolute;
+			top: -105px;
+			left: 64px;
+			z-index: 100;
+		}
+	}
+}
 
 div#header {
 	padding				: 0 0 .5rem 0;
