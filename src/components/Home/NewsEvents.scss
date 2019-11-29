@@ -14,57 +14,65 @@
     background-color: #fd8d5c;
   }
 
-  .btn-container {
-    margin-top: 4.5rem;
-  }
-
   > div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
+    .btn-container {
+      margin-top: 6.5rem;
+    }
+
+    &.panels {
+      justify-content: space-between;
+
+      .btn-container {
+        margin-top: 4.5rem;
+      }
     
-    > div {
-      width: 40rem;
-      background-color: #fff;
-      border-radius: 1.5rem;
-      padding: 2rem 0 4rem 4rem;
+      > div {
+        width: 40rem;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        padding: 2rem 0 4rem 4rem;
 
-      .date {
-        background-image: url('../../assets/images/news_header.png');
-        float: right;
-        height: 10.3rem;
-        width: 12.7rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        .date {
+          background-image: url('../../assets/images/news_header.png');
+          float: right;
+          height: 10.3rem;
+          width: 12.7rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-        p {
-          font-family: 'Arimo', 'Roboto', 'CartoGothic Std', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-          font-size: 5rem;
-          font-weight: bolder;
-          color: #fff;
-          margin-left: 2.5rem;
+          p {
+            font-family: 'Arimo', 'Roboto', 'CartoGothic Std', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            font-size: 5rem;
+            font-weight: bolder;
+            color: #fff;
+            margin-left: 2.5rem;
+          }
         }
-      }
 
-      h1 {
-        font-size: 3rem;
-        color: $color-secondary;
-        margin-top: 3rem;
-        margin-bottom: 2rem;
-      }
+        h1 {
+          font-size: 3rem;
+          color: $color-secondary;
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+        }
 
-      h2 {
-        font-family: 'Arimo', 'Roboto', 'CartoGothic Std', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-        font-size: 1.8rem;
-        font-weight: normal;
-        color: #aaa;
-        margin-bottom: 3rem;
-      }
+        h2 {
+          font-family: 'Arimo', 'Roboto', 'CartoGothic Std', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+          font-size: 1.8rem;
+          font-weight: normal;
+          color: #aaa;
+          margin-bottom: 3rem;
+        }
 
-      > p {
-        color: #444;
-        margin-right: 2rem;
-        font-size: 1.6rem;
+        > p {
+          color: #444;
+          margin-right: 2rem;
+          font-size: 1.6rem;
+        }
       }
     }
   }

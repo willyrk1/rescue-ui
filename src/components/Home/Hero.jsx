@@ -18,7 +18,7 @@ class Hero extends React.Component {
             enim est gravida enim. Suspendisse eu tortor dui.
           </p>
           <div className="btn-container">
-            <a className="btn btn--orange" href="#">Foster</a>
+            <a className="btn btn--accent" href="#">Foster</a>
           </div>
         </div>
       </section>

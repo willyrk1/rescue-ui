@@ -10,7 +10,7 @@ const HomeLinks = () => (
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
       </p>
       <div className="btn-container">
-        <a className="btn btn--orange" href="#">View All</a>
+        <a className="btn btn--accent" href="#">View All</a>
       </div>
     </div>
     <div>
@@ -20,7 +20,7 @@ const HomeLinks = () => (
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
       </p>
       <div className="btn-container">
-        <a className="btn btn--orange" href="#">Learn How</a>
+        <a className="btn btn--accent" href="#">Learn How</a>
       </div>
     </div>
     <div>
@@ -30,7 +30,7 @@ const HomeLinks = () => (
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
       </p>
       <div className="btn-container">
-        <a className="btn btn--orange" href="#">More Info</a>
+        <a className="btn btn--accent" href="#">More Info</a>
       </div>
     </div>
   </div>

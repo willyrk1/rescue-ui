@@ -118,7 +118,7 @@ function Header() {
           <li><Link to="/">Contact</Link></li>
         </ul>
         <div className="header__btn--container">
-          <a className="btn btn--orange" href="#">Donate</a>
+          <a className="btn btn--accent" href="#">Donate</a>
           <img src={headerKitten} />
         </div>
       </header>

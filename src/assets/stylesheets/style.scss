@@ -2,9 +2,66 @@
 @import './_mixins.scss';
 @import './_grid.scss';
 
-.hero__background {
-  height: 70rem;
-  background-image: url("../images/hero-bg.jpg"); 
-  background-size: cover;
-  background-position: top;
+/*
+Colors :
+
+
+
+*/
+
+/* CSS Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+img {
+  display:block;
+}
+
+.btn {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bolder;
+
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.2rem 3rem;
+    border-radius: 1.7rem;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+  }
+
+  &--accent {
+    background-color: $color-accent;
+    color: #fff;
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: #fff;
+  }
 }

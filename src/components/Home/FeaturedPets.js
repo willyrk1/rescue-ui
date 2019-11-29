@@ -13,7 +13,7 @@ const FeaturedPets = () => (
           ABC
         </div>
         <div className="btn-container">
-          <a className="btn btn--orange" href="#">View All Dogs</a>
+          <a className="btn btn--accent" href="#">View All Dogs</a>
         </div>
       </div>
       <div>
@@ -21,7 +21,7 @@ const FeaturedPets = () => (
           XYZ
         </div>
         <div className="btn-container">
-          <a className="btn btn--orange" href="#">View All Cats</a>
+          <a className="btn btn--accent" href="#">View All Cats</a>
         </div>
       </div>
     </div>
