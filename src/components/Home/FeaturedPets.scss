@@ -1,10 +1,11 @@
+@import '../../assets/stylesheets/style.scss';
 
 .home .featured-pets {
   background-color: #f9ffed;
   padding: 5rem 8rem;
 
   h1 {
-    color: #1576bc;
+    color: $color-primary;
   }
 
   hr {

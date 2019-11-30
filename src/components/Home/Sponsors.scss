@@ -1,0 +1,61 @@
+@import '../../assets/stylesheets/style.scss';
+
+.home .home-sponsors {
+  width: $content-width;
+	background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 8rem;
+  padding-right: 8rem;
+
+  > div {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    &.tiles {
+      padding: 0;
+      position: relative;
+      width: 60%;
+      overflow: hidden;
+      margin: 0 6rem 0;
+
+      > div {
+        position: absolute;
+        width: 18rem;
+        height: 23.7rem;
+        font-size: 1rem;
+        transition: all 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &.hide {
+          opacity: 0;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    color: $color-primary;
+    margin-right: 6rem;
+  }
+
+  hr {
+    background-color: #fd8d5c;
+  }
+
+  .arrow h1 {
+    margin-right: 0;
+
+    a {
+      color: #000;
+      text-decoration-line: none;
+    }
+  }
+}

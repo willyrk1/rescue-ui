@@ -3,6 +3,7 @@ import Hero from './Hero'
 import HomeLinks from './HomeLinks'
 import FeaturedPets from './FeaturedPets'
 import NewsEvents from './NewsEvents'
+import Sponsors from './Sponsors'
 import './Home.scss';
 import donateRibbon from '../../assets/images/donate_ribbon.png'
 
@@ -13,6 +14,7 @@ const Home = () => (
     <HomeLinks />
     <FeaturedPets />
     <NewsEvents />
+    <Sponsors />
   </div> 
 )
 
