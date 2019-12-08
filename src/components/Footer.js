@@ -17,6 +17,15 @@ const Footer = () => (
   <div className="Footer" id="footer">
     <div>
       <div>
+        <h1>Newsletter</h1>
+        <hr/>
+        <p>Follow our newsletter and stay in the meow!</p>
+        <input type='text' />
+        <div className="btn-container">
+          <a className="btn btn--accent" href="#">SIGN UP</a>
+        </div>
+      </div>
+      <div>
         <h1>Follow Us</h1>
         <hr/>
         <div className='image-list'>
@@ -24,15 +33,6 @@ const Footer = () => (
           <img src={twitterLogo} />
           <img src={youTubeLogo} />
           <img src={facebookLogo} />
-        </div>
-      </div>
-      <div>
-        <h1>Newsletter</h1>
-        <hr/>
-        <p>Follow our newsletter and stay in the meow!</p>
-        <input type='text' />
-        <div className="btn-container">
-          <a className="btn btn--accent" href="#">SIGN UP</a>
         </div>
       </div>
     </div>
