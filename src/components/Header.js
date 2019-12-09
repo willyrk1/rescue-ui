@@ -14,15 +14,15 @@ import headerKitten from '../assets/images/kitty.png'
 
 const cx = classNames.bind(styles)
 
-const Header = () =>
+const Header = ({ home }) =>
   <div>
-    <header className={cx("header")}>
+    <header className={cx("header", { home })}>
       <div className={cx("header__logo")}>
         <Link to="/">
           <img src="header-logo.svg" alt="St. Francis Society Animal Rescue" />
         </Link>
       </div>
-      <ul className={cx("header__nav")}>
+      <ul className={cx("header__nav", { home })}>
         <li><Link to="/adoptions">Adopt</Link></li>
         <li><Link to="/foster">Foster</Link></li>
         <li><Link to="/volunteer">Volunteer</Link></li>

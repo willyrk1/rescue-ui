@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Sponsors.module.scss'
-import spectrumLogo from '../../assets/images/Spectrum-logo.png'
-import gteLogo from '../../assets/images/GTE-financial-logo-Full-Color-2.png'
-import gulfCoastLogo from '../../assets/images/Gulfcoast Veterinary Center.png'
-import westChaseLogo from '../../assets/images/Westchase_Veterinary_Center_and_Emergenc.png'
+import spectrumLogo from '../assets/images/Spectrum-logo.png'
+import gteLogo from '../assets/images/GTE-financial-logo-Full-Color-2.png'
+import gulfCoastLogo from '../assets/images/Gulfcoast Veterinary Center.png'
+import westChaseLogo from '../assets/images/Westchase_Veterinary_Center_and_Emergenc.png'
 
 const cx = classNames.bind(styles)
 

@@ -4,6 +4,11 @@
   width: $content-width;
   height: 15rem;
 	padding: 4rem 4% 0 4%;
+	background-color: $color-primary;
+
+	&.home {
+		background-color: #fff;
+	}
 	
 	&__logo {
 		display: inline-block;
@@ -19,12 +24,18 @@
 		display: inline-block;
 		list-style: none;
 
+		&.home li {
+			a:link, a:visited {
+				color: $color-primary;
+			}
+		}
+
 		li {
 			display: inline-block;
 			margin-left: 4rem;
 
 			a:link, a:visited {
-				color: #1c75bb;
+				color: #fff;
 				text-decoration: none;
 				font-size: 1.7rem;
 				font-weight: 700;
@@ -34,7 +45,7 @@
 			}
 
 			a:hover, a:active {
-				border-bottom: 0.2rem solid #a0cd3a;
+				border-bottom: 0.2rem solid $color-secondary;
 				padding-bottom: 0.3rem;
 			}
 		}
@@ -57,51 +68,4 @@
 			z-index: 100;
 		}
 	}
-}
-
-div#header {
-	padding				: 0 0 .5rem 0;
-	font-size			: 1.25rem;
-	line-height         : 1.4rem;
-	letter-spacing		: .4px;
-	background-color    : #1d75bc;
-	border-color		: #E3E3E3;
-	color               : white;
-	width				: 100%;
-	height				: auto;
-	display			: flex;
-	flex-direction  : row; 
-
-
-	div#logo {
-		background-image: url('/logo_white.png');
-	    width: 235px;
-		height: 71px;
-		background-repeat: no-repeat;
-		background-position: right;
-	}		
-
-	span#menu-icon {
-		position: fixed;
-		z-index: 100;
-		top: 3px;
-		right: 8px;
-		
-		i {
-			cursor : pointer;
-			font-size: 34px;
-			vertical-align: middle;
-		}
-	}
-}
-
-.MuiListItemText-root { 
-	a {
-		text-decoration : none;
-		color    : #1d75bc;
-	}
-}
-
-svg.MuiSvgIcon-root {
-	fill:  #1d75bc;
 }
