@@ -1,0 +1,31 @@
+@import '../assets/stylesheets/style.scss';
+
+.mission-row {
+	width: $content-width;
+	font-family: 'Raleway', sans-serif;
+	display: flex;
+	justify-content: flex-start;
+	padding: 9rem 5rem;
+
+	h1 {
+		color: $color-accent;
+		font-size: 4.5rem;
+	}
+
+	h2 {
+		color: $color-primary;
+		font-size: 3.5rem;
+	}
+
+	> div {
+		padding: 0 2rem;
+	}
+
+	.side {
+		flex: 1 0;
+	}
+
+	.main {
+		flex: 6 0;
+	}
+}
