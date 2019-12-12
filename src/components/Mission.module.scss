@@ -5,7 +5,7 @@
 	font-family: 'Raleway', sans-serif;
 	display: flex;
 	justify-content: flex-start;
-	padding: 9rem 5rem;
+	padding: 9rem 5rem 0;
 
 	h1 {
 		color: $color-accent;
@@ -13,8 +13,28 @@
 	}
 
 	h2 {
-		color: $color-primary;
 		font-size: 3.5rem;
+		color: $color-primary;
+		margin-bottom: 2rem;
+	}
+
+	h3 {
+		font-size: 3.5rem;
+		color: $color-accent;
+	}
+
+	h4 {
+		font-size: 2rem;
+	}
+
+	p {
+		font-size: 2rem;
+		margin-top: 3rem;
+		margin-bottom: 6rem;
+
+		&.lede {
+			font-size: 3rem;
+		}
 	}
 
 	> div {
@@ -25,7 +45,16 @@
 		flex: 1 0;
 	}
 
+	&.board-member {
+		padding-top: 0;
+
+		.side img {
+			width: 22rem;
+			margin-top: 1rem;
+		}
+	}
+
 	.main {
-		flex: 6 0;
+		flex: 4 0;
 	}
 }

@@ -29,12 +29,12 @@ const Mission = () => {
   return (
     <Layout>
       <div className={cx("mission-row")}>
-        <div class={cx('side')}>
+        <div className={cx('side')}>
           <div style={{width: '10rem', height: '10rem', border: '1px solid red'}}/>
         </div>
-        <div class={cx('main')}>
+        <div className={cx('main')}>
           <h1>Our Mission</h1>
-          <p>
+          <p className={cx('lede')}>
             St. Francis Society Animal Rescue is an all volunteer, non-profit 501-c-3 animal
             rescue organization dedicated to saving the lives of sick, injured, and stray
             domestic animals as well as spaying/neutering and medical services for those
@@ -76,8 +76,8 @@ const Mission = () => {
       ].map(boardType => boardMembers[boardType].map(({
         picture, volunteer: { name }, board_member_title: { name: title }, role, bio
       }) =>
-        <div className={cx('mission-row boardMember')}>
-          <div class={cx('side')}>
+        <div className={cx('mission-row', 'board-member')}>
+          <div className={cx('side')}>
             <img
               src={picture
                 ? `${PROTOCOL}://${HOSTNAME}${picture}`
@@ -85,7 +85,7 @@ const Mission = () => {
               }
             />
           </div>
-          <div class={cx('main')}>
+          <div className={cx('main')}>
             <h3>{name.split(' ')[0]}-{title}</h3>
             <h4>{role}</h4>
             <p dangerouslySetInnerHTML={{__html: bio }} />
