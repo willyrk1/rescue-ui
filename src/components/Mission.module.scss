@@ -7,6 +7,43 @@
 	justify-content: flex-start;
 	padding: 9rem 5rem 0;
 
+	.side {
+		flex: 1 0;
+	}
+
+	.main {
+		flex: 4 0;
+		padding-left: 5rem;
+	}
+
+	&.top .side {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+
+		.money {
+			color: $color-secondary;
+			font-size: 6rem;
+			font-weight: 900;
+			margin: 2rem 0 1rem;
+		}
+
+		.caption {
+			color: #7d7d7d;
+			font-size: 2.5rem;
+			font-weight: 900;
+			margin-bottom: 4rem;
+			text-align: right;
+			line-height: 2.5rem;
+		}
+
+		hr {
+			background-color: #f0f0f0;
+			margin-bottom: 1rem;
+			width: 12rem;
+		}
+	}
+
 	h1 {
 		color: $color-accent;
 		font-size: 4.5rem;
@@ -41,10 +78,6 @@
 		padding: 0 2rem;
 	}
 
-	.side {
-		flex: 1 0;
-	}
-
 	&.board-member {
 		padding-top: 0;
 
@@ -52,9 +85,5 @@
 			width: 22rem;
 			margin-top: 1rem;
 		}
-	}
-
-	.main {
-		flex: 4 0;
 	}
 }

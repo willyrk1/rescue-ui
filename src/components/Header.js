@@ -11,6 +11,8 @@ import classNames from 'classnames/bind'
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import headerKitten from '../assets/images/kitty.png'
+import logoColor from '../assets/images/St_Francis_logo_Color.png'
+import logoWhite from '../assets/images/St_Francis_Logo_White.png'
 
 const cx = classNames.bind(styles)
 
@@ -19,7 +21,7 @@ const Header = ({ home }) =>
     <header className={cx("header", { home })}>
       <div className={cx("header__logo")}>
         <Link to="/">
-          <img src="header-logo.svg" alt="St. Francis Society Animal Rescue" />
+          <img src={home ? logoColor : logoWhite} alt="St. Francis Society Animal Rescue" />
         </Link>
       </div>
       <ul className={cx("header__nav", { home })}>

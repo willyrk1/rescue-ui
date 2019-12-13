@@ -11,6 +11,7 @@ import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue';
 import Layout from './Layout'
 import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
+import dogCat from '../assets/images/dog-cat.png'
 import styles from './Mission.module.scss';
 
 const cx = classNames.bind(styles)
@@ -28,9 +29,20 @@ const Mission = () => {
 
   return (
     <Layout>
-      <div className={cx("mission-row")}>
+      <div className={cx('mission-row', 'top')}>
         <div className={cx('side')}>
-          <div style={{width: '10rem', height: '10rem', border: '1px solid red'}}/>
+          <img src={dogCat}/>
+          <div className={cx('money')}>$10</div>
+          <div className={cx('caption')}>Food for <br/> a day.</div>
+          <hr/>
+          <div className={cx('money')}>$20</div>
+          <div className={cx('caption')}>For life-saving <br/> medicine.</div>
+          <hr/>
+          <div className={cx('money')}>$100</div>
+          <div className={cx('caption')}>Gives a night of <br/> crisis care.</div>
+          <div className={cx('btn-container')}>
+            <a className={cx('btn btn--accent')} href='#'>Donate</a>
+          </div>
         </div>
         <div className={cx('main')}>
           <h1>Our Mission</h1>
@@ -81,7 +93,7 @@ const Mission = () => {
             <img
               src={picture
                 ? `${PROTOCOL}://${HOSTNAME}${picture}`
-                : "/no_picture.jpg"
+                : '/no_picture.jpg'
               }
             />
           </div>
