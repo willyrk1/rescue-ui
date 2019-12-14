@@ -16,9 +16,7 @@
 
     &:nth-last-child(1) {
       border-right: none;
-      background-image: url('../../assets/images/dog-paw.png');
-      background-repeat: no-repeat;
-      background-position: right;
+      background: url('../../assets/images/dog-paw.png') right no-repeat;
       margin: 0;
     }
   }
