@@ -12,6 +12,7 @@ import Home from './components/Home/Home'
 import Mission from './components/Mission';
 import Cats from './components/Cats';
 import Dogs from './components/Dogs';
+import Contact from './components/Contact';
 import Page from './components/Page';
 import SuccessStories from './components/SuccessStories';
 import UnderConstruction from './components/UnderConstruction';
@@ -25,6 +26,7 @@ const App = () => (
       <Route exact path="/cats" component={Cats} />
       <Route exact path="/dogs" component={Dogs} />
       <Route exact path="/success_stories" component={SuccessStories} />
+      <Route exact path="/contact" component={Contact} />
       <Route path="/:pagename" component={Page} />
       <Route component={UnderConstruction} />
     </Switch>

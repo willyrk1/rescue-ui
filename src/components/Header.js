@@ -31,7 +31,7 @@ const Header = ({ home }) =>
         <li><Link to="/donate">Help Our Cause</Link></li>
         <li><Link to="/">Events</Link></li>
         <li><Link to="/mission">About</Link></li>
-        <li><Link to="/">Contact</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
       <div className={cx("header__btn--container")}>
         <a className={cx("btn btn--accent")} href="#">Donate</a>

@@ -1,0 +1,30 @@
+@import '../assets/stylesheets/style.scss';
+
+.contact {
+	width: $content-width;
+	font-family: 'Raleway', sans-serif;
+	padding: 5rem 10rem 0;
+
+	.form {
+		background: url('../assets/images/news_bg.png') no-repeat;
+		
+		p {
+			color: #fff;
+		}
+
+		h2 {
+			color: #fff;
+		}
+	}
+
+	h1 {
+		color: $color-accent;
+		font-size: 4.5rem;
+	}
+
+	p {
+		font-size: 2rem;
+		margin-top: 2rem;
+		margin-bottom: 3rem;
+	}
+}
