@@ -5,7 +5,7 @@
 	font-family: 'Raleway', sans-serif;
 	display: flex;
 	justify-content: flex-start;
-	padding: 9rem 5rem 0;
+	padding: 0 5rem;
 
 	.side {
 		flex: 1 0;
@@ -16,31 +16,51 @@
 		padding-left: 5rem;
 	}
 
-	&.top .side {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
+	&.top {
+		padding-top: 9rem;
 
-		.money {
-			color: $color-secondary;
-			font-size: 6rem;
-			font-weight: 900;
-			margin: 2rem 0 1rem;
+		> div {
+			padding-top: 2rem;
 		}
 
-		.caption {
-			color: #7d7d7d;
-			font-size: 2.5rem;
-			font-weight: 900;
-			margin-bottom: 4rem;
-			text-align: right;
-			line-height: 2.5rem;
+		.side {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			.money {
+				color: $color-secondary;
+				font-size: 6rem;
+				font-weight: 900;
+				margin: 2rem 0 1rem;
+			}
+
+			.caption {
+				color: #7d7d7d;
+				font-size: 2.5rem;
+				font-weight: 900;
+				margin-bottom: 4rem;
+				text-align: right;
+				line-height: 2.5rem;
+			}
+
+			hr {
+				background-color: #f0f0f0;
+				margin-bottom: 1rem;
+				width: 12rem;
+			}
 		}
 
-		hr {
-			background-color: #f0f0f0;
-			margin-bottom: 1rem;
-			width: 12rem;
+		.main {
+			background: url('../assets/images/news_bg.png') no-repeat;
+			
+			p {
+				color: #fff;
+			}
+
+			h2 {
+				color: #fff;
+			}
 		}
 	}
 
@@ -68,10 +88,6 @@
 		font-size: 2rem;
 		margin-top: 3rem;
 		margin-bottom: 6rem;
-
-		&.lede {
-			font-size: 3rem;
-		}
 	}
 
 	> div {

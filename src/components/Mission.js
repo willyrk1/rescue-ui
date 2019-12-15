@@ -33,26 +33,26 @@ const Mission = () => {
         <div className={cx('side')}>
           <img src={dogCat}/>
           <div className={cx('money')}>$10</div>
-          <div className={cx('caption')}>Food for <br/> a day.</div>
+          <div className={cx('caption')}>Feed a kitten<br/>for a month.</div>
           <hr/>
-          <div className={cx('money')}>$20</div>
-          <div className={cx('caption')}>For life-saving <br/> medicine.</div>
+          <div className={cx('money')}>$25</div>
+          <div className={cx('caption')}>Vaccinate one animal.</div>
           <hr/>
           <div className={cx('money')}>$100</div>
-          <div className={cx('caption')}>Gives a night of <br/> crisis care.</div>
+          <div className={cx('caption')}>For life-saving <br/> medicine.</div>
           <div className={cx('btn-container')}>
             <a className={cx('btn btn--accent')} href='#'>Donate</a>
           </div>
         </div>
         <div className={cx('main')}>
           <h1>Our Mission</h1>
-          <p className={cx('lede')}>
+          <p>
             St. Francis Society Animal Rescue is an all volunteer, non-profit 501-c-3 animal
             rescue organization dedicated to saving the lives of sick, injured, and stray
             domestic animals as well as spaying/neutering and medical services for those
             animals. We seek to place animals in a loving foster or permanent home after
             recovery and we DO NOT euthanize unless terminal illness necessitates such a
-            decision. All of our animals are spayed/neutered, tested for leukemia/FIV, wormed
+            decision. All of our animals are spayed/neutered, wormed
             and vaccinated before they are adopted.
           </p>
 
@@ -74,7 +74,13 @@ const Mission = () => {
             Today, we celebrate the "Feast of St. Francis" on October 4th. Across the world, a
             Blessing of the Animals is held on this day.
           </p>
+        </div>
+      </div>
 
+      <div className={cx('mission-row')}>
+        <div className={cx('side')}>
+        </div>
+        <div className={cx('main')}>
           <h2>Meet our board of Directors</h2>
         </div>
       </div>
