@@ -10,6 +10,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue';
 import Layout from './Layout'
+import DonationExamples from './DonationExamples'
 import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
 import dogCat from '../assets/images/dog-cat.png'
 import styles from './Mission.module.scss';
@@ -32,17 +33,7 @@ const Mission = () => {
       <div className={cx('mission-row', 'top')}>
         <div className={cx('side')}>
           <img src={dogCat}/>
-          <div className={cx('money')}>$10</div>
-          <div className={cx('caption')}>Feed a kitten<br/>for a month.</div>
-          <hr/>
-          <div className={cx('money')}>$25</div>
-          <div className={cx('caption')}>Vaccinate one animal.</div>
-          <hr/>
-          <div className={cx('money')}>$100</div>
-          <div className={cx('caption')}>For life-saving <br/> medicine.</div>
-          <div className={cx('btn-container')}>
-            <a className={cx('btn btn--accent')} href='#'>Donate</a>
-          </div>
+          <DonationExamples styles={styles} />
         </div>
         <div className={cx('main')}>
           <h1>Our Mission</h1>

@@ -1,10 +1,14 @@
 @import '../../assets/stylesheets/style.scss';
 
-.donate-ribbon {
+.donation-examples {
   width: $content-width;
 	background-color: $color-secondary;
 	display: flex;
   justify-content: center;
+  
+  hr {
+    display: none;
+  }
   
   > div {
     display: flex;
