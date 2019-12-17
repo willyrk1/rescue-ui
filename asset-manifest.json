@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/rescue-ui/static/css/main.f80f9a76.chunk.css",
+    "main.js": "/rescue-ui/static/js/main.92b88c49.chunk.js",
+    "main.js.map": "/rescue-ui/static/js/main.92b88c49.chunk.js.map",
+    "runtime~main.js": "/rescue-ui/static/js/runtime~main.717f1c5a.js",
+    "runtime~main.js.map": "/rescue-ui/static/js/runtime~main.717f1c5a.js.map",
+    "static/js/2.a0790f32.chunk.js": "/rescue-ui/static/js/2.a0790f32.chunk.js",
+    "static/js/2.a0790f32.chunk.js.map": "/rescue-ui/static/js/2.a0790f32.chunk.js.map",
+    "index.html": "/rescue-ui/index.html",
+    "precache-manifest.47350c4597d430055b1961fb371a12c3.js": "/rescue-ui/precache-manifest.47350c4597d430055b1961fb371a12c3.js",
+    "service-worker.js": "/rescue-ui/service-worker.js",
+    "static/css/main.f80f9a76.chunk.css.map": "/rescue-ui/static/css/main.f80f9a76.chunk.css.map",
+    "static/media/Gulfcoast Veterinary Center.png": "/rescue-ui/static/media/Gulfcoast Veterinary Center.da5cc6c7.png",
+    "static/media/St_Francis_logo_Color.png": "/rescue-ui/static/media/St_Francis_logo_Color.e73e7678.png",
+    "static/media/Westchase_Veterinary_Center_and_Emergenc.png": "/rescue-ui/static/media/Westchase_Veterinary_Center_and_Emergenc.19c601a8.png",
+    "static/media/HomeLinks.module.scss": "/rescue-ui/static/media/about_bg.8af23f99.png",
+    "static/media/featuredCat.png": "/rescue-ui/static/media/featuredCat.c5907797.png",
+    "static/media/featuredDog.png": "/rescue-ui/static/media/featuredDog.7e9dd8e4.png",
+    "static/media/Footer.module.scss": "/rescue-ui/static/media/footer_bg.a63520b5.png",
+    "static/media/hero.png": "/rescue-ui/static/media/hero.2fce555f.png",
+    "static/media/logo.svg": "/rescue-ui/static/media/logo.ee7cd8ed.svg",
+    "static/media/Contact.module.scss": "/rescue-ui/static/media/news_bg.2548ed6a.png"
+  }
+}
