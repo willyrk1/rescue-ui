@@ -19,7 +19,7 @@ import UnderConstruction from './components/UnderConstruction';
 import './App.scss';
 
 const App = () => (
-  <Router>
+  <Router basename='/rescue-ui'>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/mission" component={Mission} />
