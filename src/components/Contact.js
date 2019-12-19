@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind'
+import Select from 'react-select'
 import StFrancisRescue from '../apis/StFrancisRescue';
+import states from '../config/states'
 import Layout from './Layout'
 import styles from './Contact.module.scss';
 
@@ -34,24 +36,49 @@ const Contact = () =>
       <form action='http://stfrancisrescue.org/contact_forms'>
         <ul>
           <li>
-            <label for='firstName'>First Name *</label>
+            <label htmlFor='firstName'>First Name *</label>
             <input type='text' id='firstName' />
           </li>
           <li>
-            <label for='lastName'>Last Name *</label>
+            <label htmlFor='lastName'>Last Name *</label>
             <input type='text' id='lastName' />
           </li>
           <li>
-            <label for='email'>E-mail Address *</label>
+            <label htmlFor='email'>E-mail Address *</label>
             <input type='text' id='email' />
           </li>
           <li>
-            <label for='address'>Street Address</label>
+            <label htmlFor='address'>Street Address</label>
             <input type='text' id='address' />
           </li>
           <li>
-            <label for='city'>City</label>
+            <label htmlFor='city'>City</label>
             <input type='text' id='city' />
+          </li>
+          <li>
+            <label htmlFor='state'>State</label>
+            <Select options={states} className={cx('input-select')} />
+          </li>
+          <li>
+            <label htmlFor='zip'>ZIP</label>
+            <input type='text' id='zip' />
+          </li>
+          <li>
+            <label htmlFor='phone'>Phone</label>
+            <input type='text' id='phone' />
+          </li>
+          <li>
+            <label htmlFor='subscribe'>Would you like to subscribe to our e-mail newsletter?</label>
+            <div className={cx('input')}>
+              <label for='subcribe-yes'>
+                <input type='radio' id='subcribe-yes' name='subscribe' />
+                Yes, I would
+              </label>
+              <label for='subcribe-no'>
+                <input type='radio' id='subcribe-no' name='subscribe' />
+                No, I would not
+              </label>
+            </div>
           </li>
         </ul>
       </form>

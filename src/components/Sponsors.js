@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Sponsors.module.scss'
-import spectrumLogo from '../assets/images/Spectrum-logo.png'
-import gteLogo from '../assets/images/GTE-financial-logo-Full-Color-2.png'
+import bigCatLogo from '../assets/images/BigCatRescueLogo.png'
+import petcoLogo from '../assets/images/PetcoLogo.png'
 import gulfCoastLogo from '../assets/images/Gulfcoast Veterinary Center.png'
 import westChaseLogo from '../assets/images/Westchase_Veterinary_Center_and_Emergenc.png'
+import bisselLogo from '../assets/images/bisselpetfoundation.jpg'
+import petSmartLogo from '../assets/images/petsmart_charities-1.jpg'
 
 const cx = classNames.bind(styles)
 
@@ -26,14 +28,12 @@ const Sponsors = () => {
       </div>
       <div className={cx('tiles')}>
         {[
-          <img src={spectrumLogo} />,
-          <img src={gteLogo} />,
+          <img src={petcoLogo} />,
           <img src={gulfCoastLogo} />,
           <img src={westChaseLogo} />,
-          <img src={spectrumLogo} />,
-          <img src={gteLogo} />,
-          <img src={gulfCoastLogo} />,
-          <img src={westChaseLogo} />,
+          <img src={petSmartLogo} />,
+          <img src={bigCatLogo} />,
+          <img src={bisselLogo} />,
         ].map((logo, index, ary) => {
           const adjustedIndex = (((index - scrollIndex + 1) % ary.length) + ary.length) % ary.length
           return (
