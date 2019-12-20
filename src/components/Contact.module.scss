@@ -5,16 +5,10 @@
 	font-family: 'Raleway', sans-serif;
 	padding: 5rem 10rem 0;
 
-	.form {
-		background: url('../assets/images/news_bg.png') no-repeat;
-		
-		p {
-			color: #fff;
-		}
-
-		h2 {
-			color: #fff;
-		}
+	.contact-text {
+		background: url('../assets/images/contactBackground.jpg') no-repeat;
+		background-size: 100rem;
+		padding: 2rem 5rem;
 	}
 
 	h1 {
@@ -29,9 +23,11 @@
 	}
 
 	p {
-		font-size: 2rem;
+		font-size: 1.8rem;
+		font-weight: bold;
 		margin-top: 2rem;
 		margin-bottom: 3rem;
+		color: #fff;
 	}
 
 	form ul {

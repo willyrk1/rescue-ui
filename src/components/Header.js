@@ -26,7 +26,6 @@ const Header = ({ home }) =>
       </div>
       <ul className={cx("header__nav", { home })}>
         <li><Link to="/adoptions">Adopt</Link></li>
-        <li><Link to="/foster">Foster</Link></li>
         <li><Link to="/volunteer">Volunteer</Link></li>
         <li><Link to="/donate">Help Our Cause</Link></li>
         <li><Link to="/">Events</Link></li>

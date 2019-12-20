@@ -9,7 +9,7 @@ const NewsEvents = () =>
     <h1>News &amp; Events</h1>
     <hr/>
     <div className={cx('panels')}>
-      <div>
+      <div className={cx('panel')}>
         <div className={cx('date')}><p>29</p></div>
         <h1>Title of Event</h1>
         <h2>07-29-19 | 4:00 pm</h2>
@@ -20,7 +20,7 @@ const NewsEvents = () =>
           <a className={cx("btn btn--accent")} href="#">More Info</a>
         </div>
       </div>
-      <div>
+      <div className={cx('panel')}>
         <div className={cx('date')}><p>29</p></div>
         <h1>Title of Event</h1>
         <h2>07-29-19 | 4:00 pm</h2>
@@ -31,7 +31,7 @@ const NewsEvents = () =>
           <a className={cx("btn btn--accent")} href="#">More Info</a>
         </div>
       </div>
-      <div>
+      <div className={cx('panel')}>
         <div className={cx('date')}><p>29</p></div>
         <h1>Title of Event</h1>
         <h2>07-29-19 | 4:00 pm</h2>

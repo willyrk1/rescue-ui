@@ -12,19 +12,18 @@
     background-color: #fd8d5c;
   }
 
-  .pet-image  {
-    height: 54rem;
-    width: 62rem;
-  }
-
-  > div {
+  .pets {
     display: flex;
     justify-content: space-between;
 
-    > div {
+    .pet {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      img {
+        max-height: 40rem;
+      }
     }
   }
 
