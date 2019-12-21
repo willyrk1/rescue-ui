@@ -47,6 +47,14 @@ const Mission = () => {
             decision. All of our animals are spayed/neutered, wormed
             and vaccinated before they are adopted.
           </p>
+          <p>
+            Each year, St. Francis Society helps find homes for over 1,500 animals.  Nearly
+            half of those are saved from euthanasia at local animal shelters, and the others
+            are rescued from the community.  Additionally, each year, we trap/neuter/vaccinate
+            and return hundreds of feral cats in the Tampa community.  This is the only proven
+            humane and effective method to manage community cat colonies and prevent thousands
+            of unwanted kittens from being born.
+          </p>
         </div>
       </div>
 
