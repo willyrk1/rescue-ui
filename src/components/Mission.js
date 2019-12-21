@@ -37,6 +37,7 @@ const Mission = () => {
         </div>
         <div className={cx('main')}>
           <h1>Our Mission</h1>
+          <hr/>
           <p>
             Established in 1997, St. Francis Society Animal Rescue is an all volunteer, non-profit 501-c-3 animal
             rescue organization dedicated to saving the lives of sick, injured, and stray

@@ -14,6 +14,7 @@ const Contact = () =>
     <div className={cx('contact')}>
       <div className={cx('contact-text')}>
         <h1>Contact Us</h1>
+        <hr/>
         <p>
           If you are concerned about a loose animal, unleashed dog, abuse or neglect of an animal,
           contact Hillsborough County Pet Resource Center at (813) 744-5660.
