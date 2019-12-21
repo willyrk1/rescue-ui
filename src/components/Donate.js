@@ -4,6 +4,7 @@ import Layout from './Layout'
 import DonationExamples from './DonationExamples'
 import dogCat from '../assets/images/dog-cat.png'
 import donateCat from '../assets/images/donateCat.jpg'
+import makeDonationCat from '../assets/images/kitty.png'
 import styles from './Donate.module.scss';
 
 const cx = classNames.bind(styles)
@@ -14,7 +15,7 @@ const Donate = () => {
       <div className={cx('donate')}>
         <div className={cx('side')}>
           <img src={dogCat}/>
-          <DonationExamples styles={styles} more />
+          <DonationExamples styles={styles} />
         </div>
         <div className={cx('main')}>
           <div className={cx('top')}>
@@ -30,15 +31,21 @@ const Donate = () => {
 
           <div className={cx('make-donation')}>
             <div>
-              <p>Make A One-Time Donation</p>
-              <div className={cx("btn-container")}>
-                <a className={cx("btn btn--accent")} href="#">DONATE</a>
+              <img src={makeDonationCat} />
+              <div className={cx('one-time')}>
+                <p>Make A One-Time Donation</p>
+                <div className={cx("btn-container")}>
+                  <a className={cx("btn btn--accent")} href="#">DONATE</a>
+                </div>
               </div>
             </div>
             <div>
-              <p>Make A Monthly Donation</p>
-              <div className={cx("btn-container")}>
-                <a className={cx("btn btn--accent")} href="#">DONATE</a>
+              <img src={makeDonationCat} />
+              <div className={cx('monthly')}>
+                <p>Make A Monthly Donation</p>
+                <div className={cx("btn-container")}>
+                  <a className={cx("btn btn--accent")} href="#">DONATE</a>
+                </div>
               </div>
             </div>
           </div>

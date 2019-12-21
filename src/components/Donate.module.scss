@@ -7,12 +7,11 @@
 	margin-top: 5rem;
 
 	.side {
-		// flex: 1 0;
-
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
 		padding: 0 5rem 5rem 0;
+		margin: 0 4rem 0 10rem;
 
 		.money {
 			color: $color-secondary;
@@ -49,6 +48,7 @@
 
 	.top {
 		position: relative;
+		margin: 0 15rem 0 1rem;
 
 		img {
 			width: 100%;
@@ -64,38 +64,58 @@
 
 		p {
 			position: absolute;
-			top: 56.3rem;
-			right: 0.5rem;
+			bottom: 0.6rem;
+			right: 0.6rem;
 			color: #fff;
-			width: 31rem;
+			width: 29rem;
 			font-weight: 700;
-			font-size: 1.5rem;
+			font-size: 1.4rem;
 		}
 	}
 
 	.make-donation {
 		display: flex;
 		justify-content: space-evenly;
-		margin-top: 4rem;
+		margin: 4rem 14rem 0 0;
 
 		> div {
-			border: 1px solid $color-primary;
-			display: flex;
-			flex-direction: column;
-			// justify-content: center;
-			padding: 5rem 2rem;
-			color: $color-secondary;
-			font-size: 3.5rem;
-			font-weight: 700;
+			position: relative;
+			z-index: 100;
+
+			img {
+				position: absolute;
+				left: 50%;
+				top: -1.5rem;
+				transform: translateX(-50%);
+				height: 11rem;
+			}
+
+			> div {
+				margin-top: 4rem;
+				border: 0.9rem solid $color-primary;
+				border-radius: 1.5rem;
+				display: flex;
+				flex-direction: column;
+				padding: 7rem 2rem 3rem;
+				color: $color-secondary;
+				z-index: 50;
+			}
 
 			p {
-				// margin: 2rem;
+				font-size: 3.5rem;
+				font-weight: 700;
+				line-height: 3.5rem;
 				text-align: center;
 			}
 		}
 
 		.btn-container {
 			text-align: center;
+			margin-top: 4rem;
 		}
+	}
+
+	.one-time {
+		margin-right: 2rem;
 	}
 }
