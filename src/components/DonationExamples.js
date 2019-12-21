@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 
-const DonationExamples = ({ styles }) => {
+const DonationExamples = ({ styles, more }) => {
   const cx = classNames.bind(styles)
 
   return (
@@ -20,6 +20,15 @@ const DonationExamples = ({ styles }) => {
         <div className={cx('money')}>$100</div>
         <div className={cx('caption')}>For life-saving<br/> medicine.</div>
       </div>
+      {more &&
+        <>
+          <hr/>
+          <div>
+            <div className={cx('money')}>$500</div>
+            <div className={cx('caption')}>Provide <br/>emergency<br/> surgery.</div>
+          </div>
+        </>
+      }
       <div className={cx("btn-container")}>
         <a className={cx("btn btn--accent")} href="#">DONATE</a>
       </div>

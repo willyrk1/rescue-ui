@@ -10,6 +10,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home'
 import Mission from './components/Mission';
+import Donate from './components/Donate'
 import Cats from './components/Cats';
 import Dogs from './components/Dogs';
 import Contact from './components/Contact';
@@ -23,6 +24,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/mission" component={Mission} />
+      <Route exact path="/donate" component={Donate} />
       <Route exact path="/cats" component={Cats} />
       <Route exact path="/dogs" component={Dogs} />
       <Route exact path="/success_stories" component={SuccessStories} />
