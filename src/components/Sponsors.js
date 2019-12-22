@@ -28,16 +28,17 @@ const Sponsors = () => {
       </div>
       <div className={cx('tiles')}>
         {[
-          <img src={petcoLogo} />,
-          <img src={gulfCoastLogo} />,
-          <img src={westChaseLogo} />,
-          <img src={petSmartLogo} />,
-          <img src={bigCatLogo} />,
-          <img src={bisselLogo} />,
-        ].map((logo, index, ary) => {
+          { key: 1, logo: <img src={petcoLogo} /> },
+          { key: 2, logo: <img src={gulfCoastLogo} /> },
+          { key: 3, logo: <img src={westChaseLogo} /> },
+          { key: 4, logo: <img src={petSmartLogo} /> },
+          { key: 5, logo: <img src={bigCatLogo} /> },
+          { key: 6, logo: <img src={bisselLogo} /> },
+        ].map(({ logo, key }, index, ary) => {
           const adjustedIndex = (((index - scrollIndex + 1) % ary.length) + ary.length) % ary.length
           return (
             <div
+              key={key}
               className={cx({
                 hide: !adjustedIndex || adjustedIndex === ary.length - 1
               })}

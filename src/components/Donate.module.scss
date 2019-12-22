@@ -154,18 +154,19 @@
 		}
 
 		.panel {
-			border: 0.5rem solid #fff;
+			background-color: white;
+			border-radius: 1.5rem;
 			margin-bottom: 5rem;
 			padding: 2rem;
 			width: 30%;
-			min-height: 21rem;
+			min-height: 17rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: center;
 
 			> p {
-				color: #fff;
+				color: $color-primary;
 				margin-bottom: 2rem;
 				font-size: 2.9rem;
 				font-weight: 700;
