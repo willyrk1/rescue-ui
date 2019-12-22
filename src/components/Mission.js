@@ -55,7 +55,10 @@ const Mission = () => {
 
         <DonationExamples styles={donationStyles}/>
 
-        <h2>Meet our board of Directors</h2>
+        <div className={cx('board-header')}>
+          <h2>Meet our board of Directors</h2>
+          <hr/>
+        </div>
 
         {boardMembers && [
           'presidents',

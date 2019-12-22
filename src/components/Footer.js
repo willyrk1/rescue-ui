@@ -16,9 +16,9 @@ import styles from './Footer.module.scss';
 
 const cx = classNames.bind(styles)
 
-const Footer = () => (
+const Footer = ({ legal }) => (
   <div className={cx("footer")}>
-    <div>
+    <div className={cx('main')}>
       <div>
         <h1>Newsletter</h1>
         <hr/>
@@ -39,7 +39,20 @@ const Footer = () => (
         </div>
       </div>
     </div>
-    <p className={cx('copyright')}>© {new Date().getFullYear()} St. Francis Society Animal Rescue. Contact | Privacy Policy | St. Francis Society Animal Rescue PO Box 261614 Tampa, FL 33685-1614</p>
+    <div className={cx('bottom')}>
+      {legal &&
+        <p>
+          A COPY OF THE OFFICIAL REGISTRATION AND FINANCIAL INFORMATION MAY BE OBTAINED FROM THE
+          DIVISION OF CONSUMER SERVICES BY CALLING TOLL-FREE 800-435-7352 WITHIN THE STATE.
+          REFER TO CH9650.  REGISTRATION DOES NOT IMPLY ENDORSEMENT, APPROVAL, OR RECOMMENDATION
+          BY THE STATE.
+        </p>
+      }
+      <p>
+        &copy; {new Date().getFullYear()} St. Francis Society Animal Rescue. Contact | Privacy Policy
+        | St. Francis Society Animal Rescue PO Box 261614 Tampa, FL 33685-1614
+      </p>
+    </div>
   </div>
 )
 

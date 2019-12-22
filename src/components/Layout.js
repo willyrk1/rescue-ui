@@ -7,12 +7,12 @@ import styles from './Layout.module.scss'
 
 const cx = classNames.bind(styles)
 
-const Layout = ({ home, children }) => 
+const Layout = ({ home, legal, children }) => 
   <div className="App">
     <Header home={home} />
     <div className={cx('content')}>{children}</div>
     <Sponsors />
-    <Footer />
+    <Footer legal={legal} />
   </div>
 
 export default Layout

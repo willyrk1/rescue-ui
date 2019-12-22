@@ -11,7 +11,7 @@ const cx = classNames.bind(styles)
 
 const Donate = () => {
   return (
-    <Layout>
+    <Layout legal>
       <div className={cx('donate')}>
         <div className={cx('first')}>
           <div className={cx('side')}>

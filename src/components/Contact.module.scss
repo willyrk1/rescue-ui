@@ -15,10 +15,14 @@
 		font-size: 4.5rem;
 	}
 
+	hr {
+		margin-top: 0;
+	}
+
 	h2 {
 		font-size: 3.5rem;
 		color: $color-primary;
-		margin-bottom: 2rem;
+		margin-top: 2rem;
 	}
 
 	a {
@@ -34,33 +38,61 @@
 		color: #fff;
 	}
 
-	form ul {
-		background: $color-primary url('../assets/images/catdoggreen.png') no-repeat 6rem 15rem;
-		list-style: none;
+	form {
+		background: $color-primary url('../assets/images/catdoggreen.png') no-repeat 8rem 19rem;
 		padding: 1rem;
 
-		li {
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
+		ul {
+			list-style: none;
 
-			label {
-				flex: 1;
-				font-size: 2rem;
-				text-align: right;
+			li {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				label {
+					font-size: 2rem;
+					color: #fff;
+				}
+
+				> label {
+					flex: 1;
+					text-align: right;
+					margin: 0.5rem;
+				}
+
+				> input, .input, .input-select, textarea {
+					flex: 2;
+					margin: 0.5rem;
+					padding: 0.5rem;
+				}
+
+				textarea {
+					height: 10rem;
+				}
+						
+				> input, .input-select {
+					background-color: #fff;
+				}
+
+				.input {
+					label {
+						margin-right: 2.5rem;
+					}
+
+					input[type='radio'] {
+						margin-right: 0.5rem;
+					}
+				}
+			}
+		}
+
+		.btn-container {
+			margin: 3rem 0 2rem;
+			text-align: center;
+
+			a {
 				color: #fff;
-				margin: 0.5rem;
-			}
-
-			> input, .input, .input-select {
-				flex: 2;
-				background-color: $color-primary;
-				margin: 0.5rem;
-				padding: 0.5rem;
-			}
-
-			> input, .input-select {
-				background-color: #fff;
 			}
 		}
 	}

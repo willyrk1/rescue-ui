@@ -83,7 +83,32 @@ const Contact = () =>
               </label>
             </div>
           </li>
+          <li>
+            <label htmlFor='regarding'>I am contacting you regarding a</label>
+            <div className={cx('input')}>
+              <label for='regarding-cat'>
+                <input type='radio' id='regarding-cat' name='regarding' />
+                Cat
+              </label>
+              <label for='regarding-dog'>
+                <input type='radio' id='regarding-dog' name='regarding' />
+                Dog
+              </label>
+              <label for='regarding-other'>
+                <input type='radio' id='regarding-other' name='regarding' />
+                Other
+              </label>
+            </div>
+          </li>
+          <li>
+            <label htmlFor='comment'>Your comments or questions</label>
+            <textarea id='comment' />
+          </li>
         </ul>
+
+        <div className={cx("btn-container")}>
+          <a className={cx("btn btn--accent")} href="#">Submit Contact Form</a>
+        </div>
       </form>
     </div>
   </Layout>
