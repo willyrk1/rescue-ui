@@ -12,7 +12,7 @@ import StFrancisRescue from '../apis/StFrancisRescue';
 import Layout from './Layout'
 import DonationExamples from './DonationExamples'
 import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
-import dogCat from '../assets/images/dog-cat.png'
+import donationStyles from './Home/DonateRibbon.module.scss';
 import styles from './Mission.module.scss';
 
 const cx = classNames.bind(styles)
@@ -30,11 +30,7 @@ const Mission = () => {
 
   return (
     <Layout>
-      <div className={cx('mission-row', 'top')}>
-        <div className={cx('side')}>
-          <img src={dogCat}/>
-          <DonationExamples styles={styles} />
-        </div>
+      <div className={cx('mission')}>
         <div className={cx('main')}>
           <h1>Our Mission</h1>
           <hr/>
@@ -56,41 +52,38 @@ const Mission = () => {
             of unwanted kittens from being born.
           </p>
         </div>
-      </div>
 
-      <div className={cx('mission-row')}>
-        <div className={cx('side')}>
-        </div>
-        <div className={cx('main')}>
-          <h2>Meet our board of Directors</h2>
-        </div>
+        <DonationExamples styles={donationStyles}/>
+
+        <h2>Meet our board of Directors</h2>
+
+        {boardMembers && [
+          'presidents',
+          'vicePresidents',
+          'treasurers',
+          'secreteries',
+          'directors',
+          'adminStaff'
+        ].map(boardType => boardMembers[boardType].map(({
+          picture, volunteer: { name }, board_member_title: { name: title }, role, bio
+        }) =>
+          <div className={cx('board-member')}>
+            <div className={cx('side')}>
+              <img
+                src={picture
+                  ? `${PROTOCOL}://${HOSTNAME}${picture}`
+                  : '/no_picture.jpg'
+                }
+              />
+            </div>
+            <div>
+              <h3>{name.split(' ')[0]}-{title}</h3>
+              <h4>{role}</h4>
+              <p dangerouslySetInnerHTML={{__html: bio }} />
+            </div>
+          </div>
+        ))}
       </div>
-      {boardMembers && [
-        'presidents',
-        'vicePresidents',
-        'treasurers',
-        'secreteries',
-        'directors',
-        'adminStaff'
-      ].map(boardType => boardMembers[boardType].map(({
-        picture, volunteer: { name }, board_member_title: { name: title }, role, bio
-      }) =>
-        <div className={cx('mission-row', 'board-member')}>
-          <div className={cx('side')}>
-            <img
-              src={picture
-                ? `${PROTOCOL}://${HOSTNAME}${picture}`
-                : '/no_picture.jpg'
-              }
-            />
-          </div>
-          <div className={cx('main')}>
-            <h3>{name.split(' ')[0]}-{title}</h3>
-            <h4>{role}</h4>
-            <p dangerouslySetInnerHTML={{__html: bio }} />
-          </div>
-        </div>
-      ))}
     </Layout>
   )
 }

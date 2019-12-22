@@ -2,7 +2,7 @@
 
 .home-news-events {
   width: $content-width;
-	background-image: url('../../assets/images/news_bg.png');
+	background-image: url('../../assets/images/largeBlueCat.png');
   padding: 5rem 6rem;
   
   h1, hr {
@@ -15,7 +15,7 @@
   }
 
   hr {
-    background-color: #fd8d5c;
+    background-color: $color-accent;
   }
 
   > div {
