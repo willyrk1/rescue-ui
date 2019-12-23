@@ -1,7 +1,6 @@
 @import '../assets/stylesheets/style.scss';
 
 .mission {
-	width: $content-width;
 	font-family: 'Raleway', sans-serif;
 	margin-top: 6rem;
 	padding: 0 5rem;
@@ -33,7 +32,7 @@
 
 	.board-header {
 		margin: 4rem 2rem 2rem;
-		
+
 		h2 {
 			font-size: 3.5rem;
 			color: $color-primary;

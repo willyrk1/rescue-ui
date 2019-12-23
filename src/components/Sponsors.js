@@ -14,7 +14,7 @@ const Sponsors = () => {
   const [ scrollIndex, setScrollIndex ] = useState(0)
 
   return (
-    <div className={cx('home-sponsors')}>
+    <div className={cx('sponsors')}>
       <div>
         <h1>Our Sponsors</h1>
         <hr/>
