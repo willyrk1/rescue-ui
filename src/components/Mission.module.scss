@@ -6,27 +6,22 @@
 	padding: 0 5rem;
 
 	p {
-		margin-top: 3rem;
-		margin-bottom: 4rem;
+		margin-bottom: 3rem;
 	}
 
 	.main {
-		padding: 2rem 5rem;
-		background: url('../assets/images/largeBlueCat.png') no-repeat;
-				
 		h1 {
 			color: $color-accent;
 			font-size: 4.5rem;
 		}
 
+		hr {
+			background-color: $color-accent;
+		}
+
 		p {
-			color: #fff;
 			font-size: 1.8rem;
 			font-weight: 500;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
 		}
 	}
 
@@ -59,6 +54,7 @@
 		}
 
 		p {
+			margin-top: 3rem;
 			font-size: 2rem;
 		}
 

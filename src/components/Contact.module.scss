@@ -2,12 +2,8 @@
 
 .contact {
 	font-family: 'Raleway', sans-serif;
-	padding: 5rem 10rem 0;
-
-	.contact-text {
-		background: url('../assets/images/contactBackground.jpg') no-repeat center/cover;
-		padding: 2rem 5rem;
-	}
+	margin-top: 6rem;
+	padding: 0 5rem;
 
 	h1 {
 		color: $color-accent;
@@ -15,7 +11,11 @@
 	}
 
 	hr {
-		margin-top: 0;
+		background-color: $color-accent;
+	}
+
+	p {
+		margin-bottom: 3rem;
 	}
 
 	h2 {
@@ -32,9 +32,6 @@
 	p {
 		font-size: 1.8rem;
 		font-weight: 500;
-		margin-top: 2rem;
-		margin-bottom: 3rem;
-		color: #fff;
 	}
 
 	form {
