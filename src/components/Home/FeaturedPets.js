@@ -22,8 +22,8 @@ const FeaturedPets = () => {
     loadPets()
   }, [])
 
-  const canvasHeight = 360 // image max-height
-  const canvasWidth = 1020 // total width (1200) minus 2 * 8rem padding minus p margin
+  const canvasHeight = 300 // image max-height
+  const canvasWidth = 986
 
   const pet = pets && pets[Math.floor(Math.random() * pets.length)]
   const {
@@ -33,28 +33,31 @@ const FeaturedPets = () => {
   } = (pet && pet.images.find(({ primary }) => primary)) || {}
 
   const realImageWidth = width * (canvasHeight / height)
-  const textWidth = pet && (pet.story.length * 0.65)
+  const textWidth = pet && (pet.story.length * 0.75)
   const padding = (canvasWidth - realImageWidth - textWidth) / 2
 
   return (
     <div className={cx('featured-pets')}>
-      <h1>Featured Pet</h1>
-      <hr/>
-      {pet &&
-        <div className={cx('pet-outer')} style={{ padding: `0 ${padding}px`}}>
-          <div>
-            <h2>{pet.name}</h2>
-              <div className={cx('pet')}>
-                <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} />
-              <p>{pet.story}</p>
+      <div>
+        <h1>Featured Pet</h1>
+        <hr/>
+        {pet &&
+          <div className={cx('pet-outer')} style={{ padding: `0 ${padding}px`}}>
+        {console.log(pet)}
+            <div>
+              <h2>{pet.name}</h2>
+                <div className={cx('pet')}>
+                  <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} />
+                <p>{pet.story}</p>
+            </div>
+            <div className={cx("btn-container")}>
+              <a className={cx("btn btn--accent")} href="#">View All Cats</a>
+              <a className={cx("btn btn--accent")} href="#">View All Dogs</a>
+            </div>
           </div>
-          <div className={cx("btn-container")}>
-            <a className={cx("btn btn--accent")} href="#">View All Cats</a>
-            <a className={cx("btn btn--accent")} href="#">View All Dogs</a>
           </div>
-        </div>
-        </div>
-      }
+        }
+      </div>
     </div>
   )
 }
