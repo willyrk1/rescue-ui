@@ -24,7 +24,7 @@ const FeaturedPets = () => {
 
   const randomPets = pets && (() => {
     const randomSet = new Set()
-    while (randomSet.size < 3)
+    while (randomSet.size < 2)
     {
       randomSet.add(Math.floor(Math.random() * pets.length))
     }
