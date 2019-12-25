@@ -10,37 +10,56 @@
 
   hr {
     background-color: #fd8d5c;
+    margin-bottom: 0;
   }
 
   .pet-outer {
-    margin: 2rem;
+    margin-bottom: 2rem;
 
     h2 {
-      color: $color-accent;
-      font-size: 3rem;
+      color: #fff;
+      // background-color: #000;
+      // filter: opacity(25%);
+      font-size: 3.3rem;
+      margin-top: 2rem;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .pet-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      width: 100%;
+      max-height: 42.5rem;
+      overflow: hidden;
     }
 
     .pet {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
+      position: relative;
+      margin-top: 2rem;
+      
       img {
         max-height: 36rem;
       }
 
       p {
         color: $color-primary;
-        margin-top: 2rem;
+        margin-left: 2rem;
+        flex: 1 0;
       }
     }
-  }
 
-  .btn-container {
-    margin-top: 7rem;
-
-    a {
-      margin: 1rem;
+    .btn-container {
+      margin-top: 4rem;
+      text-align: center;
+  
+      a {
+        margin: 1rem;
+      }
     }
   }
 }
