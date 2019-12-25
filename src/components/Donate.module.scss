@@ -4,53 +4,12 @@
 	font-family: 'Raleway', sans-serif;
 	padding: 5rem 14rem 0 10rem;
 
-	.first {
-		display: flex;
-	}
-
-	.side {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		padding: 0 5rem 5rem 0;
-		margin-right: 4rem;
-
-		.money {
-			color: $color-secondary;
-			font-size: 6rem;
-			font-weight: 900;
-			text-align: right;
-			margin: 2rem 0 1rem;
-		}
-
-		.caption {
-			color: #7d7d7d;
-			font-size: 2.5rem;
-			font-weight: 900;
-			margin-bottom: 4rem;
-			text-align: right;
-			line-height: 2.5rem;
-		}
-
-		hr {
-			background-color: #f0f0f0;
-			margin-bottom: 1rem;
-			margin-left: auto;
-			width: 12rem;
-		}
-
-		.btn-container {
-			text-align: right;
-		}
-	}
-
 	.main {
 		flex: 1 0;
 	}
 
 	.top {
 		position: relative;
-		margin: 0 1rem 0 1rem;
 
 		img {
 			width: 100%;
@@ -78,7 +37,7 @@
 	.make-donation {
 		display: flex;
 		justify-content: space-evenly;
-		margin-top: 4rem;
+		margin: 4rem 0 2.5rem;
 
 		> div {
 			position: relative;
@@ -94,7 +53,7 @@
 
 			> div {
 				margin-top: 4rem;
-				border: 0.3rem solid $color-primary;
+				border: 0.6rem solid $color-primary;
 				border-radius: 1.5rem;
 				display: flex;
 				flex-direction: column;

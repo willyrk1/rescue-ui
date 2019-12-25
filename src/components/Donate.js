@@ -1,8 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind'
 import Layout from './Layout'
-import DonationExamples from './DonationExamples'
-import dogCat from '../assets/images/dog-cat.png'
 import donateCat from '../assets/images/donateCat.jpg'
 import makeDonationCat from '../assets/images/kitty.png'
 import styles from './Donate.module.scss';
@@ -14,10 +12,6 @@ const Donate = () => {
     <Layout legal>
       <div className={cx('donate')}>
         <div className={cx('first')}>
-          <div className={cx('side')}>
-            <img src={dogCat}/>
-            <DonationExamples styles={styles} />
-          </div>
           <div className={cx('main')}>
             <div className={cx('top')}>
               <img src={donateCat}/>
