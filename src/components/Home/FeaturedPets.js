@@ -3,7 +3,6 @@ import classNames from 'classnames/bind'
 import StFrancisRescue from '../../apis/StFrancisRescue';
 import {PROTOCOL, HOSTNAME} from '../../config/StFrancisRescue';
 import styles from './FeaturedPets.module.scss';
-import featuredDog from '../../assets/images/featuredDog.png'
 
 const cx = classNames.bind(styles)
 
@@ -33,7 +32,6 @@ const FeaturedPets = () => {
       <hr/>
       {pet &&
         <>
-{console.log(pet)}
           <div className={cx('pet-outer')}>
             <div className={cx('pet-info')}>
               <h2>{pet.name}</h2>
