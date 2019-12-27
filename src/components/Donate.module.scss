@@ -53,8 +53,8 @@
 
 			> div {
 				margin-top: 4rem;
-				border: 0.6rem solid $color-primary;
-				border-radius: 1.5rem;
+				border: $border-width solid $color-primary;
+				border-radius: $border-radius;
 				display: flex;
 				flex-direction: column;
 				padding: 7rem 2rem 3rem;

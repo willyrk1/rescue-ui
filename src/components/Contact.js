@@ -4,13 +4,13 @@ import classNames from 'classnames/bind'
 import Select from 'react-select'
 import StFrancisRescue from '../apis/StFrancisRescue';
 import states from '../config/states'
-import Layout from './Layout'
+import StandardLayout from './StandardLayout'
 import styles from './Contact.module.scss';
 
 const cx = classNames.bind(styles)
 
 const Contact = () =>
-  <Layout>
+  <StandardLayout>
     <div className={cx('contact')}>
       <div className={cx('contact-text')}>
         <h1>Contact Us</h1>
@@ -111,6 +111,6 @@ const Contact = () =>
         </div>
       </form>
     </div>
-  </Layout>
+  </StandardLayout>
 
 export default Contact;

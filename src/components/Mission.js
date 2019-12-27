@@ -9,7 +9,7 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue';
-import Layout from './Layout'
+import StandardLayout from './StandardLayout'
 import DonationExamples from './DonationExamples'
 import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
 import donationStyles from './Home/DonateRibbon.module.scss';
@@ -29,7 +29,7 @@ const Mission = () => {
   }, [])
 
   return (
-    <Layout>
+    <StandardLayout>
       <div className={cx('mission')}>
         <div className={cx('main')}>
           <h1>Our Mission</h1>
@@ -87,7 +87,7 @@ const Mission = () => {
           </div>
         ))}
       </div>
-    </Layout>
+    </StandardLayout>
   )
 }
 

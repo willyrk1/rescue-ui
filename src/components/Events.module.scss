@@ -1,0 +1,60 @@
+@import '../assets/stylesheets/style.scss';
+
+.events {
+	h2 {
+		font-size: 3.5rem;
+		color: $color-primary;
+		margin-top: 5rem;
+	}
+
+	a {
+		color: $color-accent;
+		font-weight: 700;
+	}
+
+	img {
+		width: 27rem;
+		margin-left: 1rem;
+	}
+
+	.right {
+		float: right;
+	}
+
+	ul {
+		margin-left: 2rem;
+	}
+
+	li {
+		font-size: 1.8rem;
+		margin: 3rem 0;
+	}
+
+	.dogs {
+		display: flex;
+		align-items: center;
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			border: $border-width solid $color-primary;
+			border-radius: $border-radius;
+			margin-right: 1rem;
+			padding: 3rem;
+
+			h2 {
+				margin: 0;
+			}
+
+			h3 {
+				font-size: 2.5rem;
+				color: $color-primary;
+			}
+
+			p {
+				margin: 2rem 0 0 0;
+			}
+		}
+	}
+}

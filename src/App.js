@@ -14,6 +14,7 @@ import Donate from './components/Donate'
 import Cats from './components/Cats';
 import Dogs from './components/Dogs';
 import Contact from './components/Contact';
+import Events from './components/Events';
 import Page from './components/Page';
 import SuccessStories from './components/SuccessStories';
 import UnderConstruction from './components/UnderConstruction';
@@ -29,6 +30,7 @@ const App = () => (
       <Route exact path="/dogs" component={Dogs} />
       <Route exact path="/success_stories" component={SuccessStories} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/events" component={Events} />
       <Route path="/:pagename" component={Page} />
       <Route component={UnderConstruction} />
     </Switch>
