@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e1985781f8344e1ecee4983c2cb69665",
+    "revision": "030d32beca20593d0a2ffda6c6429236",
     "url": "/rescue-ui/index.html"
   },
   {
-    "revision": "255e4fb47bb494ed2097",
-    "url": "/rescue-ui/static/css/main.e0790004.chunk.css"
+    "revision": "2555c7cd0228d8073ce5",
+    "url": "/rescue-ui/static/css/main.0d8c77e3.chunk.css"
   },
   {
-    "revision": "f84214344045433e2bbf",
-    "url": "/rescue-ui/static/js/2.d01e41d0.chunk.js"
+    "revision": "b04a29e500474688ae02",
+    "url": "/rescue-ui/static/js/2.938f3405.chunk.js"
   },
   {
-    "revision": "255e4fb47bb494ed2097",
-    "url": "/rescue-ui/static/js/main.d908ca31.chunk.js"
+    "revision": "2555c7cd0228d8073ce5",
+    "url": "/rescue-ui/static/js/main.6dab6e74.chunk.js"
   },
   {
     "revision": "a8f1d6e8b16d5448aed0",
@@ -44,8 +44,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rescue-ui/static/media/about_bg.8af23f99.png"
   },
   {
+    "revision": "75d3d8090f176b8552b43d01f47e927d",
+    "url": "/rescue-ui/static/media/adoptionphoto1.75d3d809.jpg"
+  },
+  {
+    "revision": "eee726adf85d8a85640a89469a787c92",
+    "url": "/rescue-ui/static/media/adoptionphoto2.eee726ad.jpg"
+  },
+  {
+    "revision": "36a76f36a16fa618a57bacf234345342",
+    "url": "/rescue-ui/static/media/adoptionphoto4.36a76f36.jpg"
+  },
+  {
     "revision": "eac33dc9ceb4c80490cf2df90e9f2fdd",
     "url": "/rescue-ui/static/media/bisselpetfoundation.eac33dc9.jpg"
+  },
+  {
+    "revision": "952a28feea9586f966290cb089cb0824",
+    "url": "/rescue-ui/static/media/dogadoption1.952a28fe.jpg"
   },
   {
     "revision": "eb17eefe010d5a105307645d774d9890",
