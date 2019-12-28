@@ -1,4 +1,5 @@
 import React from 'react';
+import Popup from "reactjs-popup"
 import classNames from 'classnames/bind'
 import Layout from './Layout'
 import donateCat from '../assets/images/donateCat.jpg'
@@ -62,7 +63,13 @@ const Donate = () => {
                 Shop Our Wish List
               </p>
               <div className={cx("btn-container")}>
-                <a className={cx("btn btn--accent")} href="#">More Info</a>
+                <a
+                  className={cx("btn btn--accent")}
+                  href='https://amzn.to/2RQwqwk'
+                  target='_blank'
+                >
+                  More Info
+                </a>
               </div>
             </div>
             <div className={cx('panel')}>
@@ -77,16 +84,75 @@ const Donate = () => {
               <p>
                 Use Amazon Smile
               </p>
-              <div className={cx("btn-container")}>
-                <a className={cx("btn btn--accent")} href="#">More Info</a>
-              </div>
+              <Popup
+                modal
+                closeOnDocumentClick
+                trigger={
+                  <div className={cx("btn-container")}>
+                    <a
+                      className={cx("btn btn--accent")}
+                      href="#"
+                      onClick={event => { event.preventDefault(); }}
+                    >
+                      More Info
+                    </a>
+                  </div>
+                }
+              >
+                {close =>
+                  <div className={cx('popup-modal')}>
+                    <a className={cx('close')} onClick={close}>
+                      &times;
+                    </a>
+                    <h2>Amazon Smile</h2>
+                    <div className={cx('content')}>
+                      <p>
+                        AmazonSmile is a website operated by Amazon with the same products, prices and
+                        shopping features as Amazon.com. The difference is that, when you shop on AmazonSmile,
+                        the AmazonSmile Foundation will donate 0.5% of the purchase price of eligible products
+                        to the charitable organization of your choice!
+                      </p>
+                      <p>
+                        Simply visit smile.amazon.com, and select St. Francis Society Animal Rescue as your
+                        charity of choice.
+                      </p>
+                    </div>
+                    <div className={cx('actions')}>
+                      <div className={cx("btn-container")}>
+                        <a
+                          className={cx("btn btn--accent")}
+                          href="https://smile.amazon.com"
+                          target='_blank'
+                        >
+                          Go to Smile
+                        </a>
+                      </div>
+                      <div className={cx("btn-container")}>
+                        <a
+                          className={cx("btn btn--accent")}
+                          href="#"
+                          onClick={event => { close(); event.preventDefault(); }}
+                        >
+                          Close
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </Popup>
             </div>
             <div className={cx('panel')}>
               <p>
                 Create A Facebook Fundraiser
               </p>
               <div className={cx("btn-container")}>
-                <a className={cx("btn btn--accent")} href="#">More Info</a>
+                <a
+                  className={cx("btn btn--accent")}
+                  href='https://www.facebook.com/fund/StFrancisSocietyAnimalRescue/'
+                  target='_blank'
+                >
+                  More Info
+                </a>
               </div>
             </div>
             <div className={cx('panel')}>
@@ -101,9 +167,52 @@ const Donate = () => {
               <p>
                 Planned Giving
               </p>
-              <div className={cx("btn-container")}>
-                <a className={cx("btn btn--accent")} href="#">More Info</a>
-              </div>
+              <Popup
+                modal
+                closeOnDocumentClick
+                trigger={
+                  <div className={cx("btn-container")}>
+                    <a
+                      className={cx("btn btn--accent")}
+                      href="#"
+                      onClick={event => { event.preventDefault(); }}
+                    >
+                      More Info
+                    </a>
+                  </div>
+                }
+              >
+                {close =>
+                  <div className={cx('popup-modal')}>
+                    <a className={cx('close')} onClick={close}>
+                      &times;
+                    </a>
+                    <h2>Planned Giving</h2>
+                    <div className={cx('content')}>
+                      <p>
+                        When you make a bequest to St. Francis Society, you are leaving a legacy of
+                        love and compassion unlike any other.  A bequest is a gift made through
+                        your will or trust, and enables us to continue our life-saving mission for
+                        years to come.  If you are interested in learning more about leaving a
+                        bequest to St. Franics Society, please contact us at
+                        {' '}
+                        <a href='mailto:stfrancissociety@gmail.com'>stfrancissociety@gmail.com</a>.
+                      </p>
+                    </div>
+                    <div className={cx('actions')}>
+                      <div className={cx("btn-container")}>
+                        <a
+                          className={cx("btn btn--accent")}
+                          href="#"
+                          onClick={event => { close(); event.preventDefault(); }}
+                        >
+                          Close
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </Popup>
             </div>
           </div>
         </div>
