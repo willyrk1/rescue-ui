@@ -16,9 +16,7 @@ const NewsEvents = () =>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
         </p>
-        <div className={cx("btn-container")}>
-          <a className={cx("btn btn--accent")} href="#">More Info</a>
-        </div>
+        <a className={cx('btn2')} href='#'>More Info</a>
       </div>
       <div className={cx('panel')}>
         <div className={cx('date')}><p>29</p></div>
@@ -27,9 +25,7 @@ const NewsEvents = () =>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
         </p>
-        <div className={cx("btn-container")}>
-          <a className={cx("btn btn--accent")} href="#">More Info</a>
-        </div>
+        <a className={cx('btn2')} href='#'>More Info</a>
       </div>
       <div className={cx('panel')}>
         <div className={cx('date')}><p>29</p></div>
@@ -38,15 +34,11 @@ const NewsEvents = () =>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex.
         </p>
-        <div className={cx("btn-container")}>
-          <a className={cx("btn btn--accent")} href="#">More Info</a>
-        </div>
+        <a className={cx('btn2')} href='#'>More Info</a>
       </div>
     </div>
     <div>
-      <div className={cx("btn-container")}>
-        <a className={cx("btn btn--secondary")} href="#">View All</a>
-      </div>
+        <a className={cx('btn2', 'btn--secondary')} href='#'>View All</a>
     </div>
   </div>
 

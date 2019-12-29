@@ -2,7 +2,7 @@
 
 .home-news-events {
 	background-image: url('../../assets/images/largeBlueCat.png');
-  padding: 5rem 6rem;
+  padding: 5rem 6rem 2.6rem;
   
   h1, hr {
     margin-left: 2rem;
@@ -21,22 +21,22 @@
     display: flex;
     justify-content: center;
 
-    .btn-container {
-      margin-top: 6.5rem;
+    .btn2 {
+      margin-top: 5.3rem;
     }
 
     &.panels {
       justify-content: space-between;
 
-      .btn-container {
-        margin-top: 4.5rem;
+      .btn2 {
+        margin-top: 3.3rem;
       }
     
       .panel {
         margin: 0 2rem;
         background-color: #fff;
         border-radius: 1.5rem;
-        padding: 2rem 0 4rem 4rem;
+        padding: 2rem 0 1.6rem 4rem;
 
         .date {
           background-image: url('../../assets/images/news_header.png');

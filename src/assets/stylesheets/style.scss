@@ -28,16 +28,30 @@ body {
   /*font-size: 16px;*/
   line-height: 1.7;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 img {
   display:block;
 }
 
-.btn {
+.btn2 {
+  margin: 1.2rem 0;
+  display: inline-block;
+}
+
+.btn, .btn2 {
   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem;
   font-weight: bolder;
+  background-color: $color-accent;
+  color: #fff;
 
   &:link,
   &:visited {
@@ -53,11 +67,6 @@ img {
 
   &:active {
     transform: translateY(-0.1rem);
-  }
-
-  &--accent {
-    background-color: $color-accent;
-    color: #fff;
   }
 
   &--secondary {

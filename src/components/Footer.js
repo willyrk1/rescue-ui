@@ -17,16 +17,14 @@ import styles from './Footer.module.scss';
 const cx = classNames.bind(styles)
 
 const Footer = ({ legal }) => (
-  <div className={cx("footer")}>
+  <div className={cx('footer')}>
     <div className={cx('main')}>
       <div>
         <h1>Newsletter</h1>
         <hr/>
         <p>Follow our newsletter and stay in the meow!</p>
         <input type='text' />
-        <div className={cx("btn-container")}>
-          <a className={cx("btn btn--accent")} href="#">SIGN UP</a>
-        </div>
+        <div><a className={cx('btn2')} href='#'>SIGN UP</a></div>
       </div>
       <div>
         <h1>Follow Us</h1>

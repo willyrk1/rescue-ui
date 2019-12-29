@@ -71,8 +71,8 @@ const FeaturedPets = () => {
             </div>
           </div>
           <div className={cx("btn-container")}>
-            <a className={cx("btn btn--accent")} href="#">View All Cats</a>
-            <a className={cx("btn btn--accent")} href="#">View All Dogs</a>
+            <a className={cx('btn2')} href="#">View All Cats</a>
+            <a className={cx('btn2')} href="#">View All Dogs</a>
           </div>
         </>
       }

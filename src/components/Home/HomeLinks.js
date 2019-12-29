@@ -12,9 +12,7 @@ const HomeLinks = () =>
       <p>
         Open your heart and your home. Someone special is waiting for you.
       </p>
-      <div className={cx("btn-container")}>
-        <a className={cx("btn btn--accent")} href="#">View All</a>
-      </div>
+      <a className={cx('btn2')} href='#'>View All</a>
     </div>
     <div>
       <h1>Foster</h1>
@@ -22,9 +20,7 @@ const HomeLinks = () =>
       <p>
         Help them grow, learn and heal.  Fostering saves lives.
       </p>
-      <div className={cx("btn-container")}>
-        <a className={cx("btn btn--accent")} href="#">Learn How</a>
-      </div>
+      <a className={cx('btn2')} href='#'>Learn How</a>
     </div>
     <div>
       <h1>Donate</h1>
@@ -32,9 +28,7 @@ const HomeLinks = () =>
       <p>
         We are 100% volunteer-run.  All donations go directly to the animals in our care.
       </p>
-      <div className={cx("btn-container")}>
-        <a className={cx("btn btn--accent")} href="#">More Info</a>
-      </div>
+      <a className={cx('btn2')} href='#'>More Info</a>
     </div>
   </div>
 

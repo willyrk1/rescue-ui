@@ -29,9 +29,7 @@ const DonationExamples = ({ styles, more }) => {
           </div>
         </>
       }
-      <div className={cx("btn-container")}>
-        <a className={cx("btn btn--accent")} href="#">DONATE</a>
-      </div>
+      <div><a className={cx('btn2')} href='#'>DONATE</a></div>
     </div>
   )
 }

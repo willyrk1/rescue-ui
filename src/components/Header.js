@@ -31,8 +31,8 @@ const Header = ({ home }) =>
       <li><Link to="/mission">About</Link></li>
       <li><Link to="/contact">Contact</Link></li>
     </ul>
-    <div className={cx("header__btn--container")}>
-      <a className={cx("btn btn--accent")} href="#">Donate</a>
+    <div className={cx('donate-cat')}>
+      <a className={cx('btn')} href='#'>Donate</a>
       <img src={headerKitten} />
     </div>
   </header>

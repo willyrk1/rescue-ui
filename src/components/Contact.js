@@ -106,9 +106,7 @@ const Contact = () =>
           </li>
         </ul>
 
-        <div className={cx("btn-container")}>
-          <a className={cx("btn btn--accent")} href="#">Submit Contact Form</a>
-        </div>
+        <a className={cx('btn2')} href='#'>Submit Contact Form</a>
       </form>
     </div>
   </StandardLayout>
