@@ -5,7 +5,7 @@ import StandardLayout from './StandardLayout'
 import styles from './Adopt.module.scss';
 import catPhoto from '../assets/images/boywithcathighres.jpg'
 import dogPhoto from '../assets/images/girlhuggingdog.jpg'
-import barnCatPhoto from '../assets/images/barncatHIGHREScrop.jpg'
+import workingCatPhoto from '../assets/images/barncatHIGHREScrop.jpg'
 
 const cx = classNames.bind(styles)
 
@@ -38,8 +38,8 @@ const Adopt = () =>
           <Link to='dogAdoptions' className={cx('caption')}>Dog Adoptions</Link>
         </div>
         <div>
-          <Link to='barnCats'><img src={barnCatPhoto}/></Link>
-          <Link to='barnCats' className={cx('caption')}>Working Cat Program</Link>
+          <Link to='workingCats'><img src={workingCatPhoto}/></Link>
+          <Link to='workingCats' className={cx('caption')}>Working Cat Program</Link>
         </div>
       </div>
     </div>
