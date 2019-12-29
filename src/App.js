@@ -9,6 +9,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home'
+import Adopt from './components/Adopt'
 import Mission from './components/Mission';
 import Donate from './components/Donate'
 import Cats from './components/Cats';
@@ -24,6 +25,7 @@ const App = () => (
   <Router basename='/rescue-ui'>
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route exact path="/adoptions" component={Adopt} />
       <Route exact path="/mission" component={Mission} />
       <Route exact path="/donate" component={Donate} />
       <Route exact path="/cats" component={Cats} />

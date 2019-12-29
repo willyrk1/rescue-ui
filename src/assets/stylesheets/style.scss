@@ -41,6 +41,11 @@ img {
   display:block;
 }
 
+a {
+  color: $color-accent;
+  font-weight: 700;
+}
+
 .btn2 {
   margin: 1.2rem 0;
   display: inline-block;

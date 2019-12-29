@@ -7,11 +7,6 @@
 		margin-top: 2rem;
 	}
 
-	p a {
-		color: $color-accent;
-		font-weight: 700;
-	}
-
 	form {
 		background: $color-primary url('../assets/images/catdoggreen.png') no-repeat 8rem 19rem;
 		padding: 1rem;
@@ -69,13 +64,5 @@
 		a {
 			margin-top: 1.8rem;
 		}
-		// .btn-container {
-		// 	margin: 3rem 0 2rem;
-		// 	text-align: center;
-
-		// 	a {
-		// 		color: #fff;
-		// 	}
-		// }
 	}
 }

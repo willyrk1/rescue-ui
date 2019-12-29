@@ -21,7 +21,7 @@ const Events = () =>
       <p>
         Adoption centers are staffed by volunteers so please verify adoption hours with store
         management.  All of our animals are spay/neutered, vaccinated, tested, microchipped,
-        de-wormed and de-fleaed before adoption.  St. Francis Society is a privately owned,
+        de-wormed and de-fleaed before adoption.  St. Francis Society is an
         all volunteer organization. We have strict guidelines for adoption approval and our
         volunteers have the right to refuse adoption applicants based on their own judgment.
       </p>
@@ -98,7 +98,7 @@ const Events = () =>
         <div>
           <h2>Looking to Adopt a Dog?</h2>
           <p>
-            St. Francis dogs/puppies live in foster homes and can be seen BY APPOINTMENT ONLY
+            St. Francis Society dogs/puppies live in foster homes and can be seen BY APPOINTMENT ONLY
             on Saturday-Sunday at
             our <a href='https://goo.gl/maps/tB7kiFNWT9p'>Citrus Park Petsmart</a> location,
             between the hours of 12:00 p.m. and 5:00 p.m. based on volunteer availability.

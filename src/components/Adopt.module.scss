@@ -1,0 +1,24 @@
+@import '../assets/stylesheets/style.scss';
+
+.adopt {
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			img {
+				max-height: 30rem;
+			}
+
+			.caption {
+				font-size: 2.5rem;
+				margin: 1rem 0 4rem;
+			}
+		}
+	}
+}

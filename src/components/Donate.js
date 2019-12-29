@@ -157,11 +157,62 @@ const Donate = () => {
             </div>
             <div className={cx('panel')}>
               <p>
-                ?
+                Company-Matched Donations
               </p>
-              <div className={cx("btn-container")}>
-                <a className={cx("btn btn--accent")} href="#">More Info</a>
-              </div>
+              <Popup
+                modal
+                closeOnDocumentClick
+                trigger={
+                  <div className={cx("btn-container")}>
+                    <a
+                      className={cx("btn btn--accent")}
+                      href="#"
+                      onClick={event => { event.preventDefault(); }}
+                    >
+                      More Info
+                    </a>
+                  </div>
+                }
+              >
+                {close =>
+                  <div className={cx('popup-modal')}>
+                    <a className={cx('close')} onClick={close}>
+                      &times;
+                    </a>
+                    <h2>Company-Matched Donations</h2>
+                    <div className={cx('content')}>
+                      <p>
+                        You may be able to double, or even triple, your donation!  Many employers
+                        offer matching gift programs and will match charitable contributions or
+                        volunteer hours donated by their employees. To find out if your
+                        company offers matching gifts, please check with your employer's Human
+                        Resources department.  You may also click below to see a comprehensive list
+                        of participating employers.
+                      </p>
+                    </div>
+                    <div className={cx('actions')}>
+                      <div className={cx("btn-container")}>
+                        <a
+                          className={cx("btn btn--accent")}
+                          href="https://ww2.matchinggifts.com/search/unh"
+                          target='_blank'
+                        >
+                          View List
+                        </a>
+                      </div>
+                      <div className={cx("btn-container")}>
+                        <a
+                          className={cx("btn btn--accent")}
+                          href="#"
+                          onClick={event => { close(); event.preventDefault(); }}
+                        >
+                          Close
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </Popup>
             </div>
             <div className={cx('panel')}>
               <p>
@@ -194,8 +245,7 @@ const Donate = () => {
                         love and compassion unlike any other.  A bequest is a gift made through
                         your will or trust, and enables us to continue our life-saving mission for
                         years to come.  If you are interested in learning more about leaving a
-                        bequest to St. Franics Society, please contact us at
-                        {' '}
+                        bequest to St. Franics Society, please contact us at&nbsp;
                         <a href='mailto:stfrancissociety@gmail.com'>stfrancissociety@gmail.com</a>.
                       </p>
                     </div>
