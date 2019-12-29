@@ -15,10 +15,10 @@ const Adopt = () =>
       <h1>Adoptions</h1>
       <hr/>
       <p>
-        Thank you for considering St. Francis Society!  We are
-        an-all volunteer organization and most of our animals reside in private foster homes.
-        However, we do have some cats available at adoption centers throughout the Tampa Bay
-        area (listed below).
+        Thinking about adopting a pet?  Thank you for considering St. Francis Society!  We are
+        an-all volunteer organization and most of our animals reside in private foster homes.  We
+        do have some cats available at adoption centers throughout the Tampa Bay area which are noted as
+        such on our <Link to='catAdoptions'>Cat Adoption</Link> page.
       </p>
       <p>
         We have guidelines for an adoption approval and reserve the right to deny any adoption
