@@ -29,14 +29,14 @@ const HelpOurCause = () => {
                 <img src={makeDonationCat} />
                 <div className={cx('one-time')}>
                   <p>Make A One-Time Donation</p>
-                  <Link className={cx('btn')} href='#'>Donate</Link>
+                  <Link to='/donate' className={cx('btn')}>Donate</Link>
                 </div>
               </div>
               <div>
                 <img src={makeDonationCat} />
                 <div className={cx('monthly')}>
                   <p>Make A Monthly Donation</p>
-                  <Link className={cx('btn')} href='#'>Donate</Link>
+                  <Link to='/donate' className={cx('btn')}>Donate</Link>
                 </div>
               </div>
             </div>

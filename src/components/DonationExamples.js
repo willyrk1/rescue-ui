@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 
 const DonationExamples = ({ styles, more }) => {
@@ -29,7 +30,7 @@ const DonationExamples = ({ styles, more }) => {
           </div>
         </>
       }
-      <div><a className={cx('btn')} href='#'>DONATE</a></div>
+      <div><Link to='/donate' className={cx('btn')}>DONATE</Link></div>
     </div>
   )
 }
