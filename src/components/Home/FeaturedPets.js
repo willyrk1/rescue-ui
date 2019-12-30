@@ -70,7 +70,7 @@ const FeaturedPets = () => {
               <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} />
             </div>
           </div>
-          <div className={cx("btn-container")}>
+          <div className={cx("view-buttons")}>
             <a className={cx('btn')} href="#">View All Cats</a>
             <a className={cx('btn')} href="#">View All Dogs</a>
           </div>
