@@ -24,7 +24,7 @@ const Footer = ({ legal }) => (
         <hr/>
         <p>Follow our newsletter and stay in the meow!</p>
         <input type='text' />
-        <div><a className={cx('btn2')} href='#'>SIGN UP</a></div>
+        <div><a className={cx('btn')} href='#'>SIGN UP</a></div>
       </div>
       <div>
         <h1>Follow Us</h1>

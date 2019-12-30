@@ -57,7 +57,9 @@
 				border-radius: $border-radius;
 				display: flex;
 				flex-direction: column;
-				padding: 7rem 2rem 3rem;
+				justify-content: space-between;
+				align-items: center;
+				padding: 7rem 2rem 1rem;
 				color: $color-secondary;
 				z-index: 50;
 			}
@@ -68,11 +70,6 @@
 				line-height: 3.5rem;
 				text-align: center;
 			}
-		}
-
-		.btn-container {
-			text-align: center;
-			margin-top: 4rem;
 		}
 	}
 
@@ -115,7 +112,7 @@
 			background-color: white;
 			border-radius: 1.5rem;
 			margin-bottom: 5rem;
-			padding: 2rem;
+			padding: 2rem 2rem 1rem;
 			width: 30%;
 			min-height: 17rem;
 			display: flex;
@@ -125,14 +122,9 @@
 
 			> p {
 				color: $color-primary;
-				margin-bottom: 2rem;
 				font-size: 2.9rem;
 				font-weight: 700;
 				text-align: center;
-			}
-
-			.btn-container {
-				margin-bottom: 1rem;
 			}
 		}
 	}
@@ -162,12 +154,11 @@
 
 		.actions {
 			width: 100%;
-			padding: 2rem 0;
 			display: flex;
 			justify-content: center;
 
-			.btn-container {
-				margin: 0 1rem;
+			.btn {
+				margin: 0 1rem 1rem;
 			}
 		}
 

@@ -18,7 +18,7 @@ const Hero = () =>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex, non vulputate
         enim est gravida enim. Suspendisse eu tortor dui.
       </p>
-      <a className={cx('btn2')} href='#'>Foster</a>
+      <a className={cx('btn')} href='#'>Foster</a>
     </div>
   </section>
 

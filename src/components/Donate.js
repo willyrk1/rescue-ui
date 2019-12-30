@@ -12,8 +12,8 @@ const Donate = () =>
       <hr/>
 
       <p>
-        Last year, St. Francis Society found homes for over 1,500 cats and kittens.  In addition,
-        nearly 200 feral cats received TNVR services (trap/neuter/vaccinate/return).  We are a
+        Last year, St. Francis Society found homes for over 1,500 homeless animals.  In addition,
+        over 200 feral cats received TNVR services (trap/neuter/vaccinate/return).  We are a
         501(c)3 non-profit organization and receive no government funding.  We have no paid
         employees so 100% of every dollar you donate goes to the animals we take care of.  We are
         completely dependent on the community’s donations to help us continue our life saving mission.
@@ -26,9 +26,9 @@ const Donate = () =>
         intended to be $50 dollars being entered as $0.50 cents. Thank You!!!
       </p>
 
-      <a className={cx('btn2')}>Donate</a>
+      <a className={cx('btn')}>Donate</a>
 
-      <h2>Become a St Francis Society Guardian Angel (monthly donor)</h2>
+      <h2>Become a St. Francis Society Guardian Angel (monthly donor)</h2>
       <p>
         Becoming one of our Guardian Angels provides St. Francis Society Animal Rescue with a
         sustainable income we can rely on.  Your monthly gift helps us to continue providing the
@@ -48,6 +48,8 @@ const Donate = () =>
         Select the monthly donation amount you would like to make from the dropdown list and then
         click on the "Subscribe" button. Thank You!!!
       </p>
+
+      <a className={cx('btn')}>Subscribe</a>
 
       <h3>If you prefer to send a check, mail it to:</h3>
       <p>

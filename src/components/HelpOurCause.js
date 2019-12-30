@@ -1,10 +1,11 @@
-import React from 'react';
-import Popup from "reactjs-popup"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Popup from 'reactjs-popup'
 import classNames from 'classnames/bind'
 import Layout from './Layout'
 import donateCat from '../assets/images/donateCat.jpg'
 import makeDonationCat from '../assets/images/kitty.png'
-import styles from './HelpOurCause.module.scss';
+import styles from './HelpOurCause.module.scss'
 
 const cx = classNames.bind(styles)
 
@@ -16,9 +17,7 @@ const HelpOurCause = () => {
           <div className={cx('main')}>
             <div className={cx('top')}>
               <img src={donateCat}/>
-              <h1>
-                <em>Please Help.<br/> He's Counting on You.</em>
-              </h1>
+              <h1><em>Please Help.<br/> He's Counting on You.</em></h1>
               <p>
                 We are a 501(c)3 non-profit organization and receive no government funding.
                 We have no paid employees so 100% of every dollar you donate goes to the animals.
@@ -30,18 +29,14 @@ const HelpOurCause = () => {
                 <img src={makeDonationCat} />
                 <div className={cx('one-time')}>
                   <p>Make A One-Time Donation</p>
-                  <div className={cx("btn-container")}>
-                    <a className={cx("btn btn--accent")} href="#">DONATE</a>
-                  </div>
+                  <Link className={cx('btn')} href='#'>Donate</Link>
                 </div>
               </div>
               <div>
                 <img src={makeDonationCat} />
                 <div className={cx('monthly')}>
                   <p>Make A Monthly Donation</p>
-                  <div className={cx("btn-container")}>
-                    <a className={cx("btn btn--accent")} href="#">DONATE</a>
-                  </div>
+                  <Link className={cx('btn')} href='#'>Donate</Link>
                 </div>
               </div>
             </div>
@@ -62,23 +57,15 @@ const HelpOurCause = () => {
               <p>
                 Shop Our Wish List
               </p>
-              <div className={cx("btn-container")}>
-                <a
-                  className={cx("btn btn--accent")}
-                  href='https://amzn.to/2RQwqwk'
-                  target='_blank'
-                >
-                  More Info
-                </a>
-              </div>
+              <a className={cx('btn')} href='https://amzn.to/2RQwqwk' target='_blank'>
+                More Info
+              </a>
             </div>
             <div className={cx('panel')}>
               <p>
                 Foster To Save Lives
               </p>
-              <div className={cx("btn-container")}>
-                <a className={cx("btn btn--accent")} href="#">More Info</a>
-              </div>
+              <a className={cx('btn')} href='#'>More Info</a>
             </div>
             <div className={cx('panel')}>
               <p>
@@ -88,15 +75,13 @@ const HelpOurCause = () => {
                 modal
                 closeOnDocumentClick
                 trigger={
-                  <div className={cx("btn-container")}>
-                    <a
-                      className={cx("btn btn--accent")}
-                      href="#"
-                      onClick={event => { event.preventDefault(); }}
-                    >
-                      More Info
-                    </a>
-                  </div>
+                  <a
+                    className={cx('btn')}
+                    href='#'
+                    onClick={event => { event.preventDefault(); }}
+                  >
+                    More Info
+                  </a>
                 }
               >
                 {close =>
@@ -118,24 +103,16 @@ const HelpOurCause = () => {
                       </p>
                     </div>
                     <div className={cx('actions')}>
-                      <div className={cx("btn-container")}>
-                        <a
-                          className={cx("btn btn--accent")}
-                          href="https://smile.amazon.com"
-                          target='_blank'
-                        >
-                          Go to Smile
-                        </a>
-                      </div>
-                      <div className={cx("btn-container")}>
-                        <a
-                          className={cx("btn btn--accent")}
-                          href="#"
-                          onClick={event => { close(); event.preventDefault(); }}
-                        >
-                          Close
-                        </a>
-                      </div>
+                      <a className={cx('btn')} href='https://smile.amazon.com' target='_blank'>
+                        Go to Smile
+                      </a>
+                      <a
+                        className={cx('btn')}
+                        href='#'
+                        onClick={event => { close(); event.preventDefault(); }}
+                      >
+                        Close
+                      </a>
                     </div>
                   </div>
                 }
@@ -145,15 +122,13 @@ const HelpOurCause = () => {
               <p>
                 Create A Facebook Fundraiser
               </p>
-              <div className={cx("btn-container")}>
-                <a
-                  className={cx("btn btn--accent")}
-                  href='https://www.facebook.com/fund/StFrancisSocietyAnimalRescue/'
-                  target='_blank'
-                >
-                  More Info
-                </a>
-              </div>
+              <a
+                className={cx('btn')}
+                href='https://www.facebook.com/fund/StFrancisSocietyAnimalRescue/'
+                target='_blank'
+              >
+                More Info
+              </a>
             </div>
             <div className={cx('panel')}>
               <p>
@@ -163,15 +138,13 @@ const HelpOurCause = () => {
                 modal
                 closeOnDocumentClick
                 trigger={
-                  <div className={cx("btn-container")}>
-                    <a
-                      className={cx("btn btn--accent")}
-                      href="#"
-                      onClick={event => { event.preventDefault(); }}
-                    >
-                      More Info
-                    </a>
-                  </div>
+                  <a
+                    className={cx('btn')}
+                    href='#'
+                    onClick={event => { event.preventDefault(); }}
+                  >
+                    More Info
+                  </a>
                 }
               >
                 {close =>
@@ -191,24 +164,20 @@ const HelpOurCause = () => {
                       </p>
                     </div>
                     <div className={cx('actions')}>
-                      <div className={cx("btn-container")}>
-                        <a
-                          className={cx("btn btn--accent")}
-                          href="https://ww2.matchinggifts.com/search/unh"
-                          target='_blank'
-                        >
-                          View List
-                        </a>
-                      </div>
-                      <div className={cx("btn-container")}>
-                        <a
-                          className={cx("btn btn--accent")}
-                          href="#"
-                          onClick={event => { close(); event.preventDefault(); }}
-                        >
-                          Close
-                        </a>
-                      </div>
+                      <a
+                        className={cx('btn')}
+                        href='https://ww2.matchinggifts.com/search/unh'
+                        target='_blank'
+                      >
+                        View List
+                      </a>
+                      <a
+                        className={cx('btn')}
+                        href='#'
+                        onClick={event => { close(); event.preventDefault(); }}
+                      >
+                        Close
+                      </a>
                     </div>
                   </div>
                 }
@@ -222,15 +191,13 @@ const HelpOurCause = () => {
                 modal
                 closeOnDocumentClick
                 trigger={
-                  <div className={cx("btn-container")}>
-                    <a
-                      className={cx("btn btn--accent")}
-                      href="#"
-                      onClick={event => { event.preventDefault(); }}
-                    >
-                      More Info
-                    </a>
-                  </div>
+                  <a
+                    className={cx('btn')}
+                    href='#'
+                    onClick={event => { event.preventDefault(); }}
+                  >
+                    More Info
+                  </a>
                 }
               >
                 {close =>
@@ -250,15 +217,13 @@ const HelpOurCause = () => {
                       </p>
                     </div>
                     <div className={cx('actions')}>
-                      <div className={cx("btn-container")}>
-                        <a
-                          className={cx("btn btn--accent")}
-                          href="#"
-                          onClick={event => { close(); event.preventDefault(); }}
-                        >
-                          Close
-                        </a>
-                      </div>
+                      <a
+                        className={cx('btn')}
+                        href='#'
+                        onClick={event => { close(); event.preventDefault(); }}
+                      >
+                        Close
+                      </a>
                     </div>
                   </div>
                 }

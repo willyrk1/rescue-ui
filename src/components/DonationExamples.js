@@ -29,7 +29,7 @@ const DonationExamples = ({ styles, more }) => {
           </div>
         </>
       }
-      <div><a className={cx('btn2')} href='#'>DONATE</a></div>
+      <div><a className={cx('btn')} href='#'>DONATE</a></div>
     </div>
   )
 }
