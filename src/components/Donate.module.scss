@@ -1,188 +1,29 @@
 @import '../assets/stylesheets/style.scss';
 
 .donate {
-	font-family: 'Raleway', sans-serif;
-	padding: 5rem 14rem 0 10rem;
+	display: flex;
+	flex-direction: column;
 
-	.main {
-		flex: 1 0;
+	.btn2 {
+		align-self: center;
 	}
 
-	.top {
-		position: relative;
-
-		img {
-			width: 100%;
-		}
-		
-		h1 {
-			position: absolute;
-			top: 1.5rem;
-			left: 1.5rem;
-			color: greenyellow;
-			font-size: 3.5rem;
-		}
-
-		p {
-			position: absolute;
-			bottom: 0.6rem;
-			right: 0.6rem;
-			color: #fff;
-			width: 29rem;
-			font-weight: 700;
-			font-size: 1.4rem;
-		}
+	h2 {
+		font-size: 3.5rem;
+		color: $color-primary;
+		margin: 3rem 0 2rem;
 	}
 
-	.make-donation {
-		display: flex;
-		justify-content: space-evenly;
-		margin: 4rem 0 2.5rem;
-
-		> div {
-			position: relative;
-			z-index: 100;
-
-			img {
-				position: absolute;
-				left: 50%;
-				top: -1.5rem;
-				transform: translateX(-50%);
-				height: 11rem;
-			}
-
-			> div {
-				margin-top: 4rem;
-				border: $border-width solid $color-primary;
-				border-radius: $border-radius;
-				display: flex;
-				flex-direction: column;
-				padding: 7rem 2rem 3rem;
-				color: $color-secondary;
-				z-index: 50;
-			}
-
-			p {
-				font-size: 3.5rem;
-				font-weight: 700;
-				line-height: 3.5rem;
-				text-align: center;
-			}
-		}
-
-		.btn-container {
-			text-align: center;
-			margin-top: 4rem;
-		}
+	h3 {
+		color: $color-accent;
+		font-size: 1.8rem;
+		font-weight: 700;
+		margin-bottom: 0.8rem;
 	}
 
-	.one-time {
-		margin-right: 2rem;
-	}
-
-	.mail-check {
-		background-color: $color-secondary;
-		padding: 2rem;
-
-		p {
-			color: #fff;
-			font-size: 1.8rem;
-			font-weight: 700;
-			text-align: center;
-		}
-	}
-
-	.other {
-		background-image: url('../assets/images/largeBlueCat.png');
-		padding: 2rem 6rem 3rem;
-		
-		h1 {
-			font-size: 3.5rem;
-			color: $color-accent;
-		}
-
-		hr {
-			background-color: #fff;
-		}
-
-		.panels {
-			display: flex;
-			justify-content: space-between;
-			flex-wrap: wrap;
-		}
-
-		.panel {
-			background-color: white;
-			border-radius: 1.5rem;
-			margin-bottom: 5rem;
-			padding: 2rem;
-			width: 30%;
-			min-height: 17rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-items: center;
-
-			> p {
-				color: $color-primary;
-				margin-bottom: 2rem;
-				font-size: 2.9rem;
-				font-weight: 700;
-				text-align: center;
-			}
-
-			.btn-container {
-				margin-bottom: 1rem;
-			}
-		}
-	}
-	.popup-modal {
-		h2 {
-			width: 100%;
-			border-bottom: 1px solid gray;
-			font-size: 2.5rem;
-			color: $color-primary;
-			text-align: center;
-			padding: 0.5rem;
-		}
-
-		.content {
-			width: 100%;
-			padding: 1rem 0.5rem;
-
-			p {
-				margin: 2rem 0;
-				font-size: 1.8rem;
-
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-		}
-
-		.actions {
-			width: 100%;
-			padding: 2rem 0;
-			display: flex;
-			justify-content: center;
-
-			.btn-container {
-				margin: 0 1rem;
-			}
-		}
-
-		.close {
-			cursor: pointer;
-			position: absolute;
-			display: block;
-			padding: 2px 5px;
-			line-height: 20px;
-			right: -10px;
-			top: -10px;
-			font-size: 24px;
-			background: #ffffff;
-			border-radius: 18px;
-			border: 1px solid #cfcece;
-		}
+	ul {
+		margin: 0 0 2rem 2rem;
+		font-size: 1.8rem;
+		font-weight: 500;
 	}
 }

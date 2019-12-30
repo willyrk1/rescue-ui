@@ -26,13 +26,13 @@ const Header = ({ home }) =>
     <ul className={cx("header__nav", { home })}>
       <li><Link to="/adoptions">Adopt</Link></li>
       <li><Link to="/volunteer">Volunteer</Link></li>
-      <li><Link to="/donate">Help Our Cause</Link></li>
+      <li><Link to="/help-our-cause">Help Our Cause</Link></li>
       <li><Link to="/events">Events</Link></li>
       <li><Link to="/mission">About</Link></li>
       <li><Link to="/contact">Contact</Link></li>
     </ul>
     <div className={cx('donate-cat')}>
-      <a className={cx('btn')} href='#'>Donate</a>
+      <Link to='/donate' className={cx('btn')}>Donate</Link>
       <img src={headerKitten} />
     </div>
   </header>

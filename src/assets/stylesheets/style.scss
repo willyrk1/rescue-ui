@@ -57,14 +57,10 @@ a {
   font-weight: bolder;
   background-color: $color-accent;
   color: #fff;
-
-  &:link,
-  &:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.2rem 3rem;
-    border-radius: 1.7rem;
-  }
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.2rem 3rem;
+  border-radius: 1.7rem;
 
   &:hover {
     transform: translateY(-0.3rem);
