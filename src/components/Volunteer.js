@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
-import fosterKitten from '../assets/images/handholdingkittenCrop.jpg'
+import fosterKitten from '../assets/images/basketkittens.jpg'
 import styles from './Volunteer.module.scss';
 
 const cx = classNames.bind(styles)
@@ -13,15 +13,15 @@ const Volunteer = () =>
       <hr/>
       <img src='https://via.placeholder.com/340x220?text=Placeholder' className={cx('right')} />
       <p>
-        Thank you for interest in becoming a volunteer at St. Francis Society! We truly appreciate
-        you for wanting to donate some of your valuable free to time to help our animals.
-        Volunteers are our most valuable asset and without volunteers we could not do the rescue
+        Thank you for your interest in becoming a volunteer at St. Francis Society! We truly
+        appreciate you for wanting to donate some of your valuable free time to help our animals.
+        Volunteers are our most valuable asset and, without volunteers, we could not do the rescue
         work we do.
       </p>
       <p>
-        It is VERY IMPORTANT that as a volunteer you realize that your piece, no matter how small
+        It is VERY IMPORTANT that, as a volunteer, you realize that your piece, no matter how small
         or insignificant you feel it is, is critical to our rescue work. Our animals rely on you
-        for their care. We do ask that once you have agreed to an assignment,  you fulfill your
+        for their care. We do ask that, once you have agreed to an assignment, you fulfill your
         commitment. The minimum age to volunteer is 18.
       </p>
 
@@ -43,10 +43,15 @@ const Volunteer = () =>
       </p>
       <p>
         Fostering is for a minimum of 5 days. Foster families are expected to provide the animal
-        with food, water, a space in your home to keep foster animals separate from your pets and
+        with food, water, a space in your home to keep foster animals separate from your pets and,
         of course, love and companionship. St. Francis is responsible for any veterinary care
         needed while the animal is in foster care. Foster families are expected to follow our
         foster guidelines while cats and kittens are in their care.
+      </p>
+      <p>
+        Fosters are required to maintain animals' medical history in our database while in their
+        care. Also, any pertinent information regarding the temperament and personality of the
+        animals should be recorded, as this will assist in placing them in permanent homes.
       </p>
     </div>
   </StandardLayout>
