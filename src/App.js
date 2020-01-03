@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'
 import Mission from './components/Mission';
+import Volunteer from './components/Volunteer'
 import HelpOurCause from './components/HelpOurCause'
 import Cats from './components/Cats';
 import Dogs from './components/Dogs';
@@ -29,6 +30,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/adoptions" component={Adopt} />
       <Route exact path="/mission" component={Mission} />
+      <Route exact path="/volunteer" component={Volunteer} />
       <Route exact path="/help-our-cause" component={HelpOurCause} />
       <Route exact path="/cats" component={Cats} />
       <Route exact path="/dogs" component={Dogs} />
