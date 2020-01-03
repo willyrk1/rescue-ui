@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "58df9589d458f7e6b314dc3396761591",
+    "revision": "6005643cb8d320fa589dc467a331a625",
     "url": "/rescue-ui/index.html"
   },
   {
-    "revision": "911b34daef1ab829d65b",
+    "revision": "d69dd6c8fbdbb61587e1",
     "url": "/rescue-ui/static/css/main.a1f41095.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rescue-ui/static/js/2.ec1927e9.chunk.js"
   },
   {
-    "revision": "911b34daef1ab829d65b",
-    "url": "/rescue-ui/static/js/main.b95b4472.chunk.js"
+    "revision": "d69dd6c8fbdbb61587e1",
+    "url": "/rescue-ui/static/js/main.786bcd3a.chunk.js"
   },
   {
     "revision": "a8f1d6e8b16d5448aed0",
@@ -60,6 +60,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rescue-ui/static/media/barncatHIGHREScrop.27339bf5.jpg"
   },
   {
+    "revision": "1c871b90d6dd300b216bde693559a146",
+    "url": "/rescue-ui/static/media/basketkittens.1c871b90.jpg"
+  },
+  {
     "revision": "eac33dc9ceb4c80490cf2df90e9f2fdd",
     "url": "/rescue-ui/static/media/bisselpetfoundation.eac33dc9.jpg"
   },
@@ -82,10 +86,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "24576999ccf242ab693b09f6aa9ba922",
     "url": "/rescue-ui/static/media/girlhuggingdog.24576999.jpg"
-  },
-  {
-    "revision": "d26ae0c81929bb57c9bf64c314a54a5b",
-    "url": "/rescue-ui/static/media/handholdingkittenCrop.d26ae0c8.jpg"
   },
   {
     "revision": "2fce555fd9230b341bad47465f926ac6",
