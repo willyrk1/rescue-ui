@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "80420bb8b271f25fcd1160bea8dfae5d",
+    "revision": "58df9589d458f7e6b314dc3396761591",
     "url": "/rescue-ui/index.html"
   },
   {
-    "revision": "4ecdd8c1cc0524ab7fba",
-    "url": "/rescue-ui/static/css/main.1dae03e4.chunk.css"
+    "revision": "911b34daef1ab829d65b",
+    "url": "/rescue-ui/static/css/main.a1f41095.chunk.css"
   },
   {
-    "revision": "b1e7b9ab26fa211cb063",
-    "url": "/rescue-ui/static/js/2.8a20e362.chunk.js"
+    "revision": "9bccd2c9ea38687c1832",
+    "url": "/rescue-ui/static/js/2.ec1927e9.chunk.js"
   },
   {
-    "revision": "4ecdd8c1cc0524ab7fba",
-    "url": "/rescue-ui/static/js/main.750dd9bf.chunk.js"
+    "revision": "911b34daef1ab829d65b",
+    "url": "/rescue-ui/static/js/main.b95b4472.chunk.js"
   },
   {
     "revision": "a8f1d6e8b16d5448aed0",
@@ -82,6 +82,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "24576999ccf242ab693b09f6aa9ba922",
     "url": "/rescue-ui/static/media/girlhuggingdog.24576999.jpg"
+  },
+  {
+    "revision": "d26ae0c81929bb57c9bf64c314a54a5b",
+    "url": "/rescue-ui/static/media/handholdingkittenCrop.d26ae0c8.jpg"
   },
   {
     "revision": "2fce555fd9230b341bad47465f926ac6",
