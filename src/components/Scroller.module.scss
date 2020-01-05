@@ -1,0 +1,21 @@
+@import '../assets/stylesheets/style.scss';
+
+.tiles {
+  position: relative;
+  overflow: hidden;
+
+  > div {
+    position: absolute;
+    transition: all 1s;
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+}
+
+.arrow button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
