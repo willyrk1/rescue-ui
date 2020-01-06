@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6005643cb8d320fa589dc467a331a625",
+    "revision": "bbdb841f0feeb2b81b52481f492a0719",
     "url": "/rescue-ui/index.html"
   },
   {
-    "revision": "d69dd6c8fbdbb61587e1",
-    "url": "/rescue-ui/static/css/main.a1f41095.chunk.css"
+    "revision": "60284ccabb6508fa228f",
+    "url": "/rescue-ui/static/css/main.f031be5d.chunk.css"
   },
   {
-    "revision": "9bccd2c9ea38687c1832",
-    "url": "/rescue-ui/static/js/2.ec1927e9.chunk.js"
+    "revision": "eef0a54c078ccadcf94a",
+    "url": "/rescue-ui/static/js/2.6c3982a7.chunk.js"
   },
   {
-    "revision": "d69dd6c8fbdbb61587e1",
-    "url": "/rescue-ui/static/js/main.786bcd3a.chunk.js"
+    "revision": "60284ccabb6508fa228f",
+    "url": "/rescue-ui/static/js/main.5da170bb.chunk.js"
   },
   {
     "revision": "a8f1d6e8b16d5448aed0",
@@ -80,12 +80,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rescue-ui/static/media/donateCat.eb17eefe.jpg"
   },
   {
+    "revision": "6c43788e3c0e7752dfc6383b61672966",
+    "url": "/rescue-ui/static/media/fiv.6c43788e.jpg"
+  },
+  {
     "revision": "a63520b51119167017582f98486f3a0c",
     "url": "/rescue-ui/static/media/footer_bg.a63520b5.png"
   },
   {
     "revision": "24576999ccf242ab693b09f6aa9ba922",
     "url": "/rescue-ui/static/media/girlhuggingdog.24576999.jpg"
+  },
+  {
+    "revision": "a9477f624372f9055ee6f20f34ec3dbe",
+    "url": "/rescue-ui/static/media/guardianangel.a9477f62.jpg"
   },
   {
     "revision": "2fce555fd9230b341bad47465f926ac6",
