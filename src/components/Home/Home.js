@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 import Layout from '../Layout'
-import Hero from './Hero'
+import Banner from './Banner'
 import DonationExamples from '../DonationExamples'
 import HomeLinks from './HomeLinks'
 import FeaturedPets from './FeaturedPets'
@@ -13,7 +13,7 @@ const cx = classNames.bind(styles)
 const Home = () =>
   <Layout home>
     <div className={cx('home')}>
-      <Hero />
+      <Banner />
       <DonationExamples styles={donationStyles}/>
       <HomeLinks />
       <FeaturedPets />

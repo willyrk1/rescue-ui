@@ -6,9 +6,9 @@ import heroImage from '../../assets/images/hero.png'
 const cx = classNames.bind(styles)
 
 const Hero = () =>
-  <section className={cx('banner')}>
+  <div className={cx('hero')}>
     <img src={heroImage} />
-    <div>
+    <div className={cx('text')}>
       <h1>
         CUDDLE<br/>
         <span className={cx('alt-color')}>PARTY</span>
@@ -20,7 +20,7 @@ const Hero = () =>
       </p>
       <a className={cx('btn')} href='#'>Foster</a>
     </div>
-  </section>
+  </div>
 
 
 export default Hero;

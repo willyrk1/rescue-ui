@@ -1,7 +1,8 @@
 @import '../../assets/stylesheets/style.scss';
 
-.banner {
+.hero {
   position: relative;
+  width: 100%;
 
   .alt-color {
     color: $color-secondary;
@@ -12,10 +13,10 @@
     filter: brightness(75%);
   }
 
-  > div {
+  div.text {
     position: absolute;
-    top: 40%;
-    left: 5rem;
+    top: 44%;
+    left: 8rem;
     line-height: 1;
     width: 45rem;
   }

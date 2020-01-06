@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import classNames from 'classnames/bind'
 import Scroller from './Scroller'
 import styles from './Sponsors.module.scss'
