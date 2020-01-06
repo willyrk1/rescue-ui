@@ -6,8 +6,8 @@
  * author: Steven Pothoven (steven@pothoven.net)
  ********************************************************************************/
 
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'
 import Mission from './components/Mission';
@@ -24,8 +24,19 @@ import Donate from './components/Donate';
 import UnderConstruction from './components/UnderConstruction';
 import './App.scss';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 const App = () => (
   <Router basename='/rescue-ui'>
+    <ScrollToTop />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/adoptions" component={Adopt} />

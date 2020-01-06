@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
+import DonateButton from './DonateButton'
+import SubscribeForm from './SubscribeForm'
 import styles from './Donate.module.scss';
 
 const cx = classNames.bind(styles)
@@ -26,7 +28,7 @@ const Donate = () =>
         intended to be $50 dollars being entered as $0.50 cents. Thank You!!!
       </p>
 
-      <a className={cx('btn')}>Donate</a>
+      <DonateButton />
 
       <h2>Become a St. Francis Society Guardian Angel (monthly donor)</h2>
       <p>
@@ -49,7 +51,9 @@ const Donate = () =>
         click on the "Subscribe" button. Thank You!!!
       </p>
 
-      <a className={cx('btn')}>Subscribe</a>
+      <p className={cx('levels')}>Donation Levels</p>
+
+      <SubscribeForm className={cx('subscribe')} />
 
       <h3>If you prefer to send a check, mail it to:</h3>
       <p>

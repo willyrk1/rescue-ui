@@ -65,7 +65,7 @@ const HelpOurCause = () => {
               <p>
                 Foster To Save Lives
               </p>
-              <a className={cx('btn')} href='#'>More Info</a>
+              <Link to='/volunteer' className={cx('btn')}>More Info</Link>
             </div>
             <div className={cx('panel')}>
               <p>
@@ -120,13 +120,9 @@ const HelpOurCause = () => {
             </div>
             <div className={cx('panel')}>
               <p>
-                Create A Facebook Fundraiser
+                Sponsor A Forever Foster
               </p>
-              <a
-                className={cx('btn')}
-                href='https://www.facebook.com/fund/StFrancisSocietyAnimalRescue/'
-                target='_blank'
-              >
+              <a className={cx('btn')} href='#'>
                 More Info
               </a>
             </div>

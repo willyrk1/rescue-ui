@@ -7,6 +7,7 @@
  ********************************************************************************/
 
 import React from 'react';
+import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import instagramLogo from '../assets/images/instagram.png'
 import twitterLogo from '../assets/images/twitter.png'
@@ -30,10 +31,18 @@ const Footer = ({ legal }) => (
         <h1>Follow Us</h1>
         <hr/>
         <div className={cx('image-list')}>
-          <img src={instagramLogo} />
-          <img src={twitterLogo} />
-          <img src={youTubeLogo} />
-          <img src={facebookLogo} />
+          <a href='https://www.instagram.com/stfrancisrescuetampa' target='_blank'>
+            <img src={instagramLogo} alt='Instagram' />
+          </a>
+          <a href='http://twitter.com/StFrancisSoc' target='_blank'>
+            <img src={twitterLogo} alt='Twitter' />
+          </a>
+          <a href='http://www.youtube.com/user/StFrancisSociety' target='_blank'>
+            <img src={youTubeLogo} alt='YouTube' />
+          </a>
+          <a href='https://facebook.com/StFrancisSocietyAnimalRescue' target='_blank'>
+            <img src={facebookLogo} alt='Facebook' />
+          </a>
         </div>
       </div>
     </div>
@@ -47,8 +56,10 @@ const Footer = ({ legal }) => (
         </p>
       }
       <p>
-        &copy; {new Date().getFullYear()} St. Francis Society Animal Rescue. Contact | Privacy Policy
-        | St. Francis Society Animal Rescue PO Box 261614 Tampa, FL 33685-1614
+        &copy; {new Date().getFullYear()} St. Francis Society Animal Rescue.&nbsp;
+        <Link to='/contact'>Contact</Link> |&nbsp;
+        <Link to='/privacy'>Privacy Policy</Link>
+        &nbsp;| St. Francis Society Animal Rescue PO Box 261614 Tampa, FL 33685-1614
       </p>
     </div>
   </div>
