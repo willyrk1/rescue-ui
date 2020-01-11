@@ -28,15 +28,22 @@
 		p {
 			font-size: 1.8rem;
 		}
-	
+
 		input {
-			background-color: rgba(255, 255, 255, 0.5);
 			border: 0;
-			margin: 2rem 0;
-			padding: 1rem;
-			width: 30rem;
-			color: #fff;
-			font-size: 1.8rem;
+	
+			&[type='text'] {
+				background-color: rgba(255, 255, 255, 0.5);
+				margin: 2rem 0;
+				padding: 1rem;
+				width: 30rem;
+				color: #fff;
+				font-size: 1.8rem;
+
+				&::placeholder {
+					color: $color-secondary;
+				}
+			}
 		}
 
 		.image-list {

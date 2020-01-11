@@ -5,6 +5,7 @@ import Banner from './Banner'
 import DonationExamples from '../DonationExamples'
 import HomeLinks from './HomeLinks'
 import FeaturedPets from './FeaturedPets'
+import NewsEvents from './NewsEvents'
 import styles from './Home.module.scss';
 import donationStyles from './DonateRibbon.module.scss';
 
@@ -17,6 +18,7 @@ const Home = () =>
       <DonationExamples styles={donationStyles}/>
       <HomeLinks />
       <FeaturedPets />
+      <NewsEvents />
     </div>
   </Layout>
 

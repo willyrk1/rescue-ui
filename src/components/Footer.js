@@ -24,8 +24,22 @@ const Footer = ({ legal }) => (
         <h1>Newsletter</h1>
         <hr/>
         <p>Follow our newsletter and stay in the meow!</p>
-        <input type='text' />
-        <div><a className={cx('btn')} href='#'>SIGN UP</a></div>
+        <form
+          action='http://oi.vresp.com?fid=37ceac6197'
+          method='post'
+          onSubmit={() => {
+            window.open(
+              "http://www.verticalresponse.com",
+              "vr_optin_popup",
+              "scrollbars=yes,width=600,height=450"
+            );
+            return true;
+          }}
+          target='vr_optin_popup'
+        >
+          <input type='text' placeholder='Enter email' name='email_address' />
+          <div><input className={cx('btn')} type='submit' value='SIGN UP' /></div>
+        </form>
       </div>
       <div>
         <h1>Follow Us</h1>
@@ -34,7 +48,7 @@ const Footer = ({ legal }) => (
           <a href='https://www.instagram.com/stfrancisrescuetampa' target='_blank'>
             <img src={instagramLogo} alt='Instagram' />
           </a>
-          <a href='http://twitter.com/StFrancisSoc' target='_blank'>
+          <a href='https://twitter.com/StFranSociety' target='_blank'>
             <img src={twitterLogo} alt='Twitter' />
           </a>
           <a href='http://www.youtube.com/user/StFrancisSociety' target='_blank'>
