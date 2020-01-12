@@ -18,7 +18,10 @@ const Adopt = () =>
         Thinking about adopting a pet?  Thank you for considering St. Francis Society!  We are
         an-all volunteer organization and most of our animals reside in private foster homes.  We
         do have some cats available at adoption centers throughout the Tampa Bay area which are noted as
-        such on our <Link to='cat-adoptions'>Cat Adoption</Link> page.
+        such on our <Link to='/adoption-locations'>Adoption Locations</Link> page.
+      </p>
+      <p>
+        Things to consider before you adopt........
       </p>
       <p>
         We have guidelines for an adoption approval and reserve the right to deny any adoption
@@ -30,16 +33,16 @@ const Adopt = () =>
       </p>
       <div className={cx('links')}>
         <div>
-          <Link to='cat-adoptions'><img src={catPhoto}/></Link>
-          <Link to='cat-adoptions' className={cx('caption')}>Cat Adoptions</Link>
+          <Link to='/cat-adoptions'><img src={catPhoto}/></Link>
+          <Link to='/cat-adoptions' className={cx('caption')}>Cat Adoptions</Link>
         </div>
         <div>
-          <Link to='dog-adoptions'><img src={dogPhoto}/></Link>
-          <Link to='dog-adoptions' className={cx('caption')}>Dog Adoptions</Link>
+          <Link to='/dog-adoptions'><img src={dogPhoto}/></Link>
+          <Link to='/dog-adoptions' className={cx('caption')}>Dog Adoptions</Link>
         </div>
         <div>
-          <Link to='working-cats'><img src={workingCatPhoto}/></Link>
-          <Link to='working-cats' className={cx('caption')}>Working Cat Program</Link>
+          <Link to='/working-cats'><img src={workingCatPhoto}/></Link>
+          <Link to='/working-cats' className={cx('caption')}>Working Cat Program</Link>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ import HelpOurCause from './components/HelpOurCause'
 import Cats from './components/Cats';
 import Dogs from './components/Dogs';
 import Contact from './components/Contact';
-import Events from './components/Events';
+import AdoptionLocations from './components/AdoptionLocations';
 import WorkingCats from './components/WorkingCats';
 import Page from './components/Page';
 import SuccessStories from './components/SuccessStories';
@@ -47,7 +47,7 @@ const App = () => (
       <Route exact path="/dogs" component={Dogs} />
       <Route exact path="/success-stories" component={SuccessStories} />
       <Route exact path="/contact" component={Contact} />
-      <Route exact path="/events" component={Events} />
+      <Route exact path="/adoption-locations" component={AdoptionLocations} />
       <Route exact path="/working-cats" component={WorkingCats} />
       <Route exact path="/donate" component={Donate} />
       <Route path="/:pagename" component={Page} />

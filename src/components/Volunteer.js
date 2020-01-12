@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
 import fosterKitten from '../assets/images/basketkittens.jpg'
+import volunteerPhoto from '../assets/images/volunteers.jpg'
 import styles from './Volunteer.module.scss';
 
 const cx = classNames.bind(styles)
@@ -11,7 +12,7 @@ const Volunteer = () =>
     <div className={cx('volunteer')}>
       <h1>Volunteer</h1>
       <hr/>
-      <img src='https://via.placeholder.com/340x220?text=Placeholder' className={cx('right')} />
+      <img src={volunteerPhoto} className={cx('right')} />
       <p>
         Thank you for your interest in becoming a volunteer at St. Francis Society! We truly
         appreciate you for wanting to donate some of your valuable free time to help our animals.
