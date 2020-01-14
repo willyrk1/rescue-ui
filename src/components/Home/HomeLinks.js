@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind'
 import styles from './HomeLinks.module.scss';
 
@@ -12,7 +13,7 @@ const HomeLinks = () =>
       <p>
         Open your heart and your home. Someone special is waiting for you.
       </p>
-      <a className={cx('btn')} href='#'>View All</a>
+      <Link to='/adoptions' className={cx('btn')}>More Info</Link>
     </div>
     <div>
       <h1>Foster</h1>
@@ -20,7 +21,7 @@ const HomeLinks = () =>
       <p>
         Help them grow, learn and heal.  Fostering saves lives.
       </p>
-      <a className={cx('btn')} href='#'>Learn How</a>
+      <Link to='/volunteer' className={cx('btn')}>Learn How</Link>
     </div>
     <div>
       <h1>Donate</h1>
@@ -28,7 +29,7 @@ const HomeLinks = () =>
       <p>
         We are 100% volunteer-run.  All donations go directly to the animals in our care.
       </p>
-      <a className={cx('btn')} href='#'>More Info</a>
+      <Link to='/donate' className={cx('btn')} href='#'>More Info</Link>
     </div>
   </div>
 

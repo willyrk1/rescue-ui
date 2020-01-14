@@ -13,9 +13,9 @@
 	align-items: center;
 	background-color: #fff;
 
-	// @media (max-width: $content-width) {
-	// 	width: 100%;
-	// }
+	@media (min-width: $content-width) {
+		width: $content-width;
+	}
 }
 
 div.content {
