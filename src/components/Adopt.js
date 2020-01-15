@@ -6,7 +6,7 @@ import styles from './Adopt.module.scss';
 import catPhoto from '../assets/images/boywithcathighres.jpg'
 import dogPhoto from '../assets/images/girlhuggingdog.jpg'
 import workingCatPhoto from '../assets/images/barncatHIGHREScrop.jpg'
-import locations from '../assets/images/locations.jpg'
+import locations from '../assets/images/locations.png'
 
 const cx = classNames.bind(styles)
 
