@@ -33,8 +33,11 @@ const FeaturedPets = () => {
       {pet &&
         <>
           <div className={cx('pet-outer')}>
-            <div className={cx('pet-info')}>
+            <div className={cx('pet-image')}>
               <h2>{pet.name}</h2>
+              <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} />
+            </div>
+            <div className={cx('pet-info')}>
               <ul>
                 <li>
                   <label htmlFor='breed'>Breed</label>
@@ -65,9 +68,6 @@ const FeaturedPets = () => {
                   <span id='goodWithChildren'>{pet.good_with_children}</span>
                 </li>
               </ul>
-            </div>
-            <div className={cx('pet-image')}>
-              <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} />
             </div>
           </div>
           <div className={cx("view-buttons")}>

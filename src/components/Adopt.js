@@ -34,12 +34,12 @@ const Adopt = () =>
       </p>
       <div className={cx('links')}>
         <div>
-          <Link to='/cat-adoptions'><img src={catPhoto}/></Link>
-          <Link to='/cat-adoptions' className={cx('caption')}>Cat Adoptions</Link>
+          <Link to='/cats'><img src={catPhoto}/></Link>
+          <Link to='/cats' className={cx('caption')}>Cat Adoptions</Link>
         </div>
         <div>
-          <Link to='/dog-adoptions'><img src={dogPhoto}/></Link>
-          <Link to='/dog-adoptions' className={cx('caption')}>Dog Adoptions</Link>
+          <Link to='/dogs'><img src={dogPhoto}/></Link>
+          <Link to='/dogs' className={cx('caption')}>Dog Adoptions</Link>
         </div>
         <div>
           <Link to='/adoption-locations'><img src={locations}/></Link>
