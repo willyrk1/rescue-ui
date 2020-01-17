@@ -3,9 +3,9 @@ import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue'
 import StandardLayout from './StandardLayout'
 import AnimalCard from './AnimalCard'
-// import styles from './AdoptableList.module.scss'
+import styles from './AdoptableLists.module.scss'
 
-// const cx = classNames.bind(styles)
+const cx = classNames.bind(styles)
 
 const AdoptableList = ({ getPets, lists, children }) => {
   const [pets, setPets] = useState()
@@ -25,9 +25,9 @@ const AdoptableList = ({ getPets, lists, children }) => {
       {pets && lists.map(({ property, title }) =>
         pets[property] && pets[property].length &&
           <React.Fragment key={property}>
-            <h2>{title}</h2>
-            {pets[property].map(animal =>
-              <AnimalCard animal={animal} key={animal.id} />
+            <h2 class={cx('adoptable-list')}>{title}</h2>
+            {pets[property].slice(0, 20).map(pet =>
+              <AnimalCard pet={pet} key={pet.id} />
             )}
           </React.Fragment>
       )}
