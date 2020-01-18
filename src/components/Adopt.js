@@ -22,15 +22,15 @@ const Adopt = () =>
         such on our <Link to='/adoption-locations'>Adoption Locations</Link> page.
       </p>
       <p>
-        Things to consider before you adopt........
-      </p>
-      <p>
         We have guidelines for an adoption approval and reserve the right to deny any adoption
         that we see as unsuitable for the animal and/or adopter. You must be at least 18 years
         of age to adopt.  If you have questions about an animal you see online, you may contact
         the foster directly.  If you are ready to adopt and want to fill out an application for
         a particular animal, please click the, "Want to Adopt Me?" button and someone will
         contact you shortly.  We look forward to helping you find your fur-ever friend!
+      </p>
+      <p>
+        <Link to='/before-you-adopt'>Things to consider before you adopt</Link>
       </p>
       <div className={cx('links')}>
         <div>

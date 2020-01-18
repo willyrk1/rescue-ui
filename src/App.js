@@ -10,6 +10,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'
+import BeforeYouAdopt from './components/BeforeYouAdopt'
 import Mission from './components/Mission';
 import Volunteer from './components/Volunteer'
 import HelpOurCause from './components/HelpOurCause'
@@ -40,6 +41,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/adoptions" component={Adopt} />
+      <Route exact path="/before-you-adopt" component={BeforeYouAdopt} />
       <Route exact path="/mission" component={Mission} />
       <Route exact path="/volunteer" component={Volunteer} />
       <Route exact path="/help-our-cause" component={HelpOurCause} />

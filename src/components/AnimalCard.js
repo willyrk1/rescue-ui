@@ -56,7 +56,7 @@ const AnimalCard = ({ pet }) =>
       </div>
     </div>  
 
-    <p><strong>{pet.story}</strong></p>
+    <p>{pet.story}</p>
 
 
 

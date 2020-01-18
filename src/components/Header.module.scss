@@ -49,11 +49,16 @@
 			}
 		}
 
-		ul li {
-			margin-left: 0;
+		ul li, &.home ul li {
+			margin: 0 0 0.9rem 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 
 			a {
-				color: $color-primary;
+				color: #000;
+				font-weight: 500;
 			}
 		}
 	}
