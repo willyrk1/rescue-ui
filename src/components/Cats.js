@@ -6,16 +6,12 @@ const Cats = () =>
     getPets={api => api.getCats()}
     lists={[
       {
-        property: 'specialNeedsAnimals',
-        title: 'Special Needs Cats',
-      },
-      {
         property: 'adoptionCenterAnimals',
-        title: 'Adoption Center Cats',
+        title: 'Cats at Adoption Centers',
       },
       {
         property: 'fosteredAnimals',
-        title: 'Fostered Cats',
+        title: 'Cats in Foster Homes',
       },
     ]}
   >

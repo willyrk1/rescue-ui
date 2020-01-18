@@ -17,46 +17,44 @@ const AnimalCard = ({ pet }) =>
   <div className={cx('animal-card')}>
     <div className={cx('pet-card')}>
       <div className={cx('pet-image')}>
-        <h3>{pet.name}</h3>
         <img src={`${PROTOCOL}://${HOSTNAME}${
           pet.images.find(({ primary }) => primary).public_filename
         }`} />
-      </div>
-      <div className={cx('pet-info')}>
-        <ul>
-          <li>
-            <label htmlFor='breed'>Breed</label>
-            <span id='breed'>{pet.dominant_breed.name}</span>
-          </li>
-          <li>
-            <label htmlFor='gender'>Gender</label>
-            <span id='gender'>{pet.sex}</span>
-          </li>
-          <li>
-            <label htmlFor='color'>Color</label>
-            <span id='color'>{pet.animal_color.name}</span>
-          </li>
-          <li>
-            <label htmlFor='dob'>Date of birth</label>
-            <span id='dob'>{new Date(pet.date_of_birth).toLocaleDateString("en-US")}</span>
-          </li>
-          <li>
-            <label htmlFor='goodWithCats'>Good with cats</label>
-            <span id='goodWithCats'>{pet.good_with_cats}</span>
-          </li>
-          <li>
-            <label htmlFor='goodWithDogs'>Good with dogs</label>
-            <span id='goodWithDogs'>{pet.good_with_dogs}</span>
-          </li>
-          <li>
-            <label htmlFor='goodWithChildren'>Good with children</label>
-            <span id='goodWithChildren'>{pet.good_with_children}</span>
-          </li>
-        </ul>
+        <div class={cx('description')}>
+          <h3>{pet.name}</h3>
+          <ul>
+            <li>
+              <label htmlFor='breed'>Breed</label>
+              <span id='breed'>{pet.dominant_breed.name}</span>
+            </li>
+            <li>
+              <label htmlFor='gender'>Gender</label>
+              <span id='gender'>{pet.sex}</span>
+            </li>
+            <li>
+              <label htmlFor='color'>Color</label>
+              <span id='color'>{pet.animal_color.name}</span>
+            </li>
+            <li>
+              <label htmlFor='dob'>Date of birth</label>
+              <span id='dob'>{new Date(pet.date_of_birth).toLocaleDateString("en-US")}</span>
+            </li>
+            {/* <li>
+              <label htmlFor='goodWithCats'>Good with cats</label>
+              <span id='goodWithCats'>{pet.good_with_cats}</span>
+            </li>
+            <li>
+              <label htmlFor='goodWithDogs'>Good with dogs</label>
+              <span id='goodWithDogs'>{pet.good_with_dogs}</span>
+            </li>
+            <li>
+              <label htmlFor='goodWithChildren'>Good with children</label>
+              <span id='goodWithChildren'>{pet.good_with_children}</span>
+            </li> */}
+          </ul>
+        </div>
       </div>
     </div>  
-
-    <p>{pet.story}</p>
 
 
 

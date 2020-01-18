@@ -1,7 +1,16 @@
 @import '../assets/stylesheets/style.scss';
 
-h2.adoptable-list {
-	font-size: 3.5rem;
-	color: $color-primary;
-	margin-bottom: 1rem;
+.adoptable-list {
+	h2 {
+		font-size: 3.5rem;
+		color: $color-primary;
+		margin-bottom: 1rem;
+	}
+
+	> div {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: flex-end;
+	}
 }

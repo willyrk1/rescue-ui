@@ -6,10 +6,6 @@ const Dogs = () =>
     getPets={api => api.getDogs()}
     lists={[
       {
-        property: 'adoptionCenterAnimals',
-        title: 'Adoption Center Dogs',
-      },
-      {
         property: 'fosteredAnimals',
         title: 'Fostered Dogs',
       },
