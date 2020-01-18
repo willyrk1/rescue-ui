@@ -38,7 +38,7 @@ const AnimalCard = ({ pet }) =>
           </li>
           <li>
             <label htmlFor='dob'>Date of birth</label>
-            <span id='dob'>{pet.date_of_birth}</span>
+            <span id='dob'>{new Date(pet.date_of_birth).toLocaleDateString("en-US")}</span>
           </li>
           <li>
             <label htmlFor='goodWithCats'>Good with cats</label>
@@ -70,18 +70,6 @@ const AnimalCard = ({ pet }) =>
 
       <table className='profile'>
         <tbody>
-        <tr>
-          <th>Date of Birth:</th>
-          <td>{pet.date_of_birth}</td>
-        </tr>
-        <tr>
-          <th>Sex:</th>
-          <td>{ pet.sex }</td>
-        </tr>
-        <tr>
-          <th>Color:</th>
-          <td>{ pet.animal_color.name }</td>
-        </tr>
         <tr>
           <th>Breed:</th>
           <td>{ pet.dominant_breed.name }
