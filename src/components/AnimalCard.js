@@ -59,6 +59,7 @@ const AnimalCard = ({ pet }) =>
             <span id='goodWithChildren'>{pet.good_with_children}</span>
           </li> */}
         </ul>
+        <a href='#' class={cx('details-link')}>Read My Profile</a>
       </div>
     </div>  
 
