@@ -13,46 +13,52 @@ import styles from './AnimalCard.module.scss'
 
 const cx = classNames.bind(styles)
 
+const getAge = date => {
+  const daysAgo = (new Date() - new Date(date)) / (1000 * 60 * 60 * 24)
+  const years = Math.floor(daysAgo / 365)
+  const yearsString = (years === 1) ? '1 Year' : years ? `${years} Years` : ''
+  const comma = years ? ', ' : ''
+  const months = Math.floor((daysAgo % 365) / 30)
+  const monthString = (months === 1) ? `${comma}1 Month` : months ? `${comma}${months} Months` : ''
+  return `${yearsString}${monthString}`
+}
+
 const AnimalCard = ({ pet }) =>
   <div className={cx('animal-card')}>
     <div className={cx('pet-card')}>
-      <div className={cx('pet-image')}>
-        <img src={`${PROTOCOL}://${HOSTNAME}${
-          pet.images.find(({ primary }) => primary).public_filename
-        }`} />
-        <div class={cx('description')}>
-          <h3>{pet.name}</h3>
-          <ul>
-            <li>
-              <label htmlFor='breed'>Breed</label>
-              <span id='breed'>{pet.dominant_breed.name}</span>
-            </li>
-            <li>
-              <label htmlFor='gender'>Gender</label>
-              <span id='gender'>{pet.sex}</span>
-            </li>
-            <li>
-              <label htmlFor='color'>Color</label>
-              <span id='color'>{pet.animal_color.name}</span>
-            </li>
-            <li>
-              <label htmlFor='dob'>Date of birth</label>
-              <span id='dob'>{new Date(pet.date_of_birth).toLocaleDateString("en-US")}</span>
-            </li>
-            {/* <li>
-              <label htmlFor='goodWithCats'>Good with cats</label>
-              <span id='goodWithCats'>{pet.good_with_cats}</span>
-            </li>
-            <li>
-              <label htmlFor='goodWithDogs'>Good with dogs</label>
-              <span id='goodWithDogs'>{pet.good_with_dogs}</span>
-            </li>
-            <li>
-              <label htmlFor='goodWithChildren'>Good with children</label>
-              <span id='goodWithChildren'>{pet.good_with_children}</span>
-            </li> */}
-          </ul>
-        </div>
+      <img src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`} />
+      <div class={cx('description')}>
+        <h3>{pet.name}</h3>
+        <ul>
+          <li>
+            <label htmlFor='breed'>Breed</label>
+            <span id='breed'>{pet.dominant_breed.name}</span>
+          </li>
+          <li>
+            <label htmlFor='gender'>Gender</label>
+            <span id='gender'>{pet.sex}</span>
+          </li>
+          <li>
+            <label htmlFor='color'>Color</label>
+            <span id='color'>{pet.animal_color.name}</span>
+          </li>
+          <li>
+            <label htmlFor='dob'>Date of birth</label>
+            <span id='dob'>{getAge(pet.date_of_birth)}</span>
+          </li>
+          {/* <li>
+            <label htmlFor='goodWithCats'>Good with cats</label>
+            <span id='goodWithCats'>{pet.good_with_cats}</span>
+          </li>
+          <li>
+            <label htmlFor='goodWithDogs'>Good with dogs</label>
+            <span id='goodWithDogs'>{pet.good_with_dogs}</span>
+          </li>
+          <li>
+            <label htmlFor='goodWithChildren'>Good with children</label>
+            <span id='goodWithChildren'>{pet.good_with_children}</span>
+          </li> */}
+        </ul>
       </div>
     </div>  
 
