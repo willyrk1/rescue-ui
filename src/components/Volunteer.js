@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
 import fosterKitten from '../assets/images/basketkittens.jpg'
@@ -54,7 +55,7 @@ const Volunteer = () =>
         care. Also, any pertinent information regarding the temperament and personality of the
         animals should be recorded, as this will assist in placing them in permanent homes.
       </p>
-      <p><a href='#'>Submit a volunteer application</a></p>
+      <p><Link to='/volunteer-form'>Submit a volunteer application</Link></p>
     </div>
   </StandardLayout>
 

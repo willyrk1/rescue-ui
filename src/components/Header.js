@@ -34,8 +34,8 @@ const Header = ({ home }) =>
           <li><Link to='/adoption-locations'>Adoption Locations</Link></li>
           <li><Link to='/cats'>Adoptable Cats</Link></li>
           <li><Link to='/dogs'>Adoptable Dogs</Link></li>
-          <li><Link to='/working-cats'>Working Cats</Link></li>
           <li><a href='#'>Before You Adopt</a></li>
+          <li><Link to='/working-cats'>Working Cats</Link></li>
         </ul>
       </Popup>
 

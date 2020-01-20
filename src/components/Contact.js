@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind'
-import Select from 'react-select'
-import StFrancisRescue from '../apis/StFrancisRescue';
 import states from '../config/states'
 import StandardLayout from './StandardLayout'
+import StandardForm from './StandardForm'
 import styles from './Contact.module.scss';
 
 const cx = classNames.bind(styles)
@@ -31,12 +30,12 @@ const Contact = () =>
         </p>
         <p>
           If you are inquiring about volunteering for St Francis and are at least 18 years old,
-          fill out a <Link to="/volunteer">Volunteer Form</Link>.
+          fill out a <Link to='/volunteer'>Volunteer Form</Link>.
         </p>
       </div>
 
       <h2>Contact Form</h2>
-      <form action='http://stfrancisrescue.org/contact_forms'>
+      <StandardForm action='http://stfrancisrescue.org/contact_forms' className={cx('form')}>
         <ul>
           <li>
             <label htmlFor='firstName'>First Name *</label>
@@ -60,7 +59,7 @@ const Contact = () =>
           </li>
           <li>
             <label htmlFor='state'>State</label>
-            <Select options={states} className={cx('input-select')} />
+            <StandardForm.Select options={states} />
           </li>
           <li>
             <label htmlFor='zip'>ZIP</label>
@@ -72,7 +71,7 @@ const Contact = () =>
           </li>
           <li>
             <label htmlFor='subscribe'>Would you like to subscribe to our e-mail newsletter?</label>
-            <div className={cx('input')}>
+            <StandardForm.Input>
               <label for='subcribe-yes'>
                 <input type='radio' id='subcribe-yes' name='subscribe' />
                 Yes, I would
@@ -81,24 +80,24 @@ const Contact = () =>
                 <input type='radio' id='subcribe-no' name='subscribe' />
                 No, I would not
               </label>
-            </div>
+            </StandardForm.Input>
           </li>
           <li>
             <label htmlFor='regarding'>I am contacting you regarding a</label>
-            <div className={cx('input')}>
-              <label for='regarding-cat'>
+            <StandardForm.Input>
+              <label htmlFor='regarding-cat'>
                 <input type='radio' id='regarding-cat' name='regarding' />
                 Cat
               </label>
-              <label for='regarding-dog'>
+              <label htmlFor='regarding-dog'>
                 <input type='radio' id='regarding-dog' name='regarding' />
                 Dog
               </label>
-              <label for='regarding-other'>
+              <label htmlFor='regarding-other'>
                 <input type='radio' id='regarding-other' name='regarding' />
                 Other
               </label>
-            </div>
+            </StandardForm.Input>
           </li>
           <li>
             <label htmlFor='comment'>Your comments or questions</label>
@@ -107,7 +106,7 @@ const Contact = () =>
         </ul>
 
         <a className={cx('btn')} href='#'>Submit Contact Form</a>
-      </form>
+      </StandardForm>
     </div>
   </StandardLayout>
 

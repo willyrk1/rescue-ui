@@ -1,0 +1,15 @@
+@import '../assets/stylesheets/style.scss';
+
+.contact {
+	h2 {
+		font-size: 3.5rem;
+		color: $color-primary;
+		margin-top: 2rem;
+	}
+
+	.form {
+		background-image: url('../assets/images/catdoggreen.png');
+		background-repeat: no-repeat;
+		background-position: 8rem 19rem;
+	}
+}

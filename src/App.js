@@ -13,6 +13,7 @@ import Adopt from './components/Adopt'
 import BeforeYouAdopt from './components/BeforeYouAdopt'
 import Mission from './components/Mission';
 import Volunteer from './components/Volunteer'
+import VolunteerForm from './components/VolunteerForm'
 import HelpOurCause from './components/HelpOurCause'
 import Cats from './components/Cats';
 import Dogs from './components/Dogs';
@@ -44,6 +45,7 @@ const App = () => (
       <Route exact path="/before-you-adopt" component={BeforeYouAdopt} />
       <Route exact path="/mission" component={Mission} />
       <Route exact path="/volunteer" component={Volunteer} />
+      <Route exact path="/volunteer-form" component={VolunteerForm} />
       <Route exact path="/help-our-cause" component={HelpOurCause} />
       <Route exact path="/cats" component={Cats} />
       <Route exact path="/dogs" component={Dogs} />
