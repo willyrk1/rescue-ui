@@ -24,7 +24,7 @@ const AdoptableList = ({ getPets, lists, children }) => {
 
       {pets && lists.map(({ property, title }) =>
         pets[property] && pets[property].length &&
-          <div class={cx('adoptable-list')} key={property}>
+          <div className={cx('adoptable-list')} key={property}>
             <h2>{title}</h2>
             <div>
               {pets[property].slice(0, 20).map(pet =>

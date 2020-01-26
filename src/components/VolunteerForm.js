@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind'
 import states from '../config/states'
 import StandardLayout from './StandardLayout'

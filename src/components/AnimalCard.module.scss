@@ -7,10 +7,13 @@
 	border-radius: 0.5rem;
 	padding: 1.5rem 1rem 1rem;
 
+	a {
+		align-self: center;
+	}
+
 	img {
 		max-height: 23rem;
 		max-width: 100%;
-		margin: 0 auto;
 	}
 
 	.pet-card {
@@ -37,11 +40,11 @@
 	.description {
 		display: flex;
 		flex-direction: column;
-	}
 
-	.details-link {
-		text-decoration: none;
-		align-self: flex-end;
-		margin-top: 1.4rem;
+		.details-link {
+			text-decoration: none;
+			align-self: flex-end;
+			margin-top: 1.4rem;
+		}
 	}
 }

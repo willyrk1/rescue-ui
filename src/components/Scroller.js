@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import classNames from 'classnames/bind'
 import scrollerStyles from './Scroller.module.scss'
 
-const Scroller = ({ components = [], styles, scrollRems = 20 }) => {
+const Scroller = ({ components = [], styles, scrollRems = 20, state }) => {
   const cx = classNames.bind({...styles, ...scrollerStyles})
-  const [ scrollIndex, setScrollIndex ] = useState(0)
+  const thisState = useState(0)
+  const [ scrollIndex, setScrollIndex ] = state || thisState
 
   return (
     <>

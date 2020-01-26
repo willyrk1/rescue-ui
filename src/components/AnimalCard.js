@@ -1,12 +1,5 @@
-/********************************************************************************
- * AnimalCard component
- *
- * AnimalCard component for the Rescue UI. 
- *
- * author: Steven Pothoven (steven@pothoven.net)
- ********************************************************************************/
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind'
 import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
 import styles from './AnimalCard.module.scss'
@@ -23,11 +16,21 @@ const getAge = date => {
   return `${yearsString}${monthString}`
 }
 
+const DetailLink = ({ pet, children }) =>
+  <Link
+    to={{ pathname: './pet-details', state: { pet }}}
+    className={cx('details-link')}
+  >
+    {children}
+  </Link>
+
 const AnimalCard = ({ pet }) =>
   <div className={cx('animal-card')}>
     <div className={cx('pet-card')}>
-      <img src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`} />
-      <div class={cx('description')}>
+      <DetailLink pet={pet}>
+        <img src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`} />
+      </DetailLink>
+      <div className={cx('description')}>
         <h3>{pet.name}</h3>
         <ul>
           <li>
@@ -59,7 +62,7 @@ const AnimalCard = ({ pet }) =>
             <span id='goodWithChildren'>{pet.good_with_children}</span>
           </li> */}
         </ul>
-        <a href='#' class={cx('details-link')}>Read My Profile</a>
+        <DetailLink pet={pet}>Read My Profile</DetailLink>
       </div>
     </div>  
 
