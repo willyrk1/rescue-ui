@@ -74,21 +74,11 @@ const HelpOurCause = () => {
               <Popup
                 modal
                 closeOnDocumentClick
-                trigger={
-                  <a
-                    className={cx('btn')}
-                    href='#'
-                    onClick={event => { event.preventDefault(); }}
-                  >
-                    More Info
-                  </a>
-                }
+                trigger={<button className={cx('btn')}>More Info</button>}
               >
                 {close =>
                   <div className={cx('popup-modal')}>
-                    <a className={cx('close')} onClick={close}>
-                      &times;
-                    </a>
+                    <button className={cx('close')} onClick={close}>&times;</button>
                     <h2>Amazon Smile</h2>
                     <div className={cx('content')}>
                       <p>
@@ -106,13 +96,7 @@ const HelpOurCause = () => {
                       <a className={cx('btn')} href='https://smile.amazon.com' target='_blank'>
                         Go to Smile
                       </a>
-                      <a
-                        className={cx('btn')}
-                        href='#'
-                        onClick={event => { close(); event.preventDefault(); }}
-                      >
-                        Close
-                      </a>
+                      <button className={cx('btn')} onClick={close}>Close</button>
                     </div>
                   </div>
                 }
@@ -133,21 +117,11 @@ const HelpOurCause = () => {
               <Popup
                 modal
                 closeOnDocumentClick
-                trigger={
-                  <a
-                    className={cx('btn')}
-                    href='#'
-                    onClick={event => { event.preventDefault(); }}
-                  >
-                    More Info
-                  </a>
-                }
+                trigger={<button className={cx('btn')}>More Info</button>}
               >
                 {close =>
                   <div className={cx('popup-modal')}>
-                    <a className={cx('close')} onClick={close}>
-                      &times;
-                    </a>
+                    <button className={cx('close')} onClick={close}>&times;</button>
                     <h2>Company-Matched Donations</h2>
                     <div className={cx('content')}>
                       <p>
@@ -167,13 +141,7 @@ const HelpOurCause = () => {
                       >
                         View List
                       </a>
-                      <a
-                        className={cx('btn')}
-                        href='#'
-                        onClick={event => { close(); event.preventDefault(); }}
-                      >
-                        Close
-                      </a>
+                      <button className={cx('btn')} onClick={close}>Close</button>
                     </div>
                   </div>
                 }
@@ -186,21 +154,11 @@ const HelpOurCause = () => {
               <Popup
                 modal
                 closeOnDocumentClick
-                trigger={
-                  <a
-                    className={cx('btn')}
-                    href='#'
-                    onClick={event => { event.preventDefault(); }}
-                  >
-                    More Info
-                  </a>
-                }
+                trigger={<button className={cx('btn')}>More Info</button>}
               >
                 {close =>
                   <div className={cx('popup-modal')}>
-                    <a className={cx('close')} onClick={close}>
-                      &times;
-                    </a>
+                    <button className={cx('close')} onClick={close}>&times;</button>
                     <h2>Planned Giving</h2>
                     <div className={cx('content')}>
                       <p>
@@ -213,13 +171,7 @@ const HelpOurCause = () => {
                       </p>
                     </div>
                     <div className={cx('actions')}>
-                      <a
-                        className={cx('btn')}
-                        href='#'
-                        onClick={event => { close(); event.preventDefault(); }}
-                      >
-                        Close
-                      </a>
+                    <button className={cx('btn')} onClick={close}>Close</button>
                     </div>
                   </div>
                 }
