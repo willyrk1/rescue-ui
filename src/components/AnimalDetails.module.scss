@@ -1,29 +1,40 @@
 @import '../assets/stylesheets/style.scss';
 
+button.popup {
+  border: none;
+}
+
 .gallery {
-	&--big, &--thumbnail {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 
-		.scroller-tiles > div, .scroller-arrow {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+  .scroller-tiles > div, .scroller-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-		img {
-			max-height: 100%;
-			max-width: 100%;
-		}
-	}
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  &--popup {
+    height: 80rem;
+    width: $content-width;
+  }
 
 	&--big {
 		position: relative;
 		height: 40rem;
 		width: 42rem;
 
-		.scroller-tiles, .scroller-tiles div {
+		.scroller-tiles, .scroller-tiles > div {
 			width: 100%;
 			height: 100%;
 		}
