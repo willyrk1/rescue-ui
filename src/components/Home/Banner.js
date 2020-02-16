@@ -4,9 +4,6 @@ import StFrancisRescue from '../../apis/StFrancisRescue'
 import { PROTOCOL, HOSTNAME } from '../../config/StFrancisRescue'
 import Scroller from '../Scroller'
 import styles from './Banner.module.scss'
-import Hero from './Hero'
-import guardianAngelBanner from '../../assets/images/guardianangel.jpg'
-import fiv from '../../assets/images/fiv.jpg'
 
 const cx = classNames.bind(styles)
 

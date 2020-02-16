@@ -38,7 +38,6 @@
 
 	label {
 		font-size: 2rem;
-		color: #fff;
 	}
 
 	.input {
@@ -57,5 +56,17 @@
 			
 	textarea {
 		height: 10rem;
-	}
+  }
+  
+  h2, label, p {
+    color: #fff;
+  }
+
+  h2 {
+		font-size: 3.5rem;
+  }
+
+  h2, p {
+    align-self: flex-start;
+  }
 }
