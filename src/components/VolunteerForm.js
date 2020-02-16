@@ -457,6 +457,85 @@ const VolunteerForm = () => {
             </>
           }
 
+          <h2>Adoption Center</h2>
+          <p>
+            There are three ways to help out at our adoption center, Kennelling, Adoption
+            Counsellor and Dog Handler.
+          </p>
+          <p>
+            <strong>Kennelling:</strong> Twice a day we let our cats out of their cage for
+            excercise, playtime and love. During that time their cage is cleaned and fresh water
+            and food (if needed) is provided. Petsmart kennels for us in the morning, we kennel in
+            the evening. For example, some volunteers pick a certain day of the week or maybe
+            every other particular weekday. Some volunteers fill in where there are gaps in the
+            schedule for the month. We try to make it flexible for the volunteers.
+          </p>
+
+          <ul>
+            <li>
+              <label htmlFor='kenneller'>I would like to be a Kenneller</label>
+              <StandardForm.Input>
+                <input
+                  type='checkbox'
+                  id='kenneller'
+                  name='volunteer[be_kenneller]'
+                  value='1'
+                />
+              </StandardForm.Input>
+            </li>
+          </ul>
+
+          <p>
+            <strong>Adoption Counselor:</strong> Adoption Counselors screen prospective adopters
+            at the adoption center. They work to try and match a potential adopter with a cat that
+            fits the personality and temperament they are looking for. Adoption center hours are
+            12:00 - 6:00 on Saturday and Sunday at the Petsmart across from Citrus Park Mall. If
+            you choose to be an adoption counselor, we ask that you commit to work the adoption
+            center at least one day a month.
+          </p>
+
+          <ul>
+            <li>
+              <label htmlFor='counselor'>I would like to be an Adoption Counselor</label>
+              <StandardForm.Input>
+                <input
+                  type='checkbox'
+                  id='counselor'
+                  name='volunteer[be_adoption_counselor]'
+                  value='1'
+                />
+              </StandardForm.Input>
+            </li>
+          </ul>
+
+          <p>
+            <strong>Dog Handler:</strong> Dog handlers assist fosters by showing dogs at adoption
+            events and talking to potential adopters about the dog's personality and likes/dislikes.
+          </p>
+
+          <ul>
+            <li>
+              <label htmlFor='dog-handler'>I would like to be a Dog Handler</label>
+              <StandardForm.Input>
+                <input
+                  type='checkbox'
+                  id='dog-handler'
+                  name='volunteer[be_dog_handler]'
+                  value='1'
+                />
+              </StandardForm.Input>
+            </li>
+          </ul>
+
+          <p>
+            Please tell us what motivated you to volunteer, and of any special skills you may have
+            in the area you are choosing.
+          </p>
+
+          <textarea name='volunteer[motivation]' />
+
+          <p className={cx('thanks')}><strong>Thank you in advance for helping the animals!</strong></p>
+
           <button className={cx('btn')} type='submit'>Submit Volunteer Application</button>
         </StandardForm>
       </div>

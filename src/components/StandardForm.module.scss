@@ -33,7 +33,11 @@
 
 		> input, .input-select {
 			background-color: #fff;
-		}
+    }
+    
+    > .input > input {
+      vertical-align: middle;
+    }
 	}
 
 	label {
