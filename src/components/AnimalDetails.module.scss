@@ -1,84 +1,159 @@
 @import '../assets/stylesheets/style.scss';
 
-button.popup {
-  border: none;
-}
-
-.gallery {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  .scroller-tiles > div, .scroller-arrow {
+.animal-details {
+  > div {
     display: flex;
-    justify-content: center;
-    align-items: center;
+
+    .details {
+      padding-left: 4rem;
+
+      p {
+        font-size: 1.7rem;
+      }
+
+      label {
+        font-weight: 700;
+        margin-right: 0.5rem;
+      }
+
+      .good-with {
+        font-size: 1.2rem;
+
+        label {
+          margin-left: 0.6rem;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+
+        span {
+          margin-right: 0.6rem;
+        }
+      }
+
+      .video {
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 3rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    .simple-details {
+      ul {
+        list-style: none;
+        margin-top: 1rem;
+      }
+
+      li {
+        display: flex;
+        
+        > label {
+          flex: 1;
+          text-align: right;
+          margin: 0.1rem;
+          padding: 0.1rem;
+        }
+
+        > span {
+          flex: 2;
+          margin: 0.1rem;
+          padding: 0.1rem;
+          font-weight: 700;
+        }
+      }
+    }
+
+    button.popup {
+      border: none;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .popup-content img {
+        max-height: 100vh;
+        margin: 0 auto;
+      }
+      
+      .scroller-tiles > div, .scroller-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      &--popup {
+        height: 80rem;
+        width: $content-width;
+      }
+
+      &--big {
+        position: relative;
+        height: 40rem;
+        width: 42rem;
+
+        .scroller-tiles, .scroller-tiles > div {
+          width: 100%;
+          height: 100%;
+        }
+
+        .scroller-arrow {
+          position: absolute;
+          z-index: 100;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: #fff;
+          opacity: 0.4;
+          text-align: center;
+      
+          &-right {
+            right: 0;
+          }
+      
+          button {
+            font-size: 2rem;
+            width: 2rem;
+            height: 6rem;
+          }
+        }
+      }
+
+      &--thumbnail {
+        height: 23rem;
+      
+        .scroller-arrow button {
+          font-size: 2rem;
+          color: $color-primary;
+        }
+        
+        .scroller-tiles {
+          padding: 0;
+          width: 38rem;
+          height: 100%;
+          margin: 0 1rem 0;
+      
+          > div {
+            width: 8rem;
+            height: 100%;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
   }
-
-  img {
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  button {
-    cursor: pointer;
-  }
-
-  &--popup {
-    height: 80rem;
-    width: $content-width;
-  }
-
-	&--big {
-		position: relative;
-		height: 40rem;
-		width: 42rem;
-
-		.scroller-tiles, .scroller-tiles > div {
-			width: 100%;
-			height: 100%;
-		}
-
-		.scroller-arrow {
-			position: absolute;
-			z-index: 100;
-			top: 50%;
-			transform: translateY(-50%);
-			background-color: #fff;
-			opacity: 0.4;
-			width: 2rem;
-			height: 6rem;
-			text-align: center;
-	
-			&-right {
-				right: 0;
-			}
-	
-			button {
-				font-size: 2rem;
-			}
-		}
-	}
-
-	&--thumbnail {
-		height: 23rem;
-	
-		.scroller-arrow button {
-			font-size: 2rem;
-			color: $color-primary;
-		}
-		
-		.scroller-tiles {
-			padding: 0;
-			width: 38rem;
-			height: 100%;
-			margin: 0 1rem 0;
-	
-			> div {
-				width: 8rem;
-				height: 100%;
-				font-size: 1rem;
-			}
-		}
-	}
 }

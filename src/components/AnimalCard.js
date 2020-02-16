@@ -2,19 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind'
 import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
+import { getAge } from '../config/helpers';
 import styles from './AnimalCard.module.scss'
 
 const cx = classNames.bind(styles)
-
-const getAge = date => {
-  const daysAgo = (new Date() - new Date(date)) / (1000 * 60 * 60 * 24)
-  const years = Math.floor(daysAgo / 365)
-  const yearsString = (years === 1) ? '1 Year' : years ? `${years} Years` : ''
-  const comma = years ? ', ' : ''
-  const months = Math.floor((daysAgo % 365) / 30)
-  const monthString = (months === 1) ? `${comma}1 Month` : months ? `${comma}${months} Months` : ''
-  return `${yearsString}${monthString}`
-}
 
 const DetailLink = ({ pet, children }) =>
   <Link

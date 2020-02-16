@@ -16,7 +16,7 @@ const AdoptableList = ({ getPets, lists, children }) => {
       setPets((await petData).data)
     }
     loadPets()
-  }, [])
+  }, [getPets])
 
   return (
     <StandardLayout>
@@ -27,9 +27,11 @@ const AdoptableList = ({ getPets, lists, children }) => {
           <div className={cx('adoptable-list')} key={property}>
             <h2>{title}</h2>
             <div>
-              {pets[property].slice(0, 20).map(pet =>
-                <AnimalCard pet={pet} key={pet.id} />
-              )}
+              {pets[property]
+                // .filter(({ youtube_url }) => youtube_url)
+                .slice(0, 20)
+                .map(pet => <AnimalCard pet={pet} key={pet.id} />)
+              }
             </div>
           </div>
       )}
