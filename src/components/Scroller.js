@@ -16,7 +16,9 @@ const Scroller = ({ components = [], styles, scrollRems = 20, state }) => {
       </div>
       <div className={cx('scroller-tiles', 'tiles')}>
         {components.map(({ component, key }, index, ary) => {
-          const adjustedIndex = (((index - scrollIndex + 1) % ary.length) + ary.length) % ary.length
+          const adjustedIndex = (ary.length > 1)
+            ? (((index - scrollIndex + 1) % ary.length) + ary.length) % ary.length
+            : 1
           return (
             <div
               key={key}

@@ -125,8 +125,11 @@ const StFrancisRescue = function() {
 
         getBoardMembers : function(params) {
             return get(`mission`, params);
+        },
+
+        getHeros : function(params) {
+            return get(`heros`, params);
         }
-        
     };
     
 }();
