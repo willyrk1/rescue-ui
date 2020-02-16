@@ -9,6 +9,9 @@ const cx = classNames.bind(styles)
 
 const VolunteerForm = () => {
   const [fosterInterest, setFosterInterest] = useState()
+  const [fosterCats, setFosterCats] = useState(false)
+  const [fosterDogs, setFosterDogs] = useState(false)
+  const [ownOthers, setOwnOthers] = useState(false)
 
   return (
     <StandardLayout>
@@ -95,11 +98,21 @@ const VolunteerForm = () => {
               <label htmlFor='rather'>Do You Want Work With</label>
               <StandardForm.Input>
                 <label htmlFor='rather-cats'>
-                  <input type='checkbox' id='rather-cats' name='volunteer[work_with_cats]' value='1' />
+                  <input
+                    type='checkbox'
+                    id='rather-cats'
+                    name='volunteer[work_with_cats]'
+                    value='1'
+                  />
                   Cats/kittens
                 </label>
                 <label htmlFor='rather-dogs'>
-                  <input type='checkbox' id='rather-dogs' name='volunteer[work_with_dogs]' value='1' />
+                  <input
+                    type='checkbox'
+                    id='rather-dogs'
+                    name='volunteer[work_with_dogs]'
+                    value='1'
+                  />
                   Dogs
                 </label>
               </StandardForm.Input>
@@ -129,12 +142,6 @@ const VolunteerForm = () => {
           <ul>
             <li>
               <label htmlFor='foster-interest'>I'm interested in being a Foster</label>
-              {/* <input
-                type='checkbox'
-                id='fosterInterest'
-                checked={fosterInterest}
-                onChange={() => setFosterInterest(!fosterInterest)}
-              /> */}
               <StandardForm.Input>
                 <label htmlFor='foster-interest-yes'>
                   <input
@@ -209,9 +216,246 @@ const VolunteerForm = () => {
                     </label>
                   </StandardForm.Input>
                 </li>
+                <li>
+                  <label htmlFor='foster-choice'>Do you want to foster:</label>
+                  <StandardForm.Input>
+                    <label htmlFor='foster-choice-cats'>
+                      <input
+                        type='checkbox'
+                        id='foster-choice-cats'
+                        checked={fosterCats}
+                        onChange={() => setFosterCats(!fosterCats)}
+                        name='volunteer[foster_cats]'
+                      />
+                      Cats/kittens
+                    </label>
+                    <label htmlFor='foster-choice-dogs'>
+                      <input
+                        type='checkbox'
+                        id='foster-choice-dogs'
+                        checked={fosterDogs}
+                        onChange={() => setFosterDogs(!fosterDogs)}
+                        name='volunteer[foster_dogs]'
+                      />
+                      Dogs
+                    </label>
+                  </StandardForm.Input>
+                </li>
               </>
             }
           </ul>
+
+          {fosterInterest &&
+            <>
+              {fosterCats &&
+                <>
+                  <p className={cx('fosterNote')}>
+                    <strong>CATS:</strong> Our cats stay in foster care until a cage is available at an
+                    adoption center. Once they go into a cage at the adoption center, they remain there
+                    for a week or so and then they go back to the foster home for a short cage break
+                    before coming back to the adoption center.
+                  </p>
+                  <ul>
+                    <li>
+                      <label htmlFor='cat-show'>
+                        Are you willing to take your foster cat to our adoption center when a cage is available?
+                      </label>
+                      <StandardForm.Input>
+                        <label htmlFor='cat-show-yes'>
+                          <input
+                            type='radio'
+                            id='cat-show-yes'
+                            name='volunteer[will_take_foster_cat_to_adoption_center]'
+                            value='true'
+                          />
+                          Yes
+                        </label>
+                        <label htmlFor='cat-show-no'>
+                          <input
+                            type='radio'
+                            id='cat-show-no'
+                            name='volunteer[will_take_foster_cat_to_adoption_center]'
+                            value='false'
+                          />
+                          No
+                        </label>
+                      </StandardForm.Input>
+                    </li>
+                  </ul>
+                </>
+              }
+
+              {fosterDogs &&
+                <>
+                  <p className={cx('fosterNote')}>
+                    <strong>DOGS:</strong> Fosters should be willing to bring their foster dog to the
+                    adoption center for viewing when requested. Occasionally we have special adoption
+                    events and request the foster bring their dog for viewing if possible.
+                  </p>
+                  <ul>
+                    <li>
+                      <label htmlFor='dog-show'>
+                        Are you willing to take your foster dog to adoption events?
+                      </label>
+                      <StandardForm.Input>
+                        <label htmlFor='dog-show-yes'>
+                          <input
+                            type='radio'
+                            id='dog-show-yes'
+                            name='volunteer[will_take_foster_dog_to_adoption_events]'
+                            value='true'
+                          />
+                          Yes
+                        </label>
+                        <label htmlFor='dog-show-no'>
+                          <input
+                            type='radio'
+                            id='dog-show-no'
+                            name='volunteer[will_take_foster_dog_to_adoption_events]'
+                            value='false'
+                          />
+                          No
+                        </label>
+                      </StandardForm.Input>
+                    </li>
+                  </ul>
+                </>
+              }
+              <ul>
+                <li>
+                  <label htmlFor='own-rent'>Do you:</label>
+                  <StandardForm.Input>
+                    <label htmlFor='own-rent-own'>
+                      <input
+                        type='radio'
+                        id='own-rent-own'
+                        name='volunteer[own_home]'
+                        value='true'
+                      />
+                      Own
+                    </label>
+                    <label htmlFor='own-rent-rent'>
+                      <input
+                        type='radio'
+                        id='own-rent-rent'
+                        name='volunteer[own_home]'
+                        value='false'
+                      />
+                      Rent
+                    </label>
+                  </StandardForm.Input>
+                </li>
+                <li>
+                  <label htmlFor='own-other'>Do you own other animals?</label>
+                  <StandardForm.Input>
+                    <label htmlFor='own-other-yes'>
+                      <input
+                        type='radio'
+                        id='own-other-yes'
+                        name='volunteer[own_other_animals]'
+                        checked={ownOthers}
+                        onChange={() => setOwnOthers(true)}
+                        value='true'
+                      />
+                      Yes
+                    </label>
+                    <label htmlFor='own-other-no'>
+                      <input
+                        type='radio'
+                        id='own-other-no'
+                        name='volunteer[own_other_animals]'
+                        checked={!ownOthers}
+                        onChange={() => setOwnOthers(false)}
+                        value='false'
+                      />
+                      No
+                    </label>
+                  </StandardForm.Input>
+                </li>
+                {ownOthers &&
+                  <>
+                    <li>
+                      <label htmlFor='spayed'>Are your animals spayed/neutered?</label>
+                      <StandardForm.Input>
+                        <label htmlFor='spayed-yes'>
+                          <input
+                            type='radio'
+                            id='spayed-yes'
+                            name='volunteer[owned_animals_spayed_neutered]'
+                            value='true'
+                          />
+                          Yes
+                        </label>
+                        <label htmlFor='spayed-no'>
+                          <input
+                            type='radio'
+                            id='spayed-no'
+                            name='volunteer[owned_animals_spayed_neutered]'
+                            value='false'
+                          />
+                          No
+                        </label>
+                      </StandardForm.Input>
+                    </li>
+                    <li>
+                      <label htmlFor='vaccinated'>
+                        Are your animals current on their vaccinations?
+                      </label>
+                      <StandardForm.Input>
+                        <label htmlFor='vaccinated-yes'>
+                          <input
+                            type='radio'
+                            id='vaccinated-yes'
+                            name='volunteer[owned_animals_vaccines_current]'
+                            value='true'
+                          />
+                          Yes
+                        </label>
+                        <label htmlFor='vaccinated-no'>
+                          <input
+                            type='radio'
+                            id='vaccinated-no'
+                            name='volunteer[owned_animals_vaccines_current]'
+                            value='false'
+                          />
+                          No
+                        </label>
+                      </StandardForm.Input>
+                    </li>
+                    <li>
+                      <label htmlFor='flea-prevent'>
+                        Are your animals on any flea prevention?
+                      </label>
+                      <StandardForm.Input>
+                        <label htmlFor='flea-prevent-yes'>
+                          <input
+                            type='radio'
+                            id='flea-prevent-yes'
+                            name='volunteer[use_flea_prevention]'
+                            value='true'
+                          />
+                          Yes
+                        </label>
+                        <label htmlFor='flea-prevent-no'>
+                          <input
+                            type='radio'
+                            id='flea-prevent-no'
+                            name='volunteer[use_flea_prevention]'
+                            value='false'
+                          />
+                          No
+                        </label>
+                      </StandardForm.Input>
+                    </li>
+                    <li>
+                      <label htmlFor='vet-clinic'>Current veterinary clinic:</label>
+                      <input type='text' id='vet-clinic' name='volunteer[veterinarian_name]' />
+                    </li>
+                  </>
+                }
+              </ul>
+            </>
+          }
 
           <button className={cx('btn')} type='submit'>Submit Volunteer Application</button>
         </StandardForm>
