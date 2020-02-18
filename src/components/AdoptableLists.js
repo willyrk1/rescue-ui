@@ -1,22 +1,38 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useReducer } from 'react'
 import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue'
 import StandardLayout from './StandardLayout'
 import AnimalCard from './AnimalCard'
+import AnimalSearch from './AnimalSearch'
 import styles from './AdoptableLists.module.scss'
 
 const cx = classNames.bind(styles)
 
 const AdoptableList = ({ getPets, lists, children }) => {
-  const [pets, setPets] = useState()
+  const getUniqueOptions = (pets, animalProperty) => [...new Set(
+    lists.reduce((acc, { property }) => {
+      acc.push(...pets[property].map(({ [animalProperty]: value }) => value))
+      return acc
+    }, [])
+  )].map(value => ({ value, label: value }))
+
+  const [state, dispatch] = useReducer((state, pets) => ({
+    pets,
+    genderChoices: getUniqueOptions(pets, 'sex'),
+  }), { pets: {} })
+
+  const [searchName, setSearchName] = useState()
+  const [searchGender, setSearchGender] = useState()
 
   useEffect(() => {
     const loadPets = async () => {
       const petData = getPets(StFrancisRescue)
-      setPets((await petData).data)
+      dispatch((await petData).data)
     }
     loadPets()
   }, [getPets])
+
+  const { pets, genderChoices } = state
 
   return (
     <StandardLayout>
@@ -25,6 +41,13 @@ const AdoptableList = ({ getPets, lists, children }) => {
       {pets && lists.map(({ property, title }) =>
         pets[property] && pets[property].length &&
           <div className={cx('adoptable-list')} key={property}>
+            <AnimalSearch
+              {...{
+                cx,
+                searchName, setSearchName,
+                genderChoices, searchGender, setSearchGender,
+              }}
+            />
             <h2>{title}</h2>
             <div>
               {pets[property]
@@ -40,4 +63,4 @@ const AdoptableList = ({ getPets, lists, children }) => {
   )
 }
 
-  export default AdoptableList
+export default AdoptableList
