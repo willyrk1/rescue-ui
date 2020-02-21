@@ -32,6 +32,11 @@ const AdoptableList = ({ getPets, lists, children }) => {
             { value: '6m-1y', label: '6 months to 1 year' },
             { value: '>1y', label: 'over 1 year' },
           ],
+          furLengthChoices: getUniqueOptions(pets, 'fur_length'),
+          declawedChoices: getUniqueOptions(pets, 'declawed'),
+          goodWithChildrenChoices: getUniqueOptions(pets, 'good_with_children'),
+          goodWithCatsChoices: getUniqueOptions(pets, 'good_with_cats'),
+          goodWithDogsChoices: getUniqueOptions(pets, 'good_with_dogs'),
         }
       case 'SET':
         return { ...state, ...params }
@@ -48,7 +53,10 @@ const AdoptableList = ({ getPets, lists, children }) => {
     loadPets()
   }, [getPets])
 
-  const { pets, searchName, searchGender, searchBreed, searchColor, searchAge } = state
+  const {
+    pets, searchName, searchGender, searchBreed, searchColor, searchAge, searchFurLength,
+    searchDeclawed, searchGoodWithChildren, searchGoodWithCats, searchGoodWithDogs,
+  } = state
 
   return (
     <StandardLayout>
@@ -57,7 +65,9 @@ const AdoptableList = ({ getPets, lists, children }) => {
       {pets && lists.map(({ property, title }) =>
         pets[property] && pets[property].length &&
           <div className={cx('adoptable-list')} key={property}>
-            <AnimalSearch {...{ cx, state, dispatch }} />
+            <div className={cx('search')}>
+              <AnimalSearch {...{ state, dispatch }} />
+            </div>
             <h2>{title}</h2>
             <div>
               {pets[property]
@@ -66,10 +76,16 @@ const AdoptableList = ({ getPets, lists, children }) => {
                   name, sex,
                   dominant_breed: { name: breed },
                   animal_color: { name: color },
+                  fur_length, declawed, good_with_children, good_with_cats, good_with_dogs
                 }) => name.toUpperCase().includes((searchName || '').toUpperCase())
                   && (!searchGender || sex === searchGender.value)
                   && (!searchBreed || breed === searchBreed.value)
                   && (!searchColor || color === searchColor.value)
+                  && (!searchFurLength || fur_length === searchFurLength.value)
+                  && (!searchDeclawed || declawed === searchDeclawed.value)
+                  && (!searchGoodWithChildren || good_with_children === searchGoodWithChildren.value)
+                  && (!searchGoodWithCats || good_with_cats === searchGoodWithCats.value)
+                  && (!searchGoodWithDogs || good_with_dogs === searchGoodWithDogs.value)
                 )
                 .slice(0, 20)
                 .map(pet => <AnimalCard pet={pet} key={pet.id} />)
