@@ -106,9 +106,9 @@ const HelpOurCause = () => {
               <p>
                 Sponsor A Forever Foster
               </p>
-              <a className={cx('btn')} href='#'>
+              <Link className={cx('btn')} to='/forever-foster'>
                 More Info
-              </a>
+              </Link>
             </div>
             <div className={cx('panel')}>
               <p>

@@ -1,0 +1,62 @@
+@import '../assets/stylesheets/style.scss';
+
+.forever-foster {
+
+  // Copied from .adoptable-list > div
+	.photo-text-gallery {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: stretch;
+  }
+
+  // Copied/adapted from .animal-card
+  .animal-card {
+    margin: 4rem 0;
+    width: 34rem;
+    border: 1px solid #b1b1b1;
+    border-radius: 0.5rem;
+    padding: 1.5rem 1rem 1rem;
+  
+    .photo {
+      align-self: center;
+    }
+  
+    img {
+      max-height: 31rem;
+      max-width: 100%;
+    }
+  
+    .pet-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+    }
+  
+    h3 {
+      color: $color-secondary;
+      font-size: 3.0rem;
+      margin: 1rem 0 0.3rem;
+    }
+    
+    ul {
+      list-style: none;
+      font-weight: 500;
+    }
+  
+    label {
+      display: none;
+    }
+  
+    .description {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+  
+    .btn {
+      align-self: center;
+    }
+  }
+}

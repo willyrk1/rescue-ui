@@ -40,18 +40,6 @@ const AnimalCard = ({ pet }) =>
             <label htmlFor='dob'>Date of birth</label>
             <span id='dob'>{getAge(pet.date_of_birth)}</span>
           </li>
-          {/* <li>
-            <label htmlFor='goodWithCats'>Good with cats</label>
-            <span id='goodWithCats'>{pet.good_with_cats}</span>
-          </li>
-          <li>
-            <label htmlFor='goodWithDogs'>Good with dogs</label>
-            <span id='goodWithDogs'>{pet.good_with_dogs}</span>
-          </li>
-          <li>
-            <label htmlFor='goodWithChildren'>Good with children</label>
-            <span id='goodWithChildren'>{pet.good_with_children}</span>
-          </li> */}
         </ul>
         <DetailLink pet={pet}>Read My Profile</DetailLink>
       </div>

@@ -24,6 +24,7 @@ import WorkingCats from './components/WorkingCats';
 import Page from './components/Page';
 import SuccessStories from './components/SuccessStories';
 import Donate from './components/Donate';
+import ForeverFoster from './components/ForeverFoster';
 import UnderConstruction from './components/UnderConstruction';
 import './App.scss';
 
@@ -56,6 +57,7 @@ const App = () => (
       <Route exact path="/adoption-locations" component={AdoptionLocations} />
       <Route exact path="/working-cats" component={WorkingCats} />
       <Route exact path="/donate" component={Donate} />
+      <Route exact path='/forever-foster' component={ForeverFoster} />
       <Route path="/:pagename" component={Page} />
       <Route component={UnderConstruction} />
     </Switch>

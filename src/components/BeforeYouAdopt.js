@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
 import styles from './BeforeYouAdopt.module.scss';
