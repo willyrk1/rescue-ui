@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
 import StandardForm from './StandardForm'
@@ -9,20 +9,20 @@ const cx = classNames.bind(styles)
 const AnimalSearch = ({
   dispatch,
   state: {
-    searchName,
-    genderChoices, searchGender,
-    breedChoices, searchBreed,
-    colorChoices, searchColor,
-    ageChoices, searchAge,
-    furLengthChoices, searchFurLength,
-    declawedChoices, searchDeclawed,
-    goodWithChildrenChoices, searchGoodWithChildren,
-    goodWithCatsChoices, searchGoodWithCats,
-    goodWithDogsChoices, searchGoodWithDogs,
+    genderChoices, breedChoices, colorChoices, ageChoices, furLengthChoices, declawedChoices,
+    goodWithChildrenChoices, goodWithCatsChoices, goodWithDogsChoices,
+    ...rest,
   },
 }) => {
-  const setInput = property => ({ target }) => dispatch({ type: 'SET', [property]: target.value })
-  const setSelect = property => value => dispatch({ type: 'SET', [property]: value })
+  const [searches, setSearches] = useState(rest)
+
+  const {
+    searchName, searchGender, searchBreed, searchColor, searchAge, searchFurLength,
+    searchDeclawed, searchGoodWithChildren, searchGoodWithCats, searchGoodWithDogs
+  } = searches
+
+  const setInput = property => ({ target }) => setSearches({ ...searches, [property]: target.value })
+  const setSelect = property => value => setSearches({ ...searches, [property]: value })
 
   const SelectOverride = props =>
     <StandardForm.Select {...props} isClearable className={cx('search-select')} />
@@ -129,12 +129,23 @@ const AnimalSearch = ({
                 />
               </li>
             </ul>
-            <button
-              className={cx('btn')}
-              onClick={() => close()}
-            >
-              Search
-            </button>
+            <div className={cx('actions')}>
+              <button
+                className={cx('btn')}
+                onClick={() => {
+                  dispatch({ type: 'SET', ...searches })
+                  close()
+                }}
+              >
+                Search
+              </button>
+              <button className={cx('btn')} onClick={() => setSearches({})}>
+                Clear
+              </button>
+              <button className={cx('btn')} onClick={() => close()}>
+                Cancel
+              </button>
+            </div>
           </StandardForm>
         </div>
       }
