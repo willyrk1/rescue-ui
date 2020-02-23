@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue'
 import StandardLayout from './StandardLayout'
@@ -8,11 +8,9 @@ import styles from './AdoptableLists.module.scss'
 
 const cx = classNames.bind(styles)
 
-const getUniqueOptions = animalProperty => (pets, lists) => [...new Set(
+const getUniqueOptions = (pets, lists, mappingFn) => [...new Set(
   lists.reduce((acc, { property }) => {
-    acc.push(...pets[property].map(pet =>
-      typeof animalProperty === 'function' ? animalProperty(pet) : pet[animalProperty]
-    ))
+    acc.push(...pets[property].map(mappingFn))
     return acc
   }, [])
 )].map(value => ({ value, label: value }))
@@ -20,101 +18,115 @@ const getUniqueOptions = animalProperty => (pets, lists) => [...new Set(
 const getDaysAgo = days => new Date() - days * 1000 * 60 * 60 * 24
 
 const AdoptableList = ({ getPets, lists, children }) => {
-  const [pets, setPets] = useState([])
+  const selectMapping = {
+    gender: { mappingFn: pet => pet.sex, label: 'Gender' },
+    breed: { mappingFn: ({ dominant_breed }) => dominant_breed.name, label: 'Breed' },
+    color: { mappingFn: ({ animal_color }) => animal_color.name, label: 'Color' },
+    furLength: { mappingFn: pet => pet.fur_length, label: 'Fur Length' },
+    declawed: { mappingFn: pet => pet.declawed, label: 'Declawed' },
+    goodWithChildren: { mappingFn: pet => pet.good_with_children, label: 'Good with Children' },
+    goodWithCats: { mappingFn: pet => pet.good_with_cats, label: 'Good with Cats' },
+    goodWithDogs: { mappingFn: pet => pet.good_with_dogs, label: 'Good with Dogs' },
+  }
 
-  const [criteria, setCriteria] = useState([{
-    inputType: 'text',
-    label: 'Name',
-  }, {
-    inputType: 'select',
-    label: 'Gender',
-    choiceFn: getUniqueOptions('sex'),
-  }, {
-    inputType: 'select',
-    label: 'Breed',
-    choiceFn: getUniqueOptions(({ dominant_breed }) => dominant_breed.name),
-  }, {
-    inputType: 'select',
-    label: 'Color',
-    choiceFn: getUniqueOptions(({ animal_color }) => animal_color.name),
-  }, {
-    inputType: 'select',
-    label: 'Age',
-    choiceFn: () => [
-      {
-        value: '<6m',
-        label: 'Under 6 months',
-        min: getDaysAgo(6 * 30),
-      },
-      {
-        value: '6m-1y',
-        label: '6 months to 1 year',
-        max: getDaysAgo(6 * 30),
-        min: getDaysAgo(365),
-      },
-      {
-        value: '>1y',
-        label: 'over 1 year',
-        max: getDaysAgo(365),
-      },
-    ],
-  }, {
-    inputType: 'select',
-    label: 'Fur Length',
-    choiceFn: getUniqueOptions('fur_length'),
-  }, {
-    inputType: 'select',
-    label: 'Declawed',
-    choiceFn: getUniqueOptions('declawed'),
-  }, {
-    inputType: 'select',
-    label: 'Good with Children',
-    choiceFn: getUniqueOptions('good_with_children'),
-  }, {
-    inputType: 'select',
-    label: 'Good with Cats',
-    choiceFn: getUniqueOptions('good_with_cats'),
-  }, {
-    inputType: 'select',
-    label: 'Good with Dogs',
-    choiceFn: getUniqueOptions('good_with_dogs'),
-  }])
+  const [state, dispatch] = useReducer((state, { type, pets, ...params }) => {
+    switch (type) {
+      case 'INITIALIZE':
+        return {
+          ...state,
+          pets,
+          search: {
+            name: {},
+            age: {
+              label: 'Age',
+              choices: [{
+                value: '<6m',
+                label: 'Under 6 months',
+                min: getDaysAgo(6 * 30),
+              }, {
+                value: '6m-1y',
+                label: '6 months to 1 year',
+                max: getDaysAgo(6 * 30),
+                min: getDaysAgo(365),
+              }, {
+                value: '>1y',
+                label: 'over 1 year',
+                max: getDaysAgo(365),
+              }]
+            },
+            ...Object.entries(selectMapping).reduce((acc, [prop, { mappingFn, label }]) => {
+              acc[prop] = { choices: getUniqueOptions(pets, lists, mappingFn), label }
+              return acc
+            }, {})
+          }
+        }
+      case 'STORE_INPUT':
+        return {
+          ...state,
+          search: {
+            ...state.search,
+            [params.prop]: {
+              ...state.search[params.prop],
+              input: params.value,
+            }
+          },
+        }
+      case 'CLEAR_INPUT':
+        return {
+          ...state,
+          search: {
+            ...state.search,
+            ...Object.entries(state.search).reduce((acc, [prop, { input, ...rest }]) => {
+              acc[prop] = rest
+              return acc
+            }, {})
+          },
+        }
+      case 'SET':
+        return {
+          ...state,
+          search: {
+            ...state.search,
+            ...Object.entries(state.search).reduce((acc, [prop, { input, ...rest }]) => {
+              acc[prop] = { input, ...rest, value: input }
+              return acc
+            }, {})
+          },
+        }
+      default:
+        break
+    }
+  }, { search: { name: {}, age: {}}})
 
   useEffect(() => {
     const loadPets = async () => {
       const { data: pets } = await getPets(StFrancisRescue)
-      setPets(pets)
-      setCriteria(criteria => criteria.map(criterion => ({
-        ...criterion,
-        ...criterion.choiceFn ? { choices: criterion.choiceFn(pets, lists) } : null,
-      })))
+      dispatch({ type: 'INITIALIZE', pets})
     }
     loadPets()
-  }, [getPets, lists])
+  }, [getPets])
+
+  const {
+    pets,
+    search,
+    search: { name: { value: searchName }, age: { value: searchAge }, ...searchSelects }
+  } = state
 
   const [pageNums, setPageNums] = useState({})
 
   // If there are searches, then filter.  Otherwise, slice the given page.
   const processList = (collection, pageNum) => {
     if (collection) {
-      if (criteria.some(({ value }) => value)) {
-        return collection.filter(({
-          name, sex, fur_length, declawed, date_of_birth,
-          dominant_breed: { name: breed }, animal_color: { name: color },
-          good_with_children, good_with_cats, good_with_dogs,
-        }) => criteria.every() name.toUpperCase().includes((searchName || '').toUpperCase())
-          && (!searchGender || sex === searchGender.value)
-          && (!searchBreed || breed === searchBreed.value)
-          && (!searchColor || color === searchColor.value)
-          && (!searchFurLength || fur_length === searchFurLength.value)
-          && (!searchDeclawed || declawed === searchDeclawed.value)
-          && (!searchGoodWithChildren || good_with_children === searchGoodWithChildren.value)
-          && (!searchGoodWithCats || good_with_cats === searchGoodWithCats.value)
-          && (!searchGoodWithDogs || good_with_dogs === searchGoodWithDogs.value)
+      if (Object.values(search).some(({ value }) => value)) {
+        return collection.filter(({ name, date_of_birth, ...rest }) =>
+          name.toUpperCase().includes((searchName || '').toUpperCase())
           && (!searchAge || (
             (!searchAge.min || new Date(date_of_birth) > searchAge.min) &&
             (!searchAge.max || new Date(date_of_birth) <= searchAge.max)
           ))
+          && Object.entries(selectMapping).every(([prop, { mappingFn }]) =>
+            !searchSelects[prop].value || searchSelects[prop].value.value === mappingFn(rest)
+          )
         )
       }
       else {

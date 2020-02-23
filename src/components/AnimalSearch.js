@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
 import StandardForm from './StandardForm'
@@ -9,20 +9,14 @@ const cx = classNames.bind(styles)
 const AnimalSearch = ({
   dispatch,
   state: {
-    genderChoices, breedChoices, colorChoices, ageChoices, furLengthChoices, declawedChoices,
-    goodWithChildrenChoices, goodWithCatsChoices, goodWithDogsChoices,
-    ...rest,
-  },
+    search,
+    search: { name: { input: searchName }}
+  }
 }) => {
-  const [searches, setSearches] = useState(rest)
+  const storeInput = (prop, value) => dispatch({ type: 'STORE_INPUT', prop, value })
 
-  const {
-    searchName, searchGender, searchBreed, searchColor, searchAge, searchFurLength,
-    searchDeclawed, searchGoodWithChildren, searchGoodWithCats, searchGoodWithDogs
-  } = searches
-
-  const setInput = property => ({ target }) => setSearches({ ...searches, [property]: target.value })
-  const setSelect = property => value => setSearches({ ...searches, [property]: value })
+  const setInput = prop => ({ target }) => storeInput(prop, target.value)
+  const setSelect = prop => value => storeInput(prop, value)
 
   const SelectOverride = props =>
     <StandardForm.Select {...props} isClearable className={cx('search-select')} />
@@ -43,106 +37,48 @@ const AnimalSearch = ({
                   type='text'
                   id='name'
                   value={searchName}
-                  onChange={setInput('searchName')}
+                  onChange={setInput('name')}
                   className={cx('search-input')}
                 />
               </li>
-              <li>
-                <label htmlFor='gender'>Gender</label>
-                <SelectOverride
-                  id='gender'
-                  options={genderChoices}
-                  value={searchGender}
-                  onChange={setSelect('searchGender')}
-                />
-              </li>
-              <li>
-                <label htmlFor='breed'>Breed</label>
-                <SelectOverride
-                  id='breed'
-                  options={breedChoices}
-                  value={searchBreed}
-                  onChange={setSelect('searchBreed')}
-                />
-              </li>
-              <li>
-                <label htmlFor='color'>Color</label>
-                <SelectOverride
-                  id='color'
-                  options={colorChoices}
-                  value={searchColor}
-                  onChange={setSelect('searchColor')}
-                />
-              </li>
-              <li>
-                <label htmlFor='age'>Age</label>
-                <SelectOverride
-                  id='age'
-                  options={ageChoices}
-                  value={searchAge}
-                  onChange={setSelect('searchAge')}
-                />
-              </li>
-              <li>
-                <label htmlFor='furLength'>Fur Length</label>
-                <SelectOverride
-                  id='furLength'
-                  options={furLengthChoices}
-                  value={searchFurLength}
-                  onChange={setSelect('searchFurLength')}
-                />
-              </li>
-              <li>
-                <label htmlFor='declawed'>Declawed</label>
-                <SelectOverride
-                  id='declawed'
-                  options={declawedChoices}
-                  value={searchDeclawed}
-                  onChange={setSelect('searchDeclawed')}
-                />
-              </li>
-              <li>
-                <label htmlFor='goodWithChildren'>Good with Children</label>
-                <SelectOverride
-                  id='goodWithChildren'
-                  options={goodWithChildrenChoices}
-                  value={searchGoodWithChildren}
-                  onChange={setSelect('searchGoodWithChildren')}
-                />
-              </li>
-              <li>
-                <label htmlFor='goodWithCats'>Good with Cats</label>
-                <SelectOverride
-                  id='goodWithCats'
-                  options={goodWithCatsChoices}
-                  value={searchGoodWithCats}
-                  onChange={setSelect('searchGoodWithCats')}
-                />
-              </li>
-              <li>
-                <label htmlFor='goodWithDogs'>Good with Dogs</label>
-                <SelectOverride
-                  id='goodWithDogs'
-                  options={goodWithDogsChoices}
-                  value={searchGoodWithDogs}
-                  onChange={setSelect('searchGoodWithDogs')}
-                />
-              </li>
+              {[
+                'gender', 'breed', 'color', 'age', 'furLength', 'declawed',
+                'goodWithChildren', 'goodWithCats', 'goodWithDogs'
+              ].map(prop =>
+                <li key={prop}>
+                  <label htmlFor={prop}>{search[prop].label}</label>
+                  <SelectOverride
+                    id={prop}
+                    options={search[prop].choices}
+                    value={search[prop].input}
+                    onChange={setSelect(prop)}
+                  />
+                </li>
+              )}
             </ul>
             <div className={cx('actions')}>
               <button
+                type='button'
                 className={cx('btn')}
                 onClick={() => {
-                  dispatch({ type: 'SET', ...searches })
+                  dispatch({ type: 'SET' })
                   close()
                 }}
               >
                 Search
               </button>
-              <button className={cx('btn')} onClick={() => setSearches({})}>
+              <button
+                type='button'
+                className={cx('btn')}
+                onClick={() => dispatch({ type: 'CLEAR_INPUT' })}
+              >
                 Clear
               </button>
-              <button className={cx('btn')} onClick={() => close()}>
+              <button
+                type='button'
+                className={cx('btn')}
+                onClick={() => close()}
+              >
                 Cancel
               </button>
             </div>
