@@ -15,7 +15,7 @@ const HelpOurCause = () =>
       <div className={cx('first')}>
         <div className={cx('main')}>
           <div className={cx('top')}>
-            <img src={donateCat}/>
+            <img src={donateCat} alt='Help Our Cause' />
             <h1><em>Please Help.<br/> He's Counting on You.</em></h1>
             <p>
               We are a 501(c)3 non-profit organization and receive no government funding.
@@ -25,14 +25,14 @@ const HelpOurCause = () =>
 
           <div className={cx('make-donation')}>
             <div>
-              <img src={makeDonationCat} />
+              <img src={makeDonationCat} alt='Help Our Cause' />
               <div className={cx('one-time')}>
                 <p>Make A One-Time Donation</p>
                 <Link to='/donate' className={cx('btn')}>Donate</Link>
               </div>
             </div>
             <div>
-              <img src={makeDonationCat} />
+              <img src={makeDonationCat} alt='Help Our Cause' />
               <div className={cx('monthly')}>
                 <p>Make A Monthly Donation</p>
                 <Link to='/donate' className={cx('btn')}>Donate</Link>
@@ -56,7 +56,12 @@ const HelpOurCause = () =>
             <p>
               Shop Our Wish List
             </p>
-            <a className={cx('btn')} href='https://amzn.to/2RQwqwk' target='_blank'>
+            <a
+              className={cx('btn')}
+              href='https://amzn.to/2RQwqwk'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               More Info
             </a>
           </div>
@@ -92,7 +97,12 @@ const HelpOurCause = () =>
                     </p>
                   </div>
                   <div className={cx('actions')}>
-                    <a className={cx('btn')} href='https://smile.amazon.com' target='_blank'>
+                    <a
+                      className={cx('btn')}
+                      href='https://smile.amazon.com'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
                       Go to Smile
                     </a>
                     <button className={cx('btn')} onClick={close}>Close</button>
@@ -137,6 +147,7 @@ const HelpOurCause = () =>
                       className={cx('btn')}
                       href='https://ww2.matchinggifts.com/search/unh'
                       target='_blank'
+                      rel='noopener noreferrer'
                     >
                       View List
                     </a>

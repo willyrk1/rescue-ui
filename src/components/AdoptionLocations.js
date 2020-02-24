@@ -14,7 +14,7 @@ const AdoptionLocations = () =>
     <div className={cx('adoption-locations')}>
       <h1>Come Visit Us</h1>
       <hr/>
-      <img src={adoptionPhoto2} className={cx('right')} />
+      <img src={adoptionPhoto2} className={cx('right')} alt='Adoptions' />
       <p>
         <strong>Looking to Adopt a Cat?  Come visit us at one of these locations!</strong>
       </p>
@@ -29,7 +29,7 @@ const AdoptionLocations = () =>
       <h2>Hillsborough</h2>
       <ul>
         <li>
-          <img src={adoptionPhoto1} className={cx('right')} />
+          <img src={adoptionPhoto1} className={cx('right')} alt='Adoptions' />
           <strong>PetSmart</strong>, located
           at <a href='https://goo.gl/maps/tB7kiFNWT9p'>12835 Citrus Park Dr</a> across from the
           Citrus Park Mall. Our volunteers are onsite for adoptions Saturday from 11:00 a.m. to
@@ -67,7 +67,7 @@ const AdoptionLocations = () =>
         </li>
       </ul>
 
-      <img src={adoptionPhoto4} className={cx('right')} />
+      <img src={adoptionPhoto4} className={cx('right')} alt='Adoptions' />
       <h2>Pasco</h2>
       <ul>
         <li>
@@ -104,7 +104,7 @@ const AdoptionLocations = () =>
             between the hours of 12:00 p.m. and 5:00 p.m. based on volunteer availability.
           </p>
         </div>
-        <img src={dogAdoption1} />
+        <img src={dogAdoption1} alt='Dog Adoptions' />
       </div>
     </div>
   </StandardLayout>

@@ -20,12 +20,12 @@ const Sponsors = () => {
       </div>
       <Scroller
         components={[
-          { key: 1, component: <img src={petcoLogo} /> },
-          { key: 2, component: <img src={gulfCoastLogo} /> },
-          { key: 3, component: <img src={westChaseLogo} /> },
-          { key: 4, component: <img src={petSmartLogo} /> },
-          { key: 5, component: <img src={bigCatLogo} /> },
-          { key: 6, component: <img src={bisselLogo} /> },
+          { key: 1, component: <img src={petcoLogo} alt='Petco' /> },
+          { key: 2, component: <img src={gulfCoastLogo} alt='Gulf Coast Veterinary' /> },
+          { key: 3, component: <img src={westChaseLogo} alt='WestChase Veterinary' /> },
+          { key: 4, component: <img src={petSmartLogo} alt='PetSmart' /> },
+          { key: 5, component: <img src={bigCatLogo} alt='Big Cat Rescue' /> },
+          { key: 6, component: <img src={bisselLogo} alt='Bissell Pet Foundation' /> },
         ]}
         styles={styles}
         scrollRems={20}

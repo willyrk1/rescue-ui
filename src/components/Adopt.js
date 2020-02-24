@@ -34,19 +34,19 @@ const Adopt = () =>
       </p>
       <div className={cx('links')}>
         <div>
-          <Link to='/cats'><img src={catPhoto}/></Link>
+          <Link to='/cats'><img src={catPhoto} alt='Cat Adoptions' /></Link>
           <Link to='/cats' className={cx('caption')}>Cat Adoptions</Link>
         </div>
         <div>
-          <Link to='/dogs'><img src={dogPhoto}/></Link>
+          <Link to='/dogs'><img src={dogPhoto} alt='Dog Adoptions' /></Link>
           <Link to='/dogs' className={cx('caption')}>Dog Adoptions</Link>
         </div>
         <div>
-          <Link to='/adoption-locations'><img src={locations}/></Link>
+          <Link to='/adoption-locations'><img src={locations} alt='Adoption Locations' /></Link>
           <Link to='/adoption-locations' className={cx('caption')}>Adoption Locations</Link>
         </div>
         <div>
-          <Link to='/working-cats'><img src={workingCatPhoto}/></Link>
+          <Link to='/working-cats'><img src={workingCatPhoto} alt='Working Cats' /></Link>
           <Link to='/working-cats' className={cx('caption')}>Working Cat Program</Link>
         </div>
       </div>

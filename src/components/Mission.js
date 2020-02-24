@@ -77,6 +77,7 @@ const Mission = () => {
                   ? `${PROTOCOL}://${HOSTNAME}${picture}`
                   : '/no_picture.jpg'
                 }
+                alt={name.split(' ')[0]}
               />
             </div>
             <div>

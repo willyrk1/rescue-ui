@@ -21,12 +21,12 @@ const AnimalDetails = ({ location: { state: { pet }}}) => {
         contentStyle={{ width: 'auto' }}
         trigger={
           <button className={cx('popup')}>
-            <img src={`${PROTOCOL}://${HOSTNAME}${public_filename}`} />
+            <img src={`${PROTOCOL}://${HOSTNAME}${public_filename}`} alt={pet.name} />
           </button>
         }
       >
         <div className={cx('popup-content')}>
-          <img src={`${PROTOCOL}://${HOSTNAME}${public_filename}`} />
+          <img src={`${PROTOCOL}://${HOSTNAME}${public_filename}`} alt={pet.name} />
         </div>
       </Popup>
   }))

@@ -13,7 +13,7 @@ const Volunteer = () =>
     <div className={cx('volunteer')}>
       <h1>Volunteer</h1>
       <hr/>
-      <img src={volunteerPhoto} className={cx('right')} />
+      <img src={volunteerPhoto} className={cx('right')} alt='Volunteers' />
       <p>
         Thank you for your interest in becoming a volunteer at St. Francis Society! We truly
         appreciate you for wanting to donate some of your valuable free time to help our animals.
@@ -35,7 +35,7 @@ const Volunteer = () =>
       </p>
 
       <h3>Fostering</h3>
-      <img src={fosterKitten} className={cx('right')} />
+      <img src={fosterKitten} className={cx('right')} alt='Fostering' />
       <p>
         Foster care homes provide a critical link between our acceptance of animals into St.
         Francis and getting them placed in adoptive homes. Since we do not have a facility to

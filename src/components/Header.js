@@ -26,7 +26,7 @@ const Header = ({ home }) =>
     </div>
     <ul className={cx('header__nav', { home })}>
       <Popup
-        trigger={<li><a>Adopt</a></li>}
+        trigger={<li><button type='button' className={cx('popup-link')}>Adopt</button></li>}
         on='hover'
       >
         <ul>
@@ -46,7 +46,7 @@ const Header = ({ home }) =>
     </ul>
     <div className={cx('donate-cat')}>
       <Link to='/donate' className={cx('btn')}>Donate</Link>
-      <img src={headerKitten} />
+      <img src={headerKitten} alt='St. Francis' />
     </div>
   </header>
 

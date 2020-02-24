@@ -19,7 +19,7 @@ const AnimalCard = ({ pet }) =>
   <div className={cx('animal-card')}>
     <div className={cx('pet-card')}>
       <DetailLink pet={pet}>
-        <img src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`} />
+        <img src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`} alt={pet.name} />
       </DetailLink>
       <div className={cx('description')}>
         <h3>{pet.name}</h3>

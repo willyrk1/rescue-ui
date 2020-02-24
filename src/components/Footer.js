@@ -45,16 +45,32 @@ const Footer = ({ legal }) => (
         <h1>Follow Us</h1>
         <hr/>
         <div className={cx('image-list')}>
-          <a href='https://www.instagram.com/stfrancisrescuetampa' target='_blank'>
+          <a
+            href='https://www.instagram.com/stfrancisrescuetampa'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <img src={instagramLogo} alt='Instagram' />
           </a>
-          <a href='https://twitter.com/StFranSociety' target='_blank'>
+          <a
+            href='https://twitter.com/StFranSociety'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <img src={twitterLogo} alt='Twitter' />
           </a>
-          <a href='http://www.youtube.com/user/StFrancisSociety' target='_blank'>
+          <a
+            href='http://www.youtube.com/user/StFrancisSociety'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <img src={youTubeLogo} alt='YouTube' />
           </a>
-          <a href='https://facebook.com/StFrancisSocietyAnimalRescue' target='_blank'>
+          <a
+            href='https://facebook.com/StFrancisSocietyAnimalRescue'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <img src={facebookLogo} alt='Facebook' />
           </a>
         </div>

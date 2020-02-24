@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
-import StFrancisRescue from '../../apis/StFrancisRescue';
-import {PROTOCOL, HOSTNAME} from '../../config/StFrancisRescue';
-import styles from './FeaturedPets.module.scss';
+import StFrancisRescue from '../../apis/StFrancisRescue'
+import {PROTOCOL, HOSTNAME} from '../../config/StFrancisRescue'
+import styles from './FeaturedPets.module.scss'
 
 const cx = classNames.bind(styles)
 
@@ -35,7 +36,7 @@ const FeaturedPets = () => {
           <div className={cx('pet-outer')}>
             <div className={cx('pet-image')}>
               <h2>{pet.name}</h2>
-              <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} />
+              <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} alt={pet.name} />
             </div>
             <div className={cx('pet-info')}>
               <ul>
@@ -71,8 +72,8 @@ const FeaturedPets = () => {
             </div>
           </div>
           <div className={cx("view-buttons")}>
-            <a className={cx('btn')} href="#">View All Cats</a>
-            <a className={cx('btn')} href="#">View All Dogs</a>
+            <Link to='/cats' className={cx('btn')}>View All Cats</Link>
+            <Link to='/dogs' className={cx('btn')}>View All Dogs</Link>
           </div>
         </>
       }
