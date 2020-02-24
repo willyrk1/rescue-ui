@@ -17,6 +17,10 @@
     background-color: $color-accent;
   }
 
+  .kenLogo {
+    width: 100%;
+  }
+
   > div {
     display: flex;
     justify-content: center;
@@ -29,6 +33,14 @@
         background-color: #fff;
         border-radius: 1.5rem;
         padding: 2rem 0 2.8rem 4rem;
+        flex: 1;
+        position: relative;
+
+        > .btn {
+          position: absolute;
+          bottom: 3rem;
+          // margin-bt
+        }
 
         .date {
           background-image: url('../../assets/images/news_header.png');
@@ -65,7 +77,7 @@
 
         > p {
           color: #444;
-          margin: 0 2rem 3.3rem 0;
+          margin: 0 2rem 8rem 0;
           font-size: 1.6rem;
         }
       }

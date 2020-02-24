@@ -8,13 +8,10 @@ const cx = classNames.bind(styles)
 const StandardForm = ({ className, ...rest }) =>
   <form className={cx(className, 'form')} {...rest} />
 
-const Input = ({ className, ...rest }) =>
+StandardForm.Input = ({ className, ...rest }) =>
   <div className={cx(className, 'input')} {...rest} />
 
-const Select = ({ className, ...rest }) =>
+StandardForm.Select = ({ className, ...rest }) =>
   <ReactSelect className={cx(className, 'input-select')} {...rest} />
-
-StandardForm.Input = Input
-StandardForm.Select = Select
 
 export default StandardForm
