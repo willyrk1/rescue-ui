@@ -72,7 +72,7 @@ const Footer = ({ legal }) => (
       <p>
         &copy; {new Date().getFullYear()} St. Francis Society Animal Rescue.&nbsp;
         <Link to='/contact'>Contact</Link> |&nbsp;
-        <Link to='/privacy'>Privacy Policy</Link>
+        <Link to='/privacy-policy'>Privacy Policy</Link>
         &nbsp;| St. Francis Society Animal Rescue PO Box 261614 Tampa, FL 33685-1614
       </p>
     </div>
