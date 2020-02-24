@@ -12,7 +12,7 @@ import frankiePhoto from '../assets/images/Frankie2.jpg'
 const cx = classNames.bind(styles)
 
 const ForeverFoster = () =>
-  <StandardLayout>
+  <StandardLayout legal>
     <div className={cx('forever-foster')}>
       <h1>Sponsor A Forever Foster</h1>
       <hr/>

@@ -8,7 +8,7 @@ import styles from './Donate.module.scss';
 const cx = classNames.bind(styles)
 
 const Donate = () =>
-  <StandardLayout>
+  <StandardLayout legal>
     <div className={cx('donate')}>
       <h1>Donate</h1>
       <hr/>
