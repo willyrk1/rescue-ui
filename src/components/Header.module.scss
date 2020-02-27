@@ -24,8 +24,10 @@
 		display: inline-block;
 		list-style: none;
 
-		&.home li a {
-			color: $color-primary;
+		&.home li {
+      a, .popup-link {
+        color: $color-primary;
+      }
 		}
 
 		li {
