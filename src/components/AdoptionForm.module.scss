@@ -1,12 +1,9 @@
 @import '../assets/stylesheets/style.scss';
 
 .adoption-form {
-	textarea {
-    width: 100%;
-    margin-bottom: 3rem;
-	}
-
-  .thanks {
-    align-self: auto;
+	.note {
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
   }
 }

@@ -11,6 +11,8 @@ const AdoptionForm = () => {
   const [forYou, setForYou] = useState()
   const [otherAnimals, setOtherAnimals] = useState()
   const [givenUp, setGivenUp] = useState()
+  const [rent, setRent] = useState()
+  const [workSchool, setWorkSchool] = useState()
 
   const name = 'Bertil'
 
@@ -273,9 +275,168 @@ const AdoptionForm = () => {
                 <textarea id='explain-giving-up' name='adopter_agreement[given_up_animal_reason]' />
               </li>
             }
+            <li>
+              <label htmlFor='rent-own'>Do you rent or own?</label>
+              <StandardForm.Input>
+                <label htmlFor='rent-own-yes'>
+                  <input
+                    type='radio'
+                    id='rent-own-yes'
+                    name='adopter_agreement[rent_home]'
+                    checked={rent || false}
+                    onChange={() => setRent(true)}
+                    value='true'
+                  />
+                  Rent
+                </label>
+                <label htmlFor='rent-own-no'>
+                  <input
+                    type='radio'
+                    id='rent-own-no'
+                    name='adopter_agreement[rent_home]'
+                    checked={rent === false}
+                    onChange={() => setRent(false)}
+                    value='false'
+                  />
+                  Own
+                </label>
+              </StandardForm.Input>
+            </li>
+            {rent &&
+              <li>
+                <label htmlFor='landlord'>
+                  What is the name of your Apartment Complex or Landlord?<br/>
+                  <em className={cx('note')}>
+                    If you rent, you will be asked to provide proof from your landlord that pets
+                    are permitted and that you have paid a pet deposit
+                  </em>
+                </label>
+                <input type='text' id='landlord' name='adopter_agreement[landlord_name]' />
+              </li>
+            }
+            <li>
+              <label htmlFor='drivers-license'>Driver's license #</label>
+              <input type='text' id='drivers-license' name='adopter_agreement[driver_license_num]' />
+            </li>
+            <li>
+              <label htmlFor='dl-state'>Driver's license state issued</label>
+              <StandardForm.Select id='dl-state' options={states} name='adopter_agreement[driver_license_state]' />
+            </li>
+            <li>
+              <label htmlFor='work-school'>Do you work outside the home or go to school?</label>
+              <StandardForm.Input>
+                <label htmlFor='work-school-yes'>
+                  <input
+                    type='radio'
+                    id='work-school-yes'
+                    name='adopter_agreement[employed_outside_home]'
+                    checked={workSchool || false}
+                    onChange={() => setWorkSchool(true)}
+                    value='true'
+                  />
+                  Yes
+                </label>
+                <label htmlFor='work-school-no'>
+                  <input
+                    type='radio'
+                    id='work-school-no'
+                    name='adopter_agreement[employed_outside_home]'
+                    checked={workSchool === false}
+                    onChange={() => setWorkSchool(false)}
+                    value='false'
+                  />
+                  No
+                </label>
+              </StandardForm.Input>
+            </li>
+            {workSchool &&
+              <li>
+                <label htmlFor='hours-out'>
+                  How many hours a day are you away for work or school?
+                </label>
+                <input type='text' id='hours-out' name='adopter_agreement[hours_away_from_home]' />
+              </li>
+            }
           </ul>
 
-          <button className={cx('btn')} type='submit'>Submit Volunteer Application</button>
+          <h2>
+            Terms
+          </h2>
+
+          <p>
+            If you are approved for adoption, please indicate whether you agree to the following terms:
+          </p>
+
+          <ul>
+            <StandardForm.RadioGroup
+              label={`I will take ${name} to the vet when medical services are needed.`}
+              name='adopter_agreement[safe_environment]'
+              id='will-treat'
+              inputs={[
+                { label: 'Yes', value: 'true' },
+                { label: 'No', value: 'false' },
+              ]}
+            />
+            <StandardForm.RadioGroup
+              label={`I will arrange for the care of ${name} during my absences (vacation, etc.).`}
+              name='adopter_agreement[absentee_care]'
+              id='absentee-care'
+              inputs={[
+                { label: 'Yes', value: 'true' },
+                { label: 'No', value: 'false' },
+              ]}
+            />
+            <StandardForm.RadioGroup
+              label={`
+                I understand St. Francis has the right to confiscate Bertil if not being cared
+                for properly (i.e. lack of food/water/shelter, roaming free, or any form of neglect).
+              `}
+              name='adopter_agreement[permit_confiscation]'
+              id='permit-confiscation'
+              inputs={[
+                { label: 'Yes', value: 'true' },
+                { label: 'No', value: 'false' },
+              ]}
+            />
+            <StandardForm.RadioGroup
+              label={`A minimum donation (depending on age and breed) is required for adoption.`}
+              name='adopter_agreement[minimum_donation]'
+              id='minimum_donation'
+              inputs={[
+                { label: 'Yes', value: 'true' },
+                { label: 'No', value: 'false' },
+              ]}
+            />
+            <StandardForm.RadioGroup
+              label={`
+                I agree to allow communication from St. Francis to ensure a mutually satisfactory
+                owner/pet relationship is established.
+              `}
+              name='adopter_agreement[communication]'
+              id='communication'
+              inputs={[
+                { label: 'Yes', value: 'true' },
+                { label: 'No', value: 'false' },
+              ]}
+            />
+            <li>
+              <label htmlFor='certify'>
+                I certify that the information provided is complete and correct. I understand if
+                it is discovered I have given any untrue information, St. Francis Society has the
+                right to confiscate {name} without a refund of my adoption fee.
+              </label>
+              <StandardForm.Input>
+                <input
+                  type='checkbox'
+                  id='certify'
+                  name='adopter_agreement[complete_accurate_information]'
+                  value='1'
+                />
+              </StandardForm.Input>
+            </li>
+          </ul>
+
+          <button className={cx('btn')} type='submit'>Submit Adoption Application</button>
         </StandardForm>
       </div>
     </StandardLayout>
