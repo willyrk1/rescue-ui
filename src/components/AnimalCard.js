@@ -7,18 +7,13 @@ import styles from './AnimalCard.module.scss'
 
 const cx = classNames.bind(styles)
 
-const DetailLink = ({ pet, children }) =>
-  <Link
-    to={{ pathname: './pet-details', state: { pet }}}
-    className={cx('details-link')}
-  >
-    {children}
-  </Link>
+const DetailLink = ({ id, children }) =>
+  <Link to={`./pet-details/${id}`} className={cx('details-link')}>{children}</Link>
 
 const AnimalCard = ({ pet }) =>
   <div className={cx('animal-card')}>
     <div className={cx('pet-card')}>
-      <DetailLink pet={pet}>
+      <DetailLink id={pet.id}>
         <img src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`} alt={pet.name} />
       </DetailLink>
       <div className={cx('description')}>
@@ -41,7 +36,7 @@ const AnimalCard = ({ pet }) =>
             <span id='dob'>{getAge(pet.date_of_birth)}</span>
           </li>
         </ul>
-        <DetailLink pet={pet}>Read My Profile</DetailLink>
+        <DetailLink id={pet.id}>Read My Profile</DetailLink>
       </div>
     </div>  
 

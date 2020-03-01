@@ -119,6 +119,10 @@ const StFrancisRescue = function() {
             return get(`animals/dogs`, params);
         },
 
+        getAnimal : function(id, params) {
+            return get(`animals/${id}`, params);
+        },
+
         getSuccessStories : function(params) {
             return get(`animals/success_stories`, params);
         },

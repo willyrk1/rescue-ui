@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
 import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue';
+import StFrancisRescue from '../apis/StFrancisRescue';
 import { getAge } from '../config/helpers';
 import StandardLayout from './StandardLayout'
 import Scroller from './Scroller'
@@ -10,9 +11,19 @@ import styles from './AnimalDetails.module.scss';
 
 const cx = classNames.bind(styles)
 
-const AnimalDetails = ({ location: { state: { pet }}}) => {
+const AnimalDetails = ({ match: { params: { id }}}) => {
+  const [pet, setPet] = useState()
   const sharedState = useState(0)
-  const components = pet.images.map(({ public_filename }) => ({
+
+  useEffect(() => {
+    const loadPet = async id => {
+      const { data: pet } = await StFrancisRescue.getAnimal(id)
+      setPet(pet)
+    }
+    loadPet(id)
+  }, [id])
+
+  const components = pet && pet.images.map(({ public_filename }) => ({
     key: public_filename,
     component:
       <Popup
@@ -31,7 +42,7 @@ const AnimalDetails = ({ location: { state: { pet }}}) => {
       </Popup>
   }))
 
-  return (
+  return pet ? (
     <StandardLayout>
       <div className={cx('animal-details')}>
         <h1>{pet.name}</h1>
@@ -108,7 +119,7 @@ const AnimalDetails = ({ location: { state: { pet }}}) => {
         </div>
       </div>
     </StandardLayout>
-  )
+  ) : null
 }
 
 export default AnimalDetails
