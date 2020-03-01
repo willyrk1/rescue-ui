@@ -13,11 +13,12 @@ const NewsEvents = () =>
     <hr/>
     <div className={cx('panels')}>
       <div className={cx('panel')}>
-        <div className={cx('date')}><p>29</p></div>
+        <div className={cx('date')}></div>
         <h1>Free Will Offer</h1>
         <h2>&nbsp;</h2>
         <p>
-          Attorney Ken Afienko is a long time supporter and St Francis adoptive pet parent.
+          Attorney Ken Afienko is a long time supporter and St. Francis adoptive pet parent.  For
+          a donation to St. Francis Society, he will provide a free simple will or living will.
         </p>
         <Popup
           modal

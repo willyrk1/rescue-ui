@@ -72,12 +72,12 @@ const Contact = () =>
           <li>
             <label htmlFor='subscribe'>Would you like to subscribe to our e-mail newsletter?</label>
             <StandardForm.Input>
-              <label for='subcribe-yes'>
-                <input type='radio' id='subcribe-yes' name='subscribe' />
+              <label for='subscribe-yes'>
+                <input type='radio' id='subscribe-yes' name='subscribe' />
                 Yes, I would
               </label>
-              <label for='subcribe-no'>
-                <input type='radio' id='subcribe-no' name='subscribe' />
+              <label for='subscribe-no'>
+                <input type='radio' id='subscribe-no' name='subscribe' />
                 No, I would not
               </label>
             </StandardForm.Input>

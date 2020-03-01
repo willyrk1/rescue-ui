@@ -2,14 +2,18 @@
 
 const env = process.env.REACT_APP_LOCAL || 'dev'
 
-const { hostName } = {
-  dev: {},
+const { hostName, protocol } = {
+  dev: {
+    protocol: 'https',
+    hostName: 'stfrancisrescue.org',
+  },
   stage: {
-    hostName: 'staging.stfrancisrescue.org'
+    protocol: 'http',
+    hostName: 'staging.stfrancisrescue.org',
   },
 }[env]
 
-export const PROTOCOL = "https";
-//export const HOSTNAME = "0.0.0.0:8080";
-export const HOSTNAME = hostName || "stfrancisrescue.org";
-export const ROOT_URL = "/";
+export const PROTOCOL = protocol
+//export const HOSTNAME = "0.0.0.0:8080"
+export const HOSTNAME = hostName
+export const ROOT_URL = "/"

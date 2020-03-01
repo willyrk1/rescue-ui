@@ -58,11 +58,11 @@ const VolunteerForm = () => {
               <StandardForm.Select id='state' options={states} name='volunteer[person_attributes][state]' />
             </li>
             <li>
-              <label htmlFor='zip'>ZIP</label>
+              <label htmlFor='zip'>ZIP *</label>
               <input type='text' id='zip' name='volunteer[person_attributes][postal_code]' />
             </li>
             <li>
-              <label htmlFor='phone'>Phone</label>
+              <label htmlFor='phone'>Phone *</label>
               <input type='text' id='phone' name='volunteer[person_attributes][phone]' />
             </li>
             <li>
@@ -75,7 +75,7 @@ const VolunteerForm = () => {
                   <input type='radio' id='email-contact-yes' name='volunteer[use_email]' value='true' />
                   Yes
                 </label>
-                <label htmlFor='subcribe-no'>
+                <label htmlFor='email-contact-no'>
                   <input type='radio' id='email-contact-no' name='volunteer[use_email]' value='false' />
                   No
                 </label>
@@ -226,6 +226,7 @@ const VolunteerForm = () => {
                         checked={fosterCats}
                         onChange={() => setFosterCats(!fosterCats)}
                         name='volunteer[foster_cats]'
+                        value='1'
                       />
                       Cats/kittens
                     </label>
@@ -236,6 +237,7 @@ const VolunteerForm = () => {
                         checked={fosterDogs}
                         onChange={() => setFosterDogs(!fosterDogs)}
                         name='volunteer[foster_dogs]'
+                        value='1'
                       />
                       Dogs
                     </label>

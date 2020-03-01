@@ -6,37 +6,38 @@
  * author: Steven Pothoven (steven@pothoven.net)
  ********************************************************************************/
 
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom'
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'
 import BeforeYouAdopt from './components/BeforeYouAdopt'
-import Mission from './components/Mission';
+import Mission from './components/Mission'
 import Volunteer from './components/Volunteer'
 import VolunteerForm from './components/VolunteerForm'
 import HelpOurCause from './components/HelpOurCause'
-import Cats from './components/Cats';
-import Dogs from './components/Dogs';
+import Cats from './components/Cats'
+import Dogs from './components/Dogs'
+import AdoptionForm from './components/AdoptionForm'
 import AnimalDetails from './components/AnimalDetails'
-import Contact from './components/Contact';
-import AdoptionLocations from './components/AdoptionLocations';
-import WorkingCats from './components/WorkingCats';
-import Page from './components/Page';
-import SuccessStories from './components/SuccessStories';
-import Donate from './components/Donate';
-import ForeverFoster from './components/ForeverFoster';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import UnderConstruction from './components/UnderConstruction';
-import './App.scss';
+import Contact from './components/Contact'
+import AdoptionLocations from './components/AdoptionLocations'
+import WorkingCats from './components/WorkingCats'
+import Page from './components/Page'
+import SuccessStories from './components/SuccessStories'
+import Donate from './components/Donate'
+import ForeverFoster from './components/ForeverFoster'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import UnderConstruction from './components/UnderConstruction'
+import './App.scss'
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    window.scrollTo(0, 0)
+  }, [pathname])
 
-  return null;
+  return null
 }
 
 const App = () => (
@@ -53,6 +54,7 @@ const App = () => (
       <Route exact path="/cats" component={Cats} />
       <Route exact path="/dogs" component={Dogs} />
       <Route exact path='/pet-details' component={AnimalDetails} />
+      <Route exact path="/adoption-form" component={AdoptionForm} />
       <Route exact path="/success-stories" component={SuccessStories} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/adoption-locations" component={AdoptionLocations} />
