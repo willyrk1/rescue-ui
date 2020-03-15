@@ -1,0 +1,38 @@
+@import '../assets/stylesheets/style.scss';
+
+.working-cat-form {
+	textarea {
+    width: 100%;
+	}
+
+  .thanks {
+    align-self: auto;
+  }
+
+  .choice-list {
+    margin: 20px 0 20px;
+
+    li {
+      label {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        margin: 0;
+
+        input {
+          margin-top: 0.8rem;
+        }
+      }
+
+      &.other-location {
+        label {
+          display: block;
+        }
+
+        textarea {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

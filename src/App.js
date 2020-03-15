@@ -22,6 +22,7 @@ import AnimalDetails from './components/AnimalDetails'
 import Contact from './components/Contact'
 import AdoptionLocations from './components/AdoptionLocations'
 import WorkingCats from './components/WorkingCats'
+import WorkingCatsForm from './components/WorkingCatsForm'
 import Page from './components/Page'
 import SuccessStories from './components/SuccessStories'
 import Donate from './components/Donate'
@@ -59,6 +60,7 @@ const App = () => (
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/adoption-locations" component={AdoptionLocations} />
       <Route exact path="/working-cats" component={WorkingCats} />
+      <Route exact path="/working-cats-form" component={WorkingCatsForm} />
       <Route exact path="/donate" component={Donate} />
       <Route exact path='/forever-foster' component={ForeverFoster} />
       <Route exact path='/privacy-policy' component={PrivacyPolicy} />
