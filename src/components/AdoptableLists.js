@@ -130,7 +130,7 @@ const AdoptableList = ({ getPets, lists, children }) => {
         )
       }
       else {
-        return collection.slice(50 * (pageNum || 0), 50 * (1 + (pageNum || 0)))
+        return collection //.slice(50 * (pageNum || 0), 50 * (1 + (pageNum || 0)))
       }
     }
     else {
