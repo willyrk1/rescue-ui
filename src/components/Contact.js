@@ -105,7 +105,7 @@ const Contact = () =>
           </li>
         </ul>
 
-        <a className={cx('btn')} href='#'>Submit Contact Form</a>
+        <button className={cx('btn')} type='submit'>Submit Contact Form</button>
       </StandardForm>
     </div>
   </StandardLayout>

@@ -459,9 +459,9 @@ const VolunteerForm = () => {
             </>
           }
 
-          <h2>Adoption Center</h2>
+          <h2>Adoption Centers</h2>
           <p>
-            There are three ways to help out at our adoption center, Kennelling, Adoption
+            There are three ways to help out at our adoption centers, Kennelling, Adoption
             Counsellor and Dog Handler.
           </p>
           <p>
@@ -489,9 +489,8 @@ const VolunteerForm = () => {
 
           <p>
             <strong>Adoption Counselor:</strong> Adoption Counselors screen prospective adopters
-            at the adoption center. They work to try and match a potential adopter with a cat that
-            fits the personality and temperament they are looking for. Adoption center hours are
-            12:00 - 6:00 on Saturday and Sunday at the Petsmart across from Citrus Park Mall. If
+            at the adoption centers. They work to try and match a potential adopter with a cat that
+            fits the personality and temperament they are looking for. If
             you choose to be an adoption counselor, we ask that you commit to work the adoption
             center at least one day a month.
           </p>
