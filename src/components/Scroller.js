@@ -1,16 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import classNames from 'classnames/bind'
 import scrollerStyles from './Scroller.module.scss'
 
-const Scroller = ({ components = [], styles, scrollRems = 20, state }) => {
+const Scroller = ({ components = [], styles, scrollRems = 20, state, timer }) => {
   const cx = classNames.bind({...styles, ...scrollerStyles})
   const thisState = useState(0)
   const [ scrollIndex, setScrollIndex ] = state || thisState
 
+  const [ cancelled, setCancelled ] = useState(false)
+
+  useEffect(() => {
+    if (timer && !cancelled) {
+      const interval = setInterval(() => {
+        setScrollIndex(scrollIndex + 1)
+      }, timer)
+
+      return () => clearInterval(interval)
+    }
+  }, [scrollIndex, setScrollIndex, timer, cancelled])
+
+  const setAndCancel = newIndex => () => {
+    setScrollIndex(newIndex)
+    setCancelled(true)
+  }
+
   return (
     <>
       <div className={cx('scroller-arrow', 'scroller-arrow-left', 'arrow')}>
-        <button onClick={() => setScrollIndex(scrollIndex + 1)}>
+        <button onClick={setAndCancel(scrollIndex + 1)}>
           &lt;
         </button>
       </div>
@@ -36,7 +53,7 @@ const Scroller = ({ components = [], styles, scrollRems = 20, state }) => {
         })}
       </div>
       <div className={cx('scroller-arrow', 'scroller-arrow-right', 'arrow')}>
-        <button onClick={() => setScrollIndex(scrollIndex - 1)}>
+        <button onClick={setAndCancel(scrollIndex - 1)}>
           &gt;
         </button>
       </div>
