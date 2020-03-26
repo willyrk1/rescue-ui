@@ -7,12 +7,16 @@ import StandardLayout from './StandardLayout'
 import Scroller from './Scroller'
 import YouTubeIcon from '../assets/images/icon-youtube.png'
 import styles from './AnimalDetails.module.scss';
+import { usePetData } from '../context/PetDataContext';
 
 const cx = classNames.bind(styles)
 
-const AnimalDetails = ({ location: { state: { pet }}}) => {
+const AnimalDetails = ({ match: { params: { petType, list, id }}}) => {
+  const petData = usePetData()
+  const pet = petData && petData[petType][list].find(({ referenceid }) => referenceid === +id)
+
   const sharedState = useState(0)
-  const components = pet.images.map(({ public_filename }) => ({
+  const components = pet && pet.images && pet.images.map(({ public_filename }) => ({
     key: public_filename,
     component:
       <Popup
@@ -31,7 +35,7 @@ const AnimalDetails = ({ location: { state: { pet }}}) => {
       </Popup>
   }))
 
-  return (
+  return pet ? (
     <StandardLayout>
       <div className={cx('animal-details')}>
         <h1>{pet.name}</h1>
@@ -108,7 +112,7 @@ const AnimalDetails = ({ location: { state: { pet }}}) => {
         </div>
       </div>
     </StandardLayout>
-  )
+  ) : null
 }
 
 export default AnimalDetails

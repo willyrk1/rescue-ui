@@ -1,31 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
-import StFrancisRescue from '../../apis/StFrancisRescue'
 import {PROTOCOL, HOSTNAME} from '../../config/StFrancisRescue'
+import { usePetData } from '../../context/PetDataContext'
 import styles from './FeaturedPets.module.scss'
 
 const cx = classNames.bind(styles)
 
 const FeaturedPets = () => {
-  const [pets, setPets] = useState()
-
-  useEffect(() => {
-    const loadPets = async () => {
-      const catData = StFrancisRescue.getCats()
-      const dogData = StFrancisRescue.getDogs()
-      setPets([
-        ...(await catData).data.fosteredAnimals,
-        ...(await dogData).data.fosteredAnimals,
-      ])
-    }
-    loadPets()
-  }, [])
-
+  const petData = usePetData()
+  const pets = petData && petData.cats.fosteredAnimals.concat(petData.dogs.fosteredAnimals)
   const pet = pets && pets[Math.floor(Math.random() * pets.length)]
+
   const {
     public_filename: petImage,
-  } = (pet && pet.images.find(({ primary }) => primary)) || {}
+  } = (pet && pet.images && pet.images.find(({ primary }) => primary)) || {}
 
   return (
     <div className={cx('featured-pets')}>
@@ -36,7 +25,7 @@ const FeaturedPets = () => {
           <div className={cx('pet-outer')}>
             <div className={cx('pet-image')}>
               <h2>{pet.name}</h2>
-              <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} alt={pet.name} />
+              {petImage && <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} alt={pet.name} />}
             </div>
             <div className={cx('pet-info')}>
               <ul>

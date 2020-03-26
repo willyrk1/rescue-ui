@@ -3,7 +3,7 @@ import AdoptableLists from './AdoptableLists'
 
 const Dogs = () =>
   <AdoptableLists
-    getPets={api => api.getDogs()}
+    petType='dogs'
     lists={[
       {
         property: 'fosteredAnimals',

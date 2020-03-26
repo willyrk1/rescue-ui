@@ -7,43 +7,46 @@ import styles from './AnimalCard.module.scss'
 
 const cx = classNames.bind(styles)
 
-const DetailLink = ({ pet, children }) =>
+const DetailLink = ({ petType, list, pet: { referenceid }, children }) =>
   <Link
-    to={{ pathname: './pet-details', state: { pet }}}
+    to={`./pet-details/${petType}/${list}/${referenceid}`}
     className={cx('details-link')}
   >
     {children}
   </Link>
 
-const AnimalCard = ({ pet }) =>
-  <div className={cx('animal-card')}>
-    <div className={cx('pet-card')}>
-      <DetailLink pet={pet}>
-        <img src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`} alt={pet.name} />
-      </DetailLink>
-      <div className={cx('description')}>
-        <h3>{pet.name}</h3>
-        <ul>
-          <li>
-            <label htmlFor='breed'>Breed</label>
-            <span id='breed'>{pet.dominant_breed.name}</span>
-          </li>
-          <li>
-            <label htmlFor='gender'>Gender</label>
-            <span id='gender'>{pet.sex}</span>
-          </li>
-          <li>
-            <label htmlFor='color'>Color</label>
-            <span id='color'>{pet.animal_color.name}</span>
-          </li>
-          <li>
-            <label htmlFor='dob'>Date of birth</label>
-            <span id='dob'>{getAge(pet.date_of_birth)}</span>
-          </li>
-        </ul>
-        <DetailLink pet={pet}>Read My Profile</DetailLink>
-      </div>
-    </div>  
+const AnimalCard = props => {
+  const { pet } = props
+
+  return (
+    <div className={cx('animal-card')}>
+      <div className={cx('pet-card')}>
+        <DetailLink {...props}>
+          <img src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`} alt={pet.name} />
+        </DetailLink>
+        <div className={cx('description')}>
+          <h3>{pet.name}</h3>
+          <ul>
+            <li>
+              <label htmlFor='breed'>Breed</label>
+              <span id='breed'>{pet.dominant_breed.name}</span>
+            </li>
+            <li>
+              <label htmlFor='gender'>Gender</label>
+              <span id='gender'>{pet.sex}</span>
+            </li>
+            <li>
+              <label htmlFor='color'>Color</label>
+              <span id='color'>{pet.animal_color.name}</span>
+            </li>
+            <li>
+              <label htmlFor='dob'>Date of birth</label>
+              <span id='dob'>{getAge(pet.date_of_birth)}</span>
+            </li>
+          </ul>
+          <DetailLink {...props}>Read My Profile</DetailLink>
+        </div>
+      </div>  
 
 
 
@@ -113,5 +116,7 @@ const AnimalCard = ({ pet }) =>
       </ul>
       </div> */}
       </div>
+  )
+}
 
 export default AnimalCard

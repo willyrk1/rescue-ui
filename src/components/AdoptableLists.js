@@ -1,10 +1,10 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import classNames from 'classnames/bind'
-import StFrancisRescue from '../apis/StFrancisRescue'
 import StandardLayout from './StandardLayout'
 import AnimalCard from './AnimalCard'
 import AnimalSearch from './AnimalSearch'
 import styles from './AdoptableLists.module.scss'
+import { usePetData } from '../context/PetDataContext'
 
 const cx = classNames.bind(styles)
 
@@ -17,7 +17,7 @@ const getUniqueOptions = (pets, lists, mappingFn) => [...new Set(
 
 const getDaysAgo = days => new Date() - days * 1000 * 60 * 60 * 24
 
-const AdoptableList = ({ getPets, lists, children }) => {
+const AdoptableList = ({ petType, lists, children }) => {
   const selectMapping = {
     gender: { mappingFn: pet => pet.sex, label: 'Gender' },
     breed: { mappingFn: ({ dominant_breed }) => dominant_breed.name, label: 'Breed' },
@@ -98,13 +98,13 @@ const AdoptableList = ({ getPets, lists, children }) => {
     }
   }, { search: { name: {}, age: {}}})
 
+  const petData = usePetData()
+  
   useEffect(() => {
-    const loadPets = async () => {
-      const { data: pets } = await getPets(StFrancisRescue)
-      dispatch({ type: 'INITIALIZE', pets})
+    if (petData) {
+      dispatch({ type: 'INITIALIZE', pets: petData[petType]})
     }
-    loadPets()
-  }, [getPets])
+  }, [petData])
 
   const {
     pets,
@@ -140,6 +140,7 @@ const AdoptableList = ({ getPets, lists, children }) => {
 
   const processedLists = pets && lists.map(({ title, property }) => ({
     title,
+    property,
     processedList: processList(pets[property], pageNums[property])
   }))
 
@@ -148,14 +149,16 @@ const AdoptableList = ({ getPets, lists, children }) => {
       {typeof children === 'function' ? children(pets) : children}
 
       {(processedLists && processedLists.some(({ processedList }) => processedList.length)) ? (
-        processedLists.map(({ title, processedList }) => !!processedList.length &&
+        processedLists.map(({ title, processedList, property }) => !!processedList.length &&
           <div className={cx('adoptable-list')} key={title}>
             <div className={cx('search')}>
               <AnimalSearch {...{ state, dispatch }} />
             </div>
             <h2>{title}</h2>
             <div>
-              {processedList.map(pet => <AnimalCard pet={pet} key={pet.id} />)}
+              {processedList.map(pet =>
+                <AnimalCard petType={petType} pet={pet} list={property} key={pet.id} />
+              )}
             </div>
           </div>
         )

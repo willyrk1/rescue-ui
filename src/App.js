@@ -8,6 +8,7 @@
 
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom'
+import { PetDataProvider } from './context/PetDataContext'
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'
 import BeforeYouAdopt from './components/BeforeYouAdopt'
@@ -44,29 +45,31 @@ const ScrollToTop = () => {
 const App = () => (
   <Router basename='/rescue-ui'>
     <ScrollToTop />
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/adoptions" component={Adopt} />
-      <Route exact path="/before-you-adopt" component={BeforeYouAdopt} />
-      <Route exact path="/mission" component={Mission} />
-      <Route exact path="/volunteer" component={Volunteer} />
-      <Route exact path="/volunteer-form" component={VolunteerForm} />
-      <Route exact path="/help-our-cause" component={HelpOurCause} />
-      <Route exact path="/cats" component={Cats} />
-      <Route exact path="/dogs" component={Dogs} />
-      <Route exact path='/pet-details' component={AnimalDetails} />
-      <Route exact path="/adoption-form" component={AdoptionForm} />
-      <Route exact path="/success-stories" component={SuccessStories} />
-      <Route exact path="/contact" component={Contact} />
-      <Route exact path="/adoption-locations" component={AdoptionLocations} />
-      <Route exact path="/working-cats" component={WorkingCats} />
-      <Route exact path="/working-cats-form" component={WorkingCatsForm} />
-      <Route exact path="/donate" component={Donate} />
-      <Route exact path='/forever-foster' component={ForeverFoster} />
-      <Route exact path='/privacy-policy' component={PrivacyPolicy} />
-      <Route path="/:pagename" component={Page} />
-      <Route component={UnderConstruction} />
-    </Switch>
+    <PetDataProvider>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/adoptions" component={Adopt} />
+        <Route exact path="/before-you-adopt" component={BeforeYouAdopt} />
+        <Route exact path="/mission" component={Mission} />
+        <Route exact path="/volunteer" component={Volunteer} />
+        <Route exact path="/volunteer-form" component={VolunteerForm} />
+        <Route exact path="/help-our-cause" component={HelpOurCause} />
+        <Route exact path="/cats" component={Cats} />
+        <Route exact path="/dogs" component={Dogs} />
+        <Route exact path='/pet-details/:petType/:list/:id' component={AnimalDetails} />
+        <Route exact path="/adoption-form" component={AdoptionForm} />
+        <Route exact path="/success-stories" component={SuccessStories} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/adoption-locations" component={AdoptionLocations} />
+        <Route exact path="/working-cats" component={WorkingCats} />
+        <Route exact path="/working-cats-form" component={WorkingCatsForm} />
+        <Route exact path="/donate" component={Donate} />
+        <Route exact path='/forever-foster' component={ForeverFoster} />
+        <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+        <Route path="/:pagename" component={Page} />
+        <Route component={UnderConstruction} />
+      </Switch>
+    </PetDataProvider>
   </Router>
 )
 
