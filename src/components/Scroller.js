@@ -27,7 +27,7 @@ const Scroller = ({ components = [], styles, scrollRems = 20, state, timer }) =>
   return (
     <>
       <div className={cx('scroller-arrow', 'scroller-arrow-left', 'arrow')}>
-        <button onClick={setAndCancel(scrollIndex + 1)}>
+        <button onClick={setAndCancel(scrollIndex - 1)}>
           &lt;
         </button>
       </div>
@@ -53,7 +53,7 @@ const Scroller = ({ components = [], styles, scrollRems = 20, state, timer }) =>
         })}
       </div>
       <div className={cx('scroller-arrow', 'scroller-arrow-right', 'arrow')}>
-        <button onClick={setAndCancel(scrollIndex - 1)}>
+        <button onClick={setAndCancel(scrollIndex + 1)}>
           &gt;
         </button>
       </div>

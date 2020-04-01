@@ -49,13 +49,13 @@ const AdoptionLocations = () =>
           and adoption counselors are onsite for adoptions Saturday from 11:00 a.m. to 4:00 p.m. only.
         </li>
         <li>
-          <strong>PetSmart</strong>, located
+          <strong>Petco</strong>, located
           at <a href='https://goo.gl/maps/M3gAzvdMGjS2'>13127 North Dale Mabry Highway</a> in
           Carrollwood.  Cats and adoption counselors are onsite for adoptions Saturday from 11:00
           a.m. to 4:00 p.m. and Sunday from Noon to 3:00 p.m. only.
         </li>
         <li>
-          <strong>PetSmart</strong>, located
+          <strong>Petco</strong>, located
           at <a href='https://goo.gl/maps/i6jTMpXmVi62'>136 S West Shore Boulevard</a> in Tampa.
           Cats and adoption counselors are onsite for adoptions Saturday from 1:00 p.m. to 4:00 p.m. only.
         </li>
