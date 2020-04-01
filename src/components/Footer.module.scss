@@ -3,14 +3,19 @@
 .footer {
 	width: 100%;
 	height: 54rem;
-	background-image: url('../assets/images/footer_bg.png');
-	padding: 5rem 8rem;
+	background: center url('../assets/images/footer_bg.png');
+	padding: 0 7%;
 	position: relative;
 
 	.main {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		color: white;
+
+		> div {
+			margin-top: 4%;
+		}
 
 		h1 {
 			font-size: 3.5rem;
