@@ -4,6 +4,18 @@
   position: relative;
   height: 60rem;
 
+  @media (max-width: 1000px) {
+    height: 40rem;
+  }
+
+  @media (max-width: 870px) {
+    height: 30rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 20rem;
+  }
+
   .scroller-tiles, .scroller-tiles div, .scroller-tiles img {
     width: 100%;
     height: 100%;
@@ -15,10 +27,14 @@
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.2);
     width: 4rem;
     height: 4rem;
     text-align: center;
+
+    @media (max-width: 480px) {
+      background-color: auto;
+    }
 
     &-left {
       left: 2rem;

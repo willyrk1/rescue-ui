@@ -4,6 +4,10 @@
 	background-color: $color-secondary;
 	display: flex;
   justify-content: center;
+
+  @media (max-width: 1060px) {
+    display: none;
+  }
   
   hr {
     display: none;

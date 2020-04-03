@@ -4,6 +4,10 @@
 	background-image: url('../../assets/images/largeBlueCat.png');
   padding: 5rem 6rem 3.8rem;
   
+  @media (max-width: 870px) {
+    display: none;
+  }
+  
   h1, hr {
     margin-left: 2rem;
   }

@@ -25,7 +25,10 @@ const FeaturedPets = () => {
           <div className={cx('pet-outer')}>
             <div className={cx('pet-image')}>
               <h2>{pet.name}</h2>
-              {petImage && <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} alt={pet.name} />}
+              {petImage
+                ? <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} alt={pet.name} />
+                : <img src="https://stopfordcats.org.uk/wordpress/wp-content/uploads/2018/05/Coming-Soon.jpg" />
+              }
             </div>
             <div className={cx('pet-info')}>
               <ul>

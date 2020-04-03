@@ -1,7 +1,7 @@
 @import '../../assets/stylesheets/style.scss';
 
 .featured-pets {
-  padding: 3rem 8rem 2.6rem;
+  padding: 3rem 6% 2.6rem;
 
   h1 {
     color: $color-accent;
@@ -11,6 +11,10 @@
     color: $color-secondary;
     font-size: 3.3rem;
     margin-bottom: 1rem;
+
+    @media (max-width: 500px) {
+      font-size: 3.1rem;
+    }
   }
 
   hr {
@@ -20,6 +24,7 @@
   .pet-outer {
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
   }
 
   .pet-info {

@@ -4,6 +4,10 @@
 	background-image: url('../../assets/images/about_bg.png');
 	display: flex;
   justify-content: center;
+
+  @media (max-width: 870px) {
+    display: none;
+  }
   
   h1 {
     font-size: 3.5rem;
