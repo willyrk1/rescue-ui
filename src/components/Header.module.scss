@@ -32,7 +32,49 @@
 
 		li {
 			display: inline-block;
-      margin-left: 4rem;
+			margin-left: 4rem;
+			
+			&.lose1 {
+				@media (max-width: 1080px) {
+					display: none;
+				}
+			}
+
+			&.gain2 {
+				@media (min-width: 960px) {
+					display: none;
+				}
+			}
+
+			&.lose2 {
+				@media (max-width: 960px) {
+					display: none;
+				}
+			}
+
+			&.gain3 {
+				@media (min-width: 800px) {
+					display: none;
+				}
+			}
+
+			&.lose3 {
+				@media (max-width: 800px) {
+					display: none;
+				}
+			}
+
+			&.gain4 {
+				@media (min-width: 700px) {
+					display: none;
+				}
+			}
+
+			.other {
+				@media (min-width: 1080px) {
+					display: none;
+				}
+			}
       
 			a, .popup-link {
         background: none;
@@ -54,6 +96,7 @@
 		}
 
 		ul li, &.home ul li {
+			display: block;
 			margin: 0 0 0.9rem 0;
 
 			&:last-child {
@@ -72,7 +115,7 @@
 		right: 4rem;
 		position: absolute;
 
-		@media (max-width: $content-width) {
+		@media (max-width: 700px) {
 			display: none;
 		}
 

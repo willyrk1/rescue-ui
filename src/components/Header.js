@@ -39,10 +39,27 @@ const Header = ({ home }) =>
         </ul>
       </Popup>
 
-      <li><Link to='/volunteer'>Volunteer</Link></li>
-      <li><Link to='/help-our-cause'>Help Our Cause</Link></li>
-      <li><Link to='/mission'>About</Link></li>
-      <li><Link to='/contact'>Contact</Link></li>
+      <li className={cx('lose1')}><Link to='/volunteer'>Volunteer</Link></li>
+      <li className={cx('lose2')}><Link to='/help-our-cause'>Help Our Cause</Link></li>
+      <li className={cx('lose1')}><Link to='/mission'>About</Link></li>
+      <li className={cx('lose3')}><Link to='/contact'>Contact</Link></li>
+      <li className={cx('gain4')}><Link to='/donate'>Donate</Link></li>
+
+      <Popup
+        trigger={
+          <li>
+            <button type='button' className={cx('popup-link', 'other')}>Other</button>
+          </li>
+        }
+        on='hover'
+      >
+        <ul>
+          <li><Link to='/mission'>About</Link></li>
+          <li className={cx('gain3')}><Link to='/contact'>Contact</Link></li>
+          <li className={cx('gain2')}><Link to='/help-our-cause'>Help Our Cause</Link></li>
+          <li><Link to='/volunteer'>Volunteer</Link></li>
+        </ul>
+      </Popup>
     </ul>
     <div className={cx('donate-cat')}>
       <Link to='/donate' className={cx('btn')}>Donate</Link>
