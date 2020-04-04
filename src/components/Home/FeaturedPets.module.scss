@@ -1,6 +1,7 @@
 @import '../../assets/stylesheets/style.scss';
 
 .featured-pets {
+  width: 100%;
   padding: 3rem 6% 2.6rem;
 
   h1 {
@@ -23,7 +24,7 @@
 
   .pet-outer {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 
@@ -54,6 +55,7 @@
         span {
           flex: 2;
           font-size: 1.5rem;
+          margin-left: 2rem;
         }
       }
     }
