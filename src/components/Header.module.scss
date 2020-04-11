@@ -7,16 +7,31 @@
 	background-color: $color-primary;
 	position: relative;
 
-	&.home {
-		background-color: #fff;
+	@media (min-width: 700px) {
+		&.home {
+			background-color: #fff;
+
+			.header__logo img {
+				&.white {
+					display: none;
+				}
+				&.color {
+					display: block;
+				}
+			}
+		}
 	}
-	
+
 	&__logo {
 		display: inline-block;
 		padding-right: 1rem;
 
 		img {
 			height: 8.2rem;
+
+			&.color {
+				display: none;
+			}
 		}
 	}
 
@@ -24,10 +39,12 @@
 		display: inline-block;
 		list-style: none;
 
-		&.home li {
-      a, .popup-link {
-        color: $color-primary;
-      }
+		@media (min-width: 700px) {
+			&.home li {
+				a, .popup-link {
+					color: $color-primary;
+				}
+			}
 		}
 
 		li {

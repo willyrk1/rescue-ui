@@ -112,23 +112,27 @@ const StFrancisRescue = function() {
         },
         
         getCats : function(params) {
-            return get(`animals/cats`, params);
+            return get('animals/cats', params);
         },
 
         getDogs : function(params) {
-            return get(`animals/dogs`, params);
+            return get('animals/dogs', params);
         },
 
         getSuccessStories : function(params) {
-            return get(`animals/success_stories`, params);
+            return get('animals/success_stories', params);
         },
 
         getBoardMembers : function(params) {
-            return get(`mission`, params);
+            return get('mission', params);
         },
 
         getHeros : function(params) {
-            return get(`heros`, params);
+            return get('heros', params);
+        },
+
+        getLocations : function(params) {
+            return get('locations', params);
         }
     };
     

@@ -21,7 +21,8 @@ const Header = ({ home }) =>
   <header className={cx('header', { home })}>
     <div className={cx('header__logo')}>
       <Link to='/'>
-        <img src={home ? logoColor : logoWhite} alt='St. Francis Society Animal Rescue' />
+        <img className={cx('color')} src={logoColor} alt='St. Francis Society Animal Rescue' />
+        <img className={cx('white')} src={logoWhite} alt='St. Francis Society Animal Rescue' />
       </Link>
     </div>
     <ul className={cx('header__nav', { home })}>
