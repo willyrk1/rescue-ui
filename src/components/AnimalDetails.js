@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
 import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue';
@@ -11,9 +12,9 @@ import { usePetData } from '../context/PetDataContext';
 
 const cx = classNames.bind(styles)
 
-const AnimalDetails = ({ match: { params: { petType, list, id }}}) => {
+const AnimalDetails = ({ match: { params: { petType, list, animalId }}}) => {
   const petData = usePetData()
-  const pet = petData && petData[petType][list].find(({ referenceid }) => referenceid === +id)
+  const pet = petData && petData[petType][list].find(({ id }) => id === +animalId)
 
   const sharedState = useState(0)
   const components = pet && pet.images && pet.images.map(({ public_filename }) => ({
@@ -34,6 +35,12 @@ const AnimalDetails = ({ match: { params: { petType, list, id }}}) => {
         </div>
       </Popup>
   }))
+
+  const contactMethods = {
+    Email: { email: true },
+    Phone: { phone: true },
+    Both: { email: true, phone: true, both: true }
+  }[pet && pet.foster_method_of_contact]
 
   return pet ? (
     <StandardLayout>
@@ -108,6 +115,27 @@ const AnimalDetails = ({ match: { params: { petType, list, id }}}) => {
                 </a>
               </p>
             }
+            {pet.foster_name &&
+              <p>
+                If you have any questions about {pet.name}, contact {pet.foster_name.split(' ')[0]} at
+                {contactMethods.email && pet.foster_email &&
+                  <>
+                    &nbsp;
+                    <a href={`mailto:${pet.foster_email}?Subject=Inquiry about ${pet.name} from stfrancisrescue.org`}>
+                      {pet.foster_email}
+                    </a>
+                  </>
+                }
+                {contactMethods.both && ' or '}
+                {contactMethods.phone && pet.foster_phone}.
+              </p>
+            }
+            <p>
+              Submit an adoption application for {pet.name} by clicking on the "want to adopt me?" button.
+            </p>
+            <Link to={`/adoption-form/${petType}/${list}/${animalId}`} className={cx('btn')}>
+              Want to Adopt Me?
+            </Link>
           </div>
         </div>
       </div>

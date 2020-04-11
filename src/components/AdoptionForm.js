@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import classNames from 'classnames/bind'
 import states from '../config/states'
+import { usePetData } from '../context/PetDataContext'
 import StandardLayout from './StandardLayout'
 import StandardForm from './StandardForm'
 import styles from './AdoptionForm.module.scss'
 
 const cx = classNames.bind(styles)
 
-const AdoptionForm = () => {
+const AdoptionForm = ({ match: { params: { petType, list, animalId }}}) => {
   const [forYou, setForYou] = useState()
   const [otherAnimals, setOtherAnimals] = useState()
   const [givenUp, setGivenUp] = useState()
   const [rent, setRent] = useState()
   const [workSchool, setWorkSchool] = useState()
 
-  const name = 'Bertil'
+  const petData = usePetData()
+  const { name } = petData && petData[petType][list].find(({ id }) => id === +animalId)
 
   return (
     <StandardLayout>
@@ -435,6 +437,8 @@ const AdoptionForm = () => {
               </StandardForm.Input>
             </li>
           </ul>
+
+          <input name="adopter_agreement[animal_id]" type="hidden" value={animalId} />
 
           <button className={cx('btn')} type='submit'>Submit Adoption Application</button>
         </StandardForm>

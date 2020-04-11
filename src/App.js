@@ -56,8 +56,8 @@ const App = () => (
         <Route exact path="/help-our-cause" component={HelpOurCause} />
         <Route exact path="/cats" component={Cats} />
         <Route exact path="/dogs" component={Dogs} />
-        <Route exact path='/pet-details/:petType/:list/:id' component={AnimalDetails} />
-        <Route exact path="/adoption-form" component={AdoptionForm} />
+        <Route exact path='/pet-details/:petType/:list/:animalId' component={AnimalDetails} />
+        <Route exact path="/adoption-form/:petType/:list/:animalId" component={AdoptionForm} />
         <Route exact path="/success-stories" component={SuccessStories} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/adoption-locations" component={AdoptionLocations} />
