@@ -104,7 +104,7 @@ const VolunteerForm = () => {
                     name='volunteer[work_with_cats]'
                     value='1'
                   />
-                  Cats/kittens
+                  Cats/<wbr />kittens
                 </label>
                 <label htmlFor='rather-dogs'>
                   <input
@@ -228,7 +228,7 @@ const VolunteerForm = () => {
                         name='volunteer[foster_cats]'
                         value='1'
                       />
-                      Cats/kittens
+                      Cats/<wbr />kittens
                     </label>
                     <label htmlFor='foster-choice-dogs'>
                       <input

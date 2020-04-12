@@ -11,5 +11,9 @@
 .form {
 	background-image: url('../assets/images/catdoggreen.png');
 	background-repeat: no-repeat;
-	background-position: 8rem 19rem;
+	background-position: 7% 19rem;
+
+	@media (max-width: 500px) {
+		background-size: 25%;
+	}
 }
