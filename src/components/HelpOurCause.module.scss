@@ -6,6 +6,28 @@
 
 	.main {
 		flex: 1 0;
+
+		h1, hr {
+			display: none;
+		}
+
+		@media (max-width: 700px) {
+			h1, hr {
+				display: block;
+			}
+	
+			h1 {
+				color: $color-accent;
+				margin-top: 1rem;
+				font-size: 2.5rem;
+				font-weight: 500;
+				line-height: 2.5rem;
+			}
+		
+			hr {
+				background-color: $color-accent;
+			}
+		}
 	}
 
 	.top {
@@ -16,11 +38,16 @@
 		}
 		
 		h1 {
+			display: block;
 			position: absolute;
 			top: 1.5rem;
 			left: 1.5rem;
 			color: #3d0606;
 			font-size: 3.5rem;
+
+			@media (max-width: 700px) {
+				display: none;
+			}
 		}
 
 		p {
@@ -31,6 +58,10 @@
 			width: 29rem;
 			font-weight: 700;
 			font-size: 1.4rem;
+
+			@media (max-width: 700px) {
+				display: none;
+			}
 		}
 	}
 
@@ -54,6 +85,10 @@
 			justify-content: center;
 			align-items: center;
 
+			@media (max-width: 625px) {
+				padding: 6rem 2rem 1.2rem;
+			}
+
 			&:before {
 				content: '';
 				background: url('../assets/images/kitty.png') no-repeat top/auto 11rem;
@@ -61,6 +96,12 @@
 				position: absolute;
 				height: 11rem;
 				top: -5.5rem;
+
+				@media (max-width: 625px) {
+					height: 9rem;
+					background-size: auto 9rem;
+					top: -4.5rem;
+				}
 			}
 
 			p {
@@ -69,6 +110,11 @@
 				line-height: 3.5rem;
 				text-align: center;
 				margin-bottom: 1.2rem;
+
+				@media (max-width: 625px) {
+					font-size: 2.2rem;
+					line-height: 2.2rem;
+				}
 			}
 		}
 	}
@@ -92,6 +138,10 @@
 		h1 {
 			font-size: 3.5rem;
 			color: $color-accent;
+
+			@media (max-width: 425px) {
+				font-size: 2.5rem;
+			}
 		}
 
 		hr {
@@ -122,6 +172,7 @@
 
 			@media (max-width: 625px) {
 				width: 100%;
+				min-height: 17rem;
 			}
 
 			> p {
@@ -130,6 +181,10 @@
 				font-weight: 700;
 				text-align: center;
 				margin-bottom: 1.2rem;
+
+				@media (max-width: 625px) {
+					font-size: 2.2rem;
+				}
 			}
 		}
 	}

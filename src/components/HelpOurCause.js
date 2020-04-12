@@ -23,6 +23,9 @@ const HelpOurCause = () =>
             </p>
           </div>
 
+          <h1>Please Help.<br/> He's Counting on You.</h1>
+          <hr/>
+
           <div className={cx('make-donation')}>
             <div className={cx('one-time')}>
               <p>Make A One-Time Donation</p>
@@ -38,7 +41,12 @@ const HelpOurCause = () =>
 
       <div className={cx('mail-check')}>
         <p>
-          If you prefer to send a check, please mail to: St. Francis Society, P.O. Box 261614, Tampa, FL 33685.
+          If you prefer to send a check, please mail to:
+        </p>
+        <p>
+          St. Francis Society<br/>
+          P.O. Box 261614<br/>
+          Tampa, FL 33685
         </p>
       </div>
 
