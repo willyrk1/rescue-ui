@@ -2,7 +2,7 @@
 
 .help-cause {
 	font-family: 'Raleway', sans-serif;
-	padding: 5rem 14rem 0 10rem;
+	padding: 4% 12% 0 8%;
 
 	.main {
 		flex: 1 0;
@@ -36,32 +36,31 @@
 
 	.make-donation {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-evenly;
-		margin: 4rem 0 2.5rem;
+		align-items: stretch;
+		margin: 2.5rem 0;
 
 		> div {
 			position: relative;
-			z-index: 100;
+			flex: 1;
+			margin: 5.5rem 1rem 0;
+			padding: 7rem 2rem 2.2rem;
+			color: $color-secondary;
+			border: $border-width solid $color-primary;
+			border-radius: $border-radius;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 
-			img {
+			&:before {
+				content: '';
+				background: url('../assets/images/kitty.png') no-repeat top/auto 11rem;
+				width: 100%;
 				position: absolute;
-				left: 50%;
-				top: -1.5rem;
-				transform: translateX(-50%);
 				height: 11rem;
-			}
-
-			> div {
-				margin-top: 4rem;
-				border: $border-width solid $color-primary;
-				border-radius: $border-radius;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				align-items: center;
-				padding: 7rem 2rem 2.2rem;
-				color: $color-secondary;
-				z-index: 50;
+				top: -5.5rem;
 			}
 
 			p {
@@ -72,10 +71,6 @@
 				margin-bottom: 1.2rem;
 			}
 		}
-	}
-
-	.one-time {
-		margin-right: 2rem;
 	}
 
 	.mail-check {
@@ -120,6 +115,14 @@
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: center;
+
+			@media (max-width: 800px) {
+				width: 45%;
+			}
+
+			@media (max-width: 625px) {
+				width: 100%;
+			}
 
 			> p {
 				color: $color-primary;
