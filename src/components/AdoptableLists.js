@@ -104,7 +104,7 @@ const AdoptableList = ({ petType, lists, children }) => {
     if (petData) {
       dispatch({ type: 'INITIALIZE', pets: petData[petType]})
     }
-  }, [petData])
+  }, [petData, petType])
 
   const {
     pets,

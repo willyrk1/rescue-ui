@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import {PROTOCOL, HOSTNAME} from '../../config/StFrancisRescue'
@@ -27,7 +27,11 @@ const FeaturedPets = () => {
               <h2>{pet.name}</h2>
               {petImage
                 ? <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} alt={pet.name} />
-                : <img src='https://wilsonortho.net/wp-content/uploads/2019/12/Photo-Coming-Soon-1.jpg' />
+                :
+                  <img
+                    src='https://wilsonortho.net/wp-content/uploads/2019/12/Photo-Coming-Soon-1.jpg'
+                    alt='Not available'
+                  />
               }
             </div>
             <div className={cx('pet-info')}>
