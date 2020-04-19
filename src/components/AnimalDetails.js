@@ -47,13 +47,12 @@ const AnimalDetails = ({ match: { params: { petType, list, animalId }}}) => {
       <div className={cx('animal-details')}>
         <h1>{pet.name}</h1>
         <hr/>
-        <div>
+        <div className={cx('main')}>
           <div className={cx('photos')}>
             <div className={cx('gallery', 'gallery--big')}>
               <Scroller
                 components={components}
                 styles={styles}
-                scrollRems={42}
                 state={sharedState}
               />
             </div>
@@ -85,7 +84,6 @@ const AnimalDetails = ({ match: { params: { petType, list, animalId }}}) => {
               <Scroller
                 components={components}
                 styles={styles}
-                scrollRems={10}
                 state={sharedState}
               />
             </div>

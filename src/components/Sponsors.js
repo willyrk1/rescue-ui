@@ -29,7 +29,6 @@ const Sponsors = () => {
             { key: 6, component: <img src={bisselLogo} alt='Bissell Pet Foundation' /> },
           ]}
           styles={styles}
-          scrollRems={20}
         />
       </div>
     </div>

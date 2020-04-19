@@ -31,7 +31,6 @@ const Banner = () => {
           })
         )}
         styles={styles}
-        scrollRems={120}
         timer={5000}
       />
     </div>

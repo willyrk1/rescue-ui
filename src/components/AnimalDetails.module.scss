@@ -1,11 +1,24 @@
 @import '../assets/stylesheets/style.scss';
 
 .animal-details {
-  > div {
+  .main {
     display: flex;
 
+    @media (max-width: 500px) {
+      flex-wrap: wrap;
+    }
+
+    .photos {
+      flex: 0 1 42rem;
+    }
+
     .details {
-      padding-left: 4rem;
+      flex: 1 0 0;
+      padding-left: 3%;
+
+      @media (max-width: 500px) {
+        margin: 2rem 0;
+      }
 
       p {
         font-size: 1.7rem;
@@ -105,7 +118,6 @@
       &--big {
         position: relative;
         height: 40rem;
-        width: 42rem;
 
         .scroller-tiles, .scroller-tiles > div {
           width: 100%;
@@ -135,15 +147,20 @@
 
       &--thumbnail {
         height: 23rem;
+        width: 100%;
       
+        @media (max-width: 500px) {
+          display: none;
+        }
+  
         .scroller-arrow button {
           font-size: 2rem;
           color: $color-primary;
         }
         
         .scroller-tiles {
+          flex: 1;
           padding: 0;
-          width: 38rem;
           height: 100%;
           margin: 0 1rem 0;
       

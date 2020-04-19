@@ -1,26 +1,54 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import classNames from 'classnames/bind'
 import scrollerStyles from './Scroller.module.scss'
 
-const Scroller = ({ components = [], styles, scrollRems = 20, state, timer }) => {
+const Scroller = ({ components = [], styles, state, timer }) => {
   const cx = classNames.bind({...styles, ...scrollerStyles})
+
+  /*
+   * Scroll index (optionally shared).
+   */
   const thisState = useState(0)
-  const [ scrollIndex, setScrollIndex ] = state || thisState
+  const [scrollIndex, setScrollIndex] = state || thisState
 
+  /*
+   * Scroll size.
+   */
+  const [scrollSize, setScrollSize] = useState()
+
+  const tileRef = useRef()
+
+  const updateScrollSize = () => {
+    if (tileRef.current) {
+      setScrollSize(tileRef.current.offsetWidth)
+    }
+  }
+
+  useLayoutEffect(() => {
+    updateScrollSize()
+  })
+
+  const setScrollIndexAndSize = scrollIndex => {
+    setScrollIndex(scrollIndex)
+    updateScrollSize()
+  }
+
+  /*
+   * Timer for auto-scrolling.
+   */
   const [ cancelled, setCancelled ] = useState(false)
-
   useEffect(() => {
     if (timer && !cancelled) {
       const interval = setInterval(() => {
-        setScrollIndex(scrollIndex + 1)
+        setScrollIndexAndSize(scrollIndex + 1)
       }, timer)
 
       return () => clearInterval(interval)
     }
-  }, [scrollIndex, setScrollIndex, timer, cancelled])
+  }, [scrollIndex, timer, cancelled])
 
   const setAndCancel = newIndex => () => {
-    setScrollIndex(newIndex)
+    setScrollIndexAndSize(newIndex)
     setCancelled(true)
   }
 
@@ -39,13 +67,14 @@ const Scroller = ({ components = [], styles, scrollRems = 20, state, timer }) =>
           return (
             <div
               key={key}
+              ref={tileRef}
               className={
                 cx((val => ({
                   'scroller-hide': val,
                   hide: val,
                 }))(!adjustedIndex || adjustedIndex === ary.length - 1))
               }
-              style={{ left: `${(adjustedIndex - 1) * scrollRems}rem` }}
+              style={{ left: `${(adjustedIndex - 1) * scrollSize}px` }}
             >
               {component}
             </div>
