@@ -26,6 +26,7 @@ const AnimalSearch = ({
       modal
       closeOnDocumentClick
       trigger={<button className={cx('btn')}>Search</button>}
+      contentStyle={{ width: 'inherit' }}
     >
       {close =>
         <div className={cx('search-content')}>
