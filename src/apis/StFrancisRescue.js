@@ -115,6 +115,10 @@ const StFrancisRescue = function() {
             return get('animals/cats', params);
         },
 
+        getCourtesyCats : function(params) {
+            return get('courtesy_animals/courtesy_cats', params);
+        },
+
         getDogs : function(params) {
             return get('animals/dogs', params);
         },

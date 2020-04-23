@@ -7,12 +7,17 @@ export const PetDataProvider = ({ children }) => {
   const [petData, setPetData] = useState()
 
   useEffect(() => {
+    // Ignore for now...
+    const handleError = async result => result.catch(() => ({}))
+
     const loadPetData = async () => {
       const cats = StFrancisRescue.getCats()
+      const courtesyCats = StFrancisRescue.getCourtesyCats()
       const dogs = StFrancisRescue.getDogs()
       setPetData({
-        cats: (await cats).data,
-        dogs: (await dogs).data,
+        cats: (await handleError(cats)).data,
+        dogs: (await handleError(dogs)).data,
+        courtesyCats: (await handleError(courtesyCats)).data,
       })
     }
     loadPetData()
