@@ -3,18 +3,33 @@ import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import {PROTOCOL, HOSTNAME} from '../../config/StFrancisRescue'
 import { usePetData } from '../../context/PetDataContext'
+import { getAge } from '../../config/helpers'
+import AnimalLink from '../AnimalLink'
 import styles from './FeaturedPets.module.scss'
 
 const cx = classNames.bind(styles)
 
 const FeaturedPets = () => {
   const petData = usePetData()
-  const pets = petData && petData.cats.fosteredAnimals.concat(petData.dogs.fosteredAnimals)
+  const pets = petData && [
+    ...petData.cats.fosteredAnimals.map(pet => ({ ...pet, petType: 'cats' })),
+    ...petData.dogs.fosteredAnimals.map(pet => ({ ...pet, petType: 'dogs' })),
+  ]
   const pet = pets && pets[Math.floor(Math.random() * pets.length)]
 
   const {
     public_filename: petImage,
   } = (pet && pet.images && pet.images.find(({ primary }) => primary)) || {}
+
+  const DetailLink = ({ children }) =>
+    <AnimalLink
+      petType={pet.petType}
+      list='fosteredAnimals'
+      pet={pet}
+      className={cx('animal-link')}
+    >
+      {children}
+    </AnimalLink>
 
   return (
     <div className={cx('featured-pets')}>
@@ -22,17 +37,19 @@ const FeaturedPets = () => {
       <hr/>
       {pet &&
         <>
+          <h2><DetailLink>{pet.name}</DetailLink></h2>
           <div className={cx('pet-outer')}>
             <div className={cx('pet-image')}>
-              <h2>{pet.name}</h2>
-              {petImage
-                ? <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} alt={pet.name} />
-                :
-                  <img
-                    src='https://wilsonortho.net/wp-content/uploads/2019/12/Photo-Coming-Soon-1.jpg'
-                    alt='Not available'
-                  />
-              }
+              <DetailLink>
+                {petImage
+                  ? <img src={`${PROTOCOL}://${HOSTNAME}${petImage}`} alt={pet.name} />
+                  :
+                    <img
+                      src='https://wilsonortho.net/wp-content/uploads/2019/12/Photo-Coming-Soon-1.jpg'
+                      alt='Not available'
+                    />
+                }
+              </DetailLink>
             </div>
             <div className={cx('pet-info')}>
               <ul>
@@ -49,8 +66,8 @@ const FeaturedPets = () => {
                   <span id='color'>{pet.animal_color.name}</span>
                 </li>
                 <li>
-                  <label htmlFor='dob'>Date of birth</label>
-                  <span id='dob'>{pet.date_of_birth}</span>
+                  <label htmlFor='dob'>Age</label>
+                  <span id='dob'>{getAge(pet.date_of_birth)}</span>
                 </li>
                 <li>
                   <label htmlFor='goodWithCats'>Good with cats</label>
@@ -65,11 +82,11 @@ const FeaturedPets = () => {
                   <span id='goodWithChildren'>{pet.good_with_children}</span>
                 </li>
               </ul>
+              <div className={cx("view-buttons")}>
+                <Link to='/cats' className={cx('btn')}>View All Cats</Link>
+                <Link to='/dogs' className={cx('btn')}>View All Dogs</Link>
+              </div>
             </div>
-          </div>
-          <div className={cx("view-buttons")}>
-            <Link to='/cats' className={cx('btn')}>View All Cats</Link>
-            <Link to='/dogs' className={cx('btn')}>View All Dogs</Link>
           </div>
         </>
       }

@@ -18,7 +18,12 @@
 	.board-member {
 		display: flex;
 		justify-content: flex-start;
+		flex-wrap: wrap;
 		padding-top: 0;
+
+		.member-info {
+			flex: 1 1;
+		}
 
 		h3 {
 			font-size: 3.5rem;

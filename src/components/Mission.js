@@ -80,7 +80,7 @@ const Mission = () => {
                 alt={name.split(' ')[0]}
               />
             </div>
-            <div>
+            <div className={cx('member-info')}>
               <h3>{name.split(' ')[0]}-{title}</h3>
               <h4>{role}</h4>
               <p dangerouslySetInnerHTML={{__html: bio }} />

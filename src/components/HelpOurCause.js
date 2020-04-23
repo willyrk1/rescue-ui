@@ -4,7 +4,6 @@ import Popup from 'reactjs-popup'
 import classNames from 'classnames/bind'
 import Layout from './Layout'
 import donateCat from '../assets/images/donateCat.jpg'
-import makeDonationCat from '../assets/images/kitty.png'
 import styles from './HelpOurCause.module.scss'
 
 const cx = classNames.bind(styles)
@@ -81,6 +80,7 @@ const HelpOurCause = () =>
               modal
               closeOnDocumentClick
               trigger={<button className={cx('btn')}>More Info</button>}
+              contentStyle={{ width: 'inherit' }}
             >
               {close =>
                 <div className={cx('popup-modal')}>
@@ -129,6 +129,7 @@ const HelpOurCause = () =>
               modal
               closeOnDocumentClick
               trigger={<button className={cx('btn')}>More Info</button>}
+              contentStyle={{ width: 'inherit' }}
             >
               {close =>
                 <div className={cx('popup-modal')}>
@@ -167,6 +168,7 @@ const HelpOurCause = () =>
               modal
               closeOnDocumentClick
               trigger={<button className={cx('btn')}>More Info</button>}
+              contentStyle={{ width: 'inherit' }}
             >
               {close =>
                 <div className={cx('popup-modal')}>

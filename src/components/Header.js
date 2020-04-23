@@ -28,7 +28,7 @@ const Header = ({ home }) =>
     <ul className={cx('header__nav', { home })}>
       <Popup
         trigger={<li><button type='button' className={cx('popup-link')}>Adopt</button></li>}
-        on='hover'
+        on={['hover', 'click']}
       >
         <ul>
           <li><Link to='/adoptions'>Adoption Information</Link></li>
@@ -52,7 +52,7 @@ const Header = ({ home }) =>
             <button type='button' className={cx('popup-link', 'other')}>Other</button>
           </li>
         }
-        on='hover'
+        on={['hover', 'click']}
       >
         <ul>
           <li><Link to='/mission'>About</Link></li>
