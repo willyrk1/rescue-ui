@@ -8,7 +8,8 @@
 	}
 
 	img {
-		width: 27rem;
+		width: 30%;
+		max-width: 27rem;
 		margin-left: 1rem;
 	}
 
@@ -24,6 +25,12 @@
 	.dogs {
 		display: flex;
 		align-items: center;
+
+		@media (max-width: 550px) {
+			img {
+				display: none;
+			}
+		}
 
 		> div {
 			display: flex;
