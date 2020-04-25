@@ -6,7 +6,7 @@
  * author: Steven Pothoven (steven@pothoven.net)
  ********************************************************************************/
 
-import { PROTOCOL, HOSTNAME, ROOT_URL } from '../config/StFrancisRescue';
+import { PROTOCOL, HOSTNAME, ROOT_URL, TOKEN } from '../config/StFrancisRescue';
 
 const StFrancisRescue = function() {
     var log = console.log;
@@ -72,24 +72,12 @@ const StFrancisRescue = function() {
      *   jwt (optional)    - JWT token if the request need authentication
      *
      */
-    /*
-    function post(endpoint, params, jwt) {
-        let url = `${PROTOCOL}://${HOSTNAME}${ROOT_URL}${endpoint}`;
-        let headers = {
-            "accept"       : "application/json",
-            "Content-Type" : "application/json"
-        };
-        if (jwt) {
-            headers.Authorization = "Bearer " + jwt;
-        }
+    function post(url, body, jwt) {
+        const headers = { "Authorization": `Basic ${jwt}` }
 
-        log("REQUEST  :=", url, params);
+        log("REQUEST  :=", url);
 
-        return fetch(url, {
-            method  : "POST",
-            headers : headers,
-            body    : JSON.stringify(params) 
-        })
+        return fetch(url, { method: "POST", headers, body })
             .then(checkFetchResponseOK)
             .then(response => response.json())
             .then(data => {
@@ -97,8 +85,7 @@ const StFrancisRescue = function() {
                 return data;
             });
     }
-    */
-    
+
     return {
 
         setLog : function(logFn) {
@@ -137,7 +124,16 @@ const StFrancisRescue = function() {
 
         getLocations : function(params) {
             return get('locations', params);
-        }
+        },
+
+        postForm: event => {
+            event.preventDefault()
+            post(
+                event.target.action,
+                new FormData(event.target),
+                TOKEN,
+            )
+        },
     };
     
 }();

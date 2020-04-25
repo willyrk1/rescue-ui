@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind'
+import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue';
 import states from '../config/states'
 import StandardLayout from './StandardLayout'
 import StandardForm from './StandardForm'
@@ -35,77 +36,66 @@ const Contact = () =>
       </div>
 
       <h2>Contact Form</h2>
-      <StandardForm action='http://stfrancisrescue.org/contact_forms' className={cx('form')}>
+      <StandardForm action={`${PROTOCOL}://${HOSTNAME}/contact_forms`} className={cx('form')}>
         <ul>
           <li>
             <label htmlFor='firstName'>First Name *</label>
-            <input type='text' id='firstName' />
+            <input type='text' id='firstName' name='contact_form[first_name]' />
           </li>
           <li>
             <label htmlFor='lastName'>Last Name *</label>
-            <input type='text' id='lastName' />
+            <input type='text' id='lastName' name='contact_form[last_name]' />
           </li>
           <li>
             <label htmlFor='email'>E-mail Address *</label>
-            <input type='text' id='email' />
+            <input type='text' id='email' name='contact_form[email]' />
           </li>
           <li>
             <label htmlFor='address'>Street Address</label>
-            <input type='text' id='address' />
+            <input type='text' id='address' name='contact_form[address]' />
           </li>
           <li>
             <label htmlFor='city'>City</label>
-            <input type='text' id='city' />
+            <input type='text' id='city' name='contact_form[city]' />
           </li>
           <li>
             <label htmlFor='state'>State</label>
-            <StandardForm.Select options={states} />
+            <StandardForm.Select options={states} name='contact_form[state]' />
           </li>
           <li>
             <label htmlFor='zip'>ZIP</label>
-            <input type='text' id='zip' />
+            <input type='text' id='zip' name='contact_form[postal_code]' />
           </li>
           <li>
             <label htmlFor='phone'>Phone</label>
-            <input type='text' id='phone' />
+            <input type='text' id='phone' name='contact_form[phone]' />
           </li>
-          <li>
-            <label htmlFor='subscribe'>Would you like to subscribe to our e-mail newsletter?</label>
-            <StandardForm.Input>
-              <label for='subscribe-yes'>
-                <input type='radio' id='subscribe-yes' name='subscribe' />
-                Yes, I would
-              </label>
-              <label for='subscribe-no'>
-                <input type='radio' id='subscribe-no' name='subscribe' />
-                No, I would not
-              </label>
-            </StandardForm.Input>
-          </li>
-          <li>
-            <label htmlFor='regarding'>I am contacting you regarding a</label>
-            <StandardForm.Input>
-              <label htmlFor='regarding-cat'>
-                <input type='radio' id='regarding-cat' name='regarding' />
-                Cat
-              </label>
-              <label htmlFor='regarding-dog'>
-                <input type='radio' id='regarding-dog' name='regarding' />
-                Dog
-              </label>
-              <label htmlFor='regarding-other'>
-                <input type='radio' id='regarding-other' name='regarding' />
-                Other
-              </label>
-            </StandardForm.Input>
-          </li>
+          <StandardForm.RadioGroup
+            label='Would you like to subscribe to our e-mail newsletter?'
+            name='contact_form[subscribe_newsletter]'
+            id='subscribe'
+            inputs={[
+              { label: 'Yes, I would', value: 'true' },
+              { label: 'No, I would not', value: 'false' },
+            ]}
+          />
+          <StandardForm.RadioGroup
+            label='I am contacting you regarding a'
+            name='contact_form[contact_regarding]'
+            id='regarding'
+            inputs={[
+              { label: 'Cat', value: 'cat' },
+              { label: 'Dog', value: 'dog' },
+              { label: 'Other', value: 'other' },
+            ]}
+          />
           <li>
             <label htmlFor='comment'>Your comments or questions</label>
-            <textarea id='comment' />
+            <textarea id='comment' name='contact_form[comments]' />
           </li>
         </ul>
 
-        <button className={cx('btn')} type='submit'>Submit Contact Form</button>
+        <button className={cx('btn')}>Submit Contact Form</button>
       </StandardForm>
     </div>
   </StandardLayout>

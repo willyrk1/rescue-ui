@@ -2,11 +2,22 @@ import React from 'react';
 import classNames from 'classnames/bind'
 import ReactSelect from 'react-select'
 import styles from './StandardForm.module.scss'
+import StFrancisRescue from '../apis/StFrancisRescue';
 
 const cx = classNames.bind(styles)
 
-const StandardForm = ({ className, ...rest }) =>
-  <form className={cx(className, 'form')} {...rest} />
+const StandardForm = ({
+  className,
+  method = 'post',
+  onSubmit = StFrancisRescue.postForm,
+  ...rest
+}) =>
+  <form
+    className={cx(className, 'form')}
+    method={method}
+    onSubmit={onSubmit}
+    {...rest}
+  />
 
 StandardForm.Input = ({ className, ...rest }) =>
   <div className={cx(className, 'input')} {...rest} />
