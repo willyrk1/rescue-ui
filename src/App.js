@@ -43,7 +43,7 @@ const ScrollToTop = () => {
 }
 
 const App = () => (
-  <Router basename='/rescue-ui'>
+  <Router basename='/'>
     <ScrollToTop />
     <PetDataProvider>
       <Switch>
