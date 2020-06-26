@@ -67,10 +67,6 @@ const AdoptionForm = ({ match: { params: { petType, list, animalId }}}) => {
               <input type='text' id='address' name='adopter_agreement[address]' />
             </li>
             <li>
-              <label htmlFor='address2'></label>
-              <input type='text' id='address2' name='adopter_agreement[address2]' />
-            </li>
-            <li>
               <label htmlFor='city'>City *</label>
               <input type='text' id='city' name='adopter_agreement[city]' />
             </li>
