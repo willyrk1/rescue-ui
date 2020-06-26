@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind'
+import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
 import states from '../config/states'
 import StandardLayout from './StandardLayout'
 import StandardForm from './StandardForm'
@@ -36,7 +37,7 @@ const WorkingCatsForm = () =>
       </div>
 
       <StandardForm
-        action='http://stfrancisrescue.org/workcat_adopter_agreements'
+        action={`${PROTOCOL}://${HOSTNAME}/workcat_adopter_agreements`}
         className={cx('form')}
       >
         <ul>

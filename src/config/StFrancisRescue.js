@@ -8,12 +8,18 @@ const { hostName, protocol, token } = {
     hostName: 'stfrancisrescue.org',
     token: 'unknown',
   },
-  stage: {
+  staging: {
     protocol: 'http',
     hostName: 'staging.stfrancisrescue.org',
     token: 'c3RhZ2luZzpwYXNzdzByZA==',
   },
+  production: {
+    protocol: 'https',
+    hostName: 'stfrancisrescue.org',
+    token: 'unknown',
+  },
 }[env]
+
 
 export const PROTOCOL = protocol
 //export const HOSTNAME = "0.0.0.0:8080"

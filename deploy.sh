@@ -8,8 +8,10 @@ NVM_DIR="$HOME/.nvm"
 if [ $ENVIRONMENT = "production" ] || [ $ENVIRONMENT = "prod" ]
 then
    DEPLOY_DIR=/home/rescue/public_html/production/current/public
+   export REACT_APP_LOCAL=production
 else
    DEPLOY_DIR=/home/rescue/public_html/staging/current/public
+   export REACT_APP_LOCAL=staging
 fi
 
 DEPLOY_HOST=rescue@45.79.204.187

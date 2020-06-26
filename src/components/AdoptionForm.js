@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import classNames from 'classnames/bind'
+import {PROTOCOL, HOSTNAME} from '../config/StFrancisRescue';
 import states from '../config/states'
 import { usePetData } from '../context/PetDataContext'
 import StandardLayout from './StandardLayout'
@@ -47,7 +48,7 @@ const AdoptionForm = ({ match: { params: { petType, list, animalId }}}) => {
           </p>
         </div>
 
-        <StandardForm action='http://stfrancisrescue.org/adopter_agreements' className={cx('form')}>
+        <StandardForm action={`${PROTOCOL}://${HOSTNAME}/adopter_agreements`} className={cx('form')}>
           <ul>
             <li>
               <label htmlFor='firstName'>First Name *</label>
