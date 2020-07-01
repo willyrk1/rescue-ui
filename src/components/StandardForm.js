@@ -44,12 +44,7 @@ const RequiredSelect = ({ className, onChange, value, ...rest }) => {
       <input
         tabIndex={-1}
         autoComplete="off"
-        style={{
-          opacity: 0,
-          width: '100%',
-          height: 0,
-          position: 'absolute',
-        }}
+        className={cx('required-input')}
         value={hiddenValue}
         onChange={() => {}}
         onFocus={() => selectRef.current.focus()}

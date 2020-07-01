@@ -140,7 +140,7 @@ const AdoptionForm = ({
 
           <ul>
             <li>
-              <label htmlFor="over-21">Are you over 21?</label>
+              <label htmlFor="over-21">Are you over 21? *</label>
               <StandardForm.Input>
                 <label htmlFor="over-21-yes">
                   <input
@@ -165,7 +165,7 @@ const AdoptionForm = ({
             </li>
             <li>
               <label htmlFor="reason">
-                Please give your reason for wanting to adopt {name}
+                Please give your reason for wanting to adopt {name} *
               </label>
               <textarea
                 id="reason"
@@ -174,7 +174,9 @@ const AdoptionForm = ({
               />
             </li>
             <li>
-              <label htmlFor="for-you">Is {name} for you or your family?</label>
+              <label htmlFor="for-you">
+                Is {name} for you or your family? *
+              </label>
               <StandardForm.Input>
                 <label htmlFor="for-you-yes">
                   <input
@@ -203,7 +205,7 @@ const AdoptionForm = ({
             </li>
             {forYou === false && (
               <li>
-                <label htmlFor="for-who">Who is {name} for?</label>
+                <label htmlFor="for-who">Who is {name} for? *</label>
                 <input
                   type="text"
                   id="for-who"
@@ -213,7 +215,9 @@ const AdoptionForm = ({
               </li>
             )}
             <li>
-              <label htmlFor="location-kept">Where will {name} be kept?</label>
+              <label htmlFor="location-kept">
+                Where will {name} be kept? *
+              </label>
               <StandardForm.Input>
                 <label htmlFor="location-kept-inside">
                   <input
@@ -246,7 +250,7 @@ const AdoptionForm = ({
               </StandardForm.Input>
             </li>
             <li>
-              <label htmlFor="plan-declaw">Do you plan to declaw?</label>
+              <label htmlFor="plan-declaw">Do you plan to declaw? *</label>
               <StandardForm.Input>
                 <label htmlFor="plan-declaw-yes">
                   <input
@@ -271,7 +275,7 @@ const AdoptionForm = ({
             </li>
             <li>
               <label htmlFor="other-animals">
-                Are there other cats or dogs in the house?
+                Are there other cats or dogs in the house? *
               </label>
               <StandardForm.Input>
                 <label htmlFor="other-animals-yes">
@@ -304,6 +308,7 @@ const AdoptionForm = ({
                 <li>
                   <label htmlFor="other-neutered">
                     Are the other animals in your household spayed or neutered?
+                    *
                   </label>
                   <StandardForm.Input>
                     <label htmlFor="other-neutered-yes">
@@ -334,7 +339,7 @@ const AdoptionForm = ({
                 {othersSpayed === false && (
                   <li>
                     <label htmlFor="reason-not-spayed">
-                      Please explain why they are not spayed/neutered
+                      Please explain why they are not spayed/neutered *
                     </label>
                     <textarea
                       id="reason-not-spayed"
@@ -357,7 +362,7 @@ const AdoptionForm = ({
             )}
             <li>
               <label htmlFor="any-allergic">
-                Is anyone in the household allergic to cats?
+                Is anyone in the household allergic to cats? *
               </label>
               <StandardForm.Input>
                 <label htmlFor="any-allergic-yes">
@@ -383,7 +388,7 @@ const AdoptionForm = ({
             </li>
             <li>
               <label htmlFor="given-up">
-                Have you ever given up an animal?
+                Have you ever given up an animal? *
               </label>
               <StandardForm.Input>
                 <label htmlFor="given-up-yes">
@@ -413,7 +418,7 @@ const AdoptionForm = ({
             </li>
             {givenUp && (
               <li>
-                <label htmlFor="explain-giving-up">Please explain why</label>
+                <label htmlFor="explain-giving-up">Please explain why *</label>
                 <textarea
                   id="explain-giving-up"
                   name="adopter_agreement[given_up_animal_reason]"
@@ -422,7 +427,7 @@ const AdoptionForm = ({
               </li>
             )}
             <li>
-              <label htmlFor="rent-own">Do you rent or own?</label>
+              <label htmlFor="rent-own">Do you rent or own? *</label>
               <StandardForm.Input>
                 <label htmlFor="rent-own-yes">
                   <input
@@ -452,7 +457,7 @@ const AdoptionForm = ({
             {rent && (
               <li>
                 <label htmlFor="landlord">
-                  What is the name of your Apartment Complex or Landlord?
+                  What is the name of your Apartment Complex or Landlord? *
                   <br />
                   <em className={cx('note')}>
                     If you rent, you will be asked to provide proof from your
@@ -486,7 +491,7 @@ const AdoptionForm = ({
             </li>
             <li>
               <label htmlFor="work-school">
-                Do you work outside the home or go to school?
+                Do you work outside the home or go to school? *
               </label>
               <StandardForm.Input>
                 <label htmlFor="work-school-yes">
@@ -517,7 +522,7 @@ const AdoptionForm = ({
             {workSchool && (
               <li>
                 <label htmlFor="hours-out">
-                  How many hours a day are you away for work or school?
+                  How many hours a day are you away for work or school? *
                 </label>
                 <input
                   type="text"
@@ -538,7 +543,7 @@ const AdoptionForm = ({
 
           <ul>
             <StandardForm.RadioGroup
-              label={`I will take ${name} to the vet when medical services are needed.`}
+              label={`I will take ${name} to the vet when medical services are needed. *`}
               name="adopter_agreement[safe_environment]"
               id="will-treat"
               inputs={[
@@ -548,7 +553,7 @@ const AdoptionForm = ({
               required
             />
             <StandardForm.RadioGroup
-              label={`I will arrange for the care of ${name} during my absences (vacation, etc.).`}
+              label={`I will arrange for the care of ${name} during my absences (vacation, etc.). *`}
               name="adopter_agreement[absentee_care]"
               id="absentee-care"
               inputs={[
@@ -560,7 +565,7 @@ const AdoptionForm = ({
             <StandardForm.RadioGroup
               label={`
                 I understand St. Francis has the right to confiscate Bertil if not being cared
-                for properly (i.e. lack of food/water/shelter, roaming free, or any form of neglect).
+                for properly (i.e. lack of food/water/shelter, roaming free, or any form of neglect). *
               `}
               name="adopter_agreement[permit_confiscation]"
               id="permit-confiscation"
@@ -571,7 +576,7 @@ const AdoptionForm = ({
               required
             />
             <StandardForm.RadioGroup
-              label={`A minimum donation (depending on age and breed) is required for adoption.`}
+              label={`A minimum donation (depending on age and breed) is required for adoption. *`}
               name="adopter_agreement[minimum_donation]"
               id="minimum_donation"
               inputs={[
@@ -583,7 +588,7 @@ const AdoptionForm = ({
             <StandardForm.RadioGroup
               label={`
                 I agree to allow communication from St. Francis to ensure a mutually satisfactory
-                owner/pet relationship is established.
+                owner/pet relationship is established. *
               `}
               name="adopter_agreement[communication]"
               id="communication"
@@ -598,7 +603,7 @@ const AdoptionForm = ({
                 I certify that the information provided is complete and correct.
                 I understand if it is discovered I have given any untrue
                 information, St. Francis Society has the right to confiscate{' '}
-                {name} without a refund of my adoption fee.
+                {name} without a refund of my adoption fee. *
               </label>
               <StandardForm.Input>
                 <input
