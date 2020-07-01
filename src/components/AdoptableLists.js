@@ -8,6 +8,8 @@ import { usePetData } from '../context/PetDataContext'
 
 const cx = classNames.bind(styles)
 
+const adoptablesPerPage = 50
+
 const getUniqueOptions = (pets, lists, mappingFn) =>
   [
     ...new Set(
@@ -153,10 +155,10 @@ const AdoptableList = ({ petType, lists, children }) => {
     },
   } = state
 
-  const [pageNums, setPageNums] = useState({})
-
-  // If there are searches, then filter.  Otherwise, slice the given page.
-  const processList = (collection, pageNum) => {
+  /*
+   * If there are searches, then filter.
+   */
+  const processList = collection => {
     if (collection) {
       if (Object.values(search).some(({ value }) => value)) {
         return collection.filter(
@@ -173,20 +175,70 @@ const AdoptableList = ({ petType, lists, children }) => {
             )
         )
       } else {
-        return collection //.slice(50 * (pageNum || 0), 50 * (1 + (pageNum || 0)))
+        return collection
       }
     } else {
       return null
     }
   }
 
-  const processedLists =
+  const [pageNum, setPageNum] = useState(1)
+
+  const filteredLists =
     pets &&
     lists.map(({ title, property }) => ({
       title,
       property,
-      processedList: processList(pets[property], pageNums[property]),
+      processedList: processList(pets[property]),
     }))
+
+  const totalCount = filteredLists
+    ? filteredLists.reduce(
+        (count, { processedList }) => count + processedList.length,
+        0
+      )
+    : 0
+  const numPages = Math.floor(totalCount / adoptablesPerPage) + 1
+
+  const applyPaging = lists => {
+    /*
+     * First, a search may have made the current page number invalid so check that.
+     */
+    if (pageNum > numPages) {
+      /*
+       * Fix pageNum and let the next render do this properly.
+       */
+      setPageNum(numPages)
+      return []
+    } else {
+      const startIndex = (pageNum - 1) * adoptablesPerPage
+      const endIndex = startIndex + adoptablesPerPage
+      return lists.reduce(
+        ({ index, lists }, { processedList, ...rest }) => {
+          const newList = processedList.slice(
+            Math.max(startIndex - index, 0),
+            Math.max(endIndex - index, 0)
+          )
+          lists.push({ processedList: newList, ...rest })
+          return {
+            index: index + processedList.length,
+            lists,
+          }
+        },
+        {
+          index: 0,
+          lists: [],
+        }
+      ).lists
+    }
+  }
+
+  const processedLists = filteredLists && applyPaging(filteredLists)
+
+  const handlePageClick = newPageNum => () => {
+    setPageNum(newPageNum)
+    window.scrollTo(0, 0)
+  }
 
   return (
     <StandardLayout>
@@ -220,6 +272,18 @@ const AdoptableList = ({ petType, lists, children }) => {
           <AnimalSearch {...{ state, dispatch }} />
         </div>
       )}
+      <div className={cx('pages')}>
+        {pageNum > 1 && (
+          <button className={cx('btn')} onClick={handlePageClick(pageNum - 1)}>
+            Previous Page
+          </button>
+        )}
+        {pageNum < numPages && (
+          <button className={cx('btn')} onClick={handlePageClick(pageNum + 1)}>
+            Next Page
+          </button>
+        )}
+      </div>
     </StandardLayout>
   )
 }
