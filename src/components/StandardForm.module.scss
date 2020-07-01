@@ -42,7 +42,11 @@
     
     > .input > input {
       vertical-align: middle;
-    }
+		}
+		
+		.required-select {
+			position: relative;
+		}
 	}
 
 	label {
