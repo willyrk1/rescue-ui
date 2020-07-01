@@ -6,136 +6,131 @@
  * author: Steven Pothoven (steven@pothoven.net)
  ********************************************************************************/
 
-import { PROTOCOL, HOSTNAME, ROOT_URL, TOKEN } from '../config/StFrancisRescue';
+import { PROTOCOL, HOSTNAME, ROOT_URL, TOKEN } from '../config/StFrancisRescue'
 
-const StFrancisRescue = function() {
-    var log = console.log;
+const StFrancisRescue = (function() {
+  var log = console.log
 
-    /*
-     * helper function for fetch to correctly throw an error when a response has an error code
-     */
-    function checkFetchResponseOK(response) {
-        if (!response.ok) {
-            console.error(response);
-            throw Error(`${response.status} - ${response.statusText}`);
-        }
-        return response;
+  /*
+   * helper function for fetch to correctly throw an error when a response has an error code
+   */
+  function checkFetchResponseOK(response) {
+    if (!response.ok) {
+      console.error(response)
+      throw Error(`${response.status} - ${response.statusText}`)
     }
-    
-    /**
-     * get
-     *
-     * basic GET request functionality to call an API endpoint
-     *
-     * Parameters:
-     *   endpoint - the specific API endpoint
-     *   params (optional) - hash of query parameters to pass in
-     *   jwt (optional) - JWT token if the request need authentication
-     *
-     */
-    function get(endpoint, params, jwt) {
-        let queryString;
-        if (params) {
-            queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-        }
-        let url = `${PROTOCOL}://${HOSTNAME}${ROOT_URL}${endpoint}`;
-        if (queryString) {
-            url += `?${queryString}`;
-        }
-        let headers = {
-            "accept": "application/json"
-        };
-        if (jwt) {
-            headers.Authorization = "Bearer " + jwt;
-        }
+    return response
+  }
 
-        log("REQUEST  :=", url);
-        
-        return fetch(url, { headers: headers })
-            .then(checkFetchResponseOK)
-            .then(response => response.json()) // parses response to JSON
-            .then(data => {
-                log("RESPONSE :=", data);
-                return data;
-            });
-
+  /**
+   * get
+   *
+   * basic GET request functionality to call an API endpoint
+   *
+   * Parameters:
+   *   endpoint - the specific API endpoint
+   *   params (optional) - hash of query parameters to pass in
+   *   jwt (optional) - JWT token if the request need authentication
+   *
+   */
+  function get(endpoint, params, jwt) {
+    let queryString
+    if (params) {
+      queryString = Object.keys(params)
+        .map(key => key + '=' + params[key])
+        .join('&')
     }
-    
-    /**
-     * post
-     *
-     * basic POST request functionality to call an API endpoint
-     *
-     * Parameters:
-     *   endpoint          - the specific API endpoint
-     *   params (optional) - hash of query parameters to pass in
-     *   jwt (optional)    - JWT token if the request need authentication
-     *
-     */
-    function post(url, body, jwt) {
-        const headers = { "Authorization": `Basic ${jwt}` }
-
-        log("REQUEST  :=", url);
-
-        return fetch(url, { method: "POST", headers, body })
-            .then(checkFetchResponseOK)
-            .then(response => response.json())
-            .then(data => {
-                log("RESPONSE :=", data);
-                return data;
-            });
+    let url = `${PROTOCOL}://${HOSTNAME}${ROOT_URL}${endpoint}`
+    if (queryString) {
+      url += `?${queryString}`
+    }
+    let headers = {
+      accept: 'application/json',
+    }
+    if (jwt) {
+      headers.Authorization = 'Bearer ' + jwt
     }
 
-    return {
+    log('REQUEST  :=', url)
 
-        setLog : function(logFn) {
-            if (typeof logFn === "function") {
-                log = logFn;
-            }
-        },
+    return fetch(url, { headers: headers })
+      .then(checkFetchResponseOK)
+      .then(response => response.json()) // parses response to JSON
+      .then(data => {
+        log('RESPONSE :=', data)
+        return data
+      })
+  }
 
-        getPage : function(pagename, params) {
-            return get(pagename, params);
-        },
-        
-        getCats : function(params) {
-            return get('animals/cats', params);
-        },
+  /**
+   * post
+   *
+   * basic POST request functionality to call an API endpoint
+   *
+   * Parameters:
+   *   endpoint          - the specific API endpoint
+   *   params (optional) - hash of query parameters to pass in
+   *   jwt (optional)    - JWT token if the request need authentication
+   *
+   */
+  function post(url, body, jwt) {
+    const headers = { Authorization: `Basic ${jwt}` }
 
-        getCourtesyCats : function(params) {
-            return get('courtesy_animals/courtesy_cats', params);
-        },
+    log('REQUEST  :=', url)
 
-        getDogs : function(params) {
-            return get('animals/dogs', params);
-        },
+    return fetch(url, { method: 'POST', headers, body })
+      .then(checkFetchResponseOK)
+      .then(response => response.json())
+      .then(data => {
+        log('RESPONSE :=', data)
+        return data
+      })
+  }
 
-        getSuccessStories : function(params) {
-            return get('animals/success_stories', params);
-        },
+  return {
+    setLog: function(logFn) {
+      if (typeof logFn === 'function') {
+        log = logFn
+      }
+    },
 
-        getBoardMembers : function(params) {
-            return get('mission', params);
-        },
+    getPage: function(pagename, params) {
+      return get(pagename, params)
+    },
 
-        getHeros : function(params) {
-            return get('heros', params);
-        },
+    getCats: function(params) {
+      return get('animals/cats', params)
+    },
 
-        getLocations : function(params) {
-            return get('locations', params);
-        },
+    getCourtesyCats: function(params) {
+      return get('courtesy_animals/courtesy_cats', params)
+    },
 
-        postForm: event => {
-            event.preventDefault()
-            post(
-                event.target.action,
-                new FormData(event.target),
-                TOKEN,
-            )
-        },
-    };
-    
-}();
+    getDogs: function(params) {
+      return get('animals/dogs', params)
+    },
 
-export default StFrancisRescue;
+    getSuccessStories: function(params) {
+      return get('animals/success_stories', params)
+    },
+
+    getBoardMembers: function(params) {
+      return get('mission', params)
+    },
+
+    getHeros: function(params) {
+      return get('heros', params)
+    },
+
+    getLocations: function(params) {
+      return get('locations', params)
+    },
+
+    postForm: event => {
+      event.preventDefault()
+      post(event.target.action, new FormData(event.target), TOKEN)
+    },
+  }
+})()
+
+export default StFrancisRescue

@@ -6,20 +6,21 @@ import DonationExamples from '../DonationExamples'
 import HomeLinks from './HomeLinks'
 import FeaturedPets from './FeaturedPets'
 import NewsEvents from './NewsEvents'
-import styles from './Home.module.scss';
-import donationStyles from './DonateRibbon.module.scss';
+import styles from './Home.module.scss'
+import donationStyles from './DonateRibbon.module.scss'
 
 const cx = classNames.bind(styles)
 
-const Home = () =>
+const Home = () => (
   <Layout home>
     <div className={cx('home')}>
       <Banner />
-      <DonationExamples styles={donationStyles}/>
+      <DonationExamples styles={donationStyles} />
       <HomeLinks />
       <FeaturedPets />
       <NewsEvents />
     </div>
   </Layout>
+)
 
 export default Home

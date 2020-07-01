@@ -1,13 +1,18 @@
 /********************************************************************************
  * App component
  *
- * Core application component for the Rescue UI. 
+ * Core application component for the Rescue UI.
  *
  * author: Steven Pothoven (steven@pothoven.net)
  ********************************************************************************/
 
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+} from 'react-router-dom'
 import { PetDataProvider } from './context/PetDataContext'
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'
@@ -43,7 +48,7 @@ const ScrollToTop = () => {
 }
 
 const App = () => (
-  <Router basename='/'>
+  <Router basename="/">
     <ScrollToTop />
     <PetDataProvider>
       <Switch>
@@ -56,16 +61,24 @@ const App = () => (
         <Route exact path="/help-our-cause" component={HelpOurCause} />
         <Route exact path="/cats" component={Cats} />
         <Route exact path="/dogs" component={Dogs} />
-        <Route exact path='/pet-details/:petType/:list/:animalId' component={AnimalDetails} />
-        <Route exact path="/adoption-form/:petType/:list/:animalId" component={AdoptionForm} />
+        <Route
+          exact
+          path="/pet-details/:petType/:list/:animalId"
+          component={AnimalDetails}
+        />
+        <Route
+          exact
+          path="/adoption-form/:petType/:list/:animalId"
+          component={AdoptionForm}
+        />
         <Route exact path="/success-stories" component={SuccessStories} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/adoption-locations" component={AdoptionLocations} />
         <Route exact path="/working-cats" component={WorkingCats} />
         <Route exact path="/working-cats-form" component={WorkingCatsForm} />
         <Route exact path="/donate" component={Donate} />
-        <Route exact path='/forever-foster' component={ForeverFoster} />
-        <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+        <Route exact path="/forever-foster" component={ForeverFoster} />
+        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/:pagename" component={Page} />
         <Route component={UnderConstruction} />
       </Switch>

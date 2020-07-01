@@ -9,28 +9,45 @@ const DonationExamples = ({ styles, more }) => {
     <div className={cx('donation-examples')}>
       <div>
         <div className={cx('money')}>$10</div>
-        <div className={cx('caption')}>Feed a kitten<br/> for a month.</div>
+        <div className={cx('caption')}>
+          Feed a kitten
+          <br /> for a month.
+        </div>
       </div>
-      <hr/>
+      <hr />
       <div>
         <div className={cx('money')}>$25</div>
-        <div className={cx('caption')}>Vaccinate one<br/> animal.</div>
+        <div className={cx('caption')}>
+          Vaccinate one
+          <br /> animal.
+        </div>
       </div>
-      <hr/>
+      <hr />
       <div>
         <div className={cx('money')}>$100</div>
-        <div className={cx('caption')}>For life-saving<br/> medicine.</div>
+        <div className={cx('caption')}>
+          For life-saving
+          <br /> medicine.
+        </div>
       </div>
-      {more &&
+      {more && (
         <>
-          <hr/>
+          <hr />
           <div>
             <div className={cx('money')}>$500</div>
-            <div className={cx('caption')}>Provide <br/>emergency<br/> surgery.</div>
+            <div className={cx('caption')}>
+              Provide <br />
+              emergency
+              <br /> surgery.
+            </div>
           </div>
         </>
-      }
-      <div><Link to='/donate' className={cx('btn')}>DONATE</Link></div>
+      )}
+      <div>
+        <Link to="/donate" className={cx('btn')}>
+          DONATE
+        </Link>
+      </div>
     </div>
   )
 }

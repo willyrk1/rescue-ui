@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext, useState, useEffect } from 'react'
 import StFrancisRescue from '../apis/StFrancisRescue'
 
 const PetDataContext = React.createContext()
@@ -24,7 +24,9 @@ export const PetDataProvider = ({ children }) => {
   }, [])
 
   return (
-    <PetDataContext.Provider value={petData}>{children}</PetDataContext.Provider>
+    <PetDataContext.Provider value={petData}>
+      {children}
+    </PetDataContext.Provider>
   )
 }
 

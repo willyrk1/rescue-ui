@@ -21,15 +21,14 @@ const Banner = () => {
   return (
     <div className={cx('banner')}>
       <Scroller
-        components={bannerImages.map(({ id, image_src, url, name }) =>
-          ({
-            key: id,
-            component:
-              <a href={url}>
-                <img src={`${PROTOCOL}://${HOSTNAME}${image_src}`} alt={name} />
-              </a>
-          })
-        )}
+        components={bannerImages.map(({ id, image_src, url, name }) => ({
+          key: id,
+          component: (
+            <a href={url}>
+              <img src={`${PROTOCOL}://${HOSTNAME}${image_src}`} alt={name} />
+            </a>
+          ),
+        }))}
         styles={styles}
         timer={5000}
       />

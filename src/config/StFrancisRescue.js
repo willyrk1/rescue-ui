@@ -20,9 +20,8 @@ const { hostName, protocol, token } = {
   },
 }[env]
 
-
 export const PROTOCOL = protocol
 //export const HOSTNAME = "0.0.0.0:8080"
 export const HOSTNAME = hostName
-export const ROOT_URL = "/"
+export const ROOT_URL = '/'
 export const TOKEN = token

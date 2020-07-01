@@ -1,26 +1,30 @@
-import React from 'react';
+import React from 'react'
 import classNames from 'classnames/bind'
-import styles from './Hero.module.scss';
+import styles from './Hero.module.scss'
 import heroImage from '../../assets/images/hero.png'
 
 const cx = classNames.bind(styles)
 
-const Hero = () =>
+const Hero = () => (
   <div className={cx('hero')}>
     <img src={heroImage} />
     <div className={cx('text')}>
       <h1>
-        CUDDLE<br/>
+        CUDDLE
+        <br />
         <span className={cx('alt-color')}>PARTY</span>
       </h1>
-      <hr/>
+      <hr />
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis, mi id imperdiet rutrum, urna ante faucibus ex, non vulputate
-        enim est gravida enim. Suspendisse eu tortor dui.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis,
+        mi id imperdiet rutrum, urna ante faucibus ex, non vulputate enim est
+        gravida enim. Suspendisse eu tortor dui.
       </p>
-      <a className={cx('btn')} href='#'>Foster</a>
+      <a className={cx('btn')} href="#">
+        Foster
+      </a>
     </div>
   </div>
+)
 
-
-export default Hero;
+export default Hero
