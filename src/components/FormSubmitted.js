@@ -7,7 +7,7 @@ const FormSubmitted = () => (
       <h1>Thank You!</h1>
       <hr />
       <p>
-        A St. Francis team member will review your application and contact you
+        A St. Francis team member will review your submission and contact you
         shortly.
       </p>
     </div>
