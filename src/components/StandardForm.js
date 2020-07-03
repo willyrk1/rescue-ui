@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import { useHistory } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import ReactSelect from 'react-select'
 import styles from './StandardForm.module.scss'
@@ -6,19 +7,28 @@ import StFrancisRescue from '../apis/StFrancisRescue'
 
 const cx = classNames.bind(styles)
 
+const doPost = ({ history, nextPage }) => async (...params) => {
+  await StFrancisRescue.postForm(...params)
+  history.push(nextPage)
+}
+
 const StandardForm = ({
   className,
   method = 'post',
-  onSubmit = StFrancisRescue.postForm,
+  onSubmit = doPost,
+  nextPage = '/form-submitted',
   ...rest
-}) => (
-  <form
-    className={cx(className, 'form')}
-    method={method}
-    onSubmit={onSubmit}
-    {...rest}
-  />
-)
+}) => {
+  const history = useHistory()
+  return (
+    <form
+      className={cx(className, 'form')}
+      method={method}
+      onSubmit={onSubmit({ history, nextPage })}
+      {...rest}
+    />
+  )
+}
 
 StandardForm.Input = ({ className, ...rest }) => (
   <div className={cx(className, 'input')} {...rest} />

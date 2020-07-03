@@ -15,7 +15,7 @@ const StFrancisRescue = (function() {
    * helper function for fetch to correctly throw an error when a response has an error code
    */
   function checkFetchResponseOK(response) {
-    if (!response.ok) {
+    if (!response.ok && response.type !== 'opaqueredirect') {
       console.error(response)
       throw Error(`${response.status} - ${response.statusText}`)
     }
@@ -78,9 +78,11 @@ const StFrancisRescue = (function() {
 
     log('REQUEST  :=', url)
 
-    return fetch(url, { method: 'POST', headers, body })
+    return fetch(url, { method: 'POST', headers, body, redirect: 'manual' })
       .then(checkFetchResponseOK)
-      .then(response => response.json())
+      .then(response =>
+        response.type === 'opaqueredirect' ? '' : response.json()
+      )
       .then(data => {
         log('RESPONSE :=', data)
         return data
@@ -128,7 +130,7 @@ const StFrancisRescue = (function() {
 
     postForm: event => {
       event.preventDefault()
-      post(event.target.action, new FormData(event.target), TOKEN)
+      return post(event.target.action, new FormData(event.target), TOKEN)
     },
   }
 })()
