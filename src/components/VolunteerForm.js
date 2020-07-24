@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import classNames from 'classnames/bind'
 import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
 import states from '../config/states'
@@ -13,6 +13,25 @@ const VolunteerForm = () => {
   const [fosterCats, setFosterCats] = useState(false)
   const [fosterDogs, setFosterDogs] = useState(false)
   const [ownOthers, setOwnOthers] = useState(false)
+  const [ratherCats, setRatherCats] = useState(false)
+  const [ratherDogs, setRatherDogs] = useState(false)
+
+  const ratherRef = useRef()
+  const fosterChoiceRef = useRef()
+
+  const validate = () => {
+    ratherRef.current.setCustomValidity(
+      ratherCats || ratherDogs
+        ? ''
+        : 'Please select at least one of these options.'
+    )
+    fosterChoiceRef.current &&
+      fosterChoiceRef.current.setCustomValidity(
+        fosterCats || fosterDogs
+          ? ''
+          : 'Please select at least one of these options.'
+      )
+  }
 
   return (
     <StandardLayout>
@@ -40,6 +59,7 @@ const VolunteerForm = () => {
                 type="text"
                 id="firstName"
                 name="volunteer[person_attributes][first_name]"
+                required
               />
             </li>
             <li>
@@ -48,6 +68,7 @@ const VolunteerForm = () => {
                 type="text"
                 id="lastName"
                 name="volunteer[person_attributes][last_name]"
+                required
               />
             </li>
             <li>
@@ -56,6 +77,7 @@ const VolunteerForm = () => {
                 type="text"
                 id="email"
                 name="volunteer[person_attributes][email]"
+                required
               />
             </li>
             <li>
@@ -64,6 +86,7 @@ const VolunteerForm = () => {
                 type="text"
                 id="address"
                 name="volunteer[person_attributes][address1]"
+                required
               />
             </li>
             <li>
@@ -80,6 +103,7 @@ const VolunteerForm = () => {
                 type="text"
                 id="city"
                 name="volunteer[person_attributes][city]"
+                required
               />
             </li>
             <li>
@@ -88,6 +112,7 @@ const VolunteerForm = () => {
                 id="state"
                 options={states}
                 name="volunteer[person_attributes][state]"
+                required
               />
             </li>
             <li>
@@ -96,6 +121,7 @@ const VolunteerForm = () => {
                 type="text"
                 id="zip"
                 name="volunteer[person_attributes][postal_code]"
+                required
               />
             </li>
             <li>
@@ -104,12 +130,13 @@ const VolunteerForm = () => {
                 type="text"
                 id="phone"
                 name="volunteer[person_attributes][phone]"
+                required
               />
             </li>
             <li>
               <label htmlFor="email-contact">
                 Is email a good way to contact you for schedule changes,
-                announcements, special events, etc.?
+                announcements, special events, etc.? *
               </label>
               <StandardForm.Input>
                 <label htmlFor="email-contact-yes">
@@ -118,6 +145,7 @@ const VolunteerForm = () => {
                     id="email-contact-yes"
                     name="volunteer[use_email]"
                     value="true"
+                    required
                   />
                   Yes
                 </label>
@@ -133,7 +161,7 @@ const VolunteerForm = () => {
               </StandardForm.Input>
             </li>
             <li>
-              <label htmlFor="under-18">Are you under 18 years of age?</label>
+              <label htmlFor="under-18">Are you under 18 years of age? *</label>
               <StandardForm.Input>
                 <label htmlFor="under-18-yes">
                   <input
@@ -141,6 +169,7 @@ const VolunteerForm = () => {
                     id="under-18-yes"
                     name="volunteer[under_18]"
                     value="true"
+                    required
                   />
                   Yes
                 </label>
@@ -156,7 +185,7 @@ const VolunteerForm = () => {
               </StandardForm.Input>
             </li>
             <li>
-              <label htmlFor="rather">Do You Want Work With</label>
+              <label htmlFor="rather">Do You Want Work With *</label>
               <StandardForm.Input>
                 <label htmlFor="rather-cats">
                   <input
@@ -164,6 +193,9 @@ const VolunteerForm = () => {
                     id="rather-cats"
                     name="volunteer[work_with_cats]"
                     value="1"
+                    checked={ratherCats}
+                    onChange={() => setRatherCats(!ratherCats)}
+                    ref={ratherRef}
                   />
                   Cats/
                   <wbr />
@@ -175,6 +207,8 @@ const VolunteerForm = () => {
                     id="rather-dogs"
                     name="volunteer[work_with_dogs]"
                     value="1"
+                    checked={ratherDogs}
+                    onChange={() => setRatherDogs(!ratherDogs)}
                   />
                   Dogs
                 </label>
@@ -209,15 +243,17 @@ const VolunteerForm = () => {
           <ul>
             <li>
               <label htmlFor="foster-interest">
-                I'm interested in being a Foster
+                I'm interested in being a Foster *
               </label>
               <StandardForm.Input>
                 <label htmlFor="foster-interest-yes">
                   <input
                     type="radio"
                     id="foster-interest-yes"
+                    name="foster-interest"
                     checked={fosterInterest || false}
                     onChange={() => setFosterInterest(true)}
+                    required
                   />
                   Yes
                 </label>
@@ -225,6 +261,7 @@ const VolunteerForm = () => {
                   <input
                     type="radio"
                     id="foster-interest-no"
+                    name="foster-interest"
                     checked={fosterInterest === false}
                     onChange={() => setFosterInterest(false)}
                   />
@@ -237,7 +274,7 @@ const VolunteerForm = () => {
                 <li>
                   <label htmlFor="provide-food">
                     Are you able to provide food and litter for the animals you
-                    foster?
+                    foster? *
                   </label>
                   <StandardForm.Input>
                     <label htmlFor="provide-food-yes">
@@ -246,6 +283,7 @@ const VolunteerForm = () => {
                         id="provide-food-yes"
                         name="volunteer[will_provide_supplies_for_fostered]"
                         value="true"
+                        required
                       />
                       Yes
                     </label>
@@ -272,6 +310,7 @@ const VolunteerForm = () => {
                         id="provide-vet-yes"
                         name="volunteer[will_bring_fostered_to_vet]"
                         value="true"
+                        required
                       />
                       Yes
                     </label>
@@ -287,7 +326,9 @@ const VolunteerForm = () => {
                   </StandardForm.Input>
                 </li>
                 <li>
-                  <label htmlFor="foster-choice">Do you want to foster:</label>
+                  <label htmlFor="foster-choice">
+                    Do you want to foster: *
+                  </label>
                   <StandardForm.Input>
                     <label htmlFor="foster-choice-cats">
                       <input
@@ -297,6 +338,7 @@ const VolunteerForm = () => {
                         onChange={() => setFosterCats(!fosterCats)}
                         name="volunteer[foster_cats]"
                         value="1"
+                        ref={fosterChoiceRef}
                       />
                       Cats/
                       <wbr />
@@ -625,13 +667,13 @@ const VolunteerForm = () => {
             skills you may have in the area you are choosing.
           </p>
 
-          <textarea name="volunteer[motivation]" />
+          <textarea name="volunteer[motivation]" required />
 
           <p className={cx('thanks')}>
             <strong>Thank you in advance for helping the animals!</strong>
           </p>
 
-          <button className={cx('btn')} type="submit">
+          <button className={cx('btn')} type="submit" onClick={validate}>
             Submit Volunteer Application
           </button>
         </StandardForm>

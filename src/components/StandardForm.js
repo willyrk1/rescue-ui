@@ -35,7 +35,7 @@ StandardForm.Input = ({ className, ...rest }) => (
 )
 
 const RequiredSelect = ({ className, onChange, value, ...rest }) => {
-  const [hiddenValue, setHiddenValue] = useState(value)
+  const [hiddenValue, setHiddenValue] = useState(value || '')
   const selectRef = useRef()
 
   const handleChange = newValue => {

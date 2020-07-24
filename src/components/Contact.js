@@ -47,15 +47,25 @@ const Contact = () => (
         <ul>
           <li>
             <label htmlFor="firstName">First Name *</label>
-            <input type="text" id="firstName" name="contact_form[first_name]" />
+            <input
+              type="text"
+              id="firstName"
+              name="contact_form[first_name]"
+              required
+            />
           </li>
           <li>
             <label htmlFor="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="contact_form[last_name]" />
+            <input
+              type="text"
+              id="lastName"
+              name="contact_form[last_name]"
+              required
+            />
           </li>
           <li>
             <label htmlFor="email">E-mail Address *</label>
-            <input type="text" id="email" name="contact_form[email]" />
+            <input type="text" id="email" name="contact_form[email]" required />
           </li>
           <li>
             <label htmlFor="address">Street Address</label>
@@ -87,7 +97,7 @@ const Contact = () => (
             ]}
           />
           <StandardForm.RadioGroup
-            label="I am contacting you regarding a"
+            label="I am contacting you regarding a *"
             name="contact_form[contact_regarding]"
             id="regarding"
             inputs={[
@@ -95,10 +105,11 @@ const Contact = () => (
               { label: 'Dog', value: 'dog' },
               { label: 'Other', value: 'other' },
             ]}
+            required
           />
           <li>
-            <label htmlFor="comment">Your comments or questions</label>
-            <textarea id="comment" name="contact_form[comments]" />
+            <label htmlFor="comment">Your comments or questions *</label>
+            <textarea id="comment" name="contact_form[comments]" required />
           </li>
         </ul>
 
