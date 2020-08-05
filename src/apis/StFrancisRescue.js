@@ -87,6 +87,9 @@ const StFrancisRescue = (function() {
         log('RESPONSE :=', data)
         return data
       })
+      .catch(error => {
+        log('ERROR :=', error)
+      })
   }
 
   return {
