@@ -33,7 +33,9 @@ const Donate = () => (
 
       <DonateButton />
 
-      <h2>Become a St. Francis Society Guardian Angel (monthly donor)</h2>
+      <h2 id="monthly">
+        Become a St. Francis Society Guardian Angel (monthly donor)
+      </h2>
       <p>
         Becoming one of our Guardian Angels provides St. Francis Society Animal
         Rescue with a sustainable income we can rely on. Your monthly gift helps

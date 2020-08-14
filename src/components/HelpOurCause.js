@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import Popup from 'reactjs-popup'
 import classNames from 'classnames/bind'
 import Layout from './Layout'
@@ -43,9 +44,9 @@ const HelpOurCause = () => (
             </div>
             <div className={cx('monthly')}>
               <p>Make A Monthly Donation</p>
-              <Link to="/donate" className={cx('btn')}>
+              <HashLink to="/donate#monthly" className={cx('btn')}>
                 Donate
-              </Link>
+              </HashLink>
             </div>
           </div>
         </div>
@@ -89,7 +90,6 @@ const HelpOurCause = () => (
               modal
               closeOnDocumentClick
               trigger={<button className={cx('btn')}>More Info</button>}
-              contentStyle={{ width: 'inherit' }}
             >
               {close => (
                 <div className={cx('popup-modal')}>
@@ -140,7 +140,6 @@ const HelpOurCause = () => (
               modal
               closeOnDocumentClick
               trigger={<button className={cx('btn')}>More Info</button>}
-              contentStyle={{ width: 'inherit' }}
             >
               {close => (
                 <div className={cx('popup-modal')}>
@@ -182,7 +181,6 @@ const HelpOurCause = () => (
               modal
               closeOnDocumentClick
               trigger={<button className={cx('btn')}>More Info</button>}
-              contentStyle={{ width: 'inherit' }}
             >
               {close => (
                 <div className={cx('popup-modal')}>
