@@ -90,10 +90,10 @@
       justify-content: flex-start;
       align-items: center;
 
-      .popup-content img {
-        max-height: 100vh;
-        margin: 0 auto;
-      }
+    .popup-content img {
+      max-height: 100vh;
+      margin: 0 auto;
+    }
       
       .scroller-tiles > div, .scroller-arrow {
         display: flex;
@@ -104,10 +104,6 @@
       img {
         max-height: 100%;
         max-width: 100%;
-      }
-
-      button {
-        cursor: pointer;
       }
 
       &--popup {

@@ -74,8 +74,12 @@ a {
   }
 }
 
-button.btn {
-  border: none;
+button {
+  cursor: pointer;
+  
+  &.btn {
+    border: none;
+  }
 }
 
 hr {
