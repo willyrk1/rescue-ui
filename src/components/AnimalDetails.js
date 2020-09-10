@@ -12,6 +12,27 @@ import { usePetData } from '../context/PetDataContext'
 
 const cx = classNames.bind(styles)
 
+const AnimalImages = ({ images, name, index }) => {
+  const [currentIndex, setCurrentIndex] = useState(index)
+
+  const setIndex = newIndex => () => setCurrentIndex(newIndex)
+
+  return (
+    <>
+      <div className={cx('arrow', 'left')}>
+        <button onClick={setIndex(currentIndex - 1)}>&lt;</button>
+      </div>
+      <img
+        src={`${PROTOCOL}://${HOSTNAME}${images[currentIndex].public_filename}`}
+        alt={name}
+      />
+      <div className={cx('arrow', 'right')}>
+        <button onClick={setIndex(currentIndex + 1)}>&gt;</button>
+      </div>
+    </>
+  )
+}
+
 const AnimalDetails = ({
   match: {
     params: { petType, list, animalId },
@@ -25,7 +46,7 @@ const AnimalDetails = ({
   const components =
     pet &&
     pet.images &&
-    pet.images.map(({ public_filename }) => ({
+    pet.images.map(({ public_filename }, index) => ({
       key: public_filename,
       component: (
         <Popup
@@ -42,10 +63,7 @@ const AnimalDetails = ({
           }
         >
           <div className={cx('popup-content')}>
-            <img
-              src={`${PROTOCOL}://${HOSTNAME}${public_filename}`}
-              alt={pet.name}
-            />
+            <AnimalImages {...{ ...pet, index }} />
           </div>
         </Popup>
       ),
