@@ -19,16 +19,20 @@ const AnimalImages = ({ images, name, index }) => {
 
   return (
     <>
-      <div className={cx('arrow', 'left')}>
-        <button onClick={setIndex(currentIndex - 1)}>&lt;</button>
-      </div>
+      {currentIndex && (
+        <div className={cx('arrow', 'left')}>
+          <button onClick={setIndex(currentIndex - 1)}>&lt;</button>
+        </div>
+      )}
       <img
         src={`${PROTOCOL}://${HOSTNAME}${images[currentIndex].public_filename}`}
         alt={name}
       />
-      <div className={cx('arrow', 'right')}>
-        <button onClick={setIndex(currentIndex + 1)}>&gt;</button>
-      </div>
+      {currentIndex < images.length - 1 && (
+        <div className={cx('arrow', 'right')}>
+          <button onClick={setIndex(currentIndex + 1)}>&gt;</button>
+        </div>
+      )}
     </>
   )
 }
