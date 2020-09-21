@@ -4,7 +4,8 @@ import classNames from 'classnames/bind'
 import PopupModal from '../PopupModal'
 import kenLogo from '../../assets/images/KenLogo.jpg'
 import styles from './NewsEvents.module.scss'
-import foodSponsorshipForm from './FoodSponsorshipForm.pdf'
+import foodSponsorshipForm from '../../assets/pdf/FoodSponsorshipForm.pdf'
+import foodSponsorshipImage from '../../assets/images/KittenSiameseWithEmptyBowl.jpg'
 
 const cx = classNames.bind(styles)
 
@@ -76,9 +77,13 @@ const NewsEvents = () => (
         <div className={cx('date')} />
         <h1>Food Friend</h1>
         <h2>&nbsp;</h2>
-        <p>
-          For individuals and businesses wishing to truly make a difference,
-          become a monthly food sponsor and see your logo here.
+        <p className={cx('panel-content', 'center')}>
+          {/* For individuals and businesses wishing to truly make a difference,
+          become a monthly food sponsor and see your logo here. */}
+          {/* This month's Food Friend is */}
+          THIS MONTH'S FOOD FRIEND
+          <img src={foodSponsorshipImage} alt="Food Friend" />
+          <em>Holly O'Brien &amp; Greg&nbsp;Gruendel</em>
         </p>
         <a className={cx('btn')} href={foodSponsorshipForm}>
           More Info
