@@ -10,3 +10,17 @@
     align-self: auto;
   }
 }
+
+.form {
+	background-image: url('../assets/images/catdoggreen.png');
+	background-repeat: no-repeat;
+	background-position: 13% 14rem;
+
+	@media (max-width: 500px) {
+		background-size: 25%;
+	}
+
+	@media (max-width: 360px) {
+		background-image: none;
+	}
+}
