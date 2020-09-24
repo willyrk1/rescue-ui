@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/rescue-ui/static/css/main.3985d706.chunk.css",
-    "main.js": "/rescue-ui/static/js/main.d361c352.chunk.js",
-    "main.js.map": "/rescue-ui/static/js/main.d361c352.chunk.js.map",
+    "main.css": "/rescue-ui/static/css/main.5f9048f5.chunk.css",
+    "main.js": "/rescue-ui/static/js/main.30fd68a7.chunk.js",
+    "main.js.map": "/rescue-ui/static/js/main.30fd68a7.chunk.js.map",
     "runtime-main.js": "/rescue-ui/static/js/runtime-main.46c10a4e.js",
     "runtime-main.js.map": "/rescue-ui/static/js/runtime-main.46c10a4e.js.map",
-    "static/js/2.dcbfe502.chunk.js": "/rescue-ui/static/js/2.dcbfe502.chunk.js",
-    "static/js/2.dcbfe502.chunk.js.map": "/rescue-ui/static/js/2.dcbfe502.chunk.js.map",
+    "static/js/2.6d7ea305.chunk.js": "/rescue-ui/static/js/2.6d7ea305.chunk.js",
+    "static/js/2.6d7ea305.chunk.js.map": "/rescue-ui/static/js/2.6d7ea305.chunk.js.map",
     "index.html": "/rescue-ui/index.html",
-    "precache-manifest.7ddcead204077dd19b3cb84841a2ffa1.js": "/rescue-ui/precache-manifest.7ddcead204077dd19b3cb84841a2ffa1.js",
+    "precache-manifest.8dd15306f7529cae260eaabff11d8200.js": "/rescue-ui/precache-manifest.8dd15306f7529cae260eaabff11d8200.js",
     "service-worker.js": "/rescue-ui/service-worker.js",
-    "static/css/main.3985d706.chunk.css.map": "/rescue-ui/static/css/main.3985d706.chunk.css.map",
-    "static/js/2.dcbfe502.chunk.js.LICENSE.txt": "/rescue-ui/static/js/2.dcbfe502.chunk.js.LICENSE.txt",
+    "static/css/main.5f9048f5.chunk.css.map": "/rescue-ui/static/css/main.5f9048f5.chunk.css.map",
+    "static/js/2.6d7ea305.chunk.js.LICENSE.txt": "/rescue-ui/static/js/2.6d7ea305.chunk.js.LICENSE.txt",
     "static/media/BigCatRescueLogo.png": "/rescue-ui/static/media/BigCatRescueLogo.682d5577.png",
     "static/media/FoodSponsorshipForm.pdf": "/rescue-ui/static/media/FoodSponsorshipForm.99fab778.pdf",
     "static/media/Frankie2.jpg": "/rescue-ui/static/media/Frankie2.62ca15e7.jpg",
     "static/media/Gulfcoast Veterinary Center.png": "/rescue-ui/static/media/Gulfcoast Veterinary Center.da5cc6c7.png",
+    "static/media/KenAfienko.jpg": "/rescue-ui/static/media/KenAfienko.e31e1f3c.jpg",
     "static/media/KenLogo.jpg": "/rescue-ui/static/media/KenLogo.0140d5dd.jpg",
+    "static/media/KittenSiameseWithEmptyBowl.jpg": "/rescue-ui/static/media/KittenSiameseWithEmptyBowl.b5a53fde.jpg",
     "static/media/Mac.jpg": "/rescue-ui/static/media/Mac.b1de0f3d.jpg",
     "static/media/PetcoLogo.png": "/rescue-ui/static/media/PetcoLogo.e7257881.png",
     "static/media/SirHiss.jpg": "/rescue-ui/static/media/SirHiss.b6951ad5.jpg",
@@ -41,13 +43,14 @@
     "static/media/logo.svg": "/rescue-ui/static/media/logo.ee7cd8ed.svg",
     "static/media/petsmart_charities-1.jpg": "/rescue-ui/static/media/petsmart_charities-1.f47e2f74.jpg",
     "static/media/smidge.jpg": "/rescue-ui/static/media/smidge.4fd2e5ba.jpg",
+    "static/media/stats.png": "/rescue-ui/static/media/stats.6d1f9325.png",
     "static/media/tiffany2.jpg": "/rescue-ui/static/media/tiffany2.c3236d32.jpg",
     "static/media/volunteers.jpg": "/rescue-ui/static/media/volunteers.e937625d.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.46c10a4e.js",
-    "static/js/2.dcbfe502.chunk.js",
-    "static/css/main.3985d706.chunk.css",
-    "static/js/main.d361c352.chunk.js"
+    "static/js/2.6d7ea305.chunk.js",
+    "static/css/main.5f9048f5.chunk.css",
+    "static/js/main.30fd68a7.chunk.js"
   ]
 }

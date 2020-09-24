@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "964da409765c3db890d4b9d830f8728c",
+    "revision": "d0310fa499d8d1c964af63126c490346",
     "url": "/rescue-ui/index.html"
   },
   {
-    "revision": "b768c9057da5d32e17dd",
-    "url": "/rescue-ui/static/css/main.3985d706.chunk.css"
+    "revision": "049ccd2ed86fde0f4d98",
+    "url": "/rescue-ui/static/css/main.5f9048f5.chunk.css"
   },
   {
-    "revision": "fcb9394fc34bb1ef4725",
-    "url": "/rescue-ui/static/js/2.dcbfe502.chunk.js"
+    "revision": "2dc6bc807559d575d0d7",
+    "url": "/rescue-ui/static/js/2.6d7ea305.chunk.js"
   },
   {
     "revision": "ea23e6ad1dad8df5daee8d2027f77880",
-    "url": "/rescue-ui/static/js/2.dcbfe502.chunk.js.LICENSE.txt"
+    "url": "/rescue-ui/static/js/2.6d7ea305.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b768c9057da5d32e17dd",
-    "url": "/rescue-ui/static/js/main.d361c352.chunk.js"
+    "revision": "049ccd2ed86fde0f4d98",
+    "url": "/rescue-ui/static/js/main.30fd68a7.chunk.js"
   },
   {
     "revision": "f3a903c45c2499edb5d0",
@@ -40,8 +40,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rescue-ui/static/media/Gulfcoast Veterinary Center.da5cc6c7.png"
   },
   {
+    "revision": "e31e1f3c209eba9eae4dc587e6123c69",
+    "url": "/rescue-ui/static/media/KenAfienko.e31e1f3c.jpg"
+  },
+  {
     "revision": "0140d5dd0e0436a7c28e91524c47f5e7",
     "url": "/rescue-ui/static/media/KenLogo.0140d5dd.jpg"
+  },
+  {
+    "revision": "b5a53fde9eac7ff7f7f29edd9cd56acb",
+    "url": "/rescue-ui/static/media/KittenSiameseWithEmptyBowl.b5a53fde.jpg"
   },
   {
     "revision": "b1de0f3d522fe06be437737a54dbf849",
@@ -138,6 +146,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4fd2e5bae629b32a441a6721c289e94c",
     "url": "/rescue-ui/static/media/smidge.4fd2e5ba.jpg"
+  },
+  {
+    "revision": "6d1f9325fa6d3ac14ddd372d3ae78616",
+    "url": "/rescue-ui/static/media/stats.6d1f9325.png"
   },
   {
     "revision": "c3236d32e39df37e3c3f7830acba5d83",
