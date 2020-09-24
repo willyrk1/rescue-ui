@@ -131,6 +131,10 @@ const StFrancisRescue = (function() {
       return get('locations', params)
     },
 
+    getStats: function(params) {
+      return get('stats', params)
+    },
+
     postForm: event => {
       event.preventDefault()
       return post(event.target.action, new FormData(event.target), TOKEN)
