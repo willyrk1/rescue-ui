@@ -168,16 +168,20 @@ const AnimalDetails = ({
                 {contactMethods.phone && pet.foster_phone}.
               </p>
             )}
-            <p>
-              Submit an adoption application for {pet.name} by clicking on the
-              "want to adopt me?" button.
-            </p>
-            <Link
-              to={`/adoption-form/${petType}/${list}/${animalId}`}
-              className={cx('btn')}
-            >
-              Want to Adopt Me?
-            </Link>
+            {list !== 'adoptionCenterAnimals' && (
+              <>
+                <p>
+                  Submit an adoption application for {pet.name} by clicking on
+                  the "want to adopt me?" button.
+                </p>
+                <Link
+                  to={`/adoption-form/${petType}/${list}/${animalId}`}
+                  className={cx('btn')}
+                >
+                  Want to Adopt Me?
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
