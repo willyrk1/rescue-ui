@@ -8,7 +8,7 @@ import StandardLayout from './StandardLayout'
 import Scroller from './Scroller'
 import YouTubeIcon from '../assets/images/icon-youtube.png'
 import styles from './AnimalDetails.module.scss'
-import { usePetData } from '../context/PetDataContext'
+import { usePetData } from '../context/GlobalDataContext'
 
 const cx = classNames.bind(styles)
 

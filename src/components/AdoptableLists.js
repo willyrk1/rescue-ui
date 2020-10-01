@@ -4,7 +4,7 @@ import StandardLayout from './StandardLayout'
 import AnimalCard from './AnimalCard'
 import AnimalSearch from './AnimalSearch'
 import styles from './AdoptableLists.module.scss'
-import { usePetData } from '../context/PetDataContext'
+import { usePetData } from '../context/GlobalDataContext'
 
 const cx = classNames.bind(styles)
 
