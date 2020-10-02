@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import classNames from 'classnames/bind'
-import StFrancisRescue from '../apis/StFrancisRescue'
+import { useLocations } from '../context/GlobalDataContext'
 import StandardLayout from './StandardLayout'
 import styles from './AdoptionLocations.module.scss'
 import adoptionPhoto1 from '../assets/images/adoptionphoto1.jpg'
@@ -11,15 +11,9 @@ import dogAdoption1 from '../assets/images/dogadoption1.jpg'
 const cx = classNames.bind(styles)
 
 const AdoptionLocations = () => {
-  const [locations, setLocations] = useState()
+  const locations = useLocations() || []
 
-  useEffect(() => {
-    const loadLocations = async () => {
-      const { data } = await StFrancisRescue.getLocations()
-      setLocations(data)
-    }
-    loadLocations()
-  }, [])
+  const counties = [...new Set(locations.map(({ county }) => county))]
 
   return (
     <StandardLayout>
@@ -41,86 +35,33 @@ const AdoptionLocations = () => {
           the right to refuse adoption applicants based on their own judgment.
         </p>
 
-        <h2>Hillsborough</h2>
-        <ul>
-          <li>
-            <img src={adoptionPhoto1} className={cx('right')} alt="Adoptions" />
-            <strong>PetSmart</strong>, located at{' '}
-            <a href="https://goo.gl/maps/tB7kiFNWT9p">12835 Citrus Park Dr</a>{' '}
-            across from the Citrus Park Mall. Our volunteers are onsite for
-            adoptions Saturday from 11:00 a.m. to 5:00 p.m. and Sunday from
-            12:00 p.m. to 5:00 p.m. They will be happy to assist you with
-            finding the perfect feline companion. Cats are onsite 7 days a week.
-          </li>
-          <li>
-            <strong>PetSmart</strong>, located at{' '}
-            <a href="https://goo.gl/maps/zt3X9HkgfQ12">11331 Causeway Blvd</a>{' '}
-            in Brandon. Cats and adoption counselors are onsite for adoptions
-            Saturday and Sunday from Noon to 4:00 p.m. only.
-          </li>
-          <li>
-            <strong>PetSmart</strong>, located at{' '}
-            <a href="https://goo.gl/maps/fUXQcqxTNAt">
-              1540 N Dale Mabry Highway
-            </a>{' '}
-            in South Tampa. Cats and adoption counselors are onsite for
-            adoptions Saturday from 11:00 a.m. to 4:00 p.m. only.
-          </li>
-          <li>
-            <strong>Petco</strong>, located at{' '}
-            <a href="https://goo.gl/maps/M3gAzvdMGjS2">
-              13127 North Dale Mabry Highway
-            </a>{' '}
-            in Carrollwood. Cats and adoption counselors are onsite for
-            adoptions Saturday from 11:00 a.m. to 4:00 p.m. and Sunday from Noon
-            to 3:00 p.m. only.
-          </li>
-          <li>
-            <strong>Petco</strong>, located at{' '}
-            <a href="https://goo.gl/maps/i6jTMpXmVi62">
-              136 S West Shore Boulevard
-            </a>{' '}
-            in Tampa. Cats and adoption counselors are onsite for adoptions
-            Saturday from 1:00 p.m. to 4:00 p.m. only.
-          </li>
-          <li>
-            <strong>Pet Supermarket Brandon</strong>, located at{' '}
-            <a href="https://goo.gl/maps/dB73tf76QKS2">
-              845 E Bloomingdale Ave
-            </a>{' '}
-            in Brandon. Pet Supermarket management can assist with an adoption
-            during business hours. Cats are onsite 7 days a week.
-          </li>
-        </ul>
-
-        <img src={adoptionPhoto4} className={cx('right')} alt="Adoptions" />
-        <h2>Pasco</h2>
-        <ul>
-          <li>
-            <strong>Pet City</strong>, located at{' '}
-            <a href="https://goo.gl/maps/DLxeZQioh2m">2119 Collier Parkway</a>{' '}
-            in Land O Lakes. Pet City management can assist with an adoption
-            during business hours. Cats are onsite 7 days a week.
-          </li>
-        </ul>
-
-        <h2>Pinellas</h2>
-        <ul>
-          <li>
-            <strong>PetSmart</strong>, located at{' '}
-            <a href="http://bit.ly/2Q0knOJ">3993 Tyrone Blvd N</a> in Lighthouse
-            Crossings. Our volunteers are onsite for adoptions Saturday from
-            11:00 a.m. to 5:00 p.m. and Sunday from 12:00 p.m. to 5:00 p.m. They
-            will be happy to assist you with finding the perfect feline
-            companion. Cats are onsite 7 days a week.
-          </li>
-          <li>
-            <strong>Petsmart</strong>, located at{' '}
-            <a href="https://goo.gl/maps/oysPe6e4Xry">3130 Tampa Road</a> in
-            Oldsmar. Cats and adoption counselors are onsite for adoptions
-            Saturday from 11:00 a.m. to 4:00 p.m. only.
-          </li>
-        </ul>
+        {counties.map((countyName, countyIndex) => (
+          <>
+            <h2>{countyName}</h2>
+            <ul>
+              {locations
+                .filter(({ county }) => county === countyName)
+                .map(
+                  (
+                    { name, street_address_1, area, description },
+                    locationIndex
+                  ) => (
+                    <li>
+                      {countyIndex === 0 && locationIndex === 0 && (
+                        <img
+                          src={adoptionPhoto1}
+                          className={cx('right')}
+                          alt="Adoptions"
+                        />
+                      )}
+                      <strong>{name}</strong>, located at{' '}
+                      <a>{street_address_1}</a> in {area}. {description}
+                    </li>
+                  )
+                )}
+            </ul>
+          </>
+        ))}
 
         <div className={cx('dogs')}>
           <div>

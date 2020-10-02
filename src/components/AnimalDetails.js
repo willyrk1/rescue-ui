@@ -8,7 +8,7 @@ import StandardLayout from './StandardLayout'
 import Scroller from './Scroller'
 import YouTubeIcon from '../assets/images/icon-youtube.png'
 import styles from './AnimalDetails.module.scss'
-import { usePetData } from '../context/PetDataContext'
+import { usePetData } from '../context/GlobalDataContext'
 
 const cx = classNames.bind(styles)
 
@@ -168,16 +168,20 @@ const AnimalDetails = ({
                 {contactMethods.phone && pet.foster_phone}.
               </p>
             )}
-            <p>
-              Submit an adoption application for {pet.name} by clicking on the
-              "want to adopt me?" button.
-            </p>
-            <Link
-              to={`/adoption-form/${petType}/${list}/${animalId}`}
-              className={cx('btn')}
-            >
-              Want to Adopt Me?
-            </Link>
+            {list !== 'adoptionCenterAnimals' && (
+              <>
+                <p>
+                  Submit an adoption application for {pet.name} by clicking on
+                  the "want to adopt me?" button.
+                </p>
+                <Link
+                  to={`/adoption-form/${petType}/${list}/${animalId}`}
+                  className={cx('btn')}
+                >
+                  Want to Adopt Me?
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

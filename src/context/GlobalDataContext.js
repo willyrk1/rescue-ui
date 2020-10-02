@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react'
 import StFrancisRescue from '../apis/StFrancisRescue'
 
-const PetDataContext = React.createContext()
+const GlobalDataContext = React.createContext()
 
-export const PetDataProvider = ({ children }) => {
+export const GlobalDataProvider = ({ children }) => {
   const [petData, setPetData] = useState()
+  const [locations, setLocations] = useState()
 
   useEffect(() => {
     // Ignore for now...
@@ -20,14 +21,22 @@ export const PetDataProvider = ({ children }) => {
         courtesyCats: (await handleError(courtesyCats)).data,
       })
     }
+
+    const loadLocations = async () => {
+      const { data } = await StFrancisRescue.getLocations()
+      setLocations(data.locations)
+    }
+
     loadPetData()
+    loadLocations()
   }, [])
 
   return (
-    <PetDataContext.Provider value={petData}>
+    <GlobalDataContext.Provider value={{ petData, locations }}>
       {children}
-    </PetDataContext.Provider>
+    </GlobalDataContext.Provider>
   )
 }
 
-export const usePetData = () => useContext(PetDataContext)
+export const usePetData = () => useContext(GlobalDataContext).petData
+export const useLocations = () => useContext(GlobalDataContext).locations

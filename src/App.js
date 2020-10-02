@@ -13,7 +13,7 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom'
-import { PetDataProvider } from './context/PetDataContext'
+import { GlobalDataProvider } from './context/GlobalDataContext'
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'
 import BeforeYouAdopt from './components/BeforeYouAdopt'
@@ -51,7 +51,7 @@ const ScrollToTop = () => {
 const App = () => (
   <Router basename='/rescue-ui'>
     <ScrollToTop />
-    <PetDataProvider>
+    <GlobalDataProvider>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/adoptions" component={Adopt} />
@@ -84,7 +84,7 @@ const App = () => (
         <Route path="/:pagename" component={Page} />
         <Route component={UnderConstruction} />
       </Switch>
-    </PetDataProvider>
+    </GlobalDataProvider>
   </Router>
 )
 

@@ -83,16 +83,11 @@ const NewsEvents = () => {
       <hr />
       <div className={cx('panels')}>
         <div className={cx('panel')}>
-          <div className={cx('date')}></div>
-          <h1>Free Will Offer</h1>
           <div className={cx('panel-content', 'center')}>
-            <div className={cx('content-heading')}>
-              Attorney Ken&nbsp;Afienko
-            </div>
+            <h2>Attorney Ken&nbsp;Afienko</h2>
+            <hr />
             <img src={kenAfienkoImage} alt="Ken Afienko" />
-            <div className={cx('content-heading')}>
-              Free Simple Will Or Living Will
-            </div>
+            <h3>Free Simple Will Or Living Will</h3>
             <Popup
               modal
               closeOnDocumentClick
@@ -131,10 +126,12 @@ const NewsEvents = () => {
           </div>
         </div>
         <div className={cx('panel')}>
-          <div className={cx('date')} />
-          <h1>Our Impact</h1>
           <div className={cx('panel-content', 'center')}>
-            <div className={cx('content-heading')}>Animals Saved</div>
+            <h2>
+              Animals
+              <br /> Saved
+            </h2>
+            <hr />
             <img src={statsImage} alt="Stats" />
             <VisibilitySensor onChange={startRunup}>
               <div className={cx('stat')}>
@@ -152,19 +149,11 @@ const NewsEvents = () => {
           </div>
         </div>
         <div className={cx('panel')}>
-          <div className={cx('date')} />
-          <h1>Food Friend</h1>
           <div className={cx('panel-content', 'center')}>
-            {/* For individuals and businesses wishing to truly make a difference,
-            become a monthly food sponsor and see your logo here. */}
-            {/* This month's Food Friend is */}
-            <div className={cx('content-heading')}>
-              Food&nbsp;Friend Of&nbsp;The&nbsp;Month
-            </div>
+            <h2>Food&nbsp;Friend Of&nbsp;The&nbsp;Month</h2>
+            <hr />
             <img src={foodSponsorshipImage} alt="Food Friend" />
-            <div className={cx('content-heading')}>
-              Holly O'Brien &amp; Greg&nbsp;Gruendel
-            </div>
+            <h3>Holly O'Brien &amp; Greg&nbsp;Gruendel</h3>
             <a className={cx('btn')} href={foodSponsorshipForm} target="_blank">
               More Info
             </a>
