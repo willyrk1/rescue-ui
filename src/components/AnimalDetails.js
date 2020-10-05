@@ -8,7 +8,7 @@ import StandardLayout from './StandardLayout'
 import Scroller from './Scroller'
 import YouTubeIcon from '../assets/images/icon-youtube.png'
 import styles from './AnimalDetails.module.scss'
-import { usePetData } from '../context/GlobalDataContext'
+import { useLocations, usePetData } from '../context/GlobalDataContext'
 
 const cx = classNames.bind(styles)
 
@@ -78,6 +78,11 @@ const AnimalDetails = ({
     Phone: { phone: true },
     Both: { email: true, phone: true, both: true },
   }[pet && pet.foster_method_of_contact]
+
+  const locations = useLocations()
+
+  const location =
+    locations && pet && locations.find(({ id }) => id === pet.location_id)
 
   return pet ? (
     <StandardLayout>
@@ -168,7 +173,20 @@ const AnimalDetails = ({
                 {contactMethods.phone && pet.foster_phone}.
               </p>
             )}
-            {list !== 'adoptionCenterAnimals' && (
+            {list === 'adoptionCenterAnimals' ? (
+              location && (
+                <p>
+                  {pet.name} is currently at our{' '}
+                  <strong>{location.name}</strong> adoption center located at{' '}
+                  <a
+                    target="_blank"
+                    href={`http://maps.google.com/maps?q=${location.street_address_1},+${location.city},+${location.state}`}
+                  >
+                    {location.street_address_1}, {location.city}
+                  </a>
+                </p>
+              )
+            ) : (
               <>
                 <p>
                   Submit an adoption application for {pet.name} by clicking on
