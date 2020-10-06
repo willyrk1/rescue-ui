@@ -28,7 +28,7 @@ const Volunteer = () => (
         minimum age to volunteer is 18.
       </p>
 
-      <h2>Volunteer Positions</h2>
+      <h2 id="positions">Volunteer Positions</h2>
       <h3>Animal Care</h3>
       <p>
         Assist cats and kittens at our adoption centers by spot cleaning,

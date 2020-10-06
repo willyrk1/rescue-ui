@@ -43,7 +43,7 @@ const AdoptionLocations = () => {
                 .filter(({ county }) => county === countyName)
                 .map(
                   (
-                    { name, street_address_1, area, description },
+                    { name, street_address_1, city, state, area, description },
                     locationIndex
                   ) => (
                     <li>
@@ -55,7 +55,13 @@ const AdoptionLocations = () => {
                         />
                       )}
                       <strong>{name}</strong>, located at{' '}
-                      <a>{street_address_1}</a> in {area}. {description}
+                      <a
+                        target="_blank"
+                        href={`http://maps.google.com/maps?q=${street_address_1},+${city},+${state}`}
+                      >
+                        {street_address_1}
+                      </a>{' '}
+                      in {area}. {description}
                     </li>
                   )
                 )}

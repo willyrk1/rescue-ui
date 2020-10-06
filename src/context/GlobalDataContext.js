@@ -3,6 +3,12 @@ import StFrancisRescue from '../apis/StFrancisRescue'
 
 const GlobalDataContext = React.createContext()
 
+const byHostsOvernight = (a, b) => {
+  if (a.hosts_animals_overnight && !b.hosts_animals_overnight) return -1
+  if (b.hosts_animals_overnight && !a.hosts_animals_overnight) return 1
+  return 0
+}
+
 export const GlobalDataProvider = ({ children }) => {
   const [petData, setPetData] = useState()
   const [locations, setLocations] = useState()
@@ -24,7 +30,7 @@ export const GlobalDataProvider = ({ children }) => {
 
     const loadLocations = async () => {
       const { data } = await StFrancisRescue.getLocations()
-      setLocations(data.locations)
+      setLocations(data.locations.sort(byHostsOvernight))
     }
 
     loadPetData()
