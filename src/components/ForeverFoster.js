@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
+import ForeverFosterButton from './ForeverFosterButton'
 import styles from './ForeverFoster.module.scss'
 import tiffanyPhoto from '../assets/images/tiffany2.jpg'
 import bebePhoto from '../assets/images/bebe2.jpg'
@@ -106,8 +107,8 @@ const ForeverFoster = () => (
             house and getting as much lap time as possible.
           `,
           },
-        ].map(({ imgSrc, name, text }) => (
-          <div className={cx('animal-card')}>
+        ].map(({ imgSrc, name, text }, index) => (
+          <div className={cx('animal-card')} key={index}>
             <div className={cx('pet-card')}>
               <div className={cx('photo')}>
                 <img src={imgSrc} alt={name} />
@@ -116,9 +117,7 @@ const ForeverFoster = () => (
                 <h3>{name}</h3>
                 <p>{text}</p>
               </div>
-              <a href="#" className={cx('btn')}>
-                Sponsor
-              </a>
+              <ForeverFosterButton />
             </div>
           </div>
         ))}

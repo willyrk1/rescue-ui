@@ -32,6 +32,15 @@
       flex-direction: column;
       justify-content: flex-start;
       height: 100%;
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        input, img {
+          align-self: center;
+        }
+      }
     }
   
     h3 {

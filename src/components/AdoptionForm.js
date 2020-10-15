@@ -127,8 +127,7 @@ const AdoptionForm = ({
             </li>
             <li>
               <label htmlFor="phone">Phone *</label>
-              <input
-                type="text"
+              <StandardForm.Phone
                 id="phone"
                 name="adopter_agreement[phone]"
                 required

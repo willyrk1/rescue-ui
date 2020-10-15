@@ -96,4 +96,21 @@ StandardForm.RadioGroup = ({
   </li>
 )
 
+StandardForm.Phone = props => {
+  const patternMessage = 'Please use format ###-###-####'
+  const onInvalid = ({ target }) => target.setCustomValidity(patternMessage)
+  const onInput = ({ target }) =>
+    target.setCustomValidity(
+      target.validity.patternMismatch ? patternMessage : ''
+    )
+
+  return (
+    <input
+      type="tel"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      {...{ onInvalid, onInput, ...props }}
+    />
+  )
+}
+
 export default StandardForm
