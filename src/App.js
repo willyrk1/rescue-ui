@@ -8,7 +8,7 @@
 
 import React, { useEffect } from 'react'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   useLocation,
@@ -49,7 +49,7 @@ const ScrollToTop = () => {
 }
 
 const App = () => (
-  <Router basename="/">
+  <Router basename="/" >
     <ScrollToTop />
     <GlobalDataProvider>
       <Switch>
