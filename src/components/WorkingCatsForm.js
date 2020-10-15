@@ -110,8 +110,7 @@ const WorkingCatsForm = () => (
           </li>
           <li>
             <label htmlFor="phone">Phone *</label>
-            <input
-              type="text"
+            <StandardForm.Phone
               id="phone"
               name="workcat_adopter_agreement[phone]"
             />

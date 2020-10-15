@@ -126,8 +126,7 @@ const VolunteerForm = () => {
             </li>
             <li>
               <label htmlFor="phone">Phone *</label>
-              <input
-                type="text"
+              <StandardForm.Phone
                 id="phone"
                 name="volunteer[person_attributes][phone]"
                 required

@@ -85,7 +85,7 @@ const Contact = () => (
           </li>
           <li>
             <label htmlFor="phone">Phone</label>
-            <input type="text" id="phone" name="contact_form[phone]" />
+            <StandardForm.Phone id="phone" name="contact_form[phone]" />
           </li>
           <StandardForm.RadioGroup
             label="Would you like to subscribe to our e-mail newsletter?"

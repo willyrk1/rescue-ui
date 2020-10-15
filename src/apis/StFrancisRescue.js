@@ -76,7 +76,7 @@ const StFrancisRescue = (function() {
   function post(url, body, jwt) {
     const headers = {
       Authorization: `Basic ${jwt}`,
-      accept: 'application/json'
+      accept: 'application/json',
     }
 
     log('REQUEST  :=', url)

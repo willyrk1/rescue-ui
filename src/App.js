@@ -49,7 +49,7 @@ const ScrollToTop = () => {
 }
 
 const App = () => (
-  <Router basename="/" >
+  <Router basename="/">
     <ScrollToTop />
     <GlobalDataProvider>
       <Switch>
