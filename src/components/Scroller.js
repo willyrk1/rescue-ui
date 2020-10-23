@@ -2,8 +2,29 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import classNames from 'classnames/bind'
 import scrollerStyles from './Scroller.module.scss'
 
-const Scroller = ({ components = [], styles, state, timer }) => {
+const Scroller = ({
+  components: originalComponents = [],
+  styles,
+  state,
+  timer,
+  showSingle,
+}) => {
   const cx = classNames.bind({ ...styles, ...scrollerStyles })
+
+  /*
+   * Handle special case where we're only showing one at a time but we only
+   * have two to scroll through. Just double them to keep the scrolling on point.
+   */
+  const components =
+    showSingle && originalComponents.length === 2
+      ? [
+          ...originalComponents,
+          ...originalComponents.map(({ key, ...rest }) => ({
+            key: `${key}_DUPE`,
+            ...rest,
+          })),
+        ]
+      : originalComponents
 
   /*
    * Scroll index (optionally shared).

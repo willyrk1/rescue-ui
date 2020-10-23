@@ -96,6 +96,7 @@ const AnimalDetails = ({
                 components={components}
                 styles={styles}
                 state={sharedState}
+                showSingle
               />
             </div>
             <div className={cx('simple-details')}>

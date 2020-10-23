@@ -45,7 +45,7 @@ const AnimalSearch = ({
                 <input
                   type="text"
                   id="name"
-                  value={searchName}
+                  value={searchName || ''}
                   onChange={setInput('name')}
                   className={cx('search-input')}
                 />
