@@ -135,7 +135,13 @@ const AnimalDetails = ({
             {pet.special_need && pet.special_need.name && (
               <p>
                 <label htmlFor="special-need">Special Need:</label>
-                <span id="special-need">{pet.special_need.name}</span>
+                {pet.special_need.reference ? (
+                  <Link to={`/special-need${pet.special_need.reference}`}>
+                    {pet.special_need.name}
+                  </Link>
+                ) : (
+                  <span id="special-need">{pet.special_need.name}</span>
+                )}
               </p>
             )}
             <p className={cx('story')}>{pet.story}</p>
@@ -159,16 +165,7 @@ const AnimalDetails = ({
               <p>
                 If you have any questions about {pet.name}, contact{' '}
                 {pet.foster_name.split(' ')[0]} at
-                {contactMethods.email && pet.foster_email && (
-                  <>
-                    &nbsp;
-                    <a
-                      href={`mailto:${pet.foster_email}?Subject=Inquiry about ${pet.name} from stfrancisrescue.org`}
-                    >
-                      {pet.foster_email}
-                    </a>
-                  </>
-                )}
+                {contactMethods.email && pet.foster_email}
                 {contactMethods.both && ' or '}
                 {contactMethods.phone && pet.foster_phone}.
               </p>

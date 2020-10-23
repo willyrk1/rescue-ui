@@ -196,11 +196,7 @@ const HelpOurCause = () => (
                       enables us to continue our life-saving mission for years
                       to come. If you are interested in learning more about
                       leaving a bequest to St. Franics Society, please contact
-                      us at&nbsp;
-                      <a href="mailto:stfrancissociety@gmail.com">
-                        stfrancissociety@gmail.com
-                      </a>
-                      .
+                      us at stfrancissociety@gmail.com.
                     </p>
                   </div>
                   <div className={cx('actions')}>

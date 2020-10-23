@@ -35,6 +35,7 @@ import Donate from './components/Donate'
 import ForeverFoster from './components/ForeverFoster'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import FormSubmitted from './components/FormSubmitted'
+import Legacy from './components/Legacy'
 import UnderConstruction from './components/UnderConstruction'
 import './App.scss'
 
@@ -49,7 +50,7 @@ const ScrollToTop = () => {
 }
 
 const App = () => (
-  <Router basename='/rescue-ui'>
+  <Router basename="/rescue-ui">
     <ScrollToTop />
     <GlobalDataProvider>
       <Switch>
@@ -81,6 +82,7 @@ const App = () => (
         <Route exact path="/forever-foster" component={ForeverFoster} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/form-submitted" component={FormSubmitted} />
+        <Route exact path="/special-need/:reference" component={Legacy} />
         <Route path="/:pagename" component={Page} />
         <Route component={UnderConstruction} />
       </Switch>
