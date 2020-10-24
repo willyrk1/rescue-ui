@@ -40,11 +40,11 @@ import UnderConstruction from './components/UnderConstruction'
 import './App.scss'
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation()
+  const { pathname, search } = useLocation()
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, search])
 
   return null
 }
