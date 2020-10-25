@@ -52,4 +52,4 @@ const AnimalCard = props => {
   )
 }
 
-export default AnimalCard
+export default React.memo(AnimalCard)
