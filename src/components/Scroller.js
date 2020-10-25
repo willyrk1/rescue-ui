@@ -104,14 +104,10 @@ const Scroller = ({
    * number of components (the weird code below is a work-around for how Javascript
    * does modulo with negative numbers).  For case of just one item, just return one.
    */
-  const getAdjustedIndex = index => {
-    if (components.length <= 1) return 1
-
-    return (
-      (((index - scrollIndex + 1) % components.length) + components.length) %
-      components.length
-    )
-  }
+  const getAdjustedIndex = index => (
+    (((index - scrollIndex + 1) % components.length) + components.length) %
+    components.length
+  )
 
   /*
    * Determine if the item should be hidden based on the adjusted index.
@@ -144,7 +140,7 @@ const Scroller = ({
               key={key}
               ref={tileRef}
               className={cx({ hide, 'scroller-hide': hide })}
-              style={{ left: `${(adjustedIndex - 1) * scrollSize}px` }}
+              style={{ left: `${(adjustedIndex - canScroll) * scrollSize}px` }}
             >
               {component}
             </div>
