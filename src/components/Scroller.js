@@ -104,10 +104,9 @@ const Scroller = ({
    * number of components (the weird code below is a work-around for how Javascript
    * does modulo with negative numbers).  For case of just one item, just return one.
    */
-  const getAdjustedIndex = index => (
+  const getAdjustedIndex = index =>
     (((index - scrollIndex + 1) % components.length) + components.length) %
     components.length
-  )
 
   /*
    * Determine if the item should be hidden based on the adjusted index.
