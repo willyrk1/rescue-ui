@@ -2,28 +2,46 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import classNames from 'classnames/bind'
 import scrollerStyles from './Scroller.module.scss'
 
+const dupeUntil = (components, untilCount) => {
+  if (components.length) {
+    const finalComponents = [...components]
+    let index = 1
+    while (finalComponents.length < untilCount) {
+      finalComponents.push(
+        ...components.map(({ key, ...rest }) => ({
+          key: `${key}_DUPE${index}`,
+          ...rest,
+        }))
+      )
+      index++
+    }
+    return finalComponents
+  }
+  // Huh?
+  else return components
+}
+
 const Scroller = ({
   components: originalComponents = [],
   styles,
   state,
   timer,
-  showSingle,
+  showCount,
 }) => {
   const cx = classNames.bind({ ...styles, ...scrollerStyles })
 
   /*
-   * Handle special case where we're only showing one at a time but we only
-   * have two to scroll through. Just double them to keep the scrolling on point.
+   * Check if there are enough items to even scroll through.
+   */
+  const canScroll = !showCount || originalComponents.length > showCount
+
+  /*
+   * If we can scroll and know how many items, make sure there are enough to hide
+   * the first and last. If not, just duplicate them to keep the scrolling on point.
    */
   const components =
-    showSingle && originalComponents.length === 2
-      ? [
-          ...originalComponents,
-          ...originalComponents.map(({ key, ...rest }) => ({
-            key: `${key}_DUPE`,
-            ...rest,
-          })),
-        ]
+    canScroll && showCount
+      ? dupeUntil(originalComponents, showCount + 2)
       : originalComponents
 
   /*
@@ -45,23 +63,9 @@ const Scroller = ({
     }
   }
 
-  /*
-   * Check if there are enough items to even scroll through.
-   */
-  const [canScroll, setCanScroll] = useState(true)
-  const tilesRef = useRef()
-
   useEffect(() => {
     const checkSizes = () => {
       updateScrollSize()
-
-      if (tilesRef.current && tilesRef.current.children.length) {
-        const parentWidth = tilesRef.current.offsetWidth
-        const childWidths = Array.from(tilesRef.current.children)
-          .map(node => node.offsetWidth)
-          .reduce((acc, curr) => acc + curr)
-        setCanScroll(parentWidth < childWidths)
-      }
     }
 
     checkSizes()
@@ -131,7 +135,7 @@ const Scroller = ({
           <button onClick={setAndCancel(scrollIndex - 1)}>&lt;</button>
         </div>
       )}
-      <div className={cx('scroller-tiles', 'tiles')} ref={tilesRef}>
+      <div className={cx('scroller-tiles', 'tiles')}>
         {components.map(({ component, key }, index) => {
           const adjustedIndex = getAdjustedIndex(index)
           const hide = isHidden(adjustedIndex)
@@ -140,7 +144,7 @@ const Scroller = ({
               key={key}
               ref={tileRef}
               className={cx({ hide, 'scroller-hide': hide })}
-              style={{ left: `${(adjustedIndex - canScroll) * scrollSize}px` }}
+              style={{ left: `${(adjustedIndex - 1) * scrollSize}px` }}
             >
               {component}
             </div>

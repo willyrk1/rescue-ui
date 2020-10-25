@@ -96,7 +96,7 @@ const AnimalDetails = ({
                 components={components}
                 styles={styles}
                 state={sharedState}
-                showSingle
+                showCount={1}
               />
             </div>
             <div className={cx('simple-details')}>
@@ -128,6 +128,7 @@ const AnimalDetails = ({
                 components={components}
                 styles={styles}
                 state={sharedState}
+                showCount={5}
               />
             </div>
           </div>

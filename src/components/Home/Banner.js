@@ -31,6 +31,7 @@ const Banner = () => {
         }))}
         styles={styles}
         timer={5000}
+        showCount={1}
       />
     </div>
   )
