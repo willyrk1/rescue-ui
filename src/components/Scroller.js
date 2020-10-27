@@ -2,8 +2,47 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import classNames from 'classnames/bind'
 import scrollerStyles from './Scroller.module.scss'
 
-const Scroller = ({ components = [], styles, state, timer }) => {
+const dupeUntil = (components, untilCount) => {
+  if (components.length) {
+    const finalComponents = [...components]
+    let index = 1
+    while (finalComponents.length < untilCount) {
+      finalComponents.push(
+        ...components.map(({ key, ...rest }) => ({
+          key: `${key}_DUPE${index}`,
+          ...rest,
+        }))
+      )
+      index++
+    }
+    return finalComponents
+  }
+  // Huh?
+  else return components
+}
+
+const Scroller = ({
+  components: originalComponents = [],
+  styles,
+  state,
+  timer,
+  showCount,
+}) => {
   const cx = classNames.bind({ ...styles, ...scrollerStyles })
+
+  /*
+   * Check if there are enough items to even scroll through.
+   */
+  const canScroll = !showCount || originalComponents.length > showCount
+
+  /*
+   * If we can scroll and know how many items, make sure there are enough to hide
+   * the first and last. If not, just duplicate them to keep the scrolling on point.
+   */
+  const components =
+    canScroll && showCount
+      ? dupeUntil(originalComponents, showCount + 2)
+      : originalComponents
 
   /*
    * Scroll index (optionally shared).
@@ -24,23 +63,9 @@ const Scroller = ({ components = [], styles, state, timer }) => {
     }
   }
 
-  /*
-   * Check if there are enough items to even scroll through.
-   */
-  const [canScroll, setCanScroll] = useState(true)
-  const tilesRef = useRef()
-
   useEffect(() => {
     const checkSizes = () => {
       updateScrollSize()
-
-      if (tilesRef.current && tilesRef.current.children.length) {
-        const parentWidth = tilesRef.current.offsetWidth
-        const childWidths = Array.from(tilesRef.current.children)
-          .map(node => node.offsetWidth)
-          .reduce((acc, curr) => acc + curr)
-        setCanScroll(parentWidth < childWidths)
-      }
     }
 
     checkSizes()
@@ -79,14 +104,9 @@ const Scroller = ({ components = [], styles, state, timer }) => {
    * number of components (the weird code below is a work-around for how Javascript
    * does modulo with negative numbers).  For case of just one item, just return one.
    */
-  const getAdjustedIndex = index => {
-    if (components.length <= 1) return 1
-
-    return (
-      (((index - scrollIndex + 1) % components.length) + components.length) %
-      components.length
-    )
-  }
+  const getAdjustedIndex = index =>
+    (((index - scrollIndex + 1) % components.length) + components.length) %
+    components.length
 
   /*
    * Determine if the item should be hidden based on the adjusted index.
@@ -110,7 +130,7 @@ const Scroller = ({ components = [], styles, state, timer }) => {
           <button onClick={setAndCancel(scrollIndex - 1)}>&lt;</button>
         </div>
       )}
-      <div className={cx('scroller-tiles', 'tiles')} ref={tilesRef}>
+      <div className={cx('scroller-tiles', 'tiles')}>
         {components.map(({ component, key }, index) => {
           const adjustedIndex = getAdjustedIndex(index)
           const hide = isHidden(adjustedIndex)

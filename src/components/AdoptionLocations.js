@@ -5,7 +5,6 @@ import StandardLayout from './StandardLayout'
 import styles from './AdoptionLocations.module.scss'
 import adoptionPhoto1 from '../assets/images/adoptionphoto1.jpg'
 import adoptionPhoto2 from '../assets/images/adoptionphoto2.jpg'
-import adoptionPhoto4 from '../assets/images/adoptionphoto4.jpg'
 import dogAdoption1 from '../assets/images/dogadoption1.jpg'
 
 const cx = classNames.bind(styles)

@@ -2,7 +2,7 @@
 
 .home-news-events {
 	background-image: url('../../assets/images/largeBlueCat.png');
-  padding: 5rem 6rem 3.8rem;
+  padding: 2rem 6rem 2.8rem;
   
   @media (max-width: 870px) {
     display: none;
@@ -18,8 +18,7 @@
   }
 
   h2 {
-    color: $color-accent;
-    color: $color-secondary;
+    color: #000;
     font-size: 3rem;
   }
 

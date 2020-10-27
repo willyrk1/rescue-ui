@@ -1,4 +1,6 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useEffect, useReducer } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import * as qs from 'query-string'
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
 import AnimalCard from './AnimalCard'
@@ -23,6 +25,9 @@ const getUniqueOptions = (pets, lists, mappingFn) =>
 const getDaysAgo = days => new Date() - days * 1000 * 60 * 60 * 24
 
 const AdoptableList = ({ petType, lists, children }) => {
+  const location = useLocation()
+  const { pageNum = 1 } = qs.parse(location.search)
+
   const selectMapping = {
     gender: { mappingFn: pet => pet.sex, label: 'Gender' },
     breed: {
@@ -182,8 +187,6 @@ const AdoptableList = ({ petType, lists, children }) => {
     }
   }
 
-  const [pageNum, setPageNum] = useState(1)
-
   const filteredLists =
     pets &&
     lists.map(({ title, property }) => ({
@@ -200,45 +203,41 @@ const AdoptableList = ({ petType, lists, children }) => {
     : 0
   const numPages = Math.floor(totalCount / adoptablesPerPage) + 1
 
+  /*
+   * A search may have made the current page number invalid so check that.
+   */
+  const realPageNum = Math.min(pageNum, numPages)
+
   const applyPaging = lists => {
-    /*
-     * First, a search may have made the current page number invalid so check that.
-     */
-    if (pageNum > numPages) {
-      /*
-       * Fix pageNum and let the next render do this properly.
-       */
-      setPageNum(numPages)
-      return []
-    } else {
-      const startIndex = (pageNum - 1) * adoptablesPerPage
-      const endIndex = startIndex + adoptablesPerPage
-      return lists.reduce(
-        ({ index, lists }, { processedList, ...rest }) => {
-          const newList = processedList.slice(
-            Math.max(startIndex - index, 0),
-            Math.max(endIndex - index, 0)
-          )
-          lists.push({ processedList: newList, ...rest })
-          return {
-            index: index + processedList.length,
-            lists,
-          }
-        },
-        {
-          index: 0,
-          lists: [],
+    const startIndex = (realPageNum - 1) * adoptablesPerPage
+    const endIndex = startIndex + adoptablesPerPage
+    return lists.reduce(
+      ({ index, lists }, { processedList, ...rest }) => {
+        const newList = processedList.slice(
+          Math.max(startIndex - index, 0),
+          Math.max(endIndex - index, 0)
+        )
+        lists.push({ processedList: newList, ...rest })
+        return {
+          index: index + processedList.length,
+          lists,
         }
-      ).lists
-    }
+      },
+      {
+        index: 0,
+        lists: [],
+      }
+    ).lists
   }
 
   const processedLists = filteredLists && applyPaging(filteredLists)
 
-  const handlePageClick = newPageNum => () => {
-    setPageNum(newPageNum)
-    window.scrollTo(0, 0)
-  }
+  const PageLink = ({ pageNum, ...rest }) => (
+    <Link
+      to={location => ({ ...location, search: qs.stringify({ pageNum }) })}
+      {...rest}
+    />
+  )
 
   return (
     <StandardLayout>
@@ -273,15 +272,15 @@ const AdoptableList = ({ petType, lists, children }) => {
         </div>
       )}
       <div className={cx('pages')}>
-        {pageNum > 1 && (
-          <button className={cx('btn')} onClick={handlePageClick(pageNum - 1)}>
+        {realPageNum > 1 && (
+          <PageLink pageNum={realPageNum - 1} className={cx('btn')}>
             Previous Page
-          </button>
+          </PageLink>
         )}
-        {pageNum < numPages && (
-          <button className={cx('btn')} onClick={handlePageClick(pageNum + 1)}>
+        {realPageNum < numPages && (
+          <PageLink pageNum={realPageNum + 1} className={cx('btn')}>
             Next Page
-          </button>
+          </PageLink>
         )}
       </div>
     </StandardLayout>
