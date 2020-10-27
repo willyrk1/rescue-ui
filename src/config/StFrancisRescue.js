@@ -9,7 +9,7 @@ const { hostName, protocol, token } = {
     token: 'unknown',
   },
   staging: {
-    protocol: 'http',
+    protocol: 'https',
     hostName: 'staging.stfrancisrescue.org',
     token: 'c3RhZ2luZzpwYXNzdzByZA==',
   },
