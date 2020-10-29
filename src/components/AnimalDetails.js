@@ -166,7 +166,7 @@ const AnimalDetails = ({
             {pet.foster_name && (
               <p>
                 If you have any questions about {pet.name}, contact{' '}
-                {pet.foster_name.split(' ')[0]} at
+                {pet.foster_name.split(' ')[0]} at{' '}
                 {contactMethods.email && pet.foster_email}
                 {contactMethods.both && ' or '}
                 {contactMethods.phone && pet.foster_phone}.
@@ -179,7 +179,7 @@ const AnimalDetails = ({
                   <strong>{location.name}</strong> adoption center located at{' '}
                   <a
                     target="_blank"
-                    href={`http://maps.google.com/maps?q=${location.street_address_1},+${location.city},+${location.state}`}
+                    href={`//maps.google.com/maps?q=${location.street_address_1},+${location.city},+${location.state}`}
                   >
                     {location.street_address_1}, {location.city}
                   </a>

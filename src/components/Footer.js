@@ -25,11 +25,11 @@ const Footer = ({ legal }) => (
         <hr />
         <p>Follow our newsletter and stay in the meow!</p>
         <form
-          action="http://oi.vresp.com?fid=37ceac6197"
+          action="//oi.vresp.com?fid=37ceac6197"
           method="post"
           onSubmit={() => {
             window.open(
-              'http://www.verticalresponse.com',
+              '//www.verticalresponse.com',
               'vr_optin_popup',
               'scrollbars=yes,width=600,height=450'
             )
@@ -48,28 +48,28 @@ const Footer = ({ legal }) => (
         <hr />
         <div className={cx('image-list')}>
           <a
-            href="https://www.instagram.com/stfrancisrescuetampa"
+            href="//www.instagram.com/stfrancisrescuetampa"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={instagramLogo} alt="Instagram" />
           </a>
           <a
-            href="https://twitter.com/StFranSociety"
+            href="//twitter.com/StFranSociety"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={twitterLogo} alt="Twitter" />
           </a>
           <a
-            href="http://www.youtube.com/user/StFrancisSociety"
+            href="//www.youtube.com/user/StFrancisSociety"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={youTubeLogo} alt="YouTube" />
           </a>
           <a
-            href="https://facebook.com/StFrancisSocietyAnimalRescue"
+            href="//facebook.com/StFrancisSocietyAnimalRescue"
             target="_blank"
             rel="noopener noreferrer"
           >

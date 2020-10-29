@@ -56,7 +56,7 @@ const AdoptionLocations = () => {
                       <strong>{name}</strong>, located at{' '}
                       <a
                         target="_blank"
-                        href={`http://maps.google.com/maps?q=${street_address_1},+${city},+${state}`}
+                        href={`//maps.google.com/maps?q=${street_address_1},+${city},+${state}`}
                       >
                         {street_address_1}
                       </a>{' '}
