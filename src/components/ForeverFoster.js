@@ -20,10 +20,8 @@ const ForeverFoster = () => (
       <p>
         A Forever Foster is a cat or dog that is unadoptable due to a medical or
         behavioral issue. St. Francis Society will never euthanize an animal
-        unless there is no further medical treatment that can done, or their
-        behavior has become too aggressive for us to safely handle them. We
-        continue to care for the animals we have rescued as long as they need
-        us.
+        unless there is no further medical treatment that can done. We continue
+        to care for the animals we have rescued as long as they need us.
       </p>
       <p>
         When you sponsor a Forever Foster, you not only help us vet and cure
