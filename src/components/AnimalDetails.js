@@ -166,7 +166,7 @@ const AnimalDetails = ({
             {pet.foster_name && (
               <p>
                 If you have any questions about {pet.name}, contact{' '}
-                {pet.foster_name.split(' ')[0]} at
+                {pet.foster_name.split(' ')[0]} at{' '}
                 {contactMethods.email && pet.foster_email}
                 {contactMethods.both && ' or '}
                 {contactMethods.phone && pet.foster_phone}.
