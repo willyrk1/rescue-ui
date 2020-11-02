@@ -18,7 +18,7 @@ const Banner = () => {
     loadBannerImages()
   }, [])
 
-  return (
+  return bannerImages.length ? (
     <div className={cx('banner')}>
       <Scroller
         components={bannerImages.map(({ id, image_src, url, name }) => ({
@@ -34,7 +34,7 @@ const Banner = () => {
         showCount={1}
       />
     </div>
-  )
+  ) : null
 }
 
 export default Banner

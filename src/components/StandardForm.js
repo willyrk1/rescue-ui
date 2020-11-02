@@ -8,8 +8,12 @@ import StFrancisRescue from '../apis/StFrancisRescue'
 const cx = classNames.bind(styles)
 
 const doPost = ({ history, nextPage }) => async (...params) => {
-  await StFrancisRescue.postForm(...params)
-  history.push(nextPage)
+  try {
+    await StFrancisRescue.postForm(...params)
+    history.push(nextPage)
+  } catch {
+    history.push('/error')
+  }
 }
 
 const StandardForm = ({

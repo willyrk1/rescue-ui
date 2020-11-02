@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import * as qs from 'query-string'
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
+import Error from './Error'
 import AnimalCard from './AnimalCard'
 import AnimalSearch from './AnimalSearch'
 import styles from './AdoptableLists.module.scss'
@@ -145,7 +146,7 @@ const AdoptableList = ({ petType, lists, children }) => {
   const petData = usePetData()
 
   useEffect(() => {
-    if (petData) {
+    if (petData && petData[petType]) {
       dispatch({ type: 'INITIALIZE', pets: petData[petType] })
     }
   }, [petData, petType])
@@ -241,48 +242,54 @@ const AdoptableList = ({ petType, lists, children }) => {
 
   return (
     <StandardLayout>
-      {typeof children === 'function' ? children(pets) : children}
-
-      {processedLists &&
-      processedLists.some(({ processedList }) => processedList.length) ? (
-        processedLists.map(
-          ({ title, processedList, property }) =>
-            !!processedList.length && (
-              <div className={cx('adoptable-list')} key={title}>
-                <div className={cx('search')}>
-                  <AnimalSearch {...{ state, dispatch }} />
-                </div>
-                <h2>{title}</h2>
-                <div>
-                  {processedList.map(pet => (
-                    <AnimalCard
-                      petType={petType}
-                      pet={pet}
-                      list={property}
-                      key={pet.id}
-                    />
-                  ))}
-                </div>
-              </div>
-            )
-        )
+      {petData && !petData[petType] ? (
+        <Error />
       ) : (
-        <div className={cx('search')}>
-          <AnimalSearch {...{ state, dispatch }} />
-        </div>
+        <>
+          {typeof children === 'function' ? children(pets) : children}
+
+          {processedLists &&
+          processedLists.some(({ processedList }) => processedList.length) ? (
+            processedLists.map(
+              ({ title, processedList, property }) =>
+                !!processedList.length && (
+                  <div className={cx('adoptable-list')} key={title}>
+                    <div className={cx('search')}>
+                      <AnimalSearch {...{ state, dispatch }} />
+                    </div>
+                    <h2>{title}</h2>
+                    <div>
+                      {processedList.map(pet => (
+                        <AnimalCard
+                          petType={petType}
+                          pet={pet}
+                          list={property}
+                          key={pet.id}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )
+            )
+          ) : (
+            <div className={cx('search')}>
+              <AnimalSearch {...{ state, dispatch }} />
+            </div>
+          )}
+          <div className={cx('pages')}>
+            {realPageNum > 1 && (
+              <PageLink pageNum={realPageNum - 1} className={cx('btn')}>
+                Previous Page
+              </PageLink>
+            )}
+            {realPageNum < numPages && (
+              <PageLink pageNum={realPageNum + 1} className={cx('btn')}>
+                Next Page
+              </PageLink>
+            )}
+          </div>
+        </>
       )}
-      <div className={cx('pages')}>
-        {realPageNum > 1 && (
-          <PageLink pageNum={realPageNum - 1} className={cx('btn')}>
-            Previous Page
-          </PageLink>
-        )}
-        {realPageNum < numPages && (
-          <PageLink pageNum={realPageNum + 1} className={cx('btn')}>
-            Next Page
-          </PageLink>
-        )}
-      </div>
     </StandardLayout>
   )
 }

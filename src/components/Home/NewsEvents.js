@@ -38,7 +38,7 @@ const NewsEvents = () => {
           total_transferred_out_since_2008,
           total_transfer_to_fos_since_2008,
           total_workcat_adoptions_since_2008,
-        },
+        } = {},
       } = await handleError(StFrancisRescue.getStats())
       setAnimalsSaved({
         ytd:
@@ -136,14 +136,18 @@ const NewsEvents = () => {
             <VisibilitySensor onChange={startRunup}>
               <div className={cx('stat')}>
                 <span>Year-To-Date:</span>{' '}
-                {Math.floor(
-                  (animalsSaved.ytd * elapsed) / totalTime
-                ).toLocaleString('en')}
+                {animalsSaved.ytd
+                  ? Math.floor(
+                      (animalsSaved.ytd * elapsed) / totalTime
+                    ).toLocaleString('en')
+                  : 'N/A'}
                 <br />
                 <span>Since 2008:</span>{' '}
-                {Math.floor(
-                  (animalsSaved.since2008 * elapsed) / totalTime
-                ).toLocaleString('en')}
+                {animalsSaved.since2008
+                  ? Math.floor(
+                      (animalsSaved.since2008 * elapsed) / totalTime
+                    ).toLocaleString('en')
+                  : 'N/A'}
               </div>
             </VisibilitySensor>
           </div>

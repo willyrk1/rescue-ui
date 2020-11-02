@@ -37,6 +37,7 @@ import PrivacyPolicy from './components/PrivacyPolicy'
 import FormSubmitted from './components/FormSubmitted'
 import Legacy from './components/Legacy'
 import UnderConstruction from './components/UnderConstruction'
+import { ErrorPage } from './components/Error'
 import './App.scss'
 
 const ScrollToTop = () => {
@@ -83,6 +84,7 @@ const App = () => (
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/form-submitted" component={FormSubmitted} />
         <Route exact path="/special-need/:reference" component={Legacy} />
+        <Route exact path="/error" component={ErrorPage} />
         <Route path="/:pagename" component={Page} />
         <Route component={UnderConstruction} />
       </Switch>

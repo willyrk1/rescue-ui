@@ -57,50 +57,53 @@ const Mission = () => {
 
         <DonationExamples styles={donationStyles} />
 
-        <div className={cx('board-header')}>
-          <h2>Meet our board of Directors</h2>
-          <hr />
-        </div>
+        {boardMembers && (
+          <>
+            <div className={cx('board-header')}>
+              <h2>Meet our board of Directors</h2>
+              <hr />
+            </div>
 
-        {boardMembers &&
-          [
-            'presidents',
-            'vicePresidents',
-            'treasurers',
-            'secreteries',
-            'directors',
-            'adminStaff',
-          ].map(boardType =>
-            boardMembers[boardType].map(
-              ({
-                picture,
-                volunteer: { name },
-                board_member_title: { name: title },
-                role,
-                bio,
-              }) => (
-                <div className={cx('board-member')}>
-                  <div className={cx('side')}>
-                    <img
-                      src={
-                        picture
-                          ? `${PROTOCOL}://${HOSTNAME}${picture}`
-                          : '/no_picture.jpg'
-                      }
-                      alt={name.split(' ')[0]}
-                    />
+            {[
+              'presidents',
+              'vicePresidents',
+              'treasurers',
+              'secreteries',
+              'directors',
+              'adminStaff',
+            ].map(boardType =>
+              boardMembers[boardType].map(
+                ({
+                  picture,
+                  volunteer: { name },
+                  board_member_title: { name: title },
+                  role,
+                  bio,
+                }) => (
+                  <div className={cx('board-member')}>
+                    <div className={cx('side')}>
+                      <img
+                        src={
+                          picture
+                            ? `${PROTOCOL}://${HOSTNAME}${picture}`
+                            : '/no_picture.jpg'
+                        }
+                        alt={name.split(' ')[0]}
+                      />
+                    </div>
+                    <div className={cx('member-info')}>
+                      <h3>
+                        {name.split(' ')[0]}-{title}
+                      </h3>
+                      <h4>{role}</h4>
+                      <p dangerouslySetInnerHTML={{ __html: bio }} />
+                    </div>
                   </div>
-                  <div className={cx('member-info')}>
-                    <h3>
-                      {name.split(' ')[0]}-{title}
-                    </h3>
-                    <h4>{role}</h4>
-                    <p dangerouslySetInnerHTML={{ __html: bio }} />
-                  </div>
-                </div>
+                )
               )
-            )
-          )}
+            )}
+          </>
+        )}
       </div>
     </StandardLayout>
   )

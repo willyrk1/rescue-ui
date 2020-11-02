@@ -92,6 +92,7 @@ const StFrancisRescue = (function() {
       })
       .catch(error => {
         log('ERROR :=', error)
+        throw error
       })
   }
 

@@ -4,6 +4,7 @@ import StFrancisRescue from '../apis/StFrancisRescue'
 import { HOSTNAME, PROTOCOL } from '../config/StFrancisRescue'
 import StandardLayout from './StandardLayout'
 import styles from './Legacy.module.scss'
+import Error from './Error'
 
 const cx = classNames.bind(styles)
 
@@ -13,20 +14,23 @@ const Legacy = ({
   },
 }) => {
   const [legacyContent, setLegacyContent] = useState()
+  const [isError, setIsError] = useState()
 
   useEffect(() => {
     // Ignore for now...
-    const handleError = async result => result.catch(() => ({}))
-
     const loadLegacyPage = async () => {
-      const {
-        data: {
-          page: { content },
-        },
-      } = await handleError(StFrancisRescue.getPage(reference))
-      setLegacyContent(
-        content.replace(/\/uploads/g, `${PROTOCOL}://${HOSTNAME}/uploads`)
-      )
+      try {
+        const {
+          data: {
+            page: { content },
+          },
+        } = await StFrancisRescue.getPage(reference)
+        setLegacyContent(
+          content.replace(/\/uploads/g, `${PROTOCOL}://${HOSTNAME}/uploads`)
+        )
+      } catch {
+        setIsError(true)
+      }
     }
 
     loadLegacyPage()
@@ -34,10 +38,14 @@ const Legacy = ({
 
   return (
     <StandardLayout>
-      <div
-        dangerouslySetInnerHTML={{ __html: legacyContent }}
-        className={cx('content')}
-      />
+      {isError ? (
+        <Error />
+      ) : (
+        <div
+          dangerouslySetInnerHTML={{ __html: legacyContent }}
+          className={cx('content')}
+        />
+      )}
     </StandardLayout>
   )
 }
