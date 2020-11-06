@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import * as qs from 'query-string'
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
@@ -27,7 +27,10 @@ const getDaysAgo = days => new Date() - days * 1000 * 60 * 60 * 24
 
 const AdoptableList = ({ petType, lists, children }) => {
   const location = useLocation()
-  const { pageNum = 1 } = qs.parse(location.search)
+  const history = useHistory()
+  const { pageNum = 1, s: scrollParam, ...restQueryParams } = qs.parse(
+    location.search
+  )
 
   const selectMapping = {
     gender: { mappingFn: pet => pet.sex, label: 'Gender' },
@@ -232,6 +235,35 @@ const AdoptableList = ({ petType, lists, children }) => {
   }
 
   const processedLists = filteredLists && applyPaging(filteredLists)
+
+  /*
+   * When hitting back from the AnimalDetails, Chrome leaves the user in the middle of nowhere.
+   * To fix that, this page now adds a scroll query string param when linking to AnimalDetails and,
+   * in this effect, we detect when the page is done loading and reset the scroll back to where
+   * it was when we left.
+   */
+  useEffect(() => {
+    let maxSize = 0
+    const intervalId =
+      scrollParam &&
+      setInterval(() => {
+        if (document.documentElement.scrollHeight > maxSize) {
+          maxSize = document.documentElement.scrollHeight
+        } else if (document.documentElement.scrollHeight > scrollParam) {
+          window.scrollTo(0, scrollParam)
+          history.replace({
+            ...location,
+            search: qs.stringify({
+              pageNum,
+              ...restQueryParams,
+            }),
+          })
+          clearInterval(intervalId)
+        }
+      }, 1000)
+
+    return () => clearInterval(intervalId)
+  }, [history, location, pageNum, restQueryParams, scrollParam])
 
   const PageLink = ({ pageNum, ...rest }) => (
     <Link

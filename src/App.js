@@ -11,7 +11,7 @@ import {
   HashRouter as Router,
   Switch,
   Route,
-  useLocation,
+  useHistory,
 } from 'react-router-dom'
 import { GlobalDataProvider } from './context/GlobalDataContext'
 import Home from './components/Home/Home'
@@ -41,11 +41,12 @@ import { ErrorPage } from './components/Error'
 import './App.scss'
 
 const ScrollToTop = () => {
-  const { pathname, search } = useLocation()
-
+  const history = useHistory()
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname, search])
+    if (history.action === 'PUSH') {
+      window.scrollTo(0, 0)
+    }
+  }, [history.location, history.action])
 
   return null
 }
