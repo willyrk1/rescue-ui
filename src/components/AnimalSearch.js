@@ -1,25 +1,68 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
+import * as qs from 'query-string'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
+import usePetSearch from '../hooks/usePetSearch'
 import StandardForm from './StandardForm'
 import styles from './AnimalSearch.module.scss'
 
 const cx = classNames.bind(styles)
 
-const AnimalSearch = ({
-  dispatch,
-  state: {
-    search,
-    search: {
-      name: { input: searchName },
-    },
-  },
-}) => {
-  const storeInput = (prop, value) =>
-    dispatch({ type: 'STORE_INPUT', prop, value })
+const clearValues = (obj = {}) =>
+  Object.keys(obj).reduce((acc, key) => {
+    acc[key] = undefined
+    return acc
+  }, {})
+
+const extractValues = obj =>
+  Object.entries(obj).reduce((acc, [key, input]) => {
+    acc[key] = input ? input.value : undefined
+    return acc
+  }, {})
+
+const populateValuesFromQuery = (choiceLookup, queryLookup) =>
+  Object.entries(choiceLookup).reduce((acc, [key, { choices }]) => {
+    acc[key] =
+      choices && choices.find(({ value }) => value === queryLookup[key])
+    return acc
+  }, {})
+
+const AnimalSearch = ({ petType, lists }) => {
+  const petSearch = usePetSearch(petType, lists)
+  const location = useLocation()
+  const history = useHistory()
+
+  const [inputs, setInputs] = useState()
+
+  useEffect(() => {
+    const queryLookup = qs.parse(location.search)
+
+    if (petSearch) {
+      setInputs({
+        ...clearValues(petSearch),
+        ...populateValuesFromQuery(petSearch, queryLookup),
+        name: queryLookup.name,
+      })
+    }
+  }, [petSearch, location.search])
+
+  const storeInput = (prop, value) => setInputs({ ...inputs, [prop]: value })
 
   const setInput = prop => ({ target }) => storeInput(prop, target.value)
   const setSelect = prop => value => storeInput(prop, value)
+  const clear = () => setInputs(clearValues(petSearch))
+
+  const set = () => {
+    history.push({
+      ...location,
+      search: qs.stringify({
+        ...qs.parse(location.search),
+        ...extractValues(inputs),
+        name: inputs.name || undefined,
+      }),
+    })
+  }
 
   const SelectOverride = props => (
     <StandardForm.Select
@@ -29,7 +72,7 @@ const AnimalSearch = ({
     />
   )
 
-  return (
+  return petSearch ? (
     <Popup
       modal
       closeOnDocumentClick
@@ -45,7 +88,7 @@ const AnimalSearch = ({
                 <input
                   type="text"
                   id="name"
-                  value={searchName || ''}
+                  value={inputs.name || ''}
                   onChange={setInput('name')}
                   className={cx('search-input')}
                 />
@@ -62,11 +105,11 @@ const AnimalSearch = ({
                 'goodWithDogs',
               ].map(prop => (
                 <li key={prop}>
-                  <label htmlFor={prop}>{search[prop].label}</label>
+                  <label htmlFor={prop}>{petSearch[prop].label}</label>
                   <SelectOverride
                     id={prop}
-                    options={search[prop].choices}
-                    value={search[prop].input}
+                    options={petSearch[prop].choices}
+                    value={inputs[prop]}
                     onChange={setSelect(prop)}
                   />
                 </li>
@@ -77,17 +120,13 @@ const AnimalSearch = ({
                 type="button"
                 className={cx('btn')}
                 onClick={() => {
-                  dispatch({ type: 'SET' })
+                  set()
                   close()
                 }}
               >
                 Search
               </button>
-              <button
-                type="button"
-                className={cx('btn')}
-                onClick={() => dispatch({ type: 'CLEAR_INPUT' })}
-              >
+              <button type="button" className={cx('btn')} onClick={clear}>
                 Clear
               </button>
               <button
@@ -102,7 +141,7 @@ const AnimalSearch = ({
         </div>
       )}
     </Popup>
-  )
+  ) : null
 }
 
 export default AnimalSearch
