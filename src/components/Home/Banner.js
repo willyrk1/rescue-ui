@@ -11,9 +11,15 @@ const Banner = () => {
   const [bannerImages, setBannerImages] = useState([])
 
   useEffect(() => {
+    const byPriority = ({ priority: a }, { priority: b }) => {
+      if (a < b) return -1
+      if (a > b) return 1
+      return 0
+    }
+
     const loadBannerImages = async () => {
       const bannerImageData = StFrancisRescue.getHeros()
-      setBannerImages((await bannerImageData).data.heros)
+      setBannerImages((await bannerImageData).data.heros.sort(byPriority))
     }
     loadBannerImages()
   }, [])
