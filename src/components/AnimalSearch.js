@@ -91,6 +91,7 @@ const AnimalSearch = ({ petType, lists }) => {
                   value={inputs.name || ''}
                   onChange={setInput('name')}
                   className={cx('search-input')}
+                  autoFocus
                 />
               </li>
               {[

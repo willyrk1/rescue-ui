@@ -52,6 +52,7 @@ const Contact = () => (
               id="firstName"
               name="contact_form[first_name]"
               required
+              autoFocus
             />
           </li>
           <li>

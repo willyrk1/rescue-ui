@@ -69,6 +69,7 @@ const AdoptionForm = ({
                 id="firstName"
                 name="adopter_agreement[first_name]"
                 required
+                autoFocus
               />
             </li>
             <li>

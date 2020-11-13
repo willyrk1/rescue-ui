@@ -50,6 +50,7 @@ const WorkingCatsForm = () => (
               type="text"
               id="firstName"
               name="workcat_adopter_agreement[first_name]"
+              autoFocus
             />
           </li>
           <li>

@@ -60,6 +60,7 @@ const VolunteerForm = () => {
                 id="firstName"
                 name="volunteer[person_attributes][first_name]"
                 required
+                autoFocus
               />
             </li>
             <li>
