@@ -157,7 +157,11 @@ const NewsEvents = () => {
             <h2>Food&nbsp;Friend Of&nbsp;The&nbsp;Month</h2>
             <hr />
             <img src={foodSponsorshipImage} alt="Food Friend" />
-            <h3>Holly O'Brien &amp; Greg&nbsp;Gruendel</h3>
+            <h3>
+              Christine Poore
+              <br />
+              &nbsp;
+            </h3>
             <a className={cx('btn')} href={foodSponsorshipForm} target="_blank">
               More Info
             </a>
