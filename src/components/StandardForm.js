@@ -87,7 +87,7 @@ StandardForm.RadioGroup = ({
     <label htmlFor={id}>{label}</label>
     <StandardForm.Input>
       {inputs.map(({ label: inputLabel, id: inputId = inputLabel, value }) => (
-        <label htmlFor={`${id}${inputId}`}>
+        <label key={inputId} htmlFor={`${id}${inputId}`}>
           <input
             type="radio"
             id={`${id}${inputId}`}
@@ -100,21 +100,26 @@ StandardForm.RadioGroup = ({
   </li>
 )
 
-StandardForm.Phone = props => {
-  const patternMessage = 'Please use format ###-###-####'
-  const onInvalid = ({ target }) => target.setCustomValidity(patternMessage)
-  const onInput = ({ target }) =>
-    target.setCustomValidity(
-      target.validity.patternMismatch ? patternMessage : ''
-    )
+const phoneReplacer = (match, p1, p2, p3) =>
+  [p1, p2, p3].filter(v => v).join('-')
 
-  return (
-    <input
-      type="tel"
-      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-      {...{ onInvalid, onInput, ...props }}
-    />
-  )
+const Phone = props => {
+  const patternMessage = 'Please use format ###-###-####'
+  const [value, setValue] = useState('')
+
+  const onChange = ({ target }) => {
+    const newValue = target.value
+      .replaceAll(/\D/g, '')
+      .replace(/(\d{0,3})(\d{0,3})(\d{0,4}).*/, phoneReplacer)
+    setValue(newValue)
+    target.setCustomValidity(
+      /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(newValue) ? '' : patternMessage
+    )
+  }
+
+  return <input type="tel" {...{ value, onChange, ...props }} />
 }
+
+StandardForm.Phone = Phone
 
 export default StandardForm
