@@ -109,17 +109,29 @@ const Phone = props => {
 
   const [message1, setMessage1] = useState()
   const [message2, setMessage2] = useState()
+  const [message3, setMessage3] = useState()
+  const [message4, setMessage4] = useState()
+  const [message5, setMessage5] = useState()
 
   const onChange = ({ target }) => {
     setMessage1('Got to onChange with ' + target.value)
-    const newValue = target.value
-      .replaceAll(/\D/g, '')
-      .replace(/(\d{0,3})(\d{0,3})(\d{0,4}).*/, phoneReplacer)
-    setValue(newValue)
-    setMessage2('Set new value: ' + newValue)
-    target.setCustomValidity(
-      /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(newValue) ? '' : patternMessage
-    )
+    try {
+      setMessage2('Got this far: ' + target.value.replaceAll(/\D/g, ''))
+      setMessage3('And now here: ' + target.value
+        .replaceAll(/\D/g, '')
+        .replace(/(\d{0,3})(\d{0,3})(\d{0,4}).*/, phoneReplacer))
+      const newValue = target.value
+        .replaceAll(/\D/g, '')
+        .replace(/(\d{0,3})(\d{0,3})(\d{0,4}).*/, phoneReplacer)
+      setValue(newValue)
+      setMessage4('Set new value: ' + newValue)
+      target.setCustomValidity(
+        /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(newValue) ? '' : patternMessage
+      )
+    }
+    catch (e) {
+      setMessage5('WOOPS, threw an exception: ', e)
+    }
   }
 
   return (
@@ -131,6 +143,9 @@ const Phone = props => {
       <p>
         STATUS1: {message1}<br/>
         STATUS2: {message2}<br/>
+        STATUS3: {message3}<br/>
+        STATUS4: {message4}<br/>
+        EXCEPTION: {message5}<br/>
       </p>
     </div>
   )
