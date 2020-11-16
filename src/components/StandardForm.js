@@ -107,17 +107,33 @@ const Phone = props => {
   const patternMessage = 'Please use format ###-###-####'
   const [value, setValue] = useState('')
 
+  const [message1, setMessage1] = useState()
+  const [message2, setMessage2] = useState()
+
   const onChange = ({ target }) => {
+    setMessage1('Got to onChange with ' + target.value)
     const newValue = target.value
       .replaceAll(/\D/g, '')
       .replace(/(\d{0,3})(\d{0,3})(\d{0,4}).*/, phoneReplacer)
     setValue(newValue)
+    setMessage2('Set new value: ' + newValue)
     target.setCustomValidity(
       /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(newValue) ? '' : patternMessage
     )
   }
 
-  return <input type="tel" {...{ value, onChange, ...props }} />
+  return (
+    <div style={{ width: 400 }}>
+      <input
+        type="tel" {...{ value, onChange, ...props }}
+        style={{ margin: 5, padding: 5, width: '100%' }}
+      />
+      <p>
+        STATUS1: {message1}<br/>
+        STATUS2: {message2}<br/>
+      </p>
+    </div>
+  )
 }
 
 StandardForm.Phone = Phone
