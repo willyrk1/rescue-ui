@@ -109,7 +109,7 @@ const Phone = props => {
 
   const onChange = ({ target }) => {
     const newValue = target.value
-      .replaceAll(/\D/g, '')
+      .replace(/\D/g, '')
       .replace(/(\d{0,3})(\d{0,3})(\d{0,4}).*/, phoneReplacer)
     setValue(newValue)
     target.setCustomValidity(
