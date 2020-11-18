@@ -113,7 +113,7 @@ const Phone = props => {
       .replace(/(\d{0,3})(\d{0,3})(\d{0,4}).*/, phoneReplacer)
     setValue(newValue)
     target.setCustomValidity(
-      /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(newValue) ? '' : patternMessage
+      /^([0-9]{3}-[0-9]{3}-[0-9]{4})?$/.test(newValue) ? '' : patternMessage
     )
   }
 
