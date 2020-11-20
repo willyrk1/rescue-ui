@@ -98,18 +98,27 @@ const AdoptableList = ({ children, ...rest }) => {
               <AnimalSearch {...adoptableList} {...rest} />
             </div>
           )}
-          <div className={cx('pages')}>
-            {realPageNum > 1 && (
-              <PageLink pageNum={realPageNum - 1} className={cx('btn')}>
-                Previous Page
-              </PageLink>
-            )}
-            {realPageNum < numPages && (
-              <PageLink pageNum={realPageNum + 1} className={cx('btn')}>
-                Next Page
-              </PageLink>
-            )}
-          </div>
+          {+numPages > 1 && (
+            <div className={cx('pages')}>
+              {realPageNum > 1 && (
+                <PageLink pageNum={realPageNum - 1}>&lt;&lt;</PageLink>
+              )}
+              {[...Array(numPages)]
+                .map((x, index) => index + 1)
+                .map(pageNum => (
+                  <PageLink
+                    pageNum={pageNum}
+                    key={pageNum}
+                    className={cx({ current: realPageNum === pageNum })}
+                  >
+                    {pageNum}
+                  </PageLink>
+                ))}
+              {realPageNum < numPages && (
+                <PageLink pageNum={realPageNum + 1}>&gt;&gt;</PageLink>
+              )}
+            </div>
+          )}
         </>
       )}
     </StandardLayout>

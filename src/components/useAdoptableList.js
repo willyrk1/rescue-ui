@@ -30,6 +30,8 @@ export default (petType, lists) => {
      */
     const processList = collection => {
       if (collection && petSearch) {
+        const { min, max } =
+          petSearch.age.choices.find(({ value }) => value === searchAge) || {}
         return collection.filter(({ name, date_of_birth, ...rest }) => {
           /*
            * Name (simple)
@@ -41,13 +43,11 @@ export default (petType, lists) => {
           /*
            * Age (range check)
            */
-          if (searchAge) {
-            if (searchAge.min && new Date(date_of_birth) > searchAge.min) {
-              return false
-            }
-            if (searchAge.max && new Date(date_of_birth) <= searchAge.max) {
-              return false
-            }
+          if (min && new Date(date_of_birth) < min) {
+            return false
+          }
+          if (max && new Date(date_of_birth) >= max) {
+            return false
           }
 
           /*

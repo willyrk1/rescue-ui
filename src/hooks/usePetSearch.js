@@ -24,7 +24,11 @@ const selectMapping = {
     label: 'Color',
   },
   furLength: { mappingFn: pet => pet.fur_length, label: 'Fur Length' },
-  declawed: { mappingFn: pet => pet.declawed, label: 'Declawed' },
+  declawed: {
+    mappingFn: pet => pet.declawed,
+    label: 'Declawed',
+    choices: ['No', 'Yes'].map(value => ({ label: value, value })),
+  },
   goodWithChildren: {
     mappingFn: pet => pet.good_with_children,
     label: 'Good with Children',
@@ -75,9 +79,10 @@ export default (petType, lists) => {
           ],
         },
         ...Object.entries(selectMapping).reduce(
-          (acc, [prop, { mappingFn, label }]) => {
+          (acc, [prop, { mappingFn, label, choices }]) => {
             acc[prop] = {
-              choices: getUniqueOptions(petData[petType], lists, mappingFn),
+              choices:
+                choices || getUniqueOptions(petData[petType], lists, mappingFn),
               label,
               mappingFn,
             }
