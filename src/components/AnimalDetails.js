@@ -154,7 +154,7 @@ const AnimalDetails = ({
                   </p>
                 )}
                 <p className={cx('story')}>{pet.story}</p>
-                <p className={cx('good-with')}>
+                <p className={cx('properties')}>
                   <label htmlFor="good-with-cats">Good with Cats:</label>
                   <span id="good-with-cats">{pet.good_with_cats}</span>|
                   <label htmlFor="good-with-dogs">Good with Dogs:</label>
@@ -164,6 +164,12 @@ const AnimalDetails = ({
                   </label>
                   <span id="good-with-children">{pet.good_with_children}</span>
                 </p>
+                {pet.must_adopt_with && (
+                  <p className={cx('properties')}>
+                    <label htmlFor="must-adopt-with">Must Adopt With:</label>
+                    <span id="must-adopt-with">{pet.must_adopt_with}</span>
+                  </p>
+                )}
                 {pet.youtube_url && (
                   <p className={cx('video')}>
                     <span>Check out my video on</span>

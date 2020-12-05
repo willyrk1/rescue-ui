@@ -118,7 +118,7 @@ const AnimalSearch = ({ petType, lists }) => {
             </ul>
             <div className={cx('actions')}>
               <button
-                type="button"
+                type="submit"
                 className={cx('btn')}
                 onClick={() => {
                   set()
