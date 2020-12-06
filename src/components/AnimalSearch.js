@@ -95,6 +95,7 @@ const AnimalSearch = ({ petType, lists }) => {
                 />
               </li>
               {[
+                'specialNeeds',
                 'gender',
                 'breed',
                 'color',

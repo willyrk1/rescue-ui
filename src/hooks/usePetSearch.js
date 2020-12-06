@@ -14,6 +14,14 @@ const getUniqueOptions = (pets, lists, mappingFn) =>
 const getDaysAgo = days => new Date() - days * 1000 * 60 * 60 * 24
 
 const selectMapping = {
+  specialNeeds: {
+    mappingFn: pet => (!!pet.special_need_id).toString(),
+    label: 'Special Needs',
+    choices: [
+      { label: 'No', value: 'false' },
+      { label: 'Yes', value: 'true' },
+    ],
+  },
   gender: { mappingFn: pet => pet.sex, label: 'Gender' },
   breed: {
     mappingFn: ({ dominant_breed }) => dominant_breed.name,
@@ -48,7 +56,7 @@ const selectMapping = {
  * and returns a list of search properties and choices based on those parameters among
  * the global pet data in memory (usePetData).
  */
-export default (petType, lists) => {
+const usePetSearch = (petType, lists) => {
   const petData = usePetData()
 
   const [searchChoices, setSearchChoices] = useState()
@@ -96,3 +104,5 @@ export default (petType, lists) => {
 
   return searchChoices
 }
+
+export default usePetSearch
