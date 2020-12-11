@@ -43,6 +43,10 @@ const Contact = () => (
       <StandardForm
         action={`${PROTOCOL}://${HOSTNAME}/contact_forms`}
         className={cx('form')}
+        submitProps={{
+          className: cx('btn'),
+          children: 'Submit Contact Form',
+        }}
       >
         <ul>
           <li>
@@ -52,6 +56,7 @@ const Contact = () => (
               id="firstName"
               name="contact_form[first_name]"
               required
+              maxLength="20"
               autoFocus
             />
           </li>
@@ -62,6 +67,7 @@ const Contact = () => (
               id="lastName"
               name="contact_form[last_name]"
               required
+              maxLength="20"
             />
           </li>
           <li>
@@ -70,11 +76,21 @@ const Contact = () => (
           </li>
           <li>
             <label htmlFor="address">Street Address</label>
-            <input type="text" id="address" name="contact_form[address]" />
+            <input
+              type="text"
+              id="address"
+              name="contact_form[address]"
+              maxLength="30"
+            />
           </li>
           <li>
             <label htmlFor="city">City</label>
-            <input type="text" id="city" name="contact_form[city]" />
+            <input
+              type="text"
+              id="city"
+              name="contact_form[city]"
+              maxLength="15"
+            />
           </li>
           <li>
             <label htmlFor="state">State</label>
@@ -82,7 +98,12 @@ const Contact = () => (
           </li>
           <li>
             <label htmlFor="zip">ZIP</label>
-            <input type="text" id="zip" name="contact_form[postal_code]" />
+            <input
+              type="text"
+              id="zip"
+              name="contact_form[postal_code]"
+              maxLength="10"
+            />
           </li>
           <li>
             <label htmlFor="phone">Phone</label>
@@ -110,11 +131,14 @@ const Contact = () => (
           />
           <li>
             <label htmlFor="comment">Your comments or questions *</label>
-            <textarea id="comment" name="contact_form[comments]" required />
+            <textarea
+              id="comment"
+              name="contact_form[comments]"
+              required
+              maxLength="1024"
+            />
           </li>
         </ul>
-
-        <button className={cx('btn')}>Submit Contact Form</button>
       </StandardForm>
     </div>
   </StandardLayout>

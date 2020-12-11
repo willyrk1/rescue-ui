@@ -60,6 +60,10 @@ const AdoptionForm = ({
         <StandardForm
           action={`${PROTOCOL}://${HOSTNAME}/adopter_agreements`}
           className={cx('form')}
+          submitProps={{
+            className: cx('btn'),
+            children: 'Submit Adoption Application',
+          }}
         >
           <ul>
             <li>
@@ -69,6 +73,7 @@ const AdoptionForm = ({
                 id="firstName"
                 name="adopter_agreement[first_name]"
                 required
+                maxLength="30"
                 autoFocus
               />
             </li>
@@ -79,6 +84,7 @@ const AdoptionForm = ({
                 id="lastName"
                 name="adopter_agreement[last_name]"
                 required
+                maxLength="30"
               />
             </li>
             <li>
@@ -97,6 +103,7 @@ const AdoptionForm = ({
                 id="address"
                 name="adopter_agreement[address]"
                 required
+                maxLength="30"
               />
             </li>
             <li>
@@ -106,6 +113,7 @@ const AdoptionForm = ({
                 id="city"
                 name="adopter_agreement[city]"
                 required
+                maxLength="15"
               />
             </li>
             <li>
@@ -171,6 +179,7 @@ const AdoptionForm = ({
                 id="reason"
                 name="adopter_agreement[adoption_reason]"
                 required
+                maxLength="1024"
               />
             </li>
             <li>
@@ -622,10 +631,6 @@ const AdoptionForm = ({
             type="hidden"
             value={animalId}
           />
-
-          <button className={cx('btn')} type="submit">
-            Submit Adoption Application
-          </button>
         </StandardForm>
       </div>
     </StandardLayout>

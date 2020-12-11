@@ -51,6 +51,11 @@ const VolunteerForm = () => {
         <StandardForm
           action={`${PROTOCOL}://${HOSTNAME}/volunteers`}
           className={cx('form')}
+          submitProps={{
+            className: cx('btn'),
+            children: 'Submit Volunteer Application',
+            onClick: validate,
+          }}
         >
           <ul>
             <li>
@@ -60,6 +65,7 @@ const VolunteerForm = () => {
                 id="firstName"
                 name="volunteer[person_attributes][first_name]"
                 required
+                maxLength="30"
                 autoFocus
               />
             </li>
@@ -70,6 +76,7 @@ const VolunteerForm = () => {
                 id="lastName"
                 name="volunteer[person_attributes][last_name]"
                 required
+                maxLength="30"
               />
             </li>
             <li>
@@ -88,6 +95,7 @@ const VolunteerForm = () => {
                 id="address"
                 name="volunteer[person_attributes][address1]"
                 required
+                maxLength="80"
               />
             </li>
             <li>
@@ -96,6 +104,7 @@ const VolunteerForm = () => {
                 type="text"
                 id="address2"
                 name="volunteer[person_attributes][address2]"
+                maxLength="80"
               />
             </li>
             <li>
@@ -105,6 +114,7 @@ const VolunteerForm = () => {
                 id="city"
                 name="volunteer[person_attributes][city]"
                 required
+                maxLength="20"
               />
             </li>
             <li>
@@ -667,15 +677,11 @@ const VolunteerForm = () => {
             skills you may have in the area you are choosing.
           </p>
 
-          <textarea name="volunteer[motivation]" required />
+          <textarea name="volunteer[motivation]" required maxLength="1024" />
 
           <p className={cx('thanks')}>
             <strong>Thank you in advance for helping the animals!</strong>
           </p>
-
-          <button className={cx('btn')} type="submit" onClick={validate}>
-            Submit Volunteer Application
-          </button>
         </StandardForm>
       </div>
     </StandardLayout>

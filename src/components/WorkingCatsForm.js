@@ -42,6 +42,10 @@ const WorkingCatsForm = () => (
       <StandardForm
         action={`${PROTOCOL}://${HOSTNAME}/workcat_adopter_agreements`}
         className={cx('form')}
+        submitProps={{
+          className: cx('btn'),
+          children: 'Submit Adoption Application',
+        }}
       >
         <ul>
           <li>
@@ -240,10 +244,6 @@ const WorkingCatsForm = () => (
             />
           </li>
         </ul>
-
-        <button className={cx('btn')} type="submit">
-          Submit Adoption Application
-        </button>
       </StandardForm>
     </div>
   </StandardLayout>

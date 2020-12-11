@@ -7,30 +7,37 @@ import StFrancisRescue from '../apis/StFrancisRescue'
 
 const cx = classNames.bind(styles)
 
-const doPost = ({ history, nextPage }) => async (...params) => {
-  try {
-    await StFrancisRescue.postForm(...params)
-    history.push(nextPage)
-  } catch {
-    history.push('/error')
-  }
-}
-
 const StandardForm = ({
   className,
   method = 'post',
-  onSubmit = doPost,
+  onSubmit,
   nextPage = '/form-submitted',
+  submitProps,
+  children,
   ...rest
 }) => {
   const history = useHistory()
+  const [submitDisabled, setSubmitDisabled] = useState(false)
+  const doPost = async (nextPage, ...params) => {
+    try {
+      setSubmitDisabled(true)
+      await StFrancisRescue.postForm(...params)
+      history.push(nextPage)
+    } catch {
+      history.push('/error')
+    }
+  }
+
   return (
     <form
       className={cx(className, 'form')}
       method={method}
-      onSubmit={onSubmit({ history, nextPage })}
+      onSubmit={(...params) => doPost(nextPage, ...params)}
       {...rest}
-    />
+    >
+      {children}
+      {submitProps && <button {...submitProps} disabled={submitDisabled} />}
+    </form>
   )
 }
 
