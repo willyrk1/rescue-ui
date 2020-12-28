@@ -7,7 +7,7 @@ import kenLogo from '../../assets/images/KenLogo.jpg'
 import statsImage from '../../assets/images/stats.png'
 import styles from './NewsEvents.module.scss'
 import foodSponsorshipForm from '../../assets/pdf/FoodSponsorshipForm.pdf'
-import foodSponsorshipImage from '../../assets/images/KittenSiameseWithEmptyBowl.jpg'
+import foodSponsorshipImage from '../../assets/images/PAR.png'
 import kenAfienkoImage from '../../assets/images/KenAfienko.jpg'
 import StFrancisRescue from '../../apis/StFrancisRescue'
 
@@ -156,9 +156,15 @@ const NewsEvents = () => {
           <div className={cx('panel-content', 'center')}>
             <h2>Food&nbsp;Friend Of&nbsp;The&nbsp;Month</h2>
             <hr />
-            <img src={foodSponsorshipImage} alt="Food Friend" />
+            <a href="https://www.parinc.com/" target="_blank">
+              <img
+                src={foodSponsorshipImage}
+                alt="Food Friend"
+                style={{ marginTop: 62 }}
+              />
+            </a>
             <h3>
-              Christine Poore
+              PAR, Inc.
               <br />
               &nbsp;
             </h3>
