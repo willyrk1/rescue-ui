@@ -94,6 +94,7 @@ const AdoptionForm = ({
                 id="email"
                 name="adopter_agreement[email]"
                 required
+                maxLength="255"
               />
             </li>
             <li>
@@ -103,7 +104,7 @@ const AdoptionForm = ({
                 id="address"
                 name="adopter_agreement[address]"
                 required
-                maxLength="30"
+                maxLength="255"
               />
             </li>
             <li>
@@ -113,7 +114,7 @@ const AdoptionForm = ({
                 id="city"
                 name="adopter_agreement[city]"
                 required
-                maxLength="15"
+                maxLength="255"
               />
             </li>
             <li>
@@ -132,6 +133,7 @@ const AdoptionForm = ({
                 id="zip"
                 name="adopter_agreement[postal_code]"
                 required
+                maxLength="255"
               />
             </li>
             <li>
@@ -140,6 +142,7 @@ const AdoptionForm = ({
                 id="phone"
                 name="adopter_agreement[phone]"
                 required
+                maxLength="255"
               />
             </li>
           </ul>
@@ -220,6 +223,7 @@ const AdoptionForm = ({
                   id="for-who"
                   name="adopter_agreement[pet_for_other]"
                   required
+                  maxLength="255"
                 />
               </li>
             )}
@@ -329,6 +333,7 @@ const AdoptionForm = ({
                         onChange={() => setOthersSpayed(true)}
                         value="true"
                         required
+                        maxLength="255"
                       />
                       Yes
                     </label>
@@ -365,6 +370,7 @@ const AdoptionForm = ({
                     type="text"
                     id="vet-clinic"
                     name="adopter_agreement[veterinarian_clinic]"
+                    maxLength="255"
                   />
                 </li>
               </>
@@ -432,6 +438,7 @@ const AdoptionForm = ({
                   id="explain-giving-up"
                   name="adopter_agreement[given_up_animal_reason]"
                   required
+                  maxLength="255"
                 />
               </li>
             )}
@@ -479,6 +486,7 @@ const AdoptionForm = ({
                   id="landlord"
                   name="adopter_agreement[landlord_name]"
                   required
+                  maxLength="255"
                 />
               </li>
             )}
@@ -488,6 +496,7 @@ const AdoptionForm = ({
                 type="text"
                 id="drivers-license"
                 name="adopter_agreement[driver_license_num]"
+                maxLength="255"
               />
             </li>
             <li>

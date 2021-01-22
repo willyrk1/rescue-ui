@@ -56,7 +56,7 @@ const Contact = () => (
               id="firstName"
               name="contact_form[first_name]"
               required
-              maxLength="20"
+              maxLength="30"
               autoFocus
             />
           </li>
@@ -67,12 +67,18 @@ const Contact = () => (
               id="lastName"
               name="contact_form[last_name]"
               required
-              maxLength="20"
+              maxLength="30"
             />
           </li>
           <li>
             <label htmlFor="email">E-mail Address *</label>
-            <input type="text" id="email" name="contact_form[email]" required />
+            <input
+              type="text"
+              id="email"
+              name="contact_form[email]"
+              required
+              maxLength="255"
+            />
           </li>
           <li>
             <label htmlFor="address">Street Address</label>
@@ -80,7 +86,7 @@ const Contact = () => (
               type="text"
               id="address"
               name="contact_form[address]"
-              maxLength="30"
+              maxLength="255"
             />
           </li>
           <li>
@@ -89,7 +95,7 @@ const Contact = () => (
               type="text"
               id="city"
               name="contact_form[city]"
-              maxLength="15"
+              maxLength="255"
             />
           </li>
           <li>
@@ -102,12 +108,16 @@ const Contact = () => (
               type="text"
               id="zip"
               name="contact_form[postal_code]"
-              maxLength="10"
+              maxLength="255"
             />
           </li>
           <li>
             <label htmlFor="phone">Phone</label>
-            <StandardForm.Phone id="phone" name="contact_form[phone]" />
+            <StandardForm.Phone
+              id="phone"
+              name="contact_form[phone]"
+              maxLength="255"
+            />
           </li>
           <StandardForm.RadioGroup
             label="Would you like to subscribe to our e-mail newsletter?"
@@ -128,6 +138,7 @@ const Contact = () => (
               { label: 'Other', value: 'other' },
             ]}
             required
+            maxLength="255"
           />
           <li>
             <label htmlFor="comment">Your comments or questions *</label>

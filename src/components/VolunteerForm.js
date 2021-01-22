@@ -587,6 +587,7 @@ const VolunteerForm = () => {
                         type="text"
                         id="vet-clinic"
                         name="volunteer[veterinarian_name]"
+                        maxLength="50"
                       />
                     </li>
                   </>
