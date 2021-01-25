@@ -333,7 +333,6 @@ const AdoptionForm = ({
                         onChange={() => setOthersSpayed(true)}
                         value="true"
                         required
-                        maxLength="255"
                       />
                       Yes
                     </label>
@@ -359,6 +358,7 @@ const AdoptionForm = ({
                       id="reason-not-spayed"
                       name="adopter_agreement[other_animals_not_spayed_neutered_reason]"
                       required
+                      maxLength={255}
                     />
                   </li>
                 )}
