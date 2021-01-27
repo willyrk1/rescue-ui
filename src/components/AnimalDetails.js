@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
@@ -50,6 +50,17 @@ const AnimalDetails = ({
     petData[petType][list].find(({ id }) => id === +animalId)
 
   const sharedState = useState(0)
+
+  useEffect(() => {
+    const primaryImageIndex = pet.images.findIndex(
+      ({ public_filename }) =>
+        public_filename === pet.primary_image_thumbnail.replace('_thumb', '')
+    )
+    if (primaryImageIndex >= 0) {
+      sharedState[1](primaryImageIndex)
+    }
+  }, [sharedState, pet])
+
   const components =
     pet &&
     pet.images &&
