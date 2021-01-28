@@ -90,7 +90,7 @@ const AdoptionForm = ({
             <li>
               <label htmlFor="email">Your E-mail Address *</label>
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="adopter_agreement[email]"
                 required

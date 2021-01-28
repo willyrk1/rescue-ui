@@ -73,7 +73,7 @@ const Contact = () => (
           <li>
             <label htmlFor="email">E-mail Address *</label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="contact_form[email]"
               required

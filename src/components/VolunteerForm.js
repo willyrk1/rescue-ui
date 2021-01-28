@@ -82,7 +82,7 @@ const VolunteerForm = () => {
             <li>
               <label htmlFor="email">Your E-mail Address *</label>
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="volunteer[person_attributes][email]"
                 required

@@ -68,7 +68,7 @@ const WorkingCatsForm = () => (
           <li>
             <label htmlFor="email">Your E-mail Address *</label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="workcat_adopter_agreement[email]"
             />
