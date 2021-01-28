@@ -59,6 +59,12 @@ const AnimalCard = props => {
               <label htmlFor="color">Color</label>
               <span id="color">{pet.animal_color.name}</span>
             </li>
+            {pet.special_need && pet.special_need.name && (
+              <li>
+                <label htmlFor="specialNeed">Age</label>
+                <span id="specialNeed">{pet.special_need.name}</span>
+              </li>
+            )}
             <li>
               <label htmlFor="dob">Age</label>
               <span id="dob">{getAge(pet.date_of_birth)}</span>
