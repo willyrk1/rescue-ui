@@ -81,43 +81,41 @@ const AnimalSearch = ({ petType, lists }) => {
     >
       {close => (
         <div className={cx('search-content')}>
-          <StandardForm>
-            <ul>
-              <li>
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={inputs.name || ''}
-                  onChange={setInput('name')}
-                  className={cx('search-input')}
-                  autoFocus
+          <StandardForm className={cx('search-form')}>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              value={inputs.name || ''}
+              onChange={setInput('name')}
+              className={cx('search-input')}
+              autoFocus
+            />
+            {[
+              'specialNeeds',
+              'gender',
+              'breed',
+              'color',
+              'age',
+              'furLength',
+              'declawed',
+              'goodWithChildren',
+              'goodWithCats',
+              'goodWithDogs',
+            ].map(prop => (
+              <>
+                <label htmlFor={prop} key={prop}>
+                  {petSearch[prop].label}
+                </label>
+                <SelectOverride
+                  id={prop}
+                  options={petSearch[prop].choices}
+                  value={inputs[prop]}
+                  onChange={setSelect(prop)}
                 />
-              </li>
-              {[
-                'specialNeeds',
-                'gender',
-                'breed',
-                'color',
-                'age',
-                'furLength',
-                'declawed',
-                'goodWithChildren',
-                'goodWithCats',
-                'goodWithDogs',
-              ].map(prop => (
-                <li key={prop}>
-                  <label htmlFor={prop}>{petSearch[prop].label}</label>
-                  <SelectOverride
-                    id={prop}
-                    options={petSearch[prop].choices}
-                    value={inputs[prop]}
-                    onChange={setSelect(prop)}
-                  />
-                </li>
-              ))}
-            </ul>
-            <div className={cx('actions')}>
+              </>
+            ))}
+            <StandardForm.FullWidth className={cx('actions')}>
               <button
                 type="submit"
                 className={cx('btn')}
@@ -138,7 +136,7 @@ const AnimalSearch = ({ petType, lists }) => {
               >
                 Cancel
               </button>
-            </div>
+            </StandardForm.FullWidth>
           </StandardForm>
         </div>
       )}

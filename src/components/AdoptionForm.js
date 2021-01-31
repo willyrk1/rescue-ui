@@ -65,575 +65,520 @@ const AdoptionForm = ({
             children: 'Submit Adoption Application',
           }}
         >
-          <ul>
-            <li>
-              <label htmlFor="firstName">First Name *</label>
-              <input
-                type="text"
-                id="firstName"
-                name="adopter_agreement[first_name]"
-                required
-                maxLength="30"
-                autoFocus
-              />
-            </li>
-            <li>
-              <label htmlFor="lastName">Last Name *</label>
-              <input
-                type="text"
-                id="lastName"
-                name="adopter_agreement[last_name]"
-                required
-                maxLength="30"
-              />
-            </li>
-            <li>
-              <label htmlFor="email">Your E-mail Address *</label>
-              <input
-                type="email"
-                id="email"
-                name="adopter_agreement[email]"
-                required
-                maxLength="255"
-              />
-            </li>
-            <li>
-              <label htmlFor="address">Street Address *</label>
-              <input
-                type="text"
-                id="address"
-                name="adopter_agreement[address]"
-                required
-                maxLength="255"
-              />
-            </li>
-            <li>
-              <label htmlFor="city">City *</label>
-              <input
-                type="text"
-                id="city"
-                name="adopter_agreement[city]"
-                required
-                maxLength="255"
-              />
-            </li>
-            <li>
-              <label htmlFor="state">State *</label>
-              <StandardForm.Select
-                id="state"
-                options={states}
-                name="adopter_agreement[state]"
-                required
-              />
-            </li>
-            <li>
-              <label htmlFor="zip">ZIP *</label>
-              <input
-                type="text"
-                id="zip"
-                name="adopter_agreement[postal_code]"
-                required
-                maxLength="255"
-              />
-            </li>
-            <li>
-              <label htmlFor="phone">Phone *</label>
-              <StandardForm.Phone
-                id="phone"
-                name="adopter_agreement[phone]"
-                required
-                maxLength="255"
-              />
-            </li>
-          </ul>
+          <label htmlFor="firstName">First Name *</label>
+          <input
+            type="text"
+            id="firstName"
+            name="adopter_agreement[first_name]"
+            required
+            maxLength="30"
+            autoFocus
+          />
+          <label htmlFor="lastName">Last Name *</label>
+          <input
+            type="text"
+            id="lastName"
+            name="adopter_agreement[last_name]"
+            required
+            maxLength="30"
+          />
+          <label htmlFor="email">Your E-mail Address *</label>
+          <input
+            type="email"
+            id="email"
+            name="adopter_agreement[email]"
+            required
+            maxLength="255"
+          />
+          <label htmlFor="address">Street Address *</label>
+          <input
+            type="text"
+            id="address"
+            name="adopter_agreement[address]"
+            required
+            maxLength="255"
+          />
+          <label htmlFor="city">City *</label>
+          <input
+            type="text"
+            id="city"
+            name="adopter_agreement[city]"
+            required
+            maxLength="255"
+          />
+          <label htmlFor="state">State *</label>
+          <StandardForm.Select
+            id="state"
+            options={states}
+            name="adopter_agreement[state]"
+            required
+          />
+          <label htmlFor="zip">ZIP *</label>
+          <input
+            type="text"
+            id="zip"
+            name="adopter_agreement[postal_code]"
+            required
+            maxLength="255"
+          />
+          <label htmlFor="phone">Phone *</label>
+          <StandardForm.Phone
+            id="phone"
+            name="adopter_agreement[phone]"
+            required
+            maxLength="255"
+          />
 
-          <h2>General Questions</h2>
+          <StandardForm.FullWidth>
+            <h2>General Questions</h2>
+          </StandardForm.FullWidth>
 
-          <ul>
-            <li>
-              <label htmlFor="over-21">Are you over 21? *</label>
+          <label htmlFor="over-21">Are you over 21? *</label>
+          <StandardForm.Input>
+            <label htmlFor="over-21-yes">
+              <input
+                type="radio"
+                id="over-21-yes"
+                name="adopter_agreement[over_21]"
+                value="true"
+                required
+              />
+              Yes
+            </label>
+            <label htmlFor="over-21-no">
+              <input
+                type="radio"
+                id="over-21-no"
+                name="adopter_agreement[over_21]"
+                value="false"
+              />
+              No
+            </label>
+          </StandardForm.Input>
+          <label htmlFor="reason">
+            Please give your reason for wanting to adopt {name} *
+          </label>
+          <textarea
+            id="reason"
+            name="adopter_agreement[adoption_reason]"
+            required
+            maxLength="1024"
+          />
+          <label htmlFor="for-you">Is {name} for you or your family? *</label>
+          <StandardForm.Input>
+            <label htmlFor="for-you-yes">
+              <input
+                type="radio"
+                id="for-you-yes"
+                name="adopter_agreement[pet_for_adopter]"
+                checked={forYou || false}
+                onChange={() => setForYou(true)}
+                value="true"
+                required
+              />
+              Yes
+            </label>
+            <label htmlFor="for-you-no">
+              <input
+                type="radio"
+                id="for-you-no"
+                name="adopter_agreement[pet_for_adopter]"
+                checked={forYou === false}
+                onChange={() => setForYou(false)}
+                value="false"
+              />
+              No
+            </label>
+          </StandardForm.Input>
+          {forYou === false && (
+            <>
+              <label htmlFor="for-who">Who is {name} for? *</label>
+              <input
+                type="text"
+                id="for-who"
+                name="adopter_agreement[pet_for_other]"
+                required
+                maxLength="255"
+              />
+            </>
+          )}
+          <label htmlFor="location-kept">Where will {name} be kept? *</label>
+          <StandardForm.Input>
+            <label htmlFor="location-kept-inside">
+              <input
+                type="radio"
+                id="location-kept-inside"
+                name="adopter_agreement[keep_inside]"
+                value="Inside"
+                required
+              />
+              Inside
+            </label>
+            <label htmlFor="location-kept-outside">
+              <input
+                type="radio"
+                id="location-kept-outside"
+                name="adopter_agreement[keep_inside]"
+                value="Outside"
+              />
+              Outside
+            </label>
+            <label htmlFor="location-kept-both">
+              <input
+                type="radio"
+                id="location-kept-both"
+                name="adopter_agreement[keep_inside]"
+                value="Both"
+              />
+              Both
+            </label>
+          </StandardForm.Input>
+          <label htmlFor="plan-declaw">Do you plan to declaw? *</label>
+          <StandardForm.Input>
+            <label htmlFor="plan-declaw-yes">
+              <input
+                type="radio"
+                id="plan-declaw-yes"
+                name="adopter_agreement[no_declaw]"
+                value="true"
+                required
+              />
+              Yes
+            </label>
+            <label htmlFor="plan-declaw-no">
+              <input
+                type="radio"
+                id="plan-declaw-no"
+                name="adopter_agreement[no_declaw]"
+                value="false"
+              />
+              No
+            </label>
+          </StandardForm.Input>
+          <label htmlFor="other-animals">
+            Are there other cats or dogs in the house? *
+          </label>
+          <StandardForm.Input>
+            <label htmlFor="other-animals-yes">
+              <input
+                type="radio"
+                id="other-animals-yes"
+                name="adopter_agreement[owned_other_animals]"
+                checked={otherAnimals || false}
+                onChange={() => setOtherAnimals(true)}
+                value="true"
+                required
+              />
+              Yes
+            </label>
+            <label htmlFor="other-animals-no">
+              <input
+                type="radio"
+                id="other-animals-no"
+                name="adopter_agreement[owned_other_animals]"
+                checked={otherAnimals === false}
+                onChange={() => setOtherAnimals(false)}
+                value="false"
+              />
+              No
+            </label>
+          </StandardForm.Input>
+          {otherAnimals && (
+            <>
+              <label htmlFor="other-neutered">
+                Are the other animals in your household spayed or neutered? *
+              </label>
               <StandardForm.Input>
-                <label htmlFor="over-21-yes">
+                <label htmlFor="other-neutered-yes">
                   <input
                     type="radio"
-                    id="over-21-yes"
-                    name="adopter_agreement[over_21]"
+                    id="other-neutered-yes"
+                    name="adopter_agreement[other_animals_spayed_neutered]"
+                    checked={othersSpayed || false}
+                    onChange={() => setOthersSpayed(true)}
                     value="true"
                     required
                   />
                   Yes
                 </label>
-                <label htmlFor="over-21-no">
+                <label htmlFor="other-neutered-no">
                   <input
                     type="radio"
-                    id="over-21-no"
-                    name="adopter_agreement[over_21]"
+                    id="other-neutered-no"
+                    name="adopter_agreement[other_animals_spayed_neutered]"
+                    checked={othersSpayed === false}
+                    onChange={() => setOthersSpayed(false)}
                     value="false"
                   />
                   No
                 </label>
               </StandardForm.Input>
-            </li>
-            <li>
-              <label htmlFor="reason">
-                Please give your reason for wanting to adopt {name} *
+              {othersSpayed === false && (
+                <>
+                  <label htmlFor="reason-not-spayed">
+                    Please explain why they are not spayed/neutered *
+                  </label>
+                  <textarea
+                    id="reason-not-spayed"
+                    name="adopter_agreement[other_animals_not_spayed_neutered_reason]"
+                    required
+                    maxLength={255}
+                  />
+                </>
+              )}
+              <label htmlFor="vet-clinic">
+                What is the name of your most recent Veterinarian Clinic?
               </label>
+              <input
+                type="text"
+                id="vet-clinic"
+                name="adopter_agreement[veterinarian_clinic]"
+                maxLength="255"
+              />
+            </>
+          )}
+          <label htmlFor="any-allergic">
+            Is anyone in the household allergic to cats? *
+          </label>
+          <StandardForm.Input>
+            <label htmlFor="any-allergic-yes">
+              <input
+                type="radio"
+                id="any-allergic-yes"
+                name="adopter_agreement[allergies]"
+                value="true"
+                required
+              />
+              Yes
+            </label>
+            <label htmlFor="any-allergic-no">
+              <input
+                type="radio"
+                id="any-allergic-no"
+                name="adopter_agreement[allergies]"
+                value="false"
+              />
+              No
+            </label>
+          </StandardForm.Input>
+          <label htmlFor="given-up">Have you ever given up an animal? *</label>
+          <StandardForm.Input>
+            <label htmlFor="given-up-yes">
+              <input
+                type="radio"
+                id="given-up-yes"
+                name="adopter_agreement[given_up_animal]"
+                checked={givenUp || false}
+                onChange={() => setGivenUp(true)}
+                value="true"
+                required
+              />
+              Yes
+            </label>
+            <label htmlFor="given-up-no">
+              <input
+                type="radio"
+                id="given-up-no"
+                name="adopter_agreement[given_up_animal]"
+                checked={givenUp === false}
+                onChange={() => setGivenUp(false)}
+                value="false"
+              />
+              No
+            </label>
+          </StandardForm.Input>
+          {givenUp && (
+            <>
+              <label htmlFor="explain-giving-up">Please explain why *</label>
               <textarea
-                id="reason"
-                name="adopter_agreement[adoption_reason]"
+                id="explain-giving-up"
+                name="adopter_agreement[given_up_animal_reason]"
                 required
-                maxLength="1024"
-              />
-            </li>
-            <li>
-              <label htmlFor="for-you">
-                Is {name} for you or your family? *
-              </label>
-              <StandardForm.Input>
-                <label htmlFor="for-you-yes">
-                  <input
-                    type="radio"
-                    id="for-you-yes"
-                    name="adopter_agreement[pet_for_adopter]"
-                    checked={forYou || false}
-                    onChange={() => setForYou(true)}
-                    value="true"
-                    required
-                  />
-                  Yes
-                </label>
-                <label htmlFor="for-you-no">
-                  <input
-                    type="radio"
-                    id="for-you-no"
-                    name="adopter_agreement[pet_for_adopter]"
-                    checked={forYou === false}
-                    onChange={() => setForYou(false)}
-                    value="false"
-                  />
-                  No
-                </label>
-              </StandardForm.Input>
-            </li>
-            {forYou === false && (
-              <li>
-                <label htmlFor="for-who">Who is {name} for? *</label>
-                <input
-                  type="text"
-                  id="for-who"
-                  name="adopter_agreement[pet_for_other]"
-                  required
-                  maxLength="255"
-                />
-              </li>
-            )}
-            <li>
-              <label htmlFor="location-kept">
-                Where will {name} be kept? *
-              </label>
-              <StandardForm.Input>
-                <label htmlFor="location-kept-inside">
-                  <input
-                    type="radio"
-                    id="location-kept-inside"
-                    name="adopter_agreement[keep_inside]"
-                    value="Inside"
-                    required
-                  />
-                  Inside
-                </label>
-                <label htmlFor="location-kept-outside">
-                  <input
-                    type="radio"
-                    id="location-kept-outside"
-                    name="adopter_agreement[keep_inside]"
-                    value="Outside"
-                  />
-                  Outside
-                </label>
-                <label htmlFor="location-kept-both">
-                  <input
-                    type="radio"
-                    id="location-kept-both"
-                    name="adopter_agreement[keep_inside]"
-                    value="Both"
-                  />
-                  Both
-                </label>
-              </StandardForm.Input>
-            </li>
-            <li>
-              <label htmlFor="plan-declaw">Do you plan to declaw? *</label>
-              <StandardForm.Input>
-                <label htmlFor="plan-declaw-yes">
-                  <input
-                    type="radio"
-                    id="plan-declaw-yes"
-                    name="adopter_agreement[no_declaw]"
-                    value="true"
-                    required
-                  />
-                  Yes
-                </label>
-                <label htmlFor="plan-declaw-no">
-                  <input
-                    type="radio"
-                    id="plan-declaw-no"
-                    name="adopter_agreement[no_declaw]"
-                    value="false"
-                  />
-                  No
-                </label>
-              </StandardForm.Input>
-            </li>
-            <li>
-              <label htmlFor="other-animals">
-                Are there other cats or dogs in the house? *
-              </label>
-              <StandardForm.Input>
-                <label htmlFor="other-animals-yes">
-                  <input
-                    type="radio"
-                    id="other-animals-yes"
-                    name="adopter_agreement[owned_other_animals]"
-                    checked={otherAnimals || false}
-                    onChange={() => setOtherAnimals(true)}
-                    value="true"
-                    required
-                  />
-                  Yes
-                </label>
-                <label htmlFor="other-animals-no">
-                  <input
-                    type="radio"
-                    id="other-animals-no"
-                    name="adopter_agreement[owned_other_animals]"
-                    checked={otherAnimals === false}
-                    onChange={() => setOtherAnimals(false)}
-                    value="false"
-                  />
-                  No
-                </label>
-              </StandardForm.Input>
-            </li>
-            {otherAnimals && (
-              <>
-                <li>
-                  <label htmlFor="other-neutered">
-                    Are the other animals in your household spayed or neutered?
-                    *
-                  </label>
-                  <StandardForm.Input>
-                    <label htmlFor="other-neutered-yes">
-                      <input
-                        type="radio"
-                        id="other-neutered-yes"
-                        name="adopter_agreement[other_animals_spayed_neutered]"
-                        checked={othersSpayed || false}
-                        onChange={() => setOthersSpayed(true)}
-                        value="true"
-                        required
-                      />
-                      Yes
-                    </label>
-                    <label htmlFor="other-neutered-no">
-                      <input
-                        type="radio"
-                        id="other-neutered-no"
-                        name="adopter_agreement[other_animals_spayed_neutered]"
-                        checked={othersSpayed === false}
-                        onChange={() => setOthersSpayed(false)}
-                        value="false"
-                      />
-                      No
-                    </label>
-                  </StandardForm.Input>
-                </li>
-                {othersSpayed === false && (
-                  <li>
-                    <label htmlFor="reason-not-spayed">
-                      Please explain why they are not spayed/neutered *
-                    </label>
-                    <textarea
-                      id="reason-not-spayed"
-                      name="adopter_agreement[other_animals_not_spayed_neutered_reason]"
-                      required
-                      maxLength={255}
-                    />
-                  </li>
-                )}
-                <li>
-                  <label htmlFor="vet-clinic">
-                    What is the name of your most recent Veterinarian Clinic?
-                  </label>
-                  <input
-                    type="text"
-                    id="vet-clinic"
-                    name="adopter_agreement[veterinarian_clinic]"
-                    maxLength="255"
-                  />
-                </li>
-              </>
-            )}
-            <li>
-              <label htmlFor="any-allergic">
-                Is anyone in the household allergic to cats? *
-              </label>
-              <StandardForm.Input>
-                <label htmlFor="any-allergic-yes">
-                  <input
-                    type="radio"
-                    id="any-allergic-yes"
-                    name="adopter_agreement[allergies]"
-                    value="true"
-                    required
-                  />
-                  Yes
-                </label>
-                <label htmlFor="any-allergic-no">
-                  <input
-                    type="radio"
-                    id="any-allergic-no"
-                    name="adopter_agreement[allergies]"
-                    value="false"
-                  />
-                  No
-                </label>
-              </StandardForm.Input>
-            </li>
-            <li>
-              <label htmlFor="given-up">
-                Have you ever given up an animal? *
-              </label>
-              <StandardForm.Input>
-                <label htmlFor="given-up-yes">
-                  <input
-                    type="radio"
-                    id="given-up-yes"
-                    name="adopter_agreement[given_up_animal]"
-                    checked={givenUp || false}
-                    onChange={() => setGivenUp(true)}
-                    value="true"
-                    required
-                  />
-                  Yes
-                </label>
-                <label htmlFor="given-up-no">
-                  <input
-                    type="radio"
-                    id="given-up-no"
-                    name="adopter_agreement[given_up_animal]"
-                    checked={givenUp === false}
-                    onChange={() => setGivenUp(false)}
-                    value="false"
-                  />
-                  No
-                </label>
-              </StandardForm.Input>
-            </li>
-            {givenUp && (
-              <li>
-                <label htmlFor="explain-giving-up">Please explain why *</label>
-                <textarea
-                  id="explain-giving-up"
-                  name="adopter_agreement[given_up_animal_reason]"
-                  required
-                  maxLength="255"
-                />
-              </li>
-            )}
-            <li>
-              <label htmlFor="rent-own">Do you rent or own? *</label>
-              <StandardForm.Input>
-                <label htmlFor="rent-own-yes">
-                  <input
-                    type="radio"
-                    id="rent-own-yes"
-                    name="adopter_agreement[rent_home]"
-                    checked={rent || false}
-                    onChange={() => setRent(true)}
-                    value="true"
-                    required
-                  />
-                  Rent
-                </label>
-                <label htmlFor="rent-own-no">
-                  <input
-                    type="radio"
-                    id="rent-own-no"
-                    name="adopter_agreement[rent_home]"
-                    checked={rent === false}
-                    onChange={() => setRent(false)}
-                    value="false"
-                  />
-                  Own
-                </label>
-              </StandardForm.Input>
-            </li>
-            {rent && (
-              <li>
-                <label htmlFor="landlord">
-                  What is the name of your Apartment Complex or Landlord? *
-                  <br />
-                  <em className={cx('note')}>
-                    If you rent, you will be asked to provide proof from your
-                    landlord that pets are permitted and that you have paid a
-                    pet deposit
-                  </em>
-                </label>
-                <input
-                  type="text"
-                  id="landlord"
-                  name="adopter_agreement[landlord_name]"
-                  required
-                  maxLength="255"
-                />
-              </li>
-            )}
-            <li>
-              <label htmlFor="drivers-license">Driver's license #</label>
-              <input
-                type="text"
-                id="drivers-license"
-                name="adopter_agreement[driver_license_num]"
                 maxLength="255"
               />
-            </li>
-            <li>
-              <label htmlFor="dl-state">Driver's license state issued</label>
-              <StandardForm.Select
-                id="dl-state"
-                options={states}
-                name="adopter_agreement[driver_license_state]"
+            </>
+          )}
+          <label htmlFor="rent-own">Do you rent or own? *</label>
+          <StandardForm.Input>
+            <label htmlFor="rent-own-yes">
+              <input
+                type="radio"
+                id="rent-own-yes"
+                name="adopter_agreement[rent_home]"
+                checked={rent || false}
+                onChange={() => setRent(true)}
+                value="true"
+                required
               />
-            </li>
-            <li>
-              <label htmlFor="work-school">
-                Do you work outside the home or go to school? *
+              Rent
+            </label>
+            <label htmlFor="rent-own-no">
+              <input
+                type="radio"
+                id="rent-own-no"
+                name="adopter_agreement[rent_home]"
+                checked={rent === false}
+                onChange={() => setRent(false)}
+                value="false"
+              />
+              Own
+            </label>
+          </StandardForm.Input>
+          {rent && (
+            <>
+              <label htmlFor="landlord">
+                What is the name of your Apartment Complex or Landlord? *
+                <br />
+                <em className={cx('note')}>
+                  If you rent, you will be asked to provide proof from your
+                  landlord that pets are permitted and that you have paid a pet
+                  deposit
+                </em>
               </label>
-              <StandardForm.Input>
-                <label htmlFor="work-school-yes">
-                  <input
-                    type="radio"
-                    id="work-school-yes"
-                    name="adopter_agreement[employed_outside_home]"
-                    checked={workSchool || false}
-                    onChange={() => setWorkSchool(true)}
-                    value="true"
-                    required
-                  />
-                  Yes
-                </label>
-                <label htmlFor="work-school-no">
-                  <input
-                    type="radio"
-                    id="work-school-no"
-                    name="adopter_agreement[employed_outside_home]"
-                    checked={workSchool === false}
-                    onChange={() => setWorkSchool(false)}
-                    value="false"
-                  />
-                  No
-                </label>
-              </StandardForm.Input>
-            </li>
-            {workSchool && (
-              <li>
-                <label htmlFor="hours-out">
-                  How many hours a day are you away for work or school? *
-                </label>
-                <input
-                  type="text"
-                  id="hours-out"
-                  name="adopter_agreement[hours_away_from_home]"
-                  required
-                />
-              </li>
-            )}
-          </ul>
+              <input
+                type="text"
+                id="landlord"
+                name="adopter_agreement[landlord_name]"
+                required
+                maxLength="255"
+              />
+            </>
+          )}
+          <label htmlFor="drivers-license">Driver's license #</label>
+          <input
+            type="text"
+            id="drivers-license"
+            name="adopter_agreement[driver_license_num]"
+            maxLength="255"
+          />
+          <label htmlFor="dl-state">Driver's license state issued</label>
+          <StandardForm.Select
+            id="dl-state"
+            options={states}
+            name="adopter_agreement[driver_license_state]"
+          />
+          <label htmlFor="work-school">
+            Do you work outside the home or go to school? *
+          </label>
+          <StandardForm.Input>
+            <label htmlFor="work-school-yes">
+              <input
+                type="radio"
+                id="work-school-yes"
+                name="adopter_agreement[employed_outside_home]"
+                checked={workSchool || false}
+                onChange={() => setWorkSchool(true)}
+                value="true"
+                required
+              />
+              Yes
+            </label>
+            <label htmlFor="work-school-no">
+              <input
+                type="radio"
+                id="work-school-no"
+                name="adopter_agreement[employed_outside_home]"
+                checked={workSchool === false}
+                onChange={() => setWorkSchool(false)}
+                value="false"
+              />
+              No
+            </label>
+          </StandardForm.Input>
+          {workSchool && (
+            <>
+              <label htmlFor="hours-out">
+                How many hours a day are you away for work or school? *
+              </label>
+              <input
+                type="text"
+                id="hours-out"
+                name="adopter_agreement[hours_away_from_home]"
+                required
+              />
+            </>
+          )}
 
-          <h2>Terms</h2>
+          <StandardForm.FullWidth>
+            <h2>Terms</h2>
 
-          <p>
-            If you are approved for adoption, please indicate whether you agree
-            to the following terms:
-          </p>
+            <p>
+              If you are approved for adoption, please indicate whether you
+              agree to the following terms:
+            </p>
+          </StandardForm.FullWidth>
 
-          <ul>
-            <StandardForm.RadioGroup
-              label={`I will take ${name} to the vet when medical services are needed. *`}
-              name="adopter_agreement[safe_environment]"
-              id="will-treat"
-              inputs={[
-                { label: 'Yes', value: 'true' },
-                { label: 'No', value: 'false' },
-              ]}
-              required
-            />
-            <StandardForm.RadioGroup
-              label={`I will arrange for the care of ${name} during my absences (vacation, etc.). *`}
-              name="adopter_agreement[absentee_care]"
-              id="absentee-care"
-              inputs={[
-                { label: 'Yes', value: 'true' },
-                { label: 'No', value: 'false' },
-              ]}
-              required
-            />
-            <StandardForm.RadioGroup
-              label={`
+          <StandardForm.RadioGroup
+            label={`I will take ${name} to the vet when medical services are needed. *`}
+            name="adopter_agreement[safe_environment]"
+            id="will-treat"
+            inputs={[
+              { label: 'Yes', value: 'true' },
+              { label: 'No', value: 'false' },
+            ]}
+            required
+          />
+          <StandardForm.RadioGroup
+            label={`I will arrange for the care of ${name} during my absences (vacation, etc.). *`}
+            name="adopter_agreement[absentee_care]"
+            id="absentee-care"
+            inputs={[
+              { label: 'Yes', value: 'true' },
+              { label: 'No', value: 'false' },
+            ]}
+            required
+          />
+          <StandardForm.RadioGroup
+            label={`
                 I understand St. Francis has the right to confiscate Bertil if not being cared
                 for properly (i.e. lack of food/water/shelter, roaming free, or any form of neglect). *
               `}
-              name="adopter_agreement[permit_confiscation]"
-              id="permit-confiscation"
-              inputs={[
-                { label: 'Yes', value: 'true' },
-                { label: 'No', value: 'false' },
-              ]}
-              required
-            />
-            <StandardForm.RadioGroup
-              label={`A minimum donation (depending on age and breed) is required for adoption. *`}
-              name="adopter_agreement[minimum_donation]"
-              id="minimum_donation"
-              inputs={[
-                { label: 'Yes', value: 'true' },
-                { label: 'No', value: 'false' },
-              ]}
-              required
-            />
-            <StandardForm.RadioGroup
-              label={`
+            name="adopter_agreement[permit_confiscation]"
+            id="permit-confiscation"
+            inputs={[
+              { label: 'Yes', value: 'true' },
+              { label: 'No', value: 'false' },
+            ]}
+            required
+          />
+          <StandardForm.RadioGroup
+            label={`A minimum donation (depending on age and breed) is required for adoption. *`}
+            name="adopter_agreement[minimum_donation]"
+            id="minimum_donation"
+            inputs={[
+              { label: 'Yes', value: 'true' },
+              { label: 'No', value: 'false' },
+            ]}
+            required
+          />
+          <StandardForm.RadioGroup
+            label={`
                 I agree to allow communication from St. Francis to ensure a mutually satisfactory
                 owner/pet relationship is established. *
               `}
-              name="adopter_agreement[communication]"
-              id="communication"
-              inputs={[
-                { label: 'Yes', value: 'true' },
-                { label: 'No', value: 'false' },
-              ]}
+            name="adopter_agreement[communication]"
+            id="communication"
+            inputs={[
+              { label: 'Yes', value: 'true' },
+              { label: 'No', value: 'false' },
+            ]}
+            required
+          />
+          <label htmlFor="certify">
+            I certify that the information provided is complete and correct. I
+            understand if it is discovered I have given any untrue information,
+            St. Francis Society has the right to confiscate {name} without a
+            refund of my adoption fee. *
+          </label>
+          <StandardForm.Input>
+            <input
+              type="checkbox"
+              id="certify"
+              name="adopter_agreement[complete_accurate_information]"
+              value="1"
               required
             />
-            <li>
-              <label htmlFor="certify">
-                I certify that the information provided is complete and correct.
-                I understand if it is discovered I have given any untrue
-                information, St. Francis Society has the right to confiscate{' '}
-                {name} without a refund of my adoption fee. *
-              </label>
-              <StandardForm.Input>
-                <input
-                  type="checkbox"
-                  id="certify"
-                  name="adopter_agreement[complete_accurate_information]"
-                  value="1"
-                  required
-                />
-              </StandardForm.Input>
-            </li>
-          </ul>
+          </StandardForm.Input>
 
           <input
             name="adopter_agreement[animal_id]"

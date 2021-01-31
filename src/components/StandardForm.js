@@ -36,7 +36,15 @@ const StandardForm = ({
       {...rest}
     >
       {children}
-      {submitProps && <button {...submitProps} disabled={submitDisabled} />}
+      {submitProps && (
+        <button
+          {...{
+            ...submitProps,
+            className: cx('submit', submitProps.className),
+          }}
+          disabled={submitDisabled}
+        />
+      )}
     </form>
   )
 }
@@ -82,15 +90,8 @@ StandardForm.Select = ({ className, required, ...rest }) =>
     <ReactSelect className={cx(className, 'input-select')} {...rest} />
   )
 
-StandardForm.RadioGroup = ({
-  className,
-  label,
-  name,
-  id = name,
-  inputs,
-  required,
-}) => (
-  <li className={className}>
+StandardForm.RadioGroup = ({ label, name, id = name, inputs, required }) => (
+  <>
     <label htmlFor={id}>{label}</label>
     <StandardForm.Input>
       {inputs.map(({ label: inputLabel, id: inputId = inputLabel, value }) => (
@@ -104,29 +105,18 @@ StandardForm.RadioGroup = ({
         </label>
       ))}
     </StandardForm.Input>
-  </li>
+  </>
 )
 
-const phoneReplacer = (match, p1, p2, p3) =>
-  [p1, p2, p3].filter(v => v).join('-')
+StandardForm.Phone = props => (
+  <div className={cx('phone')}>
+    <input type="tel" {...props} pattern="[0-9]{10}" />
+    <span>Format: ##########</span>
+  </div>
+)
 
-const Phone = props => {
-  const patternMessage = 'Please use format ###-###-####'
-  const [value, setValue] = useState('')
-
-  const onChange = ({ target }) => {
-    const newValue = target.value
-      .replace(/\D/g, '')
-      .replace(/(\d{0,3})(\d{0,3})(\d{0,4}).*/, phoneReplacer)
-    setValue(newValue)
-    target.setCustomValidity(
-      /^([0-9]{3}-[0-9]{3}-[0-9]{4})?$/.test(newValue) ? '' : patternMessage
-    )
-  }
-
-  return <input type="tel" {...{ value, onChange, ...props }} />
-}
-
-StandardForm.Phone = Phone
+StandardForm.FullWidth = ({ className, ...props }) => (
+  <div className={cx('full-width', className)} {...props} />
+)
 
 export default StandardForm

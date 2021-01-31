@@ -48,108 +48,88 @@ const Contact = () => (
           children: 'Submit Contact Form',
         }}
       >
-        <ul>
-          <li>
-            <label htmlFor="firstName">First Name *</label>
-            <input
-              type="text"
-              id="firstName"
-              name="contact_form[first_name]"
-              required
-              maxLength="30"
-              autoFocus
-            />
-          </li>
-          <li>
-            <label htmlFor="lastName">Last Name *</label>
-            <input
-              type="text"
-              id="lastName"
-              name="contact_form[last_name]"
-              required
-              maxLength="30"
-            />
-          </li>
-          <li>
-            <label htmlFor="email">E-mail Address *</label>
-            <input
-              type="email"
-              id="email"
-              name="contact_form[email]"
-              required
-              maxLength="255"
-            />
-          </li>
-          <li>
-            <label htmlFor="address">Street Address</label>
-            <input
-              type="text"
-              id="address"
-              name="contact_form[address]"
-              maxLength="255"
-            />
-          </li>
-          <li>
-            <label htmlFor="city">City</label>
-            <input
-              type="text"
-              id="city"
-              name="contact_form[city]"
-              maxLength="255"
-            />
-          </li>
-          <li>
-            <label htmlFor="state">State</label>
-            <StandardForm.Select options={states} name="contact_form[state]" />
-          </li>
-          <li>
-            <label htmlFor="zip">ZIP</label>
-            <input
-              type="text"
-              id="zip"
-              name="contact_form[postal_code]"
-              maxLength="255"
-            />
-          </li>
-          <li>
-            <label htmlFor="phone">Phone</label>
-            <StandardForm.Phone
-              id="phone"
-              name="contact_form[phone]"
-              maxLength="255"
-            />
-          </li>
-          <StandardForm.RadioGroup
-            label="Would you like to subscribe to our e-mail newsletter?"
-            name="contact_form[subscribe_newsletter]"
-            id="subscribe"
-            inputs={[
-              { label: 'Yes, I would', value: 'true' },
-              { label: 'No, I would not', value: 'false' },
-            ]}
-          />
-          <StandardForm.RadioGroup
-            label="I am contacting you regarding a *"
-            name="contact_form[contact_regarding]"
-            id="regarding"
-            inputs={[
-              { label: 'Cat', value: 'cat' },
-              { label: 'Dog', value: 'dog' },
-              { label: 'Other', value: 'other' },
-            ]}
-            required
-            maxLength="255"
-          />
-          <li>
-            <label htmlFor="comment">Your comments or questions *</label>
-            <textarea
-              id="comment"
-              name="contact_form[comments]"
-              required
-              maxLength="1024"
-            />
-          </li>
-        </ul>
+        <label htmlFor="firstName">First Name *</label>
+        <input
+          type="text"
+          id="firstName"
+          name="contact_form[first_name]"
+          required
+          maxLength="30"
+          autoFocus
+        />
+        <label htmlFor="lastName">Last Name *</label>
+        <input
+          type="text"
+          id="lastName"
+          name="contact_form[last_name]"
+          required
+          maxLength="30"
+        />
+        <label htmlFor="email">E-mail Address *</label>
+        <input
+          type="email"
+          id="email"
+          name="contact_form[email]"
+          required
+          maxLength="255"
+        />
+        <label htmlFor="address">Street Address</label>
+        <input
+          type="text"
+          id="address"
+          name="contact_form[address]"
+          maxLength="255"
+        />
+        <label htmlFor="city">City</label>
+        <input
+          type="text"
+          id="city"
+          name="contact_form[city]"
+          maxLength="255"
+        />
+        <label htmlFor="state">State</label>
+        <StandardForm.Select options={states} name="contact_form[state]" />
+        <label htmlFor="zip">ZIP</label>
+        <input
+          type="text"
+          id="zip"
+          name="contact_form[postal_code]"
+          maxLength="255"
+        />
+        <label htmlFor="phone">Phone</label>
+        <StandardForm.Phone
+          id="phone"
+          name="contact_form[phone]"
+          maxLength="255"
+        />
+        <StandardForm.RadioGroup
+          label="Would you like to subscribe to our e-mail newsletter?"
+          name="contact_form[subscribe_newsletter]"
+          id="subscribe"
+          inputs={[
+            { label: 'Yes, I would', value: 'true' },
+            { label: 'No, I would not', value: 'false' },
+          ]}
+        />
+        <StandardForm.RadioGroup
+          label="I am contacting you regarding a *"
+          name="contact_form[contact_regarding]"
+          id="regarding"
+          inputs={[
+            { label: 'Cat', value: 'cat' },
+            { label: 'Dog', value: 'dog' },
+            { label: 'Other', value: 'other' },
+          ]}
+          required
+          maxLength="255"
+        />
+        <label htmlFor="comment">Your comments or questions *</label>
+        <textarea
+          id="comment"
+          name="contact_form[comments]"
+          required
+          maxLength="1024"
+        />
       </StandardForm>
     </div>
   </StandardLayout>

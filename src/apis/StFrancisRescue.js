@@ -141,7 +141,17 @@ const StFrancisRescue = (function() {
 
     postForm: event => {
       event.preventDefault()
-      return post(event.target.action, new FormData(event.target), TOKEN)
+      const formData = new FormData(event.target)
+
+      /*
+       * Fix phone inputs.
+       */
+      const tels = event.target.querySelectorAll('input[type="tel"]')
+      ;[...tels].forEach(({ name, value }) => {
+        formData.set(name, value.replace(/(.{3})(.{3})(.{4})/, '$1-$2-$3'))
+      })
+
+      return post(event.target.action, formData, TOKEN)
     },
   }
 })()
