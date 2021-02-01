@@ -148,7 +148,10 @@ const StFrancisRescue = (function() {
        */
       const tels = event.target.querySelectorAll('input[type="tel"]')
       ;[...tels].forEach(({ name, value }) => {
-        formData.set(name, value.replace(/(.{3})(.{3})(.{4})/, '$1-$2-$3'))
+        formData.set(
+          name,
+          value.replace(/[-.]/g, '').replace(/(.{3})(.{3})(.{4})/, '$1-$2-$3')
+        )
       })
 
       return post(event.target.action, formData, TOKEN)

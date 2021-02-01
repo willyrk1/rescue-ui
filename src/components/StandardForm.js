@@ -28,6 +28,22 @@ const StandardForm = ({
     }
   }
 
+  const onClick = event => {
+    submitProps.onClick && submitProps.onClick()
+
+    /*
+     * Check all tel input formats.
+     */
+    const tels = event.target.form.querySelectorAll('input[type="tel"]')
+    ;[...tels].forEach(tel => {
+      tel.setCustomValidity(
+        !tel.value || /^[0-9]{3}[-.]?[0-9]{3}[-.]?[0-9]{4}$/.test(tel.value)
+          ? ''
+          : 'Please enter 10 digits for the phone number'
+      )
+    })
+  }
+
   return (
     <form
       className={cx(className, 'form')}
@@ -40,6 +56,7 @@ const StandardForm = ({
         <button
           {...{
             ...submitProps,
+            onClick,
             className: cx('submit', submitProps.className),
           }}
           disabled={submitDisabled}
@@ -109,10 +126,7 @@ StandardForm.RadioGroup = ({ label, name, id = name, inputs, required }) => (
 )
 
 StandardForm.Phone = props => (
-  <div className={cx('phone')}>
-    <input type="tel" {...props} pattern="[0-9]{10}" />
-    <span>Format: ##########</span>
-  </div>
+  <input type="tel" {...props} placeholder="###-###-####" />
 )
 
 StandardForm.FullWidth = ({ className, ...props }) => (

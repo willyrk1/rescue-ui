@@ -32,17 +32,6 @@
 		flex-wrap: wrap;
 	}
 
-	.phone {
-		display: flex;
-		align-items: center;
-
-		input {
-			padding: 0.5rem;
-			margin-right: 0.5rem;
-			flex: 1;
-		}
-	}
-
 	> input, .input, .input-select, textarea {
 		flex: 1;
 		padding: 0.5rem;
