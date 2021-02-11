@@ -71,21 +71,21 @@ const Contact = () => (
           id="email"
           name="contact_form[email]"
           required
-          maxLength="255"
+          maxLength="40"
         />
         <label htmlFor="address">Street Address</label>
         <input
           type="text"
           id="address"
           name="contact_form[address]"
-          maxLength="255"
+          maxLength="80"
         />
         <label htmlFor="city">City</label>
         <input
           type="text"
           id="city"
           name="contact_form[city]"
-          maxLength="255"
+          maxLength="20"
         />
         <label htmlFor="state">State</label>
         <StandardForm.Select options={states} name="contact_form[state]" />
@@ -94,13 +94,13 @@ const Contact = () => (
           type="text"
           id="zip"
           name="contact_form[postal_code]"
-          maxLength="255"
+          maxLength="2"
         />
         <label htmlFor="phone">Phone</label>
         <StandardForm.Phone
           id="phone"
           name="contact_form[phone]"
-          maxLength="255"
+          maxLength="12"
         />
         <StandardForm.RadioGroup
           label="Would you like to subscribe to our e-mail newsletter?"

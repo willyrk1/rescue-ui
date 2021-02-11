@@ -88,7 +88,7 @@ const AdoptionForm = ({
             id="email"
             name="adopter_agreement[email]"
             required
-            maxLength="255"
+            maxLength="40"
           />
           <label htmlFor="address">Street Address *</label>
           <input
@@ -96,7 +96,7 @@ const AdoptionForm = ({
             id="address"
             name="adopter_agreement[address]"
             required
-            maxLength="255"
+            maxLength="80"
           />
           <label htmlFor="city">City *</label>
           <input
@@ -104,7 +104,7 @@ const AdoptionForm = ({
             id="city"
             name="adopter_agreement[city]"
             required
-            maxLength="255"
+            maxLength="20"
           />
           <label htmlFor="state">State *</label>
           <StandardForm.Select
@@ -119,14 +119,14 @@ const AdoptionForm = ({
             id="zip"
             name="adopter_agreement[postal_code]"
             required
-            maxLength="255"
+            maxLength="10"
           />
           <label htmlFor="phone">Phone *</label>
           <StandardForm.Phone
             id="phone"
             name="adopter_agreement[phone]"
             required
-            maxLength="255"
+            maxLength="12"
           />
 
           <StandardForm.FullWidth>

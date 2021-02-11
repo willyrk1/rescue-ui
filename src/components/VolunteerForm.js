@@ -117,6 +117,7 @@ const VolunteerForm = () => {
             id="zip"
             name="volunteer[person_attributes][postal_code]"
             required
+            maxLength="10"
           />
           <label htmlFor="phone">Phone *</label>
           <StandardForm.Phone
