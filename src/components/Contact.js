@@ -94,7 +94,7 @@ const Contact = () => (
           type="text"
           id="zip"
           name="contact_form[postal_code]"
-          maxLength="2"
+          maxLength="10"
         />
         <label htmlFor="phone">Phone</label>
         <StandardForm.Phone
