@@ -52,14 +52,16 @@ const AnimalDetails = ({
   const sharedState = useState(0)
 
   useEffect(() => {
-    const primaryImageIndex = pet.images.findIndex(
-      ({ public_filename }) =>
-        public_filename === pet.primary_image_thumbnail.replace('_thumb', '')
-    )
-    if (primaryImageIndex >= 0) {
-      sharedState[1](primaryImageIndex)
+    if (pet) {
+      const primaryImageIndex = pet.images.findIndex(
+        ({ public_filename }) =>
+          public_filename === pet.primary_image_thumbnail.replace('_thumb', '')
+      )
+      if (primaryImageIndex >= 0) {
+        sharedState[1](primaryImageIndex)
+      }
     }
-  }, [sharedState, pet])
+  }, [sharedState[1], pet])
 
   const components =
     pet &&
