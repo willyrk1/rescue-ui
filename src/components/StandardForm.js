@@ -37,9 +37,10 @@ const StandardForm = ({
     const tels = event.target.form.querySelectorAll('input[type="tel"]')
     ;[...tels].forEach(tel => {
       tel.setCustomValidity(
-        !tel.value || /^[0-9]{3}[-.]?[0-9]{3}[-.]?[0-9]{4}$/.test(tel.value)
+        !tel.value ||
+          /^[2-9][0-9]{2}[-.]?[0-9]{3}[-.]?[0-9]{4}$/.test(tel.value)
           ? ''
-          : 'Please enter 10 digits for the phone number'
+          : 'Please enter 10 digits for the phone number (not starting with a 0 or 1)'
       )
     })
   }
@@ -126,7 +127,7 @@ StandardForm.RadioGroup = ({ label, name, id = name, inputs, required }) => (
 )
 
 StandardForm.Phone = props => (
-  <input type="tel" {...props} placeholder="###-###-####" />
+  <input type="tel" {...props} placeholder="##########" />
 )
 
 StandardForm.FullWidth = ({ className, ...props }) => (

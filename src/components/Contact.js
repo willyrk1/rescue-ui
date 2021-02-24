@@ -81,12 +81,7 @@ const Contact = () => (
           maxLength="80"
         />
         <label htmlFor="city">City</label>
-        <input
-          type="text"
-          id="city"
-          name="contact_form[city]"
-          maxLength="20"
-        />
+        <input type="text" id="city" name="contact_form[city]" maxLength="20" />
         <label htmlFor="state">State</label>
         <StandardForm.Select options={states} name="contact_form[state]" />
         <label htmlFor="zip">ZIP</label>
