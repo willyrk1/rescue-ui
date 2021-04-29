@@ -70,7 +70,7 @@ const WorkingCatsForm = () => (
         <input
           type="text"
           id="address"
-          name="workcat_adopter_agreement[address1]"
+          name="workcat_adopter_agreement[address]"
         />
         <label htmlFor="address2"></label>
         <input
