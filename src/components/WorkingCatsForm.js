@@ -32,7 +32,7 @@ const WorkingCatsForm = () => (
         <p>
           * St. Francis Society is a privately owned, all volunteer
           organization. It is our responsibility to find permanent loving homes
-          for all the animals under our care. We will be happy to work with you
+          for all animals under our care. We will be happy to work with you
           to choose an animal that suits your wants and lifestyle; however we DO
           have adoption guidelines and may deny an adoption we feel is
           unsuitable.
