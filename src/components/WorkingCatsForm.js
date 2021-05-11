@@ -52,6 +52,8 @@ const WorkingCatsForm = () => (
           type="text"
           id="firstName"
           name="workcat_adopter_agreement[first_name]"
+          maxLength="30"
+          required
           autoFocus
         />
         <label htmlFor="lastName">Last Name *</label>
@@ -59,43 +61,61 @@ const WorkingCatsForm = () => (
           type="text"
           id="lastName"
           name="workcat_adopter_agreement[last_name]"
+          maxLength="30"
+          required
         />
         <label htmlFor="email">Your E-mail Address *</label>
         <input
           type="email"
           id="email"
           name="workcat_adopter_agreement[email]"
+          maxLength="40"
+          required
         />
         <label htmlFor="address">Street Address *</label>
         <input
           type="text"
           id="address"
           name="workcat_adopter_agreement[address]"
+          maxLength="80"
+          required
         />
         <label htmlFor="city">City *</label>
-        <input type="text" id="city" name="workcat_adopter_agreement[city]" />
+        <input type="text"
+          id="city" 
+          name="workcat_adopter_agreement[city]"
+          maxLength="20"
+          required
+        />
         <label htmlFor="state">State *</label>
         <StandardForm.Select
           id="state"
           options={states}
           name="workcat_adopter_agreement[state]"
+          required
         />
         <label htmlFor="zip">ZIP *</label>
         <input
           type="text"
           id="zip"
           name="workcat_adopter_agreement[postal_code]"
+          maxLength="10"
+          required
         />
         <label htmlFor="phone">Phone *</label>
         <StandardForm.Phone
           id="phone"
           name="workcat_adopter_agreement[phone]"
+          maxLength="12"
+          required
         />
         <label htmlFor="drivers-license">Driver's license #</label>
         <input
           type="text"
           id="drivers-license"
           name="workcat_adopter_agreement[driver_license_num]"
+          maxLength="255"
+          required
         />
         <label htmlFor="dl-state">Driver's license state issued</label>
         <StandardForm.Select
