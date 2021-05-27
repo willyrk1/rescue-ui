@@ -233,28 +233,32 @@ const AdoptionForm = ({
               Both
             </label>
           </StandardForm.Input>
-          <label htmlFor="plan-declaw">Do you plan to declaw? *</label>
-          <StandardForm.Input>
-            <label htmlFor="plan-declaw-yes">
-              <input
-                type="radio"
-                id="plan-declaw-yes"
-                name="adopter_agreement[no_declaw]"
-                value="true"
-                required
-              />
-              Yes
-            </label>
-            <label htmlFor="plan-declaw-no">
-              <input
-                type="radio"
-                id="plan-declaw-no"
-                name="adopter_agreement[no_declaw]"
-                value="false"
-              />
-              No
-            </label>
-          </StandardForm.Input>
+          {petType === 'cats' && (
+            <>
+              <label htmlFor="plan-declaw">Do you plan to declaw? *</label>
+              <StandardForm.Input>
+                <label htmlFor="plan-declaw-yes">
+                  <input
+                    type="radio"
+                    id="plan-declaw-yes"
+                    name="adopter_agreement[no_declaw]"
+                    value="true"
+                    required
+                  />
+                  Yes
+                </label>
+                <label htmlFor="plan-declaw-no">
+                  <input
+                    type="radio"
+                    id="plan-declaw-no"
+                    name="adopter_agreement[no_declaw]"
+                    value="false"
+                  />
+                  No
+                </label>
+              </StandardForm.Input>
+            </>
+          )}
           <label htmlFor="other-animals">
             Are there other cats or dogs in the house? *
           </label>
@@ -337,30 +341,34 @@ const AdoptionForm = ({
               />
             </>
           )}
-          <label htmlFor="any-allergic">
-            Is anyone in the household allergic to cats? *
-          </label>
-          <StandardForm.Input>
-            <label htmlFor="any-allergic-yes">
-              <input
-                type="radio"
-                id="any-allergic-yes"
-                name="adopter_agreement[allergies]"
-                value="true"
-                required
-              />
-              Yes
-            </label>
-            <label htmlFor="any-allergic-no">
-              <input
-                type="radio"
-                id="any-allergic-no"
-                name="adopter_agreement[allergies]"
-                value="false"
-              />
-              No
-            </label>
-          </StandardForm.Input>
+          {petType === 'cats' && (
+            <>
+              <label htmlFor="any-allergic">
+                Is anyone in the household allergic to cats? *
+              </label>
+              <StandardForm.Input>
+                <label htmlFor="any-allergic-yes">
+                  <input
+                    type="radio"
+                    id="any-allergic-yes"
+                    name="adopter_agreement[allergies]"
+                    value="true"
+                    required
+                  />
+                  Yes
+                </label>
+                <label htmlFor="any-allergic-no">
+                  <input
+                    type="radio"
+                    id="any-allergic-no"
+                    name="adopter_agreement[allergies]"
+                    value="false"
+                  />
+                  No
+                </label>
+              </StandardForm.Input>
+            </>
+          )}
           <label htmlFor="given-up">Have you ever given up an animal? *</label>
           <StandardForm.Input>
             <label htmlFor="given-up-yes">
