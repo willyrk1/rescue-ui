@@ -150,7 +150,7 @@ const VolunteerForm = () => {
               No
             </label>
           </StandardForm.Input>
-          <label htmlFor="under-18">Are you under 18 years of age? *</label>
+          <label htmlFor="under-18">Are you at least 18 years old? *</label>
           <StandardForm.Input>
             <label htmlFor="under-18-yes">
               <input

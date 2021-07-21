@@ -108,7 +108,7 @@ const HelpOurCause = () => (
                     </p>
                     <p>
                       Simply visit smile.amazon.com, and select St. Francis
-                      Society Animal Rescue as your charity of choice.
+                      Society as your charity of choice.
                     </p>
                   </div>
                   <div className={cx('actions')}>
