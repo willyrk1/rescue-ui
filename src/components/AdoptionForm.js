@@ -538,7 +538,7 @@ const AdoptionForm = ({
           />
           <StandardForm.RadioGroup
             label={`
-                I understand St. Francis has the right to confiscate Bertil if not being cared
+                I understand St. Francis has the right to confiscate ${name} if not being cared
                 for properly (i.e. lack of food/water/shelter, roaming free, or any form of neglect). *
               `}
             name="adopter_agreement[permit_confiscation]"
@@ -549,6 +549,34 @@ const AdoptionForm = ({
             ]}
             required
           />
+          {petType === 'dogs' && (
+            <>
+              <StandardForm.RadioGroup
+                label={`
+                    I will not allow ${name} to roam freely. I will obey leash laws. *
+                  `}
+                name="adopter_agreement[leash_laws]"
+                id="leash-laws"
+                inputs={[
+                  { label: 'Yes', value: 'true' },
+                  { label: 'No', value: 'false' },
+                ]}
+                required
+              />
+              <StandardForm.RadioGroup
+                label={`
+                    I will maintain ${name} on heartworm preventative medicine. *
+                  `}
+                name="adopter_agreement[preventative_medicine]"
+                id="preventative-medicine"
+                inputs={[
+                  { label: 'Yes', value: 'true' },
+                  { label: 'No', value: 'false' },
+                ]}
+                required
+              />
+            </>
+          )}
           <StandardForm.RadioGroup
             label={`A minimum donation (depending on age and breed) is required for adoption. *`}
             name="adopter_agreement[minimum_donation]"
