@@ -549,6 +549,34 @@ const AdoptionForm = ({
             ]}
             required
           />
+          {petType === 'dogs' && (
+            <>
+              <StandardForm.RadioGroup
+                label={`
+                    I will not allow ${name} to roam freely. I will obey leash laws. *
+                  `}
+                name="adopter_agreement[leash_laws]"
+                id="leash-laws"
+                inputs={[
+                  { label: 'Yes', value: 'true' },
+                  { label: 'No', value: 'false' },
+                ]}
+                required
+              />
+              <StandardForm.RadioGroup
+                label={`
+                    I will maintain ${name} on heartworm preventative medicine. *
+                  `}
+                name="adopter_agreement[preventative_medicine]"
+                id="preventative-medicine"
+                inputs={[
+                  { label: 'Yes', value: 'true' },
+                  { label: 'No', value: 'false' },
+                ]}
+                required
+              />
+            </>
+          )}
           <StandardForm.RadioGroup
             label={`A minimum donation (depending on age and breed) is required for adoption. *`}
             name="adopter_agreement[minimum_donation]"
