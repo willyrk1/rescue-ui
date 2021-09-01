@@ -546,6 +546,24 @@ const VolunteerForm = () => {
           )}
 
           <StandardForm.FullWidth>
+            <h2>Transporting</h2>
+            <p>
+              Transport volunteers take our foster kitties to and from vet appointments and
+              occassionally deliver kittens transferring from one foster home to another.
+            </p>
+          </StandardForm.FullWidth>
+
+          <label htmlFor="transporter">I would like to be a Transporter</label>
+          <StandardForm.Input>
+            <input
+              type="checkbox"
+              id="transporter"
+              name="volunteer[be_transporter]"
+              value="1"
+            />
+          </StandardForm.Input>
+
+          <StandardForm.FullWidth>
             <h2>Adoption Centers</h2>
             <p>
               There are three ways to help out at our adoption centers,
@@ -592,24 +610,6 @@ const VolunteerForm = () => {
               type="checkbox"
               id="counselor"
               name="volunteer[be_adoption_counselor]"
-              value="1"
-            />
-          </StandardForm.Input>
-
-          <StandardForm.FullWidth>
-            <p>
-              <strong>Dog Handler:</strong> Dog handlers assist fosters by
-              showing dogs at adoption events and talking to potential adopters
-              about the dog's personality and likes/dislikes.
-            </p>
-          </StandardForm.FullWidth>
-
-          <label htmlFor="dog-handler">I would like to be a Dog Handler</label>
-          <StandardForm.Input>
-            <input
-              type="checkbox"
-              id="dog-handler"
-              name="volunteer[be_dog_handler]"
               value="1"
             />
           </StandardForm.Input>
