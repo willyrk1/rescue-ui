@@ -7,7 +7,7 @@ import kenLogo from '../../assets/images/KenLogo.jpg'
 import statsImage from '../../assets/images/stats.png'
 import styles from './NewsEvents.module.scss'
 import foodSponsorshipForm from '../../assets/pdf/FoodSponsorshipForm.pdf'
-import foodSponsorshipImage from '../../assets/images/stellar.jpg'
+import foodSponsorshipImage from '../../assets/images/KittenSiameseWithEmptyBowl.jpg'
 import kenAfienkoImage from '../../assets/images/KenAfienko.jpg'
 import StFrancisRescue from '../../apis/StFrancisRescue'
 
@@ -156,10 +156,8 @@ const NewsEvents = () => {
           <div className={cx('panel-content', 'center')}>
             <h2>Food&nbsp;Friend Of&nbsp;The&nbsp;Month</h2>
             <hr />
-            <div className={cx('friend-logo')}>
-              <img src={foodSponsorshipImage} alt="Food Friend" />
-            </div>
-            <h3>Stellar Construction Corporation</h3>
+            <img src={foodSponsorshipImage} alt="Food Friend" />
+            <h3>Support Us: See&nbsp;Your&nbsp;Logo&nbsp;Here</h3>
             <a className={cx('btn')} href={foodSponsorshipForm} target="_blank">
               More Info
             </a>
