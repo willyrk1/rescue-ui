@@ -13,6 +13,7 @@ import {
   Route,
   useHistory,
 } from 'react-router-dom'
+import ReactGA from 'react-ga'
 import { GlobalDataProvider } from './context/GlobalDataContext'
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'
@@ -40,11 +41,16 @@ import UnderConstruction from './components/UnderConstruction'
 import { ErrorPage } from './components/Error'
 import './App.scss'
 
+ReactGA.initialize('UA-6912841-1');
+ReactGA.pageview(window.location.pathname);
+
 const ScrollToTop = () => {
   const history = useHistory()
   useEffect(() => {
     if (history.action === 'PUSH') {
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0);
+      ReactGA.set({ page: history.location.pathname });
+      ReactGA.pageview(history.location.pathname);
     }
   }, [history.location, history.action])
 
