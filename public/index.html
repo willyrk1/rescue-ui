@@ -70,7 +70,6 @@
 
       var currentUrl = location.href;
       window.addEventListener('hashchange', function() {
-        console.log('hash change');
         _paq.push(['setReferrerUrl', currentUrl]);
         currentUrl = '/' + window.location.hash.substr(1);
         _paq.push(['setCustomUrl', currentUrl]);
