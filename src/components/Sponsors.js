@@ -8,6 +8,7 @@ import gulfCoastLogo from '../assets/images/Gulfcoast Veterinary Center.png'
 import westChaseLogo from '../assets/images/Westchase_Veterinary_Center_and_Emergenc.png'
 import bisselLogo from '../assets/images/bisselpetfoundation.jpg'
 import petSmartLogo from '../assets/images/petsmart_charities-1.jpg'
+import elseyLogo from '../assets/images/DrElseysLogo_2021.jpg'
 
 const cx = classNames.bind(styles)
 
@@ -32,7 +33,14 @@ const Sponsors = () => {
               key: 3,
               component: <img src={westChaseLogo} alt="WestChase Veterinary" />,
             },
-            { key: 4, component: <img src={petSmartLogo} alt="PetSmart" /> },
+            {
+              key: 4,
+              component: (
+                <a href="https://petsmartcharities.org/">
+                  <img src={petSmartLogo} alt="PetSmart" />
+                </a>
+              )
+            },
             {
               key: 5,
               component: <img src={bigCatLogo} alt="Big Cat Rescue" />,
@@ -40,6 +48,10 @@ const Sponsors = () => {
             {
               key: 6,
               component: <img src={bisselLogo} alt="Bissell Pet Foundation" />,
+            },
+            {
+              key: 7,
+              component: <img src={elseyLogo} alt="Dr. Elsey's" />,
             },
           ]}
           styles={styles}
