@@ -9,6 +9,7 @@ import westChaseLogo from '../assets/images/Westchase_Veterinary_Center_and_Emer
 import bisselLogo from '../assets/images/bisselpetfoundation.jpg'
 import petSmartLogo from '../assets/images/petsmart_charities-1.jpg'
 import elseyLogo from '../assets/images/DrElseysLogo_2021.jpg'
+import powasnickLogo from '../assets/images/Powasnick.png'
 
 const cx = classNames.bind(styles)
 
@@ -22,6 +23,7 @@ const Sponsors = () => {
       <div className={cx('scroller')}>
         <Scroller
           components={[
+            { key: 8, component: <img src={powasnickLogo} alt="Powasnick" /> },
             { key: 1, component: <img src={petcoLogo} alt="Petco" /> },
             {
               key: 2,
