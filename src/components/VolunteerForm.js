@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import classNames from 'classnames/bind'
+import Popup from 'reactjs-popup2'
 import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
 import states from '../config/states'
 import StandardLayout from './StandardLayout'
@@ -172,6 +173,57 @@ const VolunteerForm = () => {
               No
             </label>
           </StandardForm.Input>
+          <label htmlFor="background-check">Do you consent to a criminal background check? *</label>
+          <StandardForm.Input>
+            <label htmlFor="background-check-yes">
+              <input
+                type="radio"
+                id="background-check-yes"
+                name="volunteer[background_check]"
+                value="true"
+                required
+              />
+              Yes
+            </label>
+            <label htmlFor="background-check-no">
+              <Popup
+                modal
+                closeOnDocumentClick
+                trigger={
+                  <input
+                    type="radio"
+                    id="background-check-no"
+                    name="volunteer[background_check]"
+                    value="false"
+                  />
+                }
+              >
+                {close => (
+                  <div className={cx('popup-modal')}>
+                    <div className={cx('popup-inner')}>
+                      <button className={cx('close')} onClick={close}>
+                        &times;
+                      </button>
+                      <h2>Foster Application</h2>
+                      <div className={cx('content')}>
+                        <p>
+                          Thank you for your interest in becoming a foster parent. However,
+                          St. Francis Society only utilizes volunteers who have never been convicted
+                          of a felony or animal abuse.
+                        </p>
+                      </div>
+                      <div className={cx('actions')}>
+                        <button className={cx('btn')} onClick={close}>
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </Popup>
+              No
+            </label>
+          </StandardForm.Input>
           <label htmlFor="rather">Do You Want Work With *</label>
           <StandardForm.Input>
             <label htmlFor="rather-cats">
@@ -257,6 +309,59 @@ const VolunteerForm = () => {
           </StandardForm.Input>
           {fosterInterest && (
             <>
+              <label htmlFor="commit">
+                Are you willing to commit a minimum of four months to fostering?
+              </label>
+              <StandardForm.Input>
+                <label htmlFor="commit-yes">
+                  <input
+                    type="radio"
+                    id="commit-yes"
+                    name="volunteer[commit_to_4_months]"
+                    value="true"
+                    required
+                  />
+                  Yes
+                </label>
+                <label htmlFor="commit-no">
+                  <Popup
+                    modal
+                    closeOnDocumentClick
+                    trigger={
+                      <input
+                        type="radio"
+                        id="commit-no"
+                        name="volunteer[commit_to_4_months]"
+                        value="false"
+                      />
+                    }
+                  >
+                    {close => (
+                      <div className={cx('popup-modal')}>
+                        <div className={cx('popup-inner')}>
+                          <button className={cx('close')} onClick={close}>
+                            &times;
+                          </button>
+                          <h2>Foster Application</h2>
+                          <div className={cx('content')}>
+                            <p>
+                              Thank you for your interest in becoming a foster parent. However,
+                              due to the time needed for training and kitten care, we require a
+                              minimum four-month commitment.
+                            </p>
+                          </div>
+                          <div className={cx('actions')}>
+                            <button className={cx('btn')} onClick={close}>
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </Popup>
+                  No
+                </label>
+              </StandardForm.Input>
               <label htmlFor="provide-food">
                 Are you able to provide food and litter for the animals you
                 foster? *

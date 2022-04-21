@@ -25,3 +25,66 @@
 		background-image: none;
 	}
 }
+
+.popup-modal {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  width: 50%;
+  padding: 5px;
+	font-style		: normal;
+	font-weight		: 400;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing	: .03125rem;
+	line-height		: 1.4;
+
+	.popup-inner {
+		position: relative;
+	}
+
+	h2 {
+		width: 100%;
+		border-bottom: 1px solid gray;
+		font-size: 2.5rem;
+		color: $color-primary;
+		text-align: center;
+		padding: 0.5rem;
+	}
+
+	.content {
+		width: 100%;
+		padding: 1rem 0.5rem;
+
+		p {
+			color: black;
+			margin: 2rem 0;
+			font-size: 1.8rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.actions {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+
+		.btn {
+			margin: 0 1rem 1rem;
+		}
+	}
+
+	.close {
+		position: absolute;
+		display: block;
+		padding: 2px 5px;
+		line-height: 20px;
+		right: -10px;
+		top: -10px;
+		font-size: 24px;
+		background: #ffffff;
+		border-radius: 18px;
+		border: 1px solid #cfcece;
+	}
+}
