@@ -139,7 +139,7 @@ const StFrancisRescue = (function() {
       return get('stats', params)
     },
 
-    postForm: event => {
+    postForm: (event, excludeList = []) => {
       event.preventDefault()
       const formData = new FormData(event.target)
 
@@ -153,6 +153,8 @@ const StFrancisRescue = (function() {
           value.replace(/[-.]/g, '').replace(/(.{3})(.{3})(.{4})/, '$1-$2-$3')
         )
       })
+
+      excludeList.forEach(key => formData.delete(key))
 
       return post(event.target.action, formData, TOKEN)
     },

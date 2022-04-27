@@ -54,6 +54,10 @@ const VolunteerForm = () => {
         <StandardForm
           action={`${PROTOCOL}://${HOSTNAME}/volunteers`}
           className={cx('form')}
+          excludeList={[
+            "volunteer[background_check]",
+            "volunteer[commit_to_4_months]",
+          ]}
           submitProps={(backgroundConsent !== false && timeCommit !== false)
             ? {
               className: cx('btn'),

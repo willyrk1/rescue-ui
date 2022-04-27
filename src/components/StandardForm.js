@@ -14,14 +14,15 @@ const StandardForm = ({
   nextPage = '/form-submitted',
   submitProps,
   children,
+  excludeList,
   ...rest
 }) => {
   const history = useHistory()
   const [submitDisabled, setSubmitDisabled] = useState(false)
-  const doPost = async (nextPage, ...params) => {
+  const doPost = async event => {
     try {
       setSubmitDisabled(true)
-      await StFrancisRescue.postForm(...params)
+      await StFrancisRescue.postForm(event, excludeList)
       history.push(nextPage)
     } catch {
       history.push('/error')
@@ -49,7 +50,7 @@ const StandardForm = ({
     <form
       className={cx(className, 'form')}
       method={method}
-      onSubmit={(...params) => doPost(nextPage, ...params)}
+      onSubmit={event => doPost(event)}
       {...rest}
     >
       {children}
