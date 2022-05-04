@@ -9,7 +9,8 @@ import * as serviceWorker from './serviceWorker'
 
 // Google Analytics
 ReactGA.initialize('G-V7S2C8XPMR');
-ReactGA.send({ hitType: 'pageview', page: window.location.hash || window.location.pathname});
+ReactGA.send("pageview");
+// ReactGA.send({ hitType: 'pageview', page: window.location.hash || window.location.pathname});
 
 // Matomo
 const matomoInstance = createInstance({
