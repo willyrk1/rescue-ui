@@ -51,7 +51,7 @@ const ScrollToTop = () => {
     if (history.action === 'PUSH') {
       window.scrollTo(0, 0);
       ReactGA.set({ page: history.location.pathname });
-      ReactGA.send({ hitType: "pageview", page: history.location.pathname });
+      ReactGA.send({ hitType: 'pageview', page: history.location.hash || history.location.pathname });
       trackPageView({ href: history.location.pathname});
     }
   }, [history.location, history.action])
