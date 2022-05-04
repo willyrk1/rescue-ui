@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react'
 import './assets/stylesheets/_variables.scss'
 import './assets/stylesheets/style.scss'
@@ -8,8 +8,8 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 // Google Analytics
-ReactGA.initialize('UA-6912841-1');
-ReactGA.pageview(window.location.pathname);
+ReactGA.initialize('G-V7S2C8XPMR');
+ReactGA.send('pageview');
 
 // Matomo
 const matomoInstance = createInstance({

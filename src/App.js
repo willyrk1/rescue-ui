@@ -13,7 +13,7 @@ import {
   Route,
   useHistory,
 } from 'react-router-dom'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { useMatomo } from '@datapunt/matomo-tracker-react'
 import { GlobalDataProvider } from './context/GlobalDataContext'
 import Home from './components/Home/Home'
@@ -51,7 +51,7 @@ const ScrollToTop = () => {
     if (history.action === 'PUSH') {
       window.scrollTo(0, 0);
       ReactGA.set({ page: history.location.pathname });
-      ReactGA.pageview(history.location.pathname);
+      ReactGA.send({ hitType: "pageview", page: history.location.pathname });
       trackPageView({ href: history.location.pathname});
     }
   }, [history.location, history.action])
