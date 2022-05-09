@@ -41,6 +41,7 @@ import Legacy from './components/Legacy'
 import UnderConstruction from './components/UnderConstruction'
 import { ErrorPage } from './components/Error'
 import './App.scss'
+import VolunteerFormSubmitted from './components/VolunteerFormSubmitted'
 
 
 const ScrollToTop = () => {
@@ -92,6 +93,7 @@ const App = () => (
         <Route exact path="/forever-foster" component={ForeverFoster} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/form-submitted" component={FormSubmitted} />
+        <Route exact path="/volunteer-form-submitted" component={VolunteerFormSubmitted} />
         <Route exact path="/special-need/:reference" component={Legacy} />
         <Route exact path="/error" component={ErrorPage} />
         <Route path="/:pagename" component={Page} />

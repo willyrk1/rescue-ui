@@ -66,6 +66,7 @@ const VolunteerForm = () => {
             }
             : null
           }
+          nextPage='/volunteer-form-submitted'
         >
           <label htmlFor="firstName">First Name *</label>
           <input
