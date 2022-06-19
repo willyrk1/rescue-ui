@@ -73,11 +73,12 @@ const Contact = () => (
           required
           maxLength="40"
         />
-        <label htmlFor="address">Street Address</label>
+        <label htmlFor="address">Street Address *</label>
         <input
           type="text"
           id="address"
           name="contact_form[address]"
+          required
           maxLength="80"
         />
         <label htmlFor="city">City</label>
@@ -91,10 +92,11 @@ const Contact = () => (
           name="contact_form[postal_code]"
           maxLength="10"
         />
-        <label htmlFor="phone">Phone</label>
+        <label htmlFor="phone">Phone *</label>
         <StandardForm.Phone
           id="phone"
           name="contact_form[phone]"
+          required
           maxLength="12"
         />
         <StandardForm.RadioGroup
