@@ -87,7 +87,7 @@ else
     [ -s "/home/rescue/.nvm/nvm.sh" ] && \. "/home/rescue/.nvm/nvm.sh"
     [ "\$STATUS" -eq 0 ] && nvm use || STATUS=1
     [ "\$STATUS" -eq 0 ] && echo -e "\e[32mInstalling dependencies...\e[0m"
-    [ "\$STATUS" -eq 0 ] && npm ci || STATUS=1
+    [ "\$STATUS" -eq 0 ] && npm ci  --prefer-offline --silent || STATUS=1
     [ "\$STATUS" -eq 0 ] && echo -e "\e[32mBuilding React UI...\e[0m"
     if [ ${ENVIRONMENT} = "production" ] || [ ${ENVIRONMENT} = "prod" ]
     then
