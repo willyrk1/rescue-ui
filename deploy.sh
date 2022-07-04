@@ -21,7 +21,7 @@ environment=test
 ENVIRONMENT=${1:-$environment}
 mode=local
 MODE=${2:-$mode}
-BUILD_VER=`date +\%Y\%m\%d\%H%M`
+BUILD_VER=`date +%Y%m%d%H%M%S`
 
 DEPLOY_HOST="rescue@45.79.204.187"
 GIT_REPO="git@github.com-rescue-ui:pothoven/rescue-ui.git"
@@ -81,7 +81,7 @@ else
   # Do the following commands remotely on the server
   ssh -T $DEPLOY_HOST << EOF
     STATUS=0
-    echo -e "\e[32mPulling latest code from git...\e[0m"
+    [ "\$STATUS" -eq 0 ] && echo -e "\e[32mPulling latest code from git...\e[0m"
     [ "\$STATUS" -eq 0 ] && git clone ${GIT_REPO} ${EXTRACT_DIR}/${BUILD_VER} || STATUS=1
     [ "\$STATUS" -eq 0 ] && cd ${EXTRACT_DIR}/${BUILD_VER} || STATUS=1
     [ -s "/home/rescue/.nvm/nvm.sh" ] && \. "/home/rescue/.nvm/nvm.sh"
@@ -89,12 +89,11 @@ else
     [ "\$STATUS" -eq 0 ] && echo -e "\e[32mInstalling dependencies...\e[0m"
     [ "\$STATUS" -eq 0 ] && npm ci || STATUS=1
     [ "\$STATUS" -eq 0 ] && echo -e "\e[32mBuilding React UI...\e[0m"
-    [ "\$STATUS" -eq 0 ] && npm run-script build -- --prod
-    if [ $ENVIRONMENT = "production" ] || [ $ENVIRONMENT = "prod" ]
+    if [ ${ENVIRONMENT} = "production" ] || [ ${ENVIRONMENT} = "prod" ]
     then
-      [ "\$STATUS" -eq 0 ] && npm run-script build -- --prod
+      [ "\$STATUS" -eq 0 ] && npm run-script build -- --prod || STATUS=1
     else
-      [ "\$STATUS" -eq 0 ] && npm run-script build
+      [ "\$STATUS" -eq 0 ] && npm run-script build || STATUS=1
     fi    
     [ "\$STATUS" -eq 0 ] && echo -e "\033[32mCopying build to ${DEPLOY_DIR}...\033[0m"
     # Copy the built code to the Rails public directory
