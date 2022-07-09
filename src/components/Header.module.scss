@@ -47,7 +47,7 @@
 			}
 		}
 
-		li {
+		li, &.home li {
 			display: inline-block;
 			margin-left: 4rem;
 			
@@ -92,7 +92,9 @@
 					display: none;
 				}
 			}
-      
+		}
+
+		li {
 			a, .popup-link {
         background: none;
         border: none;
