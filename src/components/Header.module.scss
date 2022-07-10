@@ -51,44 +51,62 @@
 			display: inline-block;
 			margin-left: 4rem;
 			
-			&.lose1 {
+			&.lose-10 {
+				@media (max-width: 1200px) {
+					display: none;
+				}
+			}
+
+			&.gain-10 {
+				@media (min-width: 1200px) {
+					display: none;
+				}
+			}
+
+			&.lose-20 {
 				@media (max-width: 1080px) {
 					display: none;
 				}
 			}
 
-			&.gain2 {
+			&.gain-20 {
+				@media (min-width: 1080px) {
+					display: none;
+				}
+			}
+
+			&.gain-30 {
 				@media (min-width: 960px) {
 					display: none;
 				}
 			}
 
-			&.lose2 {
+			&.lose-30 {
 				@media (max-width: 960px) {
 					display: none;
 				}
 			}
 
-			&.gain3 {
+			&.gain-40 {
 				@media (min-width: 800px) {
 					display: none;
 				}
 			}
 
-			&.lose3 {
+			&.lose-40 {
 				@media (max-width: 800px) {
 					display: none;
 				}
 			}
 
-			&.gain4 {
+			&.gain-50 {
 				@media (min-width: 700px) {
 					display: none;
 				}
 			}
 
 			.other {
-				@media (min-width: 1080px) {
+				@media (min-width: 1200px) {
 					display: none;
 				}
 			}

@@ -1,0 +1,24 @@
+@import '../assets/stylesheets/style.scss';
+
+.lost-a-pet {
+	h2 {
+		color: $color-accent;
+		margin-bottom: 3rem;
+	}
+
+	li {
+		margin-left: 5rem;
+	}
+}
+
+.banner {
+	width: 100%;
+}
+
+.lead {
+	text-align: center;
+}
+
+.indent {
+	margin-left: 5rem;
+}

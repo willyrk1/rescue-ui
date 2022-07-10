@@ -42,6 +42,7 @@ import UnderConstruction from './components/UnderConstruction'
 import { ErrorPage } from './components/Error'
 import './App.scss'
 import VolunteerFormSubmitted from './components/VolunteerFormSubmitted'
+import LostAPet from './components/LostAPet'
 
 
 const ScrollToTop = () => {
@@ -72,6 +73,7 @@ const App = () => (
         <Route exact path="/volunteer" component={Volunteer} />
         <Route exact path="/volunteer-form" component={VolunteerForm} />
         <Route exact path="/help-our-cause" component={HelpOurCause} />
+        <Route exact path="/lost-a-pet" component={LostAPet} />
         <Route exact path="/cats" component={Cats} />
         <Route exact path="/dogs" component={Dogs} />
         <Route

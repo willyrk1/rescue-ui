@@ -14,9 +14,12 @@
 		background-color: $color-accent;
 	}
 
-	p {
+	p, ::marker {
 		font-size: 1.8rem;
 		font-weight: 500;
+	}
+	
+	p {
 		margin-bottom: 3rem;
 	}
 }

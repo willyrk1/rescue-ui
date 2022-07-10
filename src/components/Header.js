@@ -66,20 +66,23 @@ const Header = ({ home }) => (
         </ul>
       </Popup>
 
-      <li className={cx('lose1')}>
+      <li className={cx('lose-20')}>
         <Link to="/volunteer">Volunteer</Link>
       </li>
-      <li className={cx('lose2')}>
+      <li className={cx('lose-30')}>
         <Link to="/help-our-cause">Help Our Cause</Link>
       </li>
-      <li className={cx('lose1')}>
+      <li className={cx('lose-10')}>
         <Link to="/mission">About</Link>
       </li>
-      <li className={cx('lose3')}>
+      <li className={cx('lose-40')}>
         <Link to="/contact">Contact</Link>
       </li>
-      <li className={cx('gain4')}>
+      <li className={cx('gain-50')}>
         <Link to="/donate">Donate</Link>
+      </li>
+      <li className={cx('lose-10')}>
+        <Link to="/lost-a-pet">Lost a Pet</Link>
       </li>
 
       <Popup
@@ -96,13 +99,16 @@ const Header = ({ home }) => (
           <li>
             <Link to="/mission">About</Link>
           </li>
-          <li className={cx('gain3')}>
+          <li className={cx('gain-40')}>
             <Link to="/contact">Contact</Link>
           </li>
-          <li className={cx('gain2')}>
+          <li className={cx('gain-30')}>
             <Link to="/help-our-cause">Help Our Cause</Link>
           </li>
           <li>
+            <Link to="/lost-a-pet">Lost a Pet</Link>
+          </li>
+          <li className={cx('gain-20')}>
             <Link to="/volunteer">Volunteer</Link>
           </li>
         </ul>
