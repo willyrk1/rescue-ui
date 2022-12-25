@@ -45,7 +45,7 @@ const Mission = () => {
             spayed/neutered, wormed and vaccinated before they are adopted.
           </p>
           <p>
-            Each year, St. Francis Society helps find homes for over 1,500
+            Each year, St. Francis Society helps find homes for over 2,000
             animals. Nearly half of those are saved from euthanasia at local
             animal shelters, and the others are rescued from the community.
             Additionally, each year, we trap/neuter/vaccinate and return
