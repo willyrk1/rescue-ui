@@ -14,8 +14,8 @@ const Donate = () => (
       <hr />
 
       <p>
-        Last year, St. Francis Society found homes for over 1,800 homeless
-        animals. In addition, over 200 feral cats received TNVR services
+        Last year, St. Francis Society found homes for over 2,000 homeless
+        animals. In addition, over 1,200 feral cats received TNVR services
         (trap/neuter/vaccinate/return). We are a 501(c)3 non-profit organization
         and receive no government funding. We have no paid employees so 100% of
         every dollar you donate goes to the animals we take care of. We are
