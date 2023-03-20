@@ -6,9 +6,8 @@ import PopupModal from '../PopupModal'
 import kenLogo from '../../assets/images/KenLogo.jpg'
 import statsImage from '../../assets/images/stats.png'
 import styles from './NewsEvents.module.scss'
-import foodSponsorshipForm from '../../assets/pdf/FoodSponsorshipForm.pdf'
-import foodSponsorshipImage from '../../assets/images/KittenSiameseWithEmptyBowl.jpg'
 import kenAfienkoImage from '../../assets/images/KenAfienko.jpg'
+import bistroImage from '../../assets/images/Feline_Transp.-Logo-255x255.png'
 import StFrancisRescue from '../../apis/StFrancisRescue'
 
 const cx = classNames.bind(styles)
@@ -84,6 +83,44 @@ const NewsEvents = () => {
       <div className={cx('panels')}>
         <div className={cx('panel')}>
           <div className={cx('panel-content', 'center')}>
+            <h2>Meet Our Adoptable Cats</h2>
+            <hr />
+            <img src={bistroImage} alt="Food Friend" />
+            <h3>Visit Feline Cats Bistro Lounge</h3>
+            <a className={cx('btn')} href="https://felinecbl.com/" target="_blank">
+              More Info
+            </a>
+          </div>
+        </div>
+        <div className={cx('panel')}>
+          <div className={cx('panel-content', 'center')}>
+            <h2>
+              Animals
+              <br /> Saved
+            </h2>
+            <hr />
+            <img src={statsImage} alt="Stats" />
+            <VisibilitySensor onChange={startRunup}>
+              <div className={cx('stat')}>
+                <span>Year-To-Date:</span>{' '}
+                {animalsSaved.ytd
+                  ? Math.floor(
+                      (animalsSaved.ytd * elapsed) / totalTime
+                    ).toLocaleString('en')
+                  : 'N/A'}
+                <br />
+                <span>Since 2008:</span>{' '}
+                {animalsSaved.since2008
+                  ? Math.floor(
+                      (animalsSaved.since2008 * elapsed) / totalTime
+                    ).toLocaleString('en')
+                  : 'N/A'}
+              </div>
+            </VisibilitySensor>
+          </div>
+        </div>
+        <div className={cx('panel')}>
+          <div className={cx('panel-content', 'center')}>
             <h2>Attorney Ken&nbsp;Afienko</h2>
             <hr />
             <img src={kenAfienkoImage} alt="Ken Afienko" />
@@ -123,44 +160,6 @@ const NewsEvents = () => {
                 </PopupModal>
               )}
             </Popup>
-          </div>
-        </div>
-        <div className={cx('panel')}>
-          <div className={cx('panel-content', 'center')}>
-            <h2>
-              Animals
-              <br /> Saved
-            </h2>
-            <hr />
-            <img src={statsImage} alt="Stats" />
-            <VisibilitySensor onChange={startRunup}>
-              <div className={cx('stat')}>
-                <span>Year-To-Date:</span>{' '}
-                {animalsSaved.ytd
-                  ? Math.floor(
-                      (animalsSaved.ytd * elapsed) / totalTime
-                    ).toLocaleString('en')
-                  : 'N/A'}
-                <br />
-                <span>Since 2008:</span>{' '}
-                {animalsSaved.since2008
-                  ? Math.floor(
-                      (animalsSaved.since2008 * elapsed) / totalTime
-                    ).toLocaleString('en')
-                  : 'N/A'}
-              </div>
-            </VisibilitySensor>
-          </div>
-        </div>
-        <div className={cx('panel')}>
-          <div className={cx('panel-content', 'center')}>
-            <h2>Food&nbsp;Friend Of&nbsp;The&nbsp;Month</h2>
-            <hr />
-            <img src={foodSponsorshipImage} alt="Food Friend" />
-            <h3>Support Us: See&nbsp;Your&nbsp;Logo&nbsp;Here</h3>
-            <a className={cx('btn')} href={foodSponsorshipForm} target="_blank">
-              More Info
-            </a>
           </div>
         </div>
       </div>
