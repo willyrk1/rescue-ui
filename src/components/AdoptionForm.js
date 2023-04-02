@@ -517,7 +517,7 @@ const AdoptionForm = ({
           </StandardForm.FullWidth>
 
           <StandardForm.RadioGroup
-            label={`I will take ${name} to the vet when medical services are needed. *`}
+            label={`I will take ${name} to the vet within 3 weeks of adoption for an initial checkup and any follow-up vaccines or de-wormers. Further, I will take ${name} to the vet whenever medical services are needed. *`}
             name="adopter_agreement[safe_environment]"
             id="will-treat"
             inputs={[
