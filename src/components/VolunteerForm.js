@@ -697,7 +697,7 @@ const VolunteerForm = () => {
                     </p>
                     <p>
                       <strong>Kennelling:</strong> Twice a day we let our cats out of
-                      their cage for excercise, playtime and love. During that time
+                      their cage for exercise, playtime and love. During that time
                       their cage is cleaned and fresh water and food (if needed) is
                       provided. Petsmart kennels for us in the morning, we kennel in the
                       evening. For example, some volunteers pick a certain day of the
@@ -719,17 +719,17 @@ const VolunteerForm = () => {
 
                   <StandardForm.FullWidth>
                     <p>
-                      <strong>Adoption Counselor:</strong> Adoption Counselors screen
+                      <strong>Adoption Counsellor:</strong> Adoption Counsellors screen
                       prospective adopters at the adoption centers. They work to try and
                       match a potential adopter with a cat that fits the personality and
                       temperament they are looking for. If you choose to be an adoption
-                      counselor, we ask that you commit to work the adoption center at
+                      counsellor, we ask that you commit to work the adoption center at
                       least one day a month.
                     </p>
                   </StandardForm.FullWidth>
 
                   <label htmlFor="counselor">
-                    I would like to be an Adoption Counselor
+                    I would like to be an Adoption Counsellor
                   </label>
                   <StandardForm.Input>
                     <input
