@@ -11,7 +11,7 @@ const DonationExamples = ({ styles, more }) => {
         <div className={cx('money')}>$10</div>
         <div className={cx('caption')}>
           Feed a kitten
-          <br /> for a month.
+          <br /> for a week.
         </div>
       </div>
       <hr />

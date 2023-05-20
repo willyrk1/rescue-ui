@@ -4,6 +4,7 @@ import StandardLayout from './StandardLayout'
 import DonateButton from './DonateButton'
 import SubscribeForm from './SubscribeForm'
 import styles from './Donate.module.scss'
+import zelleLogo from '../assets/images/Zelle.png'
 
 const cx = classNames.bind(styles)
 
@@ -28,10 +29,14 @@ const Donate = () => (
         Click the "Donate" button and enter the amount you would like to donate.
         Please be sure the amount you enter reflects your intent. For instance,
         we've experienced donations intended to be $50 dollars being entered as
-        $0.50 cents. Thank You!!!
+        $0.50 cents. Zelle donations should be sent to stfrancissociety@gmail.com.
+        Thank You!!!
       </p>
 
-      <DonateButton />
+      <div className={cx('choices')}>
+        <DonateButton />
+        <img src={zelleLogo} />
+      </div>
 
       <h2 id="monthly">
         Become a St. Francis Society Guardian Angel (monthly donor)
@@ -43,9 +48,9 @@ const Donate = () => (
         food, medicine, litter, and spay/neuter surgeries.
       </p>
 
-      <h3>Here’s how your monthly donation can help</h3>
+      <h3>Here's how your monthly donation can help</h3>
       <ul>
-        <li>$10 can feed a kitten for a month</li>
+        <li>$10 can feed a kitten for a week</li>
         <li>$25 can vaccinate and microchip one animal</li>
         <li>$50 can spay or neuter one animal</li>
         <li>$100 helps provide life-saving medication</li>

@@ -9,7 +9,6 @@
 	}
 
 	form {
-		margin-bottom: 1rem;
 		display: flex;
 		flex-direction: column;
 
@@ -54,5 +53,16 @@
 		margin: 0 0 2rem 2rem;
 		font-size: 1.8rem;
 		font-weight: 500;
+	}
+
+	.choices {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		> img {
+			width: 15rem;
+			margin-left: 10rem;
+		}
 	}
 }
