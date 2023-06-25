@@ -15,12 +15,15 @@ const Donate = () => (
       <hr />
 
       <p>
-        Last year, St. Francis Society found homes for over 2,000 homeless
-        animals. In addition, over 1,200 feral cats received TNVR services
-        (trap/neuter/vaccinate/return). We are a 501(c)3 non-profit organization
+        Each year, St. Francis Society helps find homes for over 2,000
+        animals. Nearly half of those are saved from euthanasia at local
+        animal shelters, and the others are rescued from the community.
+        Additionally, each year, we trap/neuter/vaccinate and return
+        thousands of feral cats in the Tampa community.
+        We are a 501c3 non-profit organization
         and receive no government funding. We have no paid employees so 100% of
         every dollar you donate goes to the animals we take care of. We are
-        completely dependent on the community’s donations to help us continue
+        completely dependent on the community's donations to help us continue
         our life saving mission.
       </p>
 

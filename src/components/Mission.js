@@ -35,21 +35,18 @@ const Mission = () => {
           <h1>Our Mission</h1>
           <hr />
           <p>
-            Established in 1997, St. Francis Society Animal Rescue is an all
-            volunteer, non-profit 501-c-3 animal rescue organization dedicated
-            to saving the lives of sick, injured, and stray domestic animals as
-            well as spaying/neutering and medical services for those animals. We
-            seek to place animals in a loving foster or permanent home after
-            recovery and we DO NOT euthanize unless terminal illness
-            necessitates such a decision. All of our animals are
-            spayed/neutered, wormed and vaccinated before they are adopted.
+            Established in 1997, St. Francis Society Animal Rescue is an all-volunteer
+            non-profit 501c3 animal rescue organization dedicated
+            to saving the lives of sick, injured and stray cats and dogs as
+            well as spaying/neutering and providing medical services for those animals.
           </p>
+          <p>All of our animals are spayed/neutered, microchipped, wormed and vaccinated before they are adopted.</p>
           <p>
             Each year, St. Francis Society helps find homes for over 2,000
             animals. Nearly half of those are saved from euthanasia at local
             animal shelters, and the others are rescued from the community.
             Additionally, each year, we trap/neuter/vaccinate and return
-            hundreds of feral cats in the Tampa community. This is the only
+            thousands of feral cats in the Tampa community. This is the only
             proven humane and effective method to manage community cat colonies
             and prevent thousands of unwanted kittens from being born.
           </p>
