@@ -61,7 +61,7 @@ const AnimalDetails = ({
         sharedState[1](primaryImageIndex)
       }
     }
-  }, [sharedState[1], pet])
+  }, [pet, sharedState])
 
   const components =
     pet &&
@@ -207,7 +207,7 @@ const AnimalDetails = ({
                       <strong>{location.name}</strong> adoption center located
                       at{' '}
                       <a
-                        target="_blank"
+                        target="_blank" rel="noreferrer"
                         href={`//maps.google.com/maps?q=${location.street_address_1},+${location.city},+${location.state}`}
                       >
                         {location.street_address_1}, {location.city}

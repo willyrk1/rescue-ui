@@ -22,6 +22,7 @@ PopupModal.Actions = ({ className, ...rest }) => (
 )
 
 PopupModal.ActionLink = ({ className, ...rest }) => (
+  // eslint-disable-next-line jsx-a11y/anchor-has-content
   <a className={cx(className, 'btn')} {...rest} />
 )
 

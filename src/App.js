@@ -56,7 +56,7 @@ const ScrollToTop = () => {
       ReactGA.send({ hitType: 'pageview', page: history.location.hash || history.location.pathname });
       trackPageView({ href: history.location.pathname});
     }
-  }, [history.location, history.action])
+  }, [history.location, history.action, trackPageView])
 
   return null
 }

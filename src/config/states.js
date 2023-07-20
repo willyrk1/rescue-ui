@@ -1,4 +1,4 @@
-export default [
+const states = [
   { value: 'AK', label: 'Alaska' },
   { value: 'AZ', label: 'Arizona' },
   { value: 'AR', label: 'Arkansas' },
@@ -61,3 +61,4 @@ export default [
   { value: 'AE', label: 'Armed Forces Europe, Canada, Africa, or Middle East' },
   { value: 'AP', label: 'Armed Forces Pacific' },
 ]
+export default states;

@@ -8,7 +8,7 @@ const Error = () => (
 
     <p>Well this is embarrassing, we're working on it right meow!</p>
 
-    <img src={ErrorImage} />
+    <img alt="" src={ErrorImage} />
   </>
 )
 

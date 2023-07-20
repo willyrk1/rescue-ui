@@ -38,7 +38,7 @@ const Donate = () => (
 
       <div className={cx('choices')}>
         <DonateButton />
-        <img src={zelleLogo} />
+        <img alt="Zelle" src={zelleLogo} />
       </div>
 
       <h2 id="monthly">

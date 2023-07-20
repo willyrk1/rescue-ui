@@ -6,7 +6,7 @@ import usePetSearch from '../hooks/usePetSearch'
 
 const adoptablesPerPage = 50
 
-export default (petType, lists) => {
+export default function useAdoptableList(petType, lists) {
   const location = useLocation()
 
   const petData = usePetData()

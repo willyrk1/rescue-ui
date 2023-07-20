@@ -87,7 +87,7 @@ const NewsEvents = () => {
             <hr />
             <img src={bistroImage} alt="Food Friend" />
             <h3>Visit Feline Cats Bistro Lounge</h3>
-            <a className={cx('btn')} href="https://felinecbl.com/" target="_blank">
+            <a className={cx('btn')} href="https://felinecbl.com/" target="_blank" rel="noreferrer">
               More Info
             </a>
           </div>

@@ -8,6 +8,7 @@ const dupeUntil = (components, untilCount) => {
     let index = 1
     while (finalComponents.length < untilCount) {
       finalComponents.push(
+        // eslint-disable-next-line no-loop-func
         ...components.map(({ key, ...rest }) => ({
           key: `${key}_DUPE${index}`,
           ...rest,
@@ -75,6 +76,7 @@ const Scroller = ({
     return () => window.removeEventListener('resize', checkSizes)
   })
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const setScrollIndexAndSize = useCallback(scrollIndex => {
     setScrollIndex(scrollIndex)
     updateScrollSize()
