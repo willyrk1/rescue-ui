@@ -37,7 +37,7 @@ const Header = ({ home }) => (
     <ul className={cx('header__nav', { home })}>
       <Popup
         trigger={
-          <li>
+          <li key="adopt">
             <button type="button" className={cx('popup-link')}>
               Adopt
             </button>
@@ -67,28 +67,28 @@ const Header = ({ home }) => (
         </div>
       </Popup>
 
-      <li className={cx('lose-20')}>
+      <li className={cx('lose-20')} key="volunteer">
         <Link to="/volunteer">Volunteer</Link>
       </li>
-      <li className={cx('lose-30')}>
+      <li className={cx('lose-30')} key="help">
         <Link to="/help-our-cause">Help Our Cause</Link>
       </li>
-      <li className={cx('lose-10')}>
+      <li className={cx('lose-10')} key="about">
         <Link to="/mission">About</Link>
       </li>
-      <li className={cx('lose-40')}>
+      <li className={cx('lose-40')} key="contact">
         <Link to="/contact">Contact</Link>
       </li>
-      <li className={cx('gain-50')}>
+      <li className={cx('gain-50')} key="donate">
         <Link to="/donate">Donate</Link>
       </li>
-      <li className={cx('lose-10')}>
+      <li className={cx('lose-10')} key="lost">
         <Link to="/lost-a-pet">Lost a Pet</Link>
       </li>
 
       <Popup
         trigger={
-          <li>
+          <li key="other">
             <button type="button" className={cx('popup-link', 'other')}>
               Other
             </button>
@@ -96,23 +96,25 @@ const Header = ({ home }) => (
         }
         on={['hover', 'click']}
       >
-        <ul>
-          <li>
+
+        <div className="menu">
+          <div className="menu-item">
             <Link to="/mission">About</Link>
-          </li>
-          <li className={cx('gain-40')}>
+          </div>
+          <div className="menu-item">
             <Link to="/contact">Contact</Link>
-          </li>
-          <li className={cx('gain-30')}>
+          </div>
+          <div className="menu-item">
             <Link to="/help-our-cause">Help Our Cause</Link>
-          </li>
-          <li>
+          </div>
+          <div className="menu-item">
             <Link to="/lost-a-pet">Lost a Pet</Link>
-          </li>
-          <li className={cx('gain-20')}>
+          </div>
+          <div className="menu-item">
             <Link to="/volunteer">Volunteer</Link>
-          </li>
-        </ul>
+          </div>
+        </div>
+
       </Popup>
     </ul>
     <div className={cx('donate-cat')}>
