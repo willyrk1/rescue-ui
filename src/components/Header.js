@@ -10,6 +10,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css';
 import styles from './Header.module.scss'
 import headerKitten from '../assets/images/kitty.png'
 import logoColor from '../assets/images/St_Francis_logo_Color.png'
@@ -44,26 +45,26 @@ const Header = ({ home }) => (
         }
         on={['hover', 'click']}
       >
-        <ul>
-          <li>
+        <div className="menu">
+          <div className="menu-item">
             <Link to="/adoptions">Adoption Information</Link>
-          </li>
-          <li>
+          </div>
+          <div className="menu-item">
             <Link to="/adoption-locations">Adoption Locations</Link>
-          </li>
-          <li>
+          </div>
+          <div className="menu-item">
             <Link to="/cats">Adoptable Cats</Link>
-          </li>
-          <li>
+          </div>
+          <div className="menu-item">
             <Link to="/dogs">Adoptable Dogs</Link>
-          </li>
-          <li>
+          </div>
+          <div className="menu-item">
             <Link to="/before-you-adopt">Before You Adopt</Link>
-          </li>
-          <li>
+          </div>
+          <div className="menu-item">
             <Link to="/working-cats">Working Cats</Link>
-          </li>
-        </ul>
+          </div>
+        </div>
       </Popup>
 
       <li className={cx('lose-20')}>

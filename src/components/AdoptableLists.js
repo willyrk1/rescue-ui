@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { Link, useHistory, useLocation } from 'react-router-dom'
-import * as qs from 'query-string'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+import qs from 'query-string'
 import classNames from 'classnames/bind'
 import StandardLayout from './StandardLayout'
 import Error from './Error'
@@ -14,7 +14,7 @@ const cx = classNames.bind(styles)
 const AdoptableList = ({ children, ...rest }) => {
   const { petType, lists } = rest
   const location = useLocation()
-  const history = useHistory()
+  const navigate = useNavigate()
   const { pageNum = 1, s: scrollParam, ...restQueryParams } = qs.parse(
     location.search
   )
@@ -38,8 +38,9 @@ const AdoptableList = ({ children, ...rest }) => {
           maxSize = document.documentElement.scrollHeight
         } else if (document.documentElement.scrollHeight > scrollParam) {
           window.scrollTo(0, scrollParam)
-          history.replace({
+          navigate({
             ...location,
+            replace: true,
             search: qs.stringify({
               pageNum,
               ...restQueryParams,
@@ -50,18 +51,18 @@ const AdoptableList = ({ children, ...rest }) => {
       }, 1000)
 
     return () => clearInterval(intervalId)
-  }, [history, location, pageNum, restQueryParams, scrollParam])
+  }, [navigate, location, pageNum, restQueryParams, scrollParam])
 
   const PageLink = ({ pageNum, ...rest }) => (
     <Link
-      to={location => ({
+      to={{
         ...location,
-        search: qs.stringify({ ...restQueryParams, pageNum }),
-      })}
+        search: `?${qs.stringify({ ...restQueryParams, pageNum })}`,
+      }}
       {...rest}
     />
   )
-
+  
   return (
     <StandardLayout>
       {error ? (

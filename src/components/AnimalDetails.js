@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
 import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
@@ -38,11 +38,8 @@ const AnimalImages = ({ images, name, index }) => {
   )
 }
 
-const AnimalDetails = ({
-  match: {
-    params: { petType, list, animalId },
-  },
-}) => {
+const AnimalDetails = () => {
+  const { petType, list, animalId } = useParams()
   const petData = usePetData()
   const pet =
     petData &&

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import ReactSelect from 'react-select'
 import styles from './StandardForm.module.scss'
@@ -17,15 +17,15 @@ const StandardForm = ({
   excludeList,
   ...rest
 }) => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const [submitDisabled, setSubmitDisabled] = useState(false)
   const doPost = async event => {
     try {
       setSubmitDisabled(true)
       await StFrancisRescue.postForm(event, excludeList)
-      history.push(nextPage)
+      navigate(nextPage)
     } catch {
-      history.push('/error')
+      navigate('/error')
     }
   }
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
-import * as qs from 'query-string'
+import { useNavigate, useLocation } from 'react-router-dom'
+import qs from 'query-string'
 import classNames from 'classnames/bind'
 import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
 import { getAge } from '../config/helpers'
@@ -12,13 +12,14 @@ const cx = classNames.bind(styles)
 const AnimalCard = props => {
   const { pet } = props
   const location = useLocation()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const onLinkClick = event => {
     const search = qs.parse(location.search)
 
-    history.replace({
+    navigate({
       ...location,
+      replace: true,
       search: qs.stringify({
         ...search,
         s: window.scrollY,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import * as qs from 'query-string'
+import qs from 'query-string'
 import { usePetData } from '../context/GlobalDataContext'
 import usePetSearch from '../hooks/usePetSearch'
 

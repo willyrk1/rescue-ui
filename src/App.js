@@ -9,9 +9,9 @@
 import React, { useEffect } from 'react'
 import {
   HashRouter as Router,
-  Switch,
+  Routes,
   Route,
-  useHistory,
+  useNavigate,
 } from 'react-router-dom'
 import ReactGA from 'react-ga4'
 import { useMatomo } from '@datapunt/matomo-tracker-react'
@@ -46,61 +46,61 @@ import LostAPet from './components/LostAPet'
 
 
 const ScrollToTop = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const { trackPageView } = useMatomo()
 
   useEffect(() => {
-    if (history.action === 'PUSH') {
+    if (navigate.action === 'PUSH') {
       window.scrollTo(0, 0);
-      ReactGA.set({ page: history.location.pathname });
-      ReactGA.send({ hitType: 'pageview', page: history.location.hash || history.location.pathname });
-      trackPageView({ href: history.location.pathname});
+      ReactGA.set({ page: navigate.location.pathname });
+      ReactGA.send({ hitType: 'pageview', page: navigate.location.hash || navigate.location.pathname });
+      trackPageView({ href: navigate.location.pathname});
     }
-  }, [history.location, history.action, trackPageView])
+  }, [navigate.location, navigate.action, trackPageView])
 
   return null
 }
 
 const App = () => (
-  <Router basename="/rescue-ui">
+  <Router basename='rescue-ui'>
     <ScrollToTop />
     <GlobalDataProvider>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/adoptions" component={Adopt} />
-        <Route exact path="/before-you-adopt" component={BeforeYouAdopt} />
-        <Route exact path="/mission" component={Mission} />
-        <Route exact path="/volunteer" component={Volunteer} />
-        <Route exact path="/volunteer-form" component={VolunteerForm} />
-        <Route exact path="/help-our-cause" component={HelpOurCause} />
-        <Route exact path="/lost-a-pet" component={LostAPet} />
-        <Route exact path="/cats" component={Cats} />
-        <Route exact path="/dogs" component={Dogs} />
+      <Routes basename='rescue-ui'>
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/adoptions" element={<Adopt/>} />
+        <Route exact path="/before-you-adopt" element={<BeforeYouAdopt/>} />
+        <Route exact path="/mission" element={<Mission/>} />
+        <Route exact path="/volunteer" element={<Volunteer/>} />
+        <Route exact path="/volunteer-form" element={<VolunteerForm/>} />
+        <Route exact path="/help-our-cause" element={<HelpOurCause/>} />
+        <Route exact path="/lost-a-pet" element={<LostAPet/>} />
+        <Route exact path="/cats" element={<Cats/>} />
+        <Route exact path="/dogs" element={<Dogs/>} />
         <Route
           exact
           path="/pet-details/:petType/:list/:animalId"
-          component={AnimalDetails}
+          element={<AnimalDetails />}
         />
         <Route
           exact
           path="/adoption-form/:petType/:list/:animalId"
-          component={AdoptionForm}
+          element={<AdoptionForm />}
         />
-        <Route exact path="/success-stories" component={SuccessStories} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/adoption-locations" component={AdoptionLocations} />
-        <Route exact path="/working-cats" component={WorkingCats} />
-        <Route exact path="/working-cats-form" component={WorkingCatsForm} />
-        <Route exact path="/donate" component={Donate} />
-        <Route exact path="/forever-foster" component={ForeverFoster} />
-        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-        <Route exact path="/form-submitted" component={FormSubmitted} />
-        <Route exact path="/volunteer-form-submitted" component={VolunteerFormSubmitted} />
-        <Route exact path="/special-need/:reference" component={Legacy} />
-        <Route exact path="/error" component={ErrorPage} />
-        <Route path="/:pagename" component={Page} />
-        <Route component={UnderConstruction} />
-      </Switch>
+        <Route exact path="/success-stories" element={<SuccessStories/>} />
+        <Route exact path="/contact" element={<Contact/>} />
+        <Route exact path="/adoption-locations" element={<AdoptionLocations/>} />
+        <Route exact path="/working-cats" element={<WorkingCats/>} />
+        <Route exact path="/working-cats-form" element={<WorkingCatsForm/>} />
+        <Route exact path="/donate" element={<Donate/>} />
+        <Route exact path="/forever-foster" element={<ForeverFoster/>} />
+        <Route exact path="/privacy-policy" element={<PrivacyPolicy/>} />
+        <Route exact path="/form-submitted" element={<FormSubmitted/>} />
+        <Route exact path="/volunteer-form-submitted" element={<VolunteerFormSubmitted/>} />
+        <Route exact path="/special-need/:reference" element={<Legacy/>} />
+        <Route exact path="/error" element={<ErrorPage/>} />
+        <Route path="/:pagename" element={<Page/>} />
+        <Route element={<UnderConstruction/>} />
+      </Routes>
     </GlobalDataProvider>
   </Router>
 )

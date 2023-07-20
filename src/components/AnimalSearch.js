@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
-import * as qs from 'query-string'
+import { useNavigate, useLocation } from 'react-router-dom'
+import qs from 'query-string'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
 import usePetSearch from '../hooks/usePetSearch'
@@ -31,7 +31,7 @@ const populateValuesFromQuery = (choiceLookup, queryLookup) =>
 const AnimalSearch = ({ petType, lists }) => {
   const petSearch = usePetSearch(petType, lists)
   const location = useLocation()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const [inputs, setInputs] = useState()
 
@@ -54,12 +54,12 @@ const AnimalSearch = ({ petType, lists }) => {
   const clear = () => setInputs(clearValues(petSearch))
 
   const set = () => {
-    history.push({
+    navigate({
       ...location,
       search: qs.stringify({
         ...qs.parse(location.search),
         ...extractValues(inputs),
-        name: inputs.name || undefined,
+        name: inputs?.name || undefined,
       }),
     })
   }
@@ -86,7 +86,7 @@ const AnimalSearch = ({ petType, lists }) => {
             <input
               type="text"
               id="name"
-              value={inputs.name || ''}
+              value={inputs?.name || ''}
               onChange={setInput('name')}
               className={cx('search-input')}
               autoFocus
@@ -110,7 +110,7 @@ const AnimalSearch = ({ petType, lists }) => {
                 <SelectOverride
                   id={prop}
                   options={petSearch[prop].choices}
-                  value={inputs[prop]}
+                  value={inputs ? inputs[prop] : undefined}
                   onChange={setSelect(prop)}
                 />
               </>

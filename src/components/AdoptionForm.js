@@ -6,14 +6,12 @@ import { usePetData } from '../context/GlobalDataContext'
 import StandardLayout from './StandardLayout'
 import StandardForm from './StandardForm'
 import styles from './AdoptionForm.module.scss'
+import { useParams } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
-const AdoptionForm = ({
-  match: {
-    params: { petType, list, animalId },
-  },
-}) => {
+const AdoptionForm = () => {
+  const { petType, list, animalId } = useParams()
   const [forYou, setForYou] = useState()
   const [otherAnimals, setOtherAnimals] = useState()
   const [othersSpayed, setOthersSpayed] = useState()

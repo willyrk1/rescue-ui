@@ -114,3 +114,30 @@ hr {
 // [data-popup='tooltip'].popup-overlay {
 //   background: transparent;
 // }
+
+.popup-content {
+  .menu {
+
+    .menu-item {
+
+      a {
+        border: none;
+        text-decoration: none;
+        color: #000;
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin: 0.9rem 0.9rem 0.9rem 0;
+        white-space: nowrap;
+
+        border-bottom: 0.2rem solid transparent;
+        transition: border-bottom 0.2s;
+        padding-bottom: 0.3rem;
+
+        &:hover, &:active {
+          border-bottom: 0.2rem solid $color-secondary;
+          padding-bottom: 0.3rem;
+        }
+      }
+    }
+  }
+}

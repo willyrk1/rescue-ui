@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue'
 import { HOSTNAME, PROTOCOL } from '../config/StFrancisRescue'
@@ -8,11 +9,8 @@ import Error from './Error'
 
 const cx = classNames.bind(styles)
 
-const Legacy = ({
-  match: {
-    params: { reference },
-  },
-}) => {
+const Legacy = () => {
+  const { reference } = useParams();
   const [legacyContent, setLegacyContent] = useState()
   const [isError, setIsError] = useState()
 
