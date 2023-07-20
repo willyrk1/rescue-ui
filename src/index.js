@@ -19,6 +19,18 @@ const matomoInstance = createInstance({
   linkTracking: false,
 })
 
+// Old react-router-dom used to auto redirect to the route basename
+// if the user navigated to the root ('/') path, but no longer.
+// This ensures the user goes to the React route.  It's a bit of a hack.
+// see https://github.com/remix-run/react-router/issues/8427
+if (!window.location.pathname.includes('#/rescue-ui')) {
+  window.history.replaceState(
+    '',
+    '',
+    '#/rescue-ui' + window.location.pathname
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <MatomoProvider value={matomoInstance}>
