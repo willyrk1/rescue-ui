@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import ReactGA from 'react-ga4'
 import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react'
 import './assets/stylesheets/_variables.scss'
@@ -19,12 +19,11 @@ const matomoInstance = createInstance({
   linkTracking: false,
 })
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <MatomoProvider value={matomoInstance}>
     <App />
-  </MatomoProvider>,
-  document.getElementById('root')
-)
+  </MatomoProvider>)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
