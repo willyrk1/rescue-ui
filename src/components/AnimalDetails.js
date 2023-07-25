@@ -58,7 +58,8 @@ const AnimalDetails = () => {
         sharedState[1](primaryImageIndex)
       }
     }
-  }, [pet, sharedState])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sharedState[1], pet])
 
   const components =
     pet &&
