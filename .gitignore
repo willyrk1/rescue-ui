@@ -28,7 +28,6 @@ yarn-error.log*
 .project
 *.esproj/**/*
 .dir-locals.el
-.vscode/*
 **/*.swp
 **/tags
 .eslintcache
