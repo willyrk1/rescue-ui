@@ -65,7 +65,7 @@ const App = () => (
   <Router basename='rescue-ui'>
     <ScrollToTop />
     <GlobalDataProvider>
-      <Routes basename='rescue-ui'>
+      <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/adoptions" element={<Adopt/>} />
         <Route exact path="/before-you-adopt" element={<BeforeYouAdopt/>} />

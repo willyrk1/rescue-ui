@@ -23,7 +23,7 @@ const matomoInstance = createInstance({
 // if the user navigated to the root ('/') path, but no longer.
 // This ensures the user goes to the React route.  It's a bit of a hack.
 // see https://github.com/remix-run/react-router/issues/8427
-if (!window.location.pathname.includes('#/rescue-ui')) {
+if (!window.location.hash.includes('#/rescue-ui')) {
   window.history.replaceState(
     '',
     '',
