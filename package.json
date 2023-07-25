@@ -16,7 +16,6 @@
         "react-select": "^5.7.4",
         "react-visibility-sensor": "^5.1.1",
         "reactjs-popup": "^2.0.5",
-        "reactjs-popup2": "npm:reactjs-popup@^2.0.5",
         "sass": "^1.64.0"
     },
     "scripts": {

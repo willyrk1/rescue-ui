@@ -19,9 +19,9 @@ const AnimalImages = ({ images, name, index }) => {
   const setIndex = newIndex => () => setCurrentIndex(newIndex)
 
   return (
-    <>
+    <div className='animal-images'>
       {currentIndex && (
-        <div className={cx('arrow', 'left')}>
+        <div className='arrow left'>
           <button onClick={setIndex(currentIndex - 1)}>&lt;</button>
         </div>
       )}
@@ -30,11 +30,11 @@ const AnimalImages = ({ images, name, index }) => {
         alt={name}
       />
       {currentIndex < images.length - 1 && (
-        <div className={cx('arrow', 'right')}>
+        <div className='arrow right'>
           <button onClick={setIndex(currentIndex + 1)}>&gt;</button>
         </div>
       )}
-    </>
+    </div>
   )
 }
 

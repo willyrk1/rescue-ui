@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import classNames from 'classnames/bind'
-import Popup from 'reactjs-popup2'
+import Popup from 'reactjs-popup'
 import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
 import states from '../config/states'
 import StandardLayout from './StandardLayout'
