@@ -77,6 +77,21 @@ const Donate = () => (
         <br />
         Tampa, Fl 33685-1614
       </p>
+
+      <h2>Donor Privacy Policy</h2>
+      <p>
+        Our Commitment to Our Donors - St. Francis Society, Inc. will not sell, share or trade our
+        donors' names or personal information with any other entity, nor send mailings to our
+        donors on behalf of other organizations.
+      </p>
+      <p>
+        This policy applies to all information received by St. Francis Society, Inc., both online
+        and offline, on any platform, as well as any electronic, written or oral communications.
+      </p>
+      <p>
+        To the extent any donations are processed through a third-party service provider, our
+        donors' information will only be used for purposes necessary to process the donation.
+      </p>
     </div>
   </StandardLayout>
 )
