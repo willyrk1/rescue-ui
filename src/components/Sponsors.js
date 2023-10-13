@@ -21,7 +21,12 @@ const Sponsors = () => {
         <Scroller
           components={[
             { key: 8, component: <img src={powasnickLogo} alt="Powasnick" /> },
-            { key: 1, component: <img src={petcoLogo} alt="Petco" /> },
+            { key: 1, component: (
+              <a href="https://petcolove.org/">
+                <img src={petcoLogo} alt="Petco" />
+              </a>
+              )
+            },
             {
               key: 4,
               component: (
@@ -32,7 +37,11 @@ const Sponsors = () => {
             },
             {
               key: 6,
-              component: <img src={bisselLogo} alt="Bissell Pet Foundation" />,
+              component: (
+                <a href="https://www.bissellpetfoundation.org/">
+                  <img src={bisselLogo} alt="Bissell Pet Foundation" />
+                </a>
+              )
             },
             {
               key: 7,
