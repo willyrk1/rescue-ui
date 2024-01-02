@@ -131,7 +131,7 @@ const AdoptionForm = () => {
             <h2>General Questions</h2>
           </StandardForm.FullWidth>
 
-          <label htmlFor="over-21">Are you over 21? *</label>
+          <label htmlFor="over-21">Are you at least 18 years old? *</label>
           <StandardForm.Input>
             <label htmlFor="over-21-yes">
               <input
@@ -404,65 +404,6 @@ const AdoptionForm = () => {
               />
             </>
           )}
-          <label htmlFor="rent-own">Do you rent or own? *</label>
-          <StandardForm.Input>
-            <label htmlFor="rent-own-yes">
-              <input
-                type="radio"
-                id="rent-own-yes"
-                name="adopter_agreement[rent_home]"
-                checked={rent || false}
-                onChange={() => setRent(true)}
-                value="true"
-                required
-              />
-              Rent
-            </label>
-            <label htmlFor="rent-own-no">
-              <input
-                type="radio"
-                id="rent-own-no"
-                name="adopter_agreement[rent_home]"
-                checked={rent === false}
-                onChange={() => setRent(false)}
-                value="false"
-              />
-              Own
-            </label>
-          </StandardForm.Input>
-          {rent && (
-            <>
-              <label htmlFor="landlord">
-                What is the name of your Apartment Complex or Landlord? *
-                <br />
-                <em className={cx('note')}>
-                  If you rent, you will be asked to provide proof from your
-                  landlord that pets are permitted and that you have paid a pet
-                  deposit
-                </em>
-              </label>
-              <input
-                type="text"
-                id="landlord"
-                name="adopter_agreement[landlord_name]"
-                required
-                maxLength="255"
-              />
-            </>
-          )}
-          <label htmlFor="drivers-license">Driver's license #</label>
-          <input
-            type="text"
-            id="drivers-license"
-            name="adopter_agreement[driver_license_num]"
-            maxLength="255"
-          />
-          <label htmlFor="dl-state">Driver's license state issued</label>
-          <StandardForm.Select
-            id="dl-state"
-            options={states}
-            name="adopter_agreement[driver_license_state]"
-          />
           <label htmlFor="work-school">
             Do you work outside the home or go to school? *
           </label>
