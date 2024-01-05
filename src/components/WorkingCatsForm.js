@@ -109,20 +109,6 @@ const WorkingCatsForm = () => (
           maxLength="12"
           required
         />
-        <label htmlFor="drivers-license">Driver's license #</label>
-        <input
-          type="text"
-          id="drivers-license"
-          name="workcat_adopter_agreement[driver_license_num]"
-          maxLength="255"
-          required
-        />
-        <label htmlFor="dl-state">Driver's license state issued</label>
-        <StandardForm.Select
-          id="dl-state"
-          options={states}
-          name="workcat_adopter_agreement[driver_license_state]"
-        />
         <label htmlFor="facility-type">
           Type of facility which will shelter the cats
         </label>
