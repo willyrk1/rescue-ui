@@ -131,7 +131,7 @@ const WorkingCatsForm = () => (
                 label: 'Residential property with shed/barn',
               },
             ].map(checkBoxProps => (
-              <CheckboxListItem {...checkBoxProps} />
+              <CheckboxListItem {...checkBoxProps} key={checkBoxProps.id} />
             ))}
             <li className={cx('other-location')}>
               <label htmlFor="other-location">
@@ -186,7 +186,7 @@ const WorkingCatsForm = () => (
                 label: 'No food provided',
               },
             ].map(checkBoxProps => (
-              <CheckboxListItem {...checkBoxProps} />
+              <CheckboxListItem {...checkBoxProps} key={checkBoxProps.id} />
             ))}
           </ul>
         </StandardForm.Input>
