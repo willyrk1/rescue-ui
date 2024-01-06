@@ -73,7 +73,7 @@ const StFrancisRescue = (function() {
    *   jwt (optional)    - JWT token if the request need authentication
    *
    */
-  function post(url, body, jwt) {
+  async function post(url, body, jwt) {
     const headers = {
       Authorization: `Basic ${jwt}`,
       accept: 'application/json',
@@ -81,19 +81,27 @@ const StFrancisRescue = (function() {
 
     log('REQUEST  :=', url)
 
-    return fetch(url, { method: 'POST', headers, body, redirect: 'manual' })
-      .then(checkFetchResponseOK)
-      .then(response =>
-        response.type === 'opaqueredirect' ? '' : response.json()
-      )
-      .then(data => {
+    try {
+      const response = await fetch(url, { method: 'POST', headers, body, redirect: 'manual' })
+      if (response.type === 'opaqueredirect') {
+        log('RESPONSE :=')
+      }
+      else {
+        if (!response.ok) {
+          const errorText = await response.text()
+          console.error(response)
+          throw Error(errorText)
+        }
+        
+        const data = await response.json()
         log('RESPONSE :=', data)
         return data
-      })
-      .catch(error => {
-        log('ERROR :=', error)
-        throw error
-      })
+      }
+    }
+    catch (error) {
+      log('ERROR :=', error)
+      throw error
+    }
   }
 
   return {

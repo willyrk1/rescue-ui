@@ -24,8 +24,8 @@ const StandardForm = ({
       setSubmitDisabled(true)
       await StFrancisRescue.postForm(event, excludeList)
       navigate(nextPage)
-    } catch {
-      navigate('/error')
+    } catch(error) {
+      navigate('/error', { state: error })
     }
   }
 
