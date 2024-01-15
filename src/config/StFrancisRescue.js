@@ -13,6 +13,11 @@ const { hostName, protocol, token } = {
     hostName: 'staging.stfrancisrescue.org',
     token: 'c3RhZ2luZzpwYXNzdzByZA==',
   },
+  test: {
+    protocol: 'https',
+    hostName: 'test.stfrancisrescue.org',
+    token: 'c3RhZ2luZzpwYXNzdzByZA==',
+  },
   production: {
     protocol: 'https',
     hostName: 'stfrancisrescue.org',
