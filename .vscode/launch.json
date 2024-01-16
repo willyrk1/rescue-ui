@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "nvm use; npm start",
+      "command": "npm start",
       "name": "Run project",
       "request": "launch",
       "type": "node-terminal",
