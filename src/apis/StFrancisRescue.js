@@ -90,7 +90,7 @@ const StFrancisRescue = (function() {
         if (!response.ok) {
           const errorText = await response.text()
           console.error(response)
-          throw Error(errorText)
+          throw Error(`(${response.status}) ${errorText}`)
         }
         
         const data = await response.json()
