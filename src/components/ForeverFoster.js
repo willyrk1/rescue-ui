@@ -5,9 +5,7 @@ import ForeverFosterButton from './ForeverFosterButton'
 import styles from './ForeverFoster.module.scss'
 import tiffanyPhoto from '../assets/images/tiffany2.jpg'
 import bebePhoto from '../assets/images/bebe2.jpg'
-import smidgePhoto from '../assets/images/smidge.jpg'
 import sirHissPhoto from '../assets/images/SirHiss.jpg'
-import macPhoto from '../assets/images/Mac.jpg'
 import frankiePhoto from '../assets/images/Frankie2.jpg'
 
 const cx = classNames.bind(styles)
@@ -62,33 +60,6 @@ const ForeverFoster = () => (
             In addition to being very scared, he is also partially blind and deaf.  He now lives
             safely and comfortably in his forever foster home where he is allowed to hide as much
             or as little as he likes.
-          `,
-          },
-          {
-            imgSrc: macPhoto,
-            name: 'Mac',
-            text: `
-            At just three months old, Mac was found wandering the streets of Seminole Heights and
-            grew up to become a handsome loving boy.  He went to adoption events and loved to play
-            with his fur brothers and sisters at his foster home.  We're not sure if it was "black
-            dog" syndrome, (black dogs and cats tend to get adopted last) or something else, but at
-            three years old Mac was still in our care.  He began showing small signs at adoption
-            events that he was no longer enjoying them.  He was seen by various trainers who worked
-            with him to try and overcome his dominant behavior, but at the age of four, Mac was
-            placed into our Forever Foster program.  Relieved to no longer have the pressure of
-            attending events, Mac now lives a happy life in his forever foster home where were told
-            he gives the best kisses and loves to snuggle with his Foster Mom under the bed covers.
-          `,
-          },
-          {
-            imgSrc: smidgePhoto,
-            name: 'Smidge',
-            text: `
-            Smidge and his brother were rescued from the county shelter very sick and just a few
-            weeks old.  Sadly, his brother did not make it.  Smidge grew very slowly and is quite
-            small.  He also developed chronic sinus infections, as well as urinary track
-            infections.  He requires daily medication but lives a quiet and happy life with his
-            foster mom.
           `,
           },
           {
