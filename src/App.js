@@ -14,7 +14,7 @@ import {
   useNavigate,
 } from 'react-router-dom'
 import ReactGA from 'react-ga4'
-import { useMatomo } from '@datapunt/matomo-tracker-react'
+import { useMatomo } from '@jonkoops/matomo-tracker-react'
 import { GlobalDataProvider } from './context/GlobalDataContext'
 import Home from './components/Home/Home'
 import Adopt from './components/Adopt'

@@ -65,4 +65,14 @@
 			margin-left: 10rem;
 		}
 	}
+
+
+	@media screen AND (max-width: 600px) {
+
+		h1 {
+			font-size: x-large;
+		}
+	
+	}
 }
+

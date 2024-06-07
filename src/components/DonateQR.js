@@ -11,9 +11,9 @@ const cx = classNames.bind(styles)
 
 const catPhotoStyle = {
   float: 'right',
-  margin: '0 0 0 1em',
-  height: '301px',
-  width: '300px'
+  margin: '0 0 0 .5rem',
+  width: '30%',
+  borderRadius: '4%'
 }
 
 const DonateQR = () => (
@@ -24,7 +24,7 @@ const DonateQR = () => (
     <hr />
 
     <div>
-    <img src={catPhoto} style={catPhotoStyle} alt=""></img>
+    <img src={catPhoto} className="catPhoto" style={catPhotoStyle} alt=""></img>
 
     <p>To prevent homeless kittens from being born, each year we trap, neuter, vaccinate and return thousands of feral cats in the Tampa community. We are completely dependent on your donation to help us continue our mission.</p>
 

@@ -16,7 +16,6 @@ const AdoptionForm = () => {
   const [otherAnimals, setOtherAnimals] = useState()
   const [othersSpayed, setOthersSpayed] = useState()
   const [givenUp, setGivenUp] = useState()
-  const [rent, setRent] = useState()
   const [workSchool, setWorkSchool] = useState()
 
   const petData = usePetData()

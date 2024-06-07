@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import ReactGA from 'react-ga4'
-import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react'
+import { MatomoProvider, createInstance } from '@jonkoops/matomo-tracker-react'
 import './assets/stylesheets/_variables.scss'
 import './assets/stylesheets/style.scss'
 import App from './App'
