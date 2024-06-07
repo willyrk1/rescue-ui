@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select'
 
-const SubscribeForm = ({ className }) => {
+const SubscribeForm = ({ className, buttonId = '7238N3BAT93DA' }) => {
   const options = [10, 25, 50, 100, 200].map(amount => ({
     value: `$${amount} per Month`,
     label: `$${amount} per Month : $${amount}.00 USD - monthly`,
@@ -21,7 +21,7 @@ const SubscribeForm = ({ className }) => {
       />
       <input name="on0" type="hidden" value="Donation Levels" />
       <input name="cmd" type="hidden" value="_s-xclick" />
-      <input name="hosted_button_id" type="hidden" value="7238N3BAT93DA" />
+      <input name="hosted_button_id" type="hidden" value={buttonId} />
       <input name="currency_code" type="hidden" value="USD" />
       <input
         alt="PayPal - The safer, easier way to pay online!"

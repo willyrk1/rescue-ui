@@ -1,13 +1,13 @@
 import React from 'react'
 
-const DonateButton = () => (
+const DonateButton = ({ buttonId = 'SZVEZAVGVGEM6'}) => (
   <form
     action="https://www.paypal.com/cgi-bin/webscr"
     method="post"
     target="_blank"
   >
     <input name="cmd" type="hidden" value="_s-xclick" />
-    <input name="hosted_button_id" type="hidden" value="SZVEZAVGVGEM6" />
+    <input name="hosted_button_id" type="hidden" value={buttonId} />
     <input
       alt="PayPal - The safer, easier way to pay online!"
       type="image"

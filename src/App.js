@@ -34,6 +34,7 @@ import WorkingCatsForm from './components/WorkingCatsForm'
 import Page from './components/Page'
 import SuccessStories from './components/SuccessStories'
 import Donate from './components/Donate'
+import DonateQR from './components/DonateQR'
 import ForeverFoster from './components/ForeverFoster'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import FormSubmitted from './components/FormSubmitted'
@@ -92,6 +93,7 @@ const App = () => (
         <Route exact path="/working-cats" element={<WorkingCats/>} />
         <Route exact path="/working-cats-form" element={<WorkingCatsForm/>} />
         <Route exact path="/donate" element={<Donate/>} />
+        <Route exact path="/donateQR" element={<DonateQR/>} />
         <Route exact path="/forever-foster" element={<ForeverFoster/>} />
         <Route exact path="/privacy-policy" element={<PrivacyPolicy/>} />
         <Route exact path="/form-submitted" element={<FormSubmitted/>} />
