@@ -693,10 +693,10 @@ const VolunteerForm = () => {
                     <h2>Adoption Centers</h2>
                     <p>
                       There are three ways to help out at our adoption centers,
-                      Kennelling, Adoption Counsellor and Dog Handler.
+                      Kenneling, Adoption Counselor and Dog Handler.
                     </p>
                     <p>
-                      <strong>Kennelling:</strong> Twice a day we let our cats out of
+                      <strong>Kenneling:</strong> Twice a day we let our cats out of
                       their cage for exercise, playtime and love. During that time
                       their cage is cleaned and fresh water and food (if needed) is
                       provided. Petsmart kennels for us in the morning, we kennel in the
@@ -707,7 +707,7 @@ const VolunteerForm = () => {
                     </p>
                   </StandardForm.FullWidth>
 
-                  <label htmlFor="kenneller">I would like to be a Kenneller</label>
+                  <label htmlFor="kenneller">I would like to be a Kenneler</label>
                   <StandardForm.Input>
                     <input
                       type="checkbox"
@@ -719,17 +719,17 @@ const VolunteerForm = () => {
 
                   <StandardForm.FullWidth>
                     <p>
-                      <strong>Adoption Counsellor:</strong> Adoption Counsellors screen
+                      <strong>Adoption Counselor:</strong> Adoption Counselors screen
                       prospective adopters at the adoption centers. They work to try and
                       match a potential adopter with a cat that fits the personality and
                       temperament they are looking for. If you choose to be an adoption
-                      counsellor, we ask that you commit to work the adoption center at
+                      counselor, we ask that you commit to work the adoption center at
                       least one day a month.
                     </p>
                   </StandardForm.FullWidth>
 
                   <label htmlFor="counselor">
-                    I would like to be an Adoption Counsellor
+                    I would like to be an Adoption Counselor
                   </label>
                   <StandardForm.Input>
                     <input
