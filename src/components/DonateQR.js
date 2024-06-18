@@ -58,7 +58,7 @@ const DonateQR = () => (
       </p>
 
       <div className={cx('choices')}>
-        <DonateButton buttonId='SZVEZAVGVGEM6' />
+        <DonateButton buttonId='3RBQA4QJ4TXLW' />
         <img alt="Zelle" src={zelleLogo} />
       </div>
 
