@@ -20,33 +20,16 @@ const DonateQR = () => (
   <StandardLayout legal>
     <div className={cx('donate')}>
 
-    <h1>Birth control for cats, because there can be too much cuteness in Tampa.</h1>
-    <hr />
-
-    <div>
-    <img src={catPhoto} className="catPhoto" style={catPhotoStyle} alt=""></img>
-
-    <p>To prevent homeless kittens from being born, each year we trap, neuter, vaccinate and return thousands of feral cats in the Tampa community. We are completely dependent on your donation to help us continue our mission.</p>
-
-    <p>We are a 501c3 non-profit organization and receive no government funding and have no paid employees, so 100% of every dollar you donate goes to helping animals.</p>
-    </div>
-
-
-      <h1>Donate</h1>
+      <h1>Birth control for cats, because there can be too much cuteness in Tampa.</h1>
       <hr />
 
-      <p>
-        Each year, St. Francis Society helps find homes for over 2,000
-        animals. Nearly half of those are saved from euthanasia at local
-        animal shelters, and the others are rescued from the community.
-        Additionally, each year, we trap/neuter/vaccinate and return
-        thousands of feral cats in the Tampa community.
-        We are a 501c3 non-profit organization
-        and receive no government funding. We have no paid employees so 100% of
-        every dollar you donate goes to the animals we take care of. We are
-        completely dependent on the community's donations to help us continue
-        our life saving mission.
-      </p>
+      <div>
+        <img src={catPhoto} className="catPhoto" style={catPhotoStyle} alt=""></img>
+
+        <p>To prevent homeless kittens from being born, each year we trap, neuter, vaccinate and return thousands of feral cats in the Tampa community. We are completely dependent on your donation to help us continue our mission.</p>
+
+        <p>We are a 501c3 non-profit organization and receive no government funding and have no paid employees, so 100% of every dollar you donate goes to helping animals.</p>
+      </div>
 
       <h2>Make a One Time Donation</h2>
       <p>
