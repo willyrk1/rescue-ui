@@ -62,7 +62,7 @@ const Footer = ({ legal }) => (
             <img src={twitterLogo} alt="Twitter" />
           </a>
           <a
-            href="//www.youtube.com/user/StFrancisSociety"
+            href="//www.youtube.com/@SaintFrancisRescue"
             target="_blank"
             rel="noopener noreferrer"
           >
