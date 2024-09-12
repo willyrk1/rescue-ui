@@ -20,7 +20,7 @@ const { hostName, protocol, token } = {
   },
   production: {
     protocol: 'https',
-    hostName: 'stfrancisrescue.org',
+    hostName: 'www.stfrancisrescue.org',
     token: 'unknown',
   },
 }[env]
