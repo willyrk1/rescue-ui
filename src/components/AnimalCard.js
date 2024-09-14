@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import qs from 'query-string'
 import classNames from 'classnames/bind'
-import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 import { getAge } from '../config/helpers'
 import AnimalLink from './AnimalLink'
 import styles from './AnimalCard.module.scss'
@@ -41,7 +41,7 @@ const AnimalCard = props => {
       <div className={cx('pet-card')}>
         <DetailLink>
           <img
-            src={`${PROTOCOL}://${HOSTNAME}${pet.primary_image_thumbnail}`}
+            src={`${URI}${pet.primary_image_thumbnail}`}
             alt={pet.name}
           />
         </DetailLink>

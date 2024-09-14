@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react'
 import StFrancisRescue from '../apis/StFrancisRescue'
-import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 import './SuccessStories.scss'
 
 class SuccessStories extends Component {
@@ -42,7 +42,7 @@ class SuccessStories extends Component {
                     <img
                       src={animal.primary_image_thumbnail.replace(
                         /\/uploads/g,
-                        `${PROTOCOL}://${HOSTNAME}/uploads`
+                        `${URI}/uploads`
                       )}
                       alt=""
                       title={animal.name}

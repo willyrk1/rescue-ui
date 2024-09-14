@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
-import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 import states from '../config/states'
 import StandardLayout from './StandardLayout'
 import StandardForm from './StandardForm'
@@ -52,7 +52,7 @@ const VolunteerForm = () => {
         </div>
 
         <StandardForm
-          action={`${PROTOCOL}://${HOSTNAME}/volunteers`}
+          action={`${URI}/volunteers`}
           className={cx('form')}
           excludeList={[
             "volunteer[background_check]",

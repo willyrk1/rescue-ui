@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue'
-import { HOSTNAME, PROTOCOL } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 import StandardLayout from './StandardLayout'
 import styles from './Legacy.module.scss'
 import Error from './Error'
@@ -24,7 +24,7 @@ const Legacy = () => {
           },
         } = await StFrancisRescue.getPage(reference)
         setLegacyContent(
-          content.replace(/\/uploads/g, `${PROTOCOL}://${HOSTNAME}/uploads`)
+          content.replace(/\/uploads/g, `${URI}/uploads`)
         )
       } catch {
         setIsError(true)

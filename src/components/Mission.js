@@ -11,7 +11,7 @@ import classNames from 'classnames/bind'
 import StFrancisRescue from '../apis/StFrancisRescue'
 import StandardLayout from './StandardLayout'
 import DonationExamples from './DonationExamples'
-import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 import donationStyles from './Home/DonateRibbon.module.scss'
 import styles from './Mission.module.scss'
 
@@ -82,7 +82,7 @@ const Mission = () => {
                       <img
                         src={
                           picture
-                            ? `${PROTOCOL}://${HOSTNAME}${picture}`
+                            ? `${URI}${picture}`
                             : '/no_picture.jpg'
                         }
                         alt={name.split(' ')[0]}

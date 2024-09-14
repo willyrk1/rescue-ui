@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import Popup from 'reactjs-popup'
-import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 import { getAge } from '../config/helpers'
 import StandardLayout from './StandardLayout'
 import Error from './Error'
@@ -26,7 +26,7 @@ const AnimalImages = ({ images, name, index }) => {
         </div>
       )}
       <img
-        src={`${PROTOCOL}://${HOSTNAME}${images[currentIndex].public_filename}`}
+        src={`${URI}${images[currentIndex].public_filename}`}
         alt={name}
       />
       {currentIndex < images.length - 1 && (
@@ -77,7 +77,7 @@ const AnimalDetails = () => {
           trigger={
             <button className={cx('popup')}>
               <img
-                src={`${PROTOCOL}://${HOSTNAME}${public_filename}`}
+                src={`${URI}${public_filename}`}
                 alt={pet.name}
               />
             </button>

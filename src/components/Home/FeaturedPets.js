@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
-import { PROTOCOL, HOSTNAME } from '../../config/StFrancisRescue'
+import { URI } from '../../config/StFrancisRescue'
 import { usePetData } from '../../context/GlobalDataContext'
 import { getAge } from '../../config/helpers'
 import AnimalLink from '../AnimalLink'
@@ -45,7 +45,7 @@ const FeaturedPets = () => {
           <DetailLink>
             {petImage ? (
               <img
-                src={`${PROTOCOL}://${HOSTNAME}${petImage}`}
+                src={`${URI}${petImage}`}
                 alt={pet.name}
               />
             ) : (

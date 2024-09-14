@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import classNames from 'classnames/bind'
-import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 import states from '../config/states'
 import { usePetData } from '../context/GlobalDataContext'
 import StandardLayout from './StandardLayout'
@@ -55,7 +55,7 @@ const AdoptionForm = () => {
         </div>
 
         <StandardForm
-          action={`${PROTOCOL}://${HOSTNAME}/adopter_agreements`}
+          action={`${URI}/adopter_agreements`}
           className={cx('form')}
           submitProps={{
             className: cx('btn'),

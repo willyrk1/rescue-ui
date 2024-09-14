@@ -6,7 +6,7 @@
  * author: Steven Pothoven (steven@pothoven.net)
  ********************************************************************************/
 
-import { PROTOCOL, HOSTNAME, ROOT_URL, TOKEN } from '../config/StFrancisRescue'
+import { URI, ROOT_URL, TOKEN } from '../config/StFrancisRescue'
 
 const StFrancisRescue = (function() {
   var log = console.log
@@ -40,7 +40,7 @@ const StFrancisRescue = (function() {
         .map(key => key + '=' + params[key])
         .join('&')
     }
-    let url = `${PROTOCOL}://${HOSTNAME}${ROOT_URL}${endpoint}`
+    let url = `${URI}${ROOT_URL}${endpoint}`
     if (queryString) {
       url += `?${queryString}`
     }

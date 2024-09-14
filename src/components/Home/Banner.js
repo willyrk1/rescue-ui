@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import classNames from 'classnames/bind'
 import StFrancisRescue from '../../apis/StFrancisRescue'
-import { PROTOCOL, HOSTNAME } from '../../config/StFrancisRescue'
+import { URI } from '../../config/StFrancisRescue'
 import Scroller from '../Scroller'
 import styles from './Banner.module.scss'
 
@@ -31,7 +31,7 @@ const Banner = () => {
           key: id,
           component: (
             <a href={url}>
-              <img src={`${PROTOCOL}://${HOSTNAME}${image_src}`} alt={name} />
+              <img src={`${URI}${image_src}`} alt={name} />
             </a>
           ),
         }))}

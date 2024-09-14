@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react'
 import StFrancisRescue from '../apis/StFrancisRescue'
-import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 
 class Page extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class Page extends Component {
     if (this.state.loaded) {
       const content = page.content.replace(
         /\/uploads/g,
-        `${PROTOCOL}://${HOSTNAME}/uploads`
+        `${URI}/uploads`
       )
       return (
         <div id="page">

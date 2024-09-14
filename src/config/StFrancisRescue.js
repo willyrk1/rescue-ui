@@ -10,7 +10,7 @@ const { hostName, protocol, token } = {
   },
   staging: {
     protocol: 'https',
-    hostName: 'staging.stfrancisrescue.org',
+    hostName: '',
     token: 'c3RhZ2luZzpwYXNzdzByZA==',
   },
   test: {
@@ -20,7 +20,7 @@ const { hostName, protocol, token } = {
   },
   production: {
     protocol: 'https',
-    hostName: 'stfrancisrescue.org',
+    hostName: '',
     token: 'unknown',
   },
 }[env]
@@ -30,3 +30,4 @@ export const PROTOCOL = protocol
 export const HOSTNAME = hostName
 export const ROOT_URL = '/'
 export const TOKEN = token
+export const URI = HOSTNAME ? `${PROTOCOL}://${HOSTNAME}` : ''

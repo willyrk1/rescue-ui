@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
-import { PROTOCOL, HOSTNAME } from '../config/StFrancisRescue'
+import { URI } from '../config/StFrancisRescue'
 import states from '../config/states'
 import StandardLayout from './StandardLayout'
 import StandardForm from './StandardForm'
@@ -41,7 +41,7 @@ const Contact = () => (
 
       <h2>Contact Form</h2>
       <StandardForm
-        action={`${PROTOCOL}://${HOSTNAME}/contact_forms`}
+        action={`${URI}/contact_forms`}
         className={cx('form')}
         submitProps={{
           className: cx('btn'),
