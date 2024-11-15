@@ -77,6 +77,7 @@ const Donate = () => (
         <br />
         Tampa, Fl 33685-1614
       </p>
+      <p>The EIN for St. Francis Society, Inc. is 59-3469332.</p>
 
       <h2>Donor Privacy Policy</h2>
       <p>
